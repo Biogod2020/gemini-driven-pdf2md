@@ -2,11 +2,11 @@
 
 ## Phase 1: Environment and Project Scaffolding
 - [x] Task: Set up Python project with Poetry (2594b02)
-- [ ] Task: Configure basic CLI structure using Typer
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Configure basic CLI structure using Typer (98925db)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (manual)
 
 ## Phase 2: Gemini API Integration
-- [ ] Task: Implement Gemini multimodal client
+- [x] Task: Implement Gemini multimodal client (680fa97)
 - [ ] Task: Develop prompt strategies for structural inference
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
