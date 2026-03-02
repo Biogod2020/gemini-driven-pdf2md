@@ -7,7 +7,7 @@
 
 ## Phase 2: Gemini API Integration
 - [x] Task: Implement Gemini multimodal client (680fa97)
-- [ ] Task: Develop prompt strategies for structural inference
+- [x] Task: Develop prompt strategies for structural inference (83ad87d)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3: Extraction and Storage
