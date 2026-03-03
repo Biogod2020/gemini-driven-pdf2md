@@ -6,7 +6,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 0' (Protocol in workflow.md) (manual)
 
 ## Phase 1: Triplet Extraction Engine
-- [~] Task: Implement Triplet Sliding Window logic in `batch_process.py`
+- [x] Task: Implement Triplet Sliding Window logic in `batch_process.py` (a0e0bc9)
 - [ ] Task: Update Gemini client to handle multi-image payloads
 - [ ] Task: Integrate Style Registry into extraction prompts
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
