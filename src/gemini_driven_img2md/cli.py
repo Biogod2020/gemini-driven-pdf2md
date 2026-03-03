@@ -43,48 +43,78 @@ def image_to_base64(image, max_size=(1024, 1024)):
 def extract(
     input_path: Path = typer.Argument(..., help="Path to the PDF or image document."),
     output_dir: Path = typer.Option(Path("./output"), "--output", "-o", help="Directory to save extracted content."),
-    page: int = typer.Option(0, "--page", "-p", help="Page number to extract (0-indexed)."),
+    page: int = typer.Option(0, "--page", "-p", help="Target page number to extract (0-indexed)."),
+    style_profile: Optional[Path] = typer.Option(None, "--style-profile", help="Path to the style_profile.json."),
+    prev_page: Optional[int] = typer.Option(None, "--prev-page", help="Previous page index for context."),
+    next_page: Optional[int] = typer.Option(None, "--next-page", help="Next page index for context."),
 ):
     """
-    Extract content from a document and convert it to Markdown.
+    Extract content from a document and convert it to Markdown using Triplet Context.
     """
     if not input_path.exists():
         typer.echo(f"Error: File {input_path} does not exist.", err=True)
         raise typer.Exit(code=1)
 
-    typer.echo(f"Processing {input_path} (page {page})...")
+    typer.echo(f"Processing {input_path} (Target: Page {page}, Context: {prev_page}, {next_page})...")
     
-    # 1. Load the page as an image
+    # 1. Load Images
     try:
-        if input_path.suffix.lower() == ".pdf":
-            page_image = get_page_image(input_path, page)
-        else:
-            from PIL import Image
-            page_image = Image.open(input_path).convert("RGB")
+        # Load Target
+        target_image = get_page_image(input_path, page)
+        
+        # Load Contexts
+        prev_image = None
+        if prev_page is not None:
+            prev_image = get_page_image(input_path, prev_page)
+            
+        next_image = None
+        if next_page is not None:
+            next_image = get_page_image(input_path, next_page)
+            
     except Exception as e:
-        typer.echo(f"Error loading document: {e}", err=True)
+        typer.echo(f"Error loading document pages: {e}", err=True)
         raise typer.Exit(code=1)
 
-    # 2. Prepare Gemini call
-    client = get_gemini_client()
-    prompt = get_extraction_prompt()
-    
-    # Encode image for multimodal input
-    base64_image = image_to_base64(page_image)
-    
-    # ChatGoogleGenerativeAI expects a specific content list format
-    message = HumanMessage(
-        content=[
-            {"type": "text", "text": prompt},
-            {
-                "type": "image_url",
-                "image_url": f"data:image/png;base64,{base64_image}",
-            },
-        ]
-    )
+    # 2. Load Style Profile
+    profile_data = ""
+    if style_profile and style_profile.exists():
+        with open(style_profile, "r", encoding="utf-8") as f:
+            profile_data = f.read()
 
-    # 3. Call Gemini
-    typer.echo("Calling Gemini API...")
+    # 3. Prepare Gemini call
+    client = get_gemini_client()
+    prompt = get_extraction_prompt(style_profile=profile_data)
+    
+    # Multimodal content list
+    content = [{"type": "text", "text": prompt}]
+    
+    # Add Previous Page Context
+    if prev_image:
+        content.append({"type": "text", "text": "### [CONTEXT] PREVIOUS PAGE (Reference Only)"})
+        content.append({
+            "type": "image_url",
+            "image_url": f"data:image/png;base64,{image_to_base64(prev_image)}"
+        })
+        
+    # Add Target Page (The one to extract)
+    content.append({"type": "text", "text": "### [TARGET] THE CURRENT PAGE TO EXTRACT"})
+    content.append({
+        "type": "image_url",
+        "image_url": f"data:image/png;base64,{image_to_base64(target_image)}"
+    })
+    
+    # Add Next Page Context
+    if next_image:
+        content.append({"type": "text", "text": "### [CONTEXT] NEXT PAGE (Reference Only)"})
+        content.append({
+            "type": "image_url",
+            "image_url": f"data:image/png;base64,{image_to_base64(next_image)}"
+        })
+    
+    message = HumanMessage(content=content)
+
+    # 4. Call Gemini
+    typer.echo("Calling Gemini API with Triplet Context...")
     try:
         response = client.invoke([message])
         response_text = response.content
