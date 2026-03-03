@@ -1,13 +1,13 @@
 import pytest
 from gemini_driven_img2md.gemini_client import get_gemini_client
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 def test_get_gemini_client():
-    """Test that the client is initialized correctly using the local proxy."""
+    """Test that the client is initialized correctly as ChatGoogleGenerativeAI."""
     client = get_gemini_client()
-    assert isinstance(client, ChatOpenAI)
-    assert client.model_name == "gemini-3-flash"
-    assert str(client.openai_api_base) == "http://localhost:8888/v1/"
+    assert isinstance(client, ChatGoogleGenerativeAI)
+    assert "gemini-3-flash" in client.model
+    assert client.transport == "rest"
 
 def test_client_initialization_with_custom_params():
     """Verify that the client can be initialized with custom settings."""
