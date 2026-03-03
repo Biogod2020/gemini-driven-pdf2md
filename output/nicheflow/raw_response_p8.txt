@@ -1,0 +1,38 @@
+```json
+{
+  "document_metadata": {
+    "title": "NicheFlow: Qualitative evaluation and biological analysis",
+    "inferred_style": "academic/scientific paper"
+  },
+  "assets": [
+    {
+      "id": "fig3",
+      "type": "figure",
+      "bbox": [91, 176, 304, 823],
+      "caption": "Figure 3: Left and right panels show the mapping of spinal cord (E10.5 to E11.5) and head neural crest cells (E9.5 to E10.5). In each panel, the left column shows source cells and expected targets, and the right column shows density contours of the most likely mapped regions. Bar plots display transition probabilities to the most likely descendant cell types. For NicheFlow, contours represent the proportion of samples in generated point clouds assigned to real cell coordinates across 10 samples.",
+      "description": "A comparative visualization of NicheFlow and moscot mapping probabilities for spinal cord and neural crest cells. It includes spatial density plots and bar charts showing cell type transition frequencies."
+    }
+  ]
+}
+```
+
+---
+
+![Figure 3: Left and right panels show the mapping of spinal cord (E10.5 to E11.5) and head neural crest cells (E9.5 to E10.5). In each panel, the left column shows source cells and expected targets, and the right column shows density contours of the most likely mapped regions. Bar plots display transition probabilities to the most likely descendant cell types. For NicheFlow, contours represent the proportion of samples in generated point clouds assigned to real cell coordinates across 10 samples.](assets/fig3.png)
+
+the ablations in Sec. D.5 and D.6. We present results with a single value for $\lambda$ as this experiment compares different models on reconstructing fixed tissue structures over time, for which we enforce spatial preservation (see Sec. 4.2). However, we also include model comparisons across multiple values of $\lambda$ in Tab. 3 for completion.
+
+**Results.** Our quantitative evaluation (Tab. 1) demonstrates that *NicheFlow* trained with the GLVFM objective consistently achieves strong performance across both spatial and semantic metrics. It outperforms all baselines in reconstructing spatial structure (PSD, SPD) and cell-type organization (1NN-F1) on developmental datasets, while remaining competitive on ageing data. These results highlight the importance of structured microenvironment modeling for capturing the spatiotemporal dynamics of complex tissues. We complement our quantitative results visually in Fig. 2 and Fig. 6 and 10 in the Appendix, where we show that SPFlow fails to capture tissue-level organization, producing blurry and spatially incoherent samples. In contrast, NicheFlow generates predictions that preserve spatial structure and cell-type organization, despite learning only from local microenvironments. In Sec. D.4 and Sec. D.7, we additionally demonstrate that NicheFlow produces conditionally consistent outputs with the source, while RPCFlow generates very diffused mappings across the slide, failing to preserve spatial consistency across time.
+
+### 5.2 Qualitative evaluation and biological analysis
+
+We explore the capabilities of NicheFlow on the spatial trajectory inference task through qualitative and biological assessments. Specifically, we focus on validating whether our model captures compositional changes within fixed spatial structures and developmental trajectories.
+
+**Experimental setup.** We train the model as described in Sec. 5.1.1. Using the mouse embryonic dataset [8], we select specific microenvironments as source niches for which we want to study the trajectory over time. Specifically, we propose two scenarios for the application of NicheFlow depending on the choice of the OT parameter $\lambda$ (see Sec. 4.2):
+
+1. *Compositional changes in fixed structures across time.* We choose the evolution of the *spinal cord* of the embryo from E10.5 to E11.5 as an example and set a low value of $\lambda$ to prioritize the preservation of the spatial location in the trajectory.
+2. *Spatial and cellular development of immature cells.* Developing cells may displace to different areas of the embryo, requiring a higher value of $\lambda$ to account for gene expression. As a case study, we inspect how neural crest cells in the head evolve into mesenchymal and cranial structures.
+
+**Baseline.** We compare NicheFlow with the spatiotemporal framework in moscot [20], which models spatial trajectories at the single-cell level. In contrast to NicheFlow, moscot integrates spatial
+
+9

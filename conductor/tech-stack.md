@@ -5,7 +5,8 @@
 - **TypeScript (Node.js)**: Secondary language for optional web-based visualization or frontend components.
 
 ## AI & Orchestration
-- **Gemini Multimodal Models**: The primary vision and reasoning engine.
+- **Gemini Multimodal Models**: The primary vision and reasoning engine, using the **Native Gemini API Format**.
+- **Google Generative AI SDK / langchain-google-genai**: Primary libraries for native API interaction.
 - **LangChain / LangGraph**: Framework for orchestrating complex extraction workflows, managing state, and handling multimodal data flows.
 
 ## Document Handling (LLM-Centric)

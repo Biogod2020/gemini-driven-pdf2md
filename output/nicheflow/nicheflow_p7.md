@@ -1,0 +1,21 @@
+![Figure 2: Qualitative comparison of generated samples on the embryonic development dataset (9.5-11.5 days). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives.](assets/fig2.png)
+
+regions of the slides computed with $K$-Means clustering over the 2D coordinates (see Fig. 13 for a visualization with different $K$ values). From these regions, we collect $M$ source and target microenvironments and resample $N \le M$ matching pairs from the entropic OT coupling $(\mathcal{M}^0, \mathcal{M}^1) \sim \pi^*_{\epsilon, \lambda}$ as described in Sec. 3.1, where $\mathcal{M}^0$ and $\mathcal{M}^1$ denote the sampled sets (see Sec. 4.2 for details on our OT coupling).
+
+**Evaluation data.** For consistent and reproducible evaluation, we discretize each tissue into a fixed 2D grid and define evaluation microenvironments as fixed-radius neighborhoods around the nearest cells to each grid point. This guarantees full spatial coverage and ensures deterministic comparison across methods. See Sec. F.5 for details.
+
+**Multiple time-point.** NicheFlow predicts piecewise trajectories between subsequent time points. Instead of learning one flow for each couple of subsequent slides, we train a single model with additional conditioning on source and target labels (see Sec. F.6).
+
+### 5.1.2 Quantitative evaluation metrics
+
+**Spatial structure.** We quantify coordinate generation accuracy using two asymmetric distance metrics. The *point-to-shape distance* (PSD) measures how far predicted coordinates deviate from the true structure by computing the mean squared distance from each generated point to its nearest ground truth counterpart. In contrast, the *shape-to-point distance* (SPD) evaluates how well the generated points cover the target region by averaging the squared distance from each ground truth point to its nearest generated point (see Sec. F.3 for a mathematical formulation of the metrics).
+
+**Cell-type organization.** To assess how well the model reconstructs the spatial organization of different cell types, we use a 1-nearest-neighbor (1NN) classification setup. Since the model generates only gene expression profiles and spatial coordinates, we assign cell type labels to generated cells using a classifier trained on ground truth gene expression data (see Sec. F.4). Each predicted cell is then matched to its nearest real cell, and we report the weighted F1 score (1NN-F1).
+
+### 5.1.3 Models and results
+
+**Baselines.** We compare against what we call *SPFlow* (Single-Point Flow), a standard FM-based model that predicts temporal trajectories across slides at a single-cell level using an MLP-based velocity field. We also consider *RPCFlow* (Random Point Cloud Flow), which has the same backbone as NicheFlow, but conditions on randomly sampled point clouds instead of radius neighborhoods. Additionally, we include *LUNA* [36], a diffusion model for spatial reconstruction from dissociated cells. Note that LUNA does not model temporal dynamics and only generates coordinates from noise with their respective biological annotations. Therefore, we use it as a reference for spatial generation accuracy via the 1NN-F1 metric rather than a proper baseline.
+
+**Ablations.** We assess different training objectives by comparing standard Conditional Flow Matching (CFM) [26] with two variational formulations modeling posteriors over coordinates and features: Gaussian-only (GVFM) and Gaussian-Laplace (GLVFM). The former uses Gaussian posteriors for coordinates and features. The latter uses the factorized formulation in Sec. 4.3. For the point-cloud-based methods, we use a fixed value of $\lambda = 0.1$ and sampled batches of 64 regions chosen from
+
+8

@@ -1,0 +1,17 @@
+# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+
+*Table 20. Extrapolation on the last holdout timestep on the Brain Regeneration dataset.*
+
+| $\lambda$ | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
+| :--- | :--- | :--- | :--- | :--- |
+| 0 | $6.968 \pm 0.608$ | $7.198 \pm 0.726$ | $6.243 \pm 0.760$ | $6.220 \pm 0.751$ |
+| 0.2 | $7.313 \pm 0.384$ | $7.331 \pm 0.467$ | $6.502 \pm 0.634$ | $6.039 \pm 0.733$ |
+| 0.5 | $7.243 \pm 0.479$ | $7.157 \pm 0.641$ | $6.254 \pm 0.819$ | $5.973 \pm 0.757$ |
+| 0.8 | $7.333 \pm 0.605$ | $7.334 \pm 0.622$ | $6.598 \pm 0.892$ | $6.402 \pm 1.039$ |
+| 1 | $7.505 \pm 0.667$ | $7.338 \pm 0.601$ | $5.277 \pm 0.936$ | $6.021 \pm 1.192$ |
+
+![Figure 11. Performance variation with λ for extrapolation on the Brain Regeneration dataset.](assets/fig11.png)
+
+(a) Next Step Sampling \hspace{2cm} (b) IVP Sampling
+
+34

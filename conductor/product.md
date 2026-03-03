@@ -14,8 +14,12 @@ A high-fidelity multimodal document conversion tool that leverages Gemini's visi
 - **High Structural Fidelity**: Accurately infer document hierarchy (headers, lists, tables) from the source layout.
 - **Processing Speed**: Efficiently convert complex documents without sacrificing accuracy.
 - **Rich Multimodal Support**: Automatically detect, extract, and caption all visual elements.
+- **Global Style Consistency**: Use an evolutionary **Dynamic Style Registry** to maintain uniform formatting across 100+ page documents.
 
 ## Key Features
+- **Global Style Profiling (Stage 0)**: Pre-scan documents using visual-density clustering to establish a baseline Style Registry.
+- **Triplet-Context Extraction**: Process pages in [N-1, N, N+1] windows to resolve cross-page semantic breaks.
+- **Dynamic Style Patching**: Autonomously detect style drift and update the registry during extraction.
 - **Layout Inference**: Automatically determines formatting rules based on the input document's structure.
 - **VLM-based Image Extraction**: Uses Vision-Language Models to intercept, crop, and caption illustrations.
 - **LaTeX Math Support**: Converts complex mathematical notation into standard LaTeX.
@@ -24,4 +28,4 @@ A high-fidelity multimodal document conversion tool that leverages Gemini's visi
 ## Technical Scope
 - **Input**: PDF files, documents with images.
 - **Output**: Markdown (.md) files with relative image links.
-- **Engine**: Gemini Multimodal APIs.
+- **Engine**: Gemini Multimodal APIs (Native Request Format).

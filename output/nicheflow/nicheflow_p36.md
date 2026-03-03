@@ -1,0 +1,15 @@
+**OT and mini-batching.** To ensure spatial diversity and computational tractability, we uniformly sample 256 source–target microenvironment pairs from the $K$ spatial clusters obtained via $K$-Means. We then compute the entropic OT plan between these sampled pairs and resample 64 source-target pairs from this plan to define a single training instance. During training, we process 16 such instances per batch.
+
+**Optimization.** All models are trained using the AdamW optimizer with a learning rate of $2 \cdot 10^{-4}$ and a weight decay of $1 \cdot 10^{-5}$. We train each model until convergence.
+
+**Computational cost.** All models were trained on a single NVIDIA GeForce GTX 1080 Ti GPU with 11GB of memory. Depending on the dataset and training objective (e.g., CFM or VFM), training takes approximately 12–16 hours per model.
+
+### F.8 Comparison with moscot
+
+Here, we describe how we conduct the comparisons with moscot, as shown in Fig. 3, Fig. 4, and Fig. 5. For both NicheFlow and moscot, we select a source microenvironment that we want to track over time. In the case of NicheFlow, this corresponds to an aggregate of point clouds. For moscot, it refers to a group of single cells spatially located within the region of interest. The same set of cells is used for both methods.
+
+**NicheFlow.** To generate contour plots over the spatial slide, we push forward the selected region and assign the generated points to their nearest real neighbors based on spatial coordinates. We then compute a probability value for each real position by normalizing the number of assigned generated points. In other words, the more generated points that are close to a given real point, the higher the probability assigned to that location in the contour plot. Cell type proportions are computed as the aggregated frequencies of the generated cell types across the slide. Each plot considers 10 independent generation runs from the same niche.
+
+**moscot.** This baseline is not a generative model, but rather a standard discrete OT framework using a Fused Gromov-Wasserstein cost. As such, it does not generate new features or coordinates. Instead, it outputs a transition matrix that assigns matching probabilities between each source slide cell and each target slide cell. We use these transition probabilities to compute contour plots over the target slide and to aggregate cell type probabilities for the bar plots. For the latter, moscot provides a custom method called `cell_transition()`.
+
+For the Appendix figures Fig. 4, Fig. 7, Fig. 8, and Fig. 9, we propagate the initial source region across multiple time steps. In NicheFlow, this is achieved by using the simulated point cloud from step $t$ to predict the next state at $t + 1$, and then feeding this output as the input for the following trajectory step from $t + 1$ to $t + 2$, and so on. Ground truth points are not used as intermediate sources during this process. For moscot, pushing the source across time points can be automatically done by setting non-subsequent time points in the `cell_transition()` function.

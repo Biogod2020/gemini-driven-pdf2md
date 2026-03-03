@@ -1,0 +1,46 @@
+Table 7: Comparison of Wasserstein distances between generated and real tissue structures on the axolotl brain development (ABD) dataset. We report $\mathcal{W}_1$ and $\mathcal{W}_2$ distances separately for spatial positions (Pos.) and gene expression features (Genes), averaged across all generated cell types and timepoints. All models use $\lambda = 0.1$, and results are averaged over five generation runs. Bold indicates the best (lowest) value per column.
+
+| Model | Obj. | $\mathcal{W}_1$ Pos. | $\mathcal{W}_1$ Genes | $\mathcal{W}_2$ Pos. | $\mathcal{W}_2$ Genes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| SPFlow | CFM | $0.474 \pm 0.003$ | $6.711 \pm 0.002$ | $0.573 \pm 0.003$ | $6.096 \pm 0.081$ |
+| SPFlow | GVFM | $0.538 \pm 0.002$ | $6.681 \pm 0.003$ | $0.639 \pm 0.003$ | $6.209 \pm 0.099$ |
+| SPFlow | GLVFM | $0.489 \pm 0.002$ | $6.533 \pm 0.002$ | $0.586 \pm 0.003$ | $6.090 \pm 0.166$ |
+| RPCFlow | CFM | **0.234 ± 0.003** | $6.363 \pm 0.004$ | $0.374 \pm 0.005$ | $6.031 \pm 0.089$ |
+| RPCFlow | GVFM | $0.247 \pm 0.002$ | $6.093 \pm 0.006$ | **0.369 ± 0.005** | $5.921 \pm 0.051$ |
+| RPCFlow | GLVFM | $0.254 \pm 0.002$ | **6.070 ± 0.004** | $0.406 \pm 0.003$ | **5.884 ± 0.042** |
+| NicheFlow | CFM | $0.267 \pm 0.002$ | $6.347 \pm 0.003$ | $0.428 \pm 0.005$ | $6.107 \pm 0.003$ |
+| NicheFlow | GVFM | $0.284 \pm 0.004$ | $6.081 \pm 0.004$ | $0.448 \pm 0.006$ | $5.917 \pm 0.036$ |
+| NicheFlow | GLVFM | $0.279 \pm 0.006$ | $6.085 \pm 0.003$ | $0.444 \pm 0.011$ | $5.923 \pm 0.034$ |
+
+Table 8: Comparison of Wasserstein distances between generated and real tissue structures on the mouse brain aging (MBA) dataset. We compute $\mathcal{W}_1$ and $\mathcal{W}_2$ distances for spatial coordinates (Pos.) and gene expression features (Genes), averaging per cell type and timepoint. All models are trained with $\lambda = 0.1$, and results are averaged across five generation runs. Bold marks the lowest value in each column.
+
+| Model | Obj. | $\mathcal{W}_1$ Pos. | $\mathcal{W}_1$ Genes | $\mathcal{W}_2$ Pos. | $\mathcal{W}_2$ Genes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| SPFlow | CFM | $0.515 \pm 0.001$ | $7.544 \pm 0.004$ | $0.600 \pm 0.002$ | $5.237 \pm 0.056$ |
+| SPFlow | GVFM | $0.564 \pm 0.001$ | $7.461 \pm 0.004$ | $0.646 \pm 0.001$ | $4.961 \pm 0.114$ |
+| SPFlow | GLVFM | $0.552 \pm 0.002$ | $7.431 \pm 0.003$ | $0.632 \pm 0.002$ | **4.117 ± 0.196** |
+| RPCFlow | CFM | **0.385 ± 0.003** | $7.318 \pm 0.006$ | **0.480 ± 0.003** | $6.659 \pm 0.098$ |
+| RPCFlow | GVFM | $0.416 \pm 0.003$ | $7.202 \pm 0.003$ | $0.510 \pm 0.003$ | $6.346 \pm 0.061$ |
+| NicheFlow | CFM | $0.416 \pm 0.008$ | $7.321 \pm 0.012$ | $0.510 \pm 0.008$ | $6.487 \pm 0.084$ |
+| NicheFlow | GVFM | $0.412 \pm 0.004$ | **7.102 ± 0.001** | $0.503 \pm 0.004$ | $6.403 \pm 0.087$ |
+| NicheFlow | GLVFM | $0.431 \pm 0.008$ | $7.121 \pm 0.008$ | $0.527 \pm 0.007$ | $6.298 \pm 0.029$ |
+
+biological interpretability. Therefore, even when RPCFlow achieves slightly lower Wasserstein distances in aggregate, these gains are not actionable in practice, as the model cannot be used to infer biologically meaningful transitions or trace the evolution of specific spatial regions.
+
+Taken together, Wasserstein metrics offer a complementary, global validation of the structural and semantic accuracy of NicheFlow. They reinforce the quantitative evidence already provided by Chamfer-based metrics (PSD/SPD) and Gromov-based structural evaluations (GW/FGW), confirming that our model accurately captures the tissue-scale organization of both spatial and gene expression patterns.
+
+## E Algorithms
+
+Here, we present the algorithmic procedures underlying NicheFlow. To streamline the exposition, we first define compact notation for representing noisy microenvironments and their interpolations.
+
+We denote a single noisy microenvironment (simplifying Eq. (11)) as:
+
+$$ \mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{1 \times k} = \{ (c_i^z, z_i) \mid c_i^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_2), \ z_i \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_D), \ \forall i = 1, \dots, k \}, \tag{33} $$
+
+where $k$ denotes the number of spatial points per microenvironment, $c_i^z$ are 2D cell coordinates, and $z_i$ are associated feature vectors in $\mathbb{R}^D$. For a collection of $N$ microenvironments, we define the corresponding set of noisy microenvironments
+
+$$ \mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{N \times k} = \{ \mathcal{M}_i^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{1 \times k} \mid \forall i = 1, \dots, N \}. \tag{34} $$
+
+Given a noisy sample $\mathcal{M}^z$ and a corresponding ground-truth microenvironment $\mathcal{M}^1$, we define their linear interpolation at time $t \in [0, 1]$ as: $\mathcal{M}^t = (1 - t)\mathcal{M}^z + t\mathcal{M}^1$, where the interpolation is
+
+31

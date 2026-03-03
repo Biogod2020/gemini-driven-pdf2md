@@ -1,0 +1,14 @@
+# CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics
+
+Chen Su$^1$, Amin Emad$^{1, 2, 3, 4, *}$
+
+$^1$ Department of Electrical and Computer Engineering, McGill University, Montreal, QC, Canada  
+$^2$ Mila, Quebec AI Institute, Montreal, QC, Canada  
+$^3$ Rosalind and Morris Goodman Cancer Institute, Montreal, QC, Canada  
+$^4$ Victor P. Dahdaleh Institute of Genomic Medicine, Montreal, QC, Canada  
+
+**\* Corresponding Author:**  
+Amin Emad  
+755 McConnell Engineering Building  
+3480 University Street, Montreal, Quebec, Canada, H3A 0E9  
+Email: amin.emad@mcgill.ca

@@ -1,0 +1,60 @@
+```json
+{
+  "document_metadata": {
+    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
+    "inferred_style": "academic technical paper"
+  },
+  "assets": [
+    {
+      "id": "fig14",
+      "type": "figure",
+      "bbox": [257, 116, 484, 854],
+      "caption": "Figure 14. Performance variation with λ for extrapolation on the Mouse Organogenesis dataset.",
+      "description": "Two line charts showing metric values (log scale) against Lambda for Next Step Sampling and IVP Sampling. Each chart compares Wasserstein and Weighted Wasserstein metrics."
+    },
+    {
+      "id": "fig16",
+      "type": "figure",
+      "bbox": [758, 116, 985, 854],
+      "caption": "Figure 16. Performance variation with radius for extrapolation on the Brain Regeneration dataset.",
+      "description": "Two line charts showing metric values against Radius for Next Step Sampling and IVP Sampling. Each chart compares Wasserstein and Weighted Wasserstein metrics."
+    }
+  ]
+}
+```
+
+---
+
+# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+
+*Table 23. Extrapolation for holdout timestep 5 on the Mouse Organogenesis dataset.*
+
+| $\lambda$ | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
+| :--- | :--- | :--- | :--- | :--- |
+| 0 | $1.508 \pm 0.047$ | $1.386 \pm 0.088$ | $6.33 \times 10^5 \pm 1.72 \times 10^6$ | $3.95 \times 10^6 \pm 1.05 \times 10^7$ |
+| 0.2 | $1.614 \pm 0.081$ | $1.642 \pm 0.136$ | $9.18 \times 10^2 \pm 1.69 \times 10^3$ | $4.29 \times 10^4 \pm 1.05 \times 10^5$ |
+| 0.5 | $1.638 \pm 0.069$ | $1.676 \pm 0.114$ | $1.08 \times 10^5 \pm 2.76 \times 10^5$ | $9.95 \times 10^5 \pm 2.77 \times 10^6$ |
+| 0.8 | $1.617 \pm 0.042$ | $1.680 \pm 0.094$ | $1.66 \times 10^5 \pm 3.92 \times 10^5$ | $1.43 \times 10^6 \pm 3.43 \times 10^6$ |
+| 1 | $1.906 \pm 0.071$ | $1.892 \pm 0.092$ | $1.89 \times 10^1 \pm 1.77 \times 10^1$ | $6.89 \times 10^1 \pm 7.36 \times 10^1$ |
+
+![Figure 14. Performance variation with λ for extrapolation on the Mouse Organogenesis dataset.](assets/fig14.png)
+
+(a) Next Step Sampling \hspace{50pt} (b) IVP Sampling
+
+---
+
+*Table 25. Extrapolation with CTF-H at $\lambda = 1$ (only using the spatial smoothness prior) for the last holdout timestep on the Brain Regeneration dataset.*
+
+| Radius | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
+| :--- | :--- | :--- | :--- | :--- |
+| 12 | $6.228 \pm 1.276$ | $6.163 \pm 1.490$ | $4.415 \pm 0.580$ | $6.843 \pm 4.812$ |
+| 25 | $6.244 \pm 1.066$ | $6.231 \pm 1.043$ | $6.500 \pm 1.751$ | $5.613 \pm 1.561$ |
+| 50 | $7.505 \pm 0.667$ | $7.338 \pm 0.601$ | $5.277 \pm 0.936$ | $6.021 \pm 1.192$ |
+| 100 | $6.892 \pm 0.930$ | $6.702 \pm 0.631$ | $7.061 \pm 1.677$ | $6.860 \pm 1.880$ |
+| 150 | $7.747 \pm 0.923$ | $7.793 \pm 0.934$ | $9.796 \pm 3.847$ | $10.656 \pm 6.591$ |
+| 200 | $6.039 \pm 0.282$ | $5.764 \pm 0.272$ | $5.630 \pm 0.793$ | $5.000 \pm 0.735$ |
+| 250 | $6.804 \pm 1.011$ | $6.834 \pm 1.124$ | $6.578 \pm 1.611$ | $7.379 \pm 2.864$ |
+
+![Figure 16. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig16.png)
+
+(a) Next Step Sampling \hspace{50pt} (b) IVP Sampling

@@ -1,0 +1,38 @@
+```json
+{
+  "document_metadata": {
+    "title": "Compositional evolution left dorsal pallium and Qualitative comparison of generated samples",
+    "inferred_style": "academic/scientific publication"
+  },
+  "assets": [
+    {
+      "id": "fig9",
+      "type": "figure",
+      "bbox": [91, 188, 328, 811],
+      "caption": "Figure 9: Structural and compositional prediction of the left dorsal pallium during the axolotl brain development. We use the left dorsal pallium region at the St.44 developmental stadium (highlighted on the left) and predict its trajectory over time. In the top row, we show the proportion of different cell types in the predicted region, colored as immature (light red) and mature (dark red). At the bottom, we show the structural prediction for the left dorsal pallium overlaid on the true slide. We set $\\lambda = 0.5$.",
+      "description": "A multi-panel figure showing bar charts of cell type composition across six time points (0 to 5) and corresponding spatial brain maps showing the 'Source' and 'Generated region' for the left dorsal pallium."
+    },
+    {
+      "id": "fig10",
+      "type": "figure",
+      "bbox": [455, 178, 816, 821],
+      "caption": "Figure 10: Qualitative comparison of generated samples on the mouse brain aging dataset (3.4, 3.8, 4.3, 5.4, 6.6, 9.8 months). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives. NicheFlow captures the spatial structure and cell-type organization more faithfully across developmental stages.",
+      "description": "A grid of brain slice images comparing different generative models (SPFlow CFM, GVFM, GLVFM and NicheFlow CFM, GVFM, GLVFM) against Source and Target samples across six age milestones. A legend at the bottom identifies various cell types by color."
+    }
+  ]
+}
+```
+
+---
+
+# Compositional evolution left dorsal pallium
+
+![Figure 9: Structural and compositional prediction of the left dorsal pallium during the axolotl brain development. We use the left dorsal pallium region at the St.44 developmental stadium (highlighted on the left) and predict its trajectory over time. In the top row, we show the proportion of different cell types in the predicted region, colored as immature (light red) and mature (dark red). At the bottom, we show the structural prediction for the left dorsal pallium overlaid on the true slide. We set $\lambda = 0.5$.](assets/fig9.png)
+
+Figure 9: Structural and compositional prediction of the left dorsal pallium during the axolotl brain development. We use the left dorsal pallium region at the St.44 developmental stadium (highlighted on the left) and predict its trajectory over time. In the top row, we show the proportion of different cell types in the predicted region, colored as immature (light red) and mature (dark red). At the bottom, we show the structural prediction for the left dorsal pallium overlaid on the true slide. We set $\lambda = 0.5$.
+
+![Figure 10: Qualitative comparison of generated samples on the mouse brain aging dataset (3.4, 3.8, 4.3, 5.4, 6.6, 9.8 months). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives. NicheFlow captures the spatial structure and cell-type organization more faithfully across developmental stages.](assets/fig10.png)
+
+Figure 10: Qualitative comparison of generated samples on the mouse brain aging dataset (3.4, 3.8, 4.3, 5.4, 6.6, 9.8 months). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives. NicheFlow captures the spatial structure and cell-type organization more faithfully across developmental stages.
+
+23

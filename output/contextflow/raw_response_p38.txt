@@ -1,0 +1,41 @@
+```json
+{
+  "document_metadata": {
+    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
+    "inferred_style": "academic_technical_report"
+  },
+  "assets": [
+    {
+      "id": "fig18",
+      "type": "figure",
+      "bbox": [304, 115, 548, 854],
+      "caption": "Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.",
+      "description": "Two line charts showing metric values (Wasserstein and Weighted Wasserstein) against Radius for (a) Next Step Sampling and (b) IVP Sampling. In (a), both metrics fluctuate between 6.0 and 7.5. In (b), the standard Wasserstein metric shows a significant spike at low radius values and higher overall variance compared to the Weighted Wasserstein metric."
+    }
+  ]
+}
+```
+
+---
+
+Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+
+*Table 27. Extrapolation for the last holdout timestep with CTF-H at $\lambda = 0.8$ on the Brain Regeneration dataset.*
+
+| Radius | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
+| :--- | :--- | :--- | :--- | :--- |
+| 12 | $6.924 \pm 1.178$ | $6.831 \pm 1.132$ | $8.049 \pm 2.162$ | $13.223 \pm 12.164$ |
+| 25 | $6.633 \pm 0.780$ | $6.350 \pm 0.654$ | $6.621 \pm 1.608$ | $9.223 \pm 8.396$ |
+| 50 | $7.130 \pm 0.389$ | $7.260 \pm 0.632$ | $5.971 \pm 0.461$ | $5.836 \pm 1.181$ |
+| 100 | $6.411 \pm 0.522$ | $6.351 \pm 0.456$ | $5.932 \pm 0.264$ | $6.434 \pm 0.840$ |
+| 150 | $6.498 \pm 1.056$ | $6.501 \pm 1.098$ | $6.033 \pm 0.882$ | $7.203 \pm 2.443$ |
+| 200 | $6.052 \pm 0.873$ | $6.129 \pm 1.052$ | $5.852 \pm 1.085$ | $6.247 \pm 1.731$ |
+| 250 | $6.449 \pm 0.909$ | $6.278 \pm 0.726$ | $6.151 \pm 0.986$ | $11.261 \pm 7.063$ |
+
+![Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig18.png)
+
+(a) Next Step Sampling \hskip 100pt (b) IVP Sampling
+
+*Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.*
+
+39

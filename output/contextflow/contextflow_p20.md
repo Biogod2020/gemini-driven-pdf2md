@@ -1,0 +1,24 @@
+**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
+
+*Table 6. Runtime for computing cell-cell communication patterns.*
+
+| Dataset | Total Number of Cells | Runtime (seconds) |
+| :--- | :--- | :--- |
+| Brain Regeneration (Wei et al., 2022) | 28,780 | 23.35 |
+| Mouse Organogenesis (Chen et al., 2022) | 399,248 | 200.40 |
+
+![Figure 3. Training time comparisons for different algorithms with a mini-batch size of 256 on the Brain Regeneration dataset.](assets/fig3.png)
+
+*Cell-Cell Communication Patterns (LR).* We employ spatially informed bivariate statistics implemented in LIANA+ (Dimitrov et al., 2024), for computing LR features, where we applied the cosine similarity metric to gene expression profiles and used the recommended hyperparameters. The exact runtime complexity for LIANA+ is unknown. Table 6 summarizes the total time taken for the Brain Regeneration and Mouse Organogenesis datasets in our case.
+
+**Training of ContextFlow.** The training time complexity largely depends on the total number of training epochs ($E$), mini-batch size ($B$), time per forward and backward pass ($P$), transcriptomic feature dimension ($d$), and total LR pairs ($l$). Below, we compute the time complexity for each step in ContextFlow:
+
+*TPM Construction.* The construction of the transition plausibility matrix involves a calculation of pairwise distances for each mini-batch, resulting in the runtime of $O(B^2(l + d))$.
+
+*Sinkhorn Algorithm.* According to Theorem 3.1, we know that Sinkhorn iterations can be adapted to solve the prior-aware entropy regularization problem (Equation 13). Since the Sinkhorn algorithm has a well-known quadratic time complexity (Cuturi, 2013), the runtime for computing minibatch OT couplings in ContextFlow is $O(B^2)$.
+
+*Total Runtime.* Putting pieces together, across all the training epochs, the total runtime complexity of ContextFlow turns out to be $O(E \times (B^2(d + l) + P))$. As shown in Figure 3, the runtime is linearly dependent on the total epochs $E$, with different linear rates for various configurations. CFM is the fastest because it bypasses the optimal transport coupling step required by the other methods.
+
+### F. Spatiotemporal Optimal Transport
+
+In this section, we compare the recent state-of-the-art spatiotemporal alignment methods, including DeST-OT (Halmos et al., 2025) and TOAST (Ceccarelli et al., 2025), with our prior-aware entropy regularized (PAER) OT objective used in ContextFlow (CTF-H). It is important to note that these OT methods are not generative models and are only used for pairwise alignment tasks. ContextFlow, on the other hand, is a generative model that learns a dynamic flow across the time horizon and utilizes OT couplings to design better conditional paths for regression. In particular, we compute metrics described in DeST-OT on the Axolotl Brain Regeneration dataset following the same setup as used in flow matching. Specifically, for each time step, we randomly sample a batch of 1000 cells and compute the corresponding coupling matrix $\mathbf{\Pi}$, which is then used to derive the metrics. We use the CTF-H ($\lambda = 0.8$) version of ContextFlow for comparison.

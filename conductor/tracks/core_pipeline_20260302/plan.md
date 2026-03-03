@@ -2,7 +2,7 @@
 
 ## Phase 0: Global Style Profiler (Bootstrapping)
 - [x] Task: Implement `profiler.py` with Visual Density Clustering (7612645)
-- [ ] Task: Develop Stage 0 prompt for Style Registry generation
+- [x] Task: Develop Stage 0 prompt for Style Registry generation (12104bb)
 - [ ] Task: Conductor - User Manual Verification 'Phase 0' (Protocol in workflow.md)
 
 ## Phase 1: Triplet Extraction Engine

@@ -1,0 +1,35 @@
+# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+
+Let $u \in \mathbb{R}^n$ and $v \in \mathbb{R}^m$ such that:
+$$u_k = e^{\frac{f_k}{\epsilon}}, \quad v_l = e^{\frac{g_l}{\epsilon}}$$
+
+Let $K_{kl}$ be the kernel $M_{kl} e^{-C_{kl}/\epsilon}$.
+Then, we have:
+$$\Pi^*_{kl} = u_k K_{kl} v_l$$
+$$\Pi^* = \text{diag}(u) \cdot K \cdot \text{diag}(v) \tag{15}$$
+
+Differentiating the Lagrangian with respect to $f_k$ and $g_l$, we get:
+$$\frac{\partial \mathcal{L}}{\partial f_k} = 1 \cdot \left( \sum_l \Pi^*_{kl} - a_k \right) = 0$$
+$$\implies \Pi^* \mathbf{1} = a \tag{16}$$
+
+$$\frac{\partial \mathcal{L}}{\partial g_l} = 1 \cdot \left( \sum_i \Pi^*_{kl} - b_l \right) = 0$$
+$$\implies \Pi^{*\top} \mathbf{1} = b \tag{17}$$
+
+From equations 16 C, 17 C, and 18 C above, we get:
+$$\text{diag}(u) \cdot K \cdot \text{diag}(v) \cdot \mathbf{1} = a$$
+$$(\text{diag}(u) \cdot K \cdot \text{diag}(v))^\top \mathbf{1} = b$$
+
+Which can be rewritten as:
+$$u \odot (Kv) = a$$
+$$K^\top u \odot v = b$$
+
+This is the usual matrix scaling formulation for which the Iterative Proportional Fitting (IPF) updates are:
+$$u_k^{t+1} = \frac{a_k}{(Kv^t)_k}, \quad v_l^{t+1} = \frac{b_l}{(K^\top u^{t+1})_l}$$
+
+Sinkhorn Algorithm uses these updates, iteratively, and these updates are shown to converge in (Franklin & Lorenz, 1989). Thus, Sinkhorn Algorithm can be used for the ContextFlow's Prior Aware Entropy Regularized ($PAER$) (CTF-H) formulation.
+
+From equation (9) C, we get:
+$$\Pi^*_{kl} = e^{f_k/\epsilon} M_{kl} e^{-C_{kl}/\epsilon} e^{g_l/\epsilon}$$
+
+When $\epsilon \to \infty$, we have $C_{kl}/\epsilon \to 0$.
+$$e^{-C_{kl}/\epsilon} \to 1$$

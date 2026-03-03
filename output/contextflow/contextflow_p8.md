@@ -1,0 +1,47 @@
+**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
+
+### Impact Statement
+
+Our work contributes a new method for modeling dynamical systems from unpaired observations with structural constraints. As such, our algorithm can contribute to biomedical domains, for example, by modeling drug perturbation responses in spatially resolved tumor tissues or by analyzing complex biological dynamics with unpaired datasets. These applications could positively impact biomedical research by enabling more data-efficient modeling of longitudinal biological processes and expediting hypothesis generation about treatment effects or underlying mechanisms. Future work should emphasize broad validation of our method using experimental or clinical ground truth, and the interpretation of results with domain experts to build appropriate trust in predictions.
+
+### References
+
+Aguadé-Gorgorió, G., Anderson, A. R., and Solé, R. Modeling tumors as complex ecosystems. *Iscience*, 27(9), 2024.
+
+Albergo, M. S. and Vanden-Eijnden, E. Building normalizing flows with stochastic interpolants. *arXiv preprint arXiv:2209.15571*, 2022.
+
+Armingol, E., Officer, A., Harismendy, O., and Lewis, N. E. Deciphering cell–cell interactions and communication from gene expression. *Nature Reviews Genetics*, 22(2): 71–88, 2021.
+
+Armingol, E., Baghdassarian, H. M., and Lewis, N. E. The diversification of methods for studying cell–cell interactions and communication. *Nature Reviews Genetics*, 25 (6):381–400, 2024.
+
+Ben-Moshe, S., Veg, T., Manco, R., Dan, S., Kolodziejczyk, A. A., Halpern, K. B., Elinav, E., and Itzkovitz, S. The spatio-temporal program of liver zonal regeneration. *bioRxiv*, pp. 2021–08, 2021.
+
+Bernton, E., Ghosal, P., and Nutz, M. Entropic optimal transport: Geometry and large deviations. *Duke Mathematical Journal*, 171(16):3363–3400, 2022.
+
+Brunton, S. L., Proctor, J. L., and Kutz, J. N. Discovering governing equations from data by sparse identification of nonlinear dynamical systems. *Proceedings of the national academy of sciences*, 113(15):3932–3937, 2016.
+
+Bunne, C., Schiebinger, G., Krause, A., Regev, A., and Cuturi, M. Optimal transport for single-cell and spatial omics. *Nature Reviews Methods Primers*, 4(1):58, 2024.
+
+Ceccarelli, F., Liò, P., Saez-Rodriguez, J., Holden, S. B., and Tanevski, J. Topography aware optimal transport for alignment of spatial omics data. *bioRxiv*, pp. 2025–04, 2025.
+
+Chen, A., Liao, S., Cheng, M., Ma, K., Wu, L., Lai, Y., Qiu, X., Yang, J., Xu, J., Hao, S., et al. Spatiotemporal transcriptomic atlas of mouse organogenesis using dna nanoball-patterned arrays. *Cell*, 185(10):1777–1792, 2022.
+
+Chen, R. T., Rubanova, Y., Bettencourt, J., and Duvenaud, D. K. Neural ordinary differential equations. *Advances in neural information processing systems*, 31, 2018.
+
+Chen, T. and Guestrin, C. Xgboost: A scalable tree boosting system. In *Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining*, pp. 785–794, 2016.
+
+Cuturi, M. Sinkhorn distances: Lightspeed computation of optimal transport. *Advances in neural information processing systems*, 26, 2013.
+
+Dimitrov, D., Türei, D., Garrido-Rodriguez, M., Burmedi, P. L., Nagai, J. S., Boys, C., Ramirez Flores, R. O., Kim, H., Szalai, B., Costa, I. G., et al. Comparison of methods and resources for cell–cell communication inference from single-cell rna-seq data. *Nature communications*, 13(1): 3224, 2022.
+
+Dimitrov, D., Schäfer, P. S. L., Farr, E., Rodriguez-Mier, P., Lobentanzer, S., Badia-i Mompel, P., Dugourd, A., Tanevski, J., Ramirez Flores, R. O., and Saez-Rodriguez, J. Liana+ provides an all-in-one framework for cell–cell communication inference. *Nature Cell Biology*, 26(9): 1613–1622, 2024.
+
+Flamary, R., Courty, N., Gramfort, A., Alaya, M. Z., Boisbunon, A., Chambon, S., Chapel, L., Corenflos, A., Fatras, K., Fournier, N., et al. Pot: Python optimal transport. *Journal of Machine Learning Research*, 22(78):1–8, 2021.
+
+Franklin, J. and Lorenz, J. On the scaling of multidimensional matrices. *Linear Algebra and its applications*, 114: 717–735, 1989.
+
+Gontis, V., Ruseckas, J., and Kononovičius, A. A long-range memory stochastic model of the return in financial markets. *Physica A: Statistical Mechanics and its Applications*, 389(1):100–106, 2010.
+
+Greenwald, A. C., Darnell, N. G., Hoefflin, R., Simkin, D., Mount, C. W., Gonzalez Castro, L. N., Harnik, Y., Dumont, S., Hirsch, D., Nomura, M., Talpir, T., Kedmi, M., Goliand, I., Medici, G., Laffy, J., Li, B., Mangena, V., Keren-Shaul, H., Weller, M., Addadi, Y., Neidert, M. C., Suvà, M. L., and Tirosh, I. Integrative spatial analysis reveals a multi-layered organization of glioblastoma. *Cell*, 187(10):2485–2501.e26, 2024.
+
+9

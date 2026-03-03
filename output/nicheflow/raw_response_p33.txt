@@ -1,0 +1,44 @@
+```json
+{
+  "document_metadata": {
+    "title": "Quantitative evaluation metrics and preprocessing for spatial transcriptomics",
+    "inferred_style": "academic technical paper"
+  },
+  "assets": []
+}
+```
+
+Table 9: Overview of the time-resolved spatial transcriptomics datasets used in our experiments. MED: Mouse Embryonic Development, ABD: Axolotl Brain Development, MBA: Mouse Brain Aging. Each dataset varies in organism, tissue type, number of timepoints, cell types, total number of cells, and spatial transcriptomics technology.
+
+| Dataset | Organism | Tissue | Timepoints | Cell Types | Cells | Technology |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| MED | Mouse | Whole embryo | 3 | 24 | 54k | Stereo-seq |
+| ABD | Axolotl | Brain | 6 | 33 | 36k | Stereo-seq |
+| MBA | Mouse | Brain | 20 | 18 | 1.5M | MERFISH |
+
+transformation, and principal component analysis (PCA). For the mouse embryonic development [20] and axolotl brain development [42] datasets, total count normalization, and logarithmic transformation had already been applied; we, therefore, performed PCA ourselves on the transformed data. For the mouse brain aging dataset [43], we applied all three steps: we first normalized raw count matrices so that each cell had the same total expression, followed by a natural logarithm transformation of the form $\log(X + 1)$ to stabilize variance and mitigate the influence of large values. We then computed PCA on the log-transformed data.
+
+To reduce computational overhead due to high cell counts in the aging dataset, we subsampled the data by a factor of 0.2.
+
+Finally, we standardized PCA components across all cells to ensure consistent scaling across time points. Spatial coordinates were standardized independently for each time point by subtracting the per-time-point mean and dividing by the standard deviation. This standardization preserves the relative spatial configuration while accounting for scale and position differences over developmental time.
+
+**Microenvironments preprocessing.** To facilitate efficient training and enable consistent microenvironment construction, we precompute all fixed-radius neighborhoods for each dataset using a radius $r$ chosen based on spatial resolution. To reduce variability in the number of neighbors and improve batching efficiency, we fix the number of nodes per microenvironment to the most frequent neighbor count observed within each slide. This standardization ensures structural comparability across microenvironments while significantly reducing computational overhead during training, as costly radius or nearest-neighbor queries are avoided at runtime.
+
+### F.3 Quantitative evaluation metrics
+
+We assess spatial fidelity using two complementary asymmetric distance measures. The *point-to-shape distance* (PSD) captures how much predicted cell positions diverge from the actual tissue layout, computed as the average squared distance from each simulated point to its nearest neighbor in the ground truth. Conversely, the *shape-to-point distance* (SPD) quantifies how comprehensively the predicted distribution spans the target structure by averaging the squared distance from each ground truth point to its closest generated counterpart.
+
+Let $\mathcal{G}^t$ denote the set of generated coordinates and $\mathcal{R}^t$ the set of ground truth coordinates at time $t$. Define $\text{NN}_{\text{ref}}^t(c_i)$ as the nearest neighbor of $c_i \in \mathcal{G}^t$ in $\mathcal{R}^t$, and $\text{NN}_{\text{gen}}^t(c_j)$ as the nearest neighbor of $c_j \in \mathcal{R}^t$ in $\mathcal{G}^t$. Then, the two metrics are given by:
+
+$$\text{PSD} = \frac{1}{|\mathcal{G}|} \sum_{\mathcal{G}^t \in \mathcal{G}} \sum_{c_i \in \mathcal{G}^t} \|c_i - \text{NN}_{\text{ref}}^t(c_i)\|_2^2, \tag{39}$$
+
+$$\text{SPD} = \frac{1}{|\mathcal{R}|} \sum_{\mathcal{R}^t \in \mathcal{R}} \sum_{c_j \in \mathcal{R}^t} \|c_j - \text{NN}_{\text{gen}}^t(c_j)\|_2^2. \tag{40}$$
+
+where $\mathcal{G} := \cup_{t \in T} \mathcal{G}^t$ and $\mathcal{R} := \cup_{t \in T} \mathcal{R}^t$.
+
+### F.4 Cell-type classification for evaluation
+
+To evaluate cell-type fidelity of generated microenvironments, we train a supervised classifier to assign cell type labels based on gene expression profiles. We apply the same preprocessing steps
+
+---
+34

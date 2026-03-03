@@ -1,0 +1,32 @@
+# A Broader impacts
+
+This work addresses fundamental challenges in spatial transcriptomics by modeling complex spatial and compositional changes in developing tissues. We demonstrate how efficient representations of high-dimensional spatial cellular data can advance the understanding of developmental trajectories and microenvironment dynamics. We anticipate releasing NicheFlow as an open-source, user-friendly tool to enable broad application in spatial biology studies. Given its use with biological data, NicheFlow may also be applied in sensitive contexts involving clinical or patient information.
+
+# B Limitations
+
+Our approach relies on fixed OT feature weighting by a parameter $\lambda$ during training (see Sec. 4.2), limiting flexibility at inference and potentially constraining certain biological analyses. Moreover, radius-based niche definitions may also be sub-optimal for small or irregularly shaped microenvironments, where the radius captures excessive spatial context and does not allow fine-grained modeling of the functional region's evolution.
+
+The model assumes that spatial slides can be aligned with respect to each other in time and requires normalization-based pre-processing. Future work will be directed towards rotational and translational invariant spatial constraints and the incorporation of cell-to-cell communication priors in the neighborhood definition. While the learned flow models cell population dynamics, it does not explicitly capture biological events such as division or death.
+
+Finally, this study focuses on in-distribution testing and does not consider generalization to unseen slides or full anatomical regions excluded from the training process. To achieve prediction in unseen settings, we foresee the need for technical replicates of the same slide across time points, as the model cannot extrapolate spatial arrangements without prior exposure to the associated region. We leave these analyses to future work when spatio-temporal measurements across multiple replicates become increasingly available.
+
+# C Mixed-factorized Variational Flow Matching
+
+## C.1 Theoretical aspects of Variational Flow Matching
+
+Variational Flow Matching (VFM) [25] relies on the observation that one can write the time-resolved marginal vector field $u_t(\boldsymbol{x})$ in FM as the expected conditional field $u_t(\boldsymbol{x} \mid \boldsymbol{x}_1)$ under the posterior $p_t(\boldsymbol{x}_1 \mid \boldsymbol{x})$ as:
+$$u_t(\boldsymbol{x}) = \mathbb{E}_{p_t(\boldsymbol{x}_1 \mid \boldsymbol{x})} \left[ u_t(\boldsymbol{x} \mid \boldsymbol{x}_1) \right] . \tag{15}$$
+
+Since $u_t(\boldsymbol{x} \mid \boldsymbol{x}_1)$ has a closed form and $u_t(\boldsymbol{x})$ is all that we need to generate the probability path $p_t$ from noise to data, this opens the door to a new interpretation of the objective as a variational inference problem, where we approximate $p_t(\boldsymbol{x}_1 \mid \boldsymbol{x})$ with a variational posterior $q_t^\theta(\boldsymbol{x}_1 \mid \boldsymbol{x})$. In other words, one can optimize the following objective:
+$$\mathcal{L}_{\text{VFM}}(\theta) = -\mathbb{E}_{t \sim \mathcal{U}[0,1], \boldsymbol{x}_1 \sim p_1(\boldsymbol{x}_1), \boldsymbol{x} \sim p_t(\boldsymbol{x} \mid \boldsymbol{x}_1)} \left[ \log q_t^\theta(\boldsymbol{x}_1 \mid \boldsymbol{x}) \right] ,$$
+where $p_1(\boldsymbol{x})$ is the data distribution and $p_t(\boldsymbol{x} \mid \boldsymbol{x}_1)$ a straight probability path. When $u_t(\boldsymbol{x} \mid \boldsymbol{x}_1)$ is linear in $\boldsymbol{x}_1$, this model formulation acquires convenient properties listed below.
+
+**Mean parameterization.** The expected conditional field under the posterior only depends on the posterior mean:
+$$\mathbb{E}_{p_t(\boldsymbol{x}_1 \mid \boldsymbol{x})} \left[ u_t(\boldsymbol{x} \mid \boldsymbol{x}_1) \right] = u_t(\boldsymbol{x}_1 \mid \mathbb{E}_{p_t(\boldsymbol{x}_1 \mid \boldsymbol{x})} [\boldsymbol{x}_1]) ,$$
+suggesting that it is sufficient to parameterize the posterior mean to simulate data under the marginal flow. The posterior mean can be regressed against real samples $\boldsymbol{x}_1$ during training.
+
+**Equivalence between posterior and approximate posterior formulation.** From the previous point, it follows that the expectation of the conditional field is the same under the true and approximate posterior, as long as their first moments match.
+
+**Efficient simulation.** Given a parameterized posterior mean $\mu_t^\theta$, simulating the generative field in Eq. (15) is efficient under the linearity condition. For example, in the standard FM setting with
+
+15
