@@ -26,12 +26,17 @@ def validate_conversion(original_image: Image.Image, markdown_path: Path, assets
     
     validation_prompt = f"""
 You are a Quality Assurance bot for document conversion.
-Compare the provided original document image with the extracted Markdown content and the extracted assets index.
+Compare the provided original TARGET document image with the extracted Markdown content and assets.
+
+### Context Awareness:
+Note that this page was extracted as part of a continuous document. 
+- If the Markdown starts mid-sentence, check if it logically follows the flow (don't penalize missing headers if they were on previous pages).
+- If the Markdown ends mid-sentence, check if it correctly captures up to the physical end of the target page.
 
 ### Criteria:
-1. **Content Accuracy**: Is all text present and accurate?
-2. **Structural Fidelity**: Are headers, lists, and tables correctly identified?
-3. **Multimodal Extraction**: Are all figures identified? Do the bounding boxes in the metadata (inferred from placeholders) seem correct?
+1. **Content Accuracy**: Is all text on the TARGET image present and accurate in the Markdown?
+2. **Structural Fidelity**: Are headers, lists, and tables within the TARGET page correctly identified?
+3. **Multimodal Extraction**: Are all figures in the TARGET page identified?
 4. **Formatting**: Is LaTeX used correctly for math?
 
 ### Extracted Markdown:
@@ -44,7 +49,7 @@ Compare the provided original document image with the extracted Markdown content
 {assets_json}
 ```
 
-Provide a brief report on whether the conversion is "PERFECT", "GOOD", or "FAILED". If not perfect, list the specific issues.
+Provide a brief report on whether the conversion is "PERFECT", "GOOD", or "FAILED".
 """
 
     base64_image = image_to_base64(original_image)
