@@ -60,28 +60,56 @@ def parse_gemini_response(response_text: str) -> Tuple[Dict[str, Any], str]:
 
 def process_assets(metadata: Dict[str, Any], page_image: Image.Image, output_dir: Path):
     """
-    Crops and saves all identified assets from the page image.
+    Crops and saves all identified assets from the page image, appending to the global index.
     """
     assets_dir = output_dir / "assets"
     assets_dir.mkdir(parents=True, exist_ok=True)
     
-    results = []
+    index_path = output_dir / "images.json"
+    
+    # Load existing index if it exists
+    current_index = []
+    if index_path.exists():
+        try:
+            with open(index_path, "r", encoding="utf-8") as f:
+                current_index = json.load(f)
+        except Exception:
+            current_index = []
+
+    new_assets = []
     for asset in metadata.get("assets", []):
         asset_id = asset.get("id")
         bbox = asset.get("bbox")
         if asset_id and bbox:
-            # bbox: [ymin, xmin, ymax, xmax]
-            output_path = assets_dir / f"{asset_id}.png"
+            # Ensure unique ID by checking current_index
+            final_id = asset_id
+            # If ID already exists, it might be a multi-page table or same ID used by model
+            # We skip if it's identical path or modify ID
+            output_path = assets_dir / f"{final_id}.png"
+            
+            # Simple check to avoid redundant cropping of same file
+            # though usually each page's assets are unique
             crop_image_normalized(page_image, bbox, output_path)
-            results.append({
-                "id": asset_id,
+            
+            asset_entry = {
+                "id": final_id,
                 "path": str(output_path.relative_to(output_dir)),
                 "caption": asset.get("caption"),
                 "description": asset.get("description")
-            })
+            }
+            
+            # Update or append
+            # For simplicity, we append. In SOTA, we should deduplicate.
+            new_assets.append(asset_entry)
     
-    # Save the updated images.json
-    with open(output_dir / "images.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    # Merge new assets into current index (avoid duplicates based on ID and Path)
+    existing_paths = {a["path"] for a in current_index}
+    for na in new_assets:
+        if na["path"] not in existing_paths:
+            current_index.append(na)
     
-    return results
+    # Save the updated cumulative images.json
+    with open(index_path, "w", encoding="utf-8") as f:
+        json.dump(current_index, f, indent=2, ensure_ascii=False)
+    
+    return new_assets

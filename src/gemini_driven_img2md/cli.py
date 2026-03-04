@@ -5,12 +5,10 @@ from typing import Optional
 from pathlib import Path
 from gemini_driven_img2md.gemini_client import get_gemini_client
 from gemini_driven_img2md.prompts import get_extraction_prompt
-from gemini_driven_img2md.utils import get_page_image
+from gemini_driven_img2md.utils import get_page_image, image_to_base64
 from gemini_driven_img2md.extraction import parse_gemini_response, process_assets
 from gemini_driven_img2md.profiler import calculate_page_density, select_representative_pages
 from langchain_core.messages import HumanMessage
-import base64
-from io import BytesIO
 from PIL import Image
 
 app = typer.Typer(name="gemini-driven-img2md", help="A tool to convert research paper PDFs to Markdown using Gemini vision.")
@@ -30,14 +28,6 @@ def main(
     Multimodal document extraction tool powered by Gemini.
     """
     pass
-
-def image_to_base64(image, max_size=(1024, 1024)):
-    # Resize image if it exceeds max_size to avoid 502/timeout issues
-    img_copy = image.copy()
-    img_copy.thumbnail(max_size, Image.Resampling.LANCZOS)
-    buffered = BytesIO()
-    img_copy.save(buffered, format="PNG")
-    return base64.b64encode(buffered.getvalue()).decode('utf-8')
 
 @app.command()
 def extract(
@@ -131,6 +121,19 @@ def extract(
     try:
         metadata, markdown_content = parse_gemini_response(response_text)
         
+        # Ensure asset IDs are unique across pages and sync Markdown text
+        for asset in metadata.get("assets", []):
+            old_id = asset.get("id")
+            if old_id:
+                new_id = f"p{page}_{old_id}"
+                # 1. Update the ID in metadata for physical cropping
+                asset["id"] = new_id
+                # 2. Sync the Markdown content to use the new unique path
+                # Replacing assets/old_id.png with assets/new_id.png
+                old_path = f"assets/{old_id}.png"
+                new_path = f"assets/{new_id}.png"
+                markdown_content = markdown_content.replace(old_path, new_path)
+        
         # Handle Style Evolution
         patch = metadata.get("document_metadata", {}).get("style_patch")
         if patch:
@@ -158,12 +161,6 @@ def extract(
         
     except Exception as e:
         typer.echo(f"Error processing response: {e}", err=True)
-        # Still save the raw response for debugging
-        debug_path = output_dir / "raw_response.txt"
-        output_dir.mkdir(parents=True, exist_ok=True)
-        with open(debug_path, "w", encoding="utf-8") as f:
-            f.write(response_text)
-        typer.echo(f"Raw response saved to {debug_path} for debugging.")
         raise typer.Exit(code=1)
 
 @app.command()
@@ -267,6 +264,18 @@ def validate(
         typer.echo(f"Error during validation: {e}", err=True)
         raise typer.Exit(code=1)
 
+@app.command()
+def merge(
+    input_dir: Path = typer.Argument(..., help="Directory containing page Markdown files."),
+    output_name: str = typer.Option("full_document.md", "--output", "-o", help="Name of the combined Markdown file."),
+):
+    """
+    Merge all page-level Markdown files into one.
+    """
+    from gemini_driven_img2md.merger import merge_markdown_files
+    
+    output_path = input_dir / output_name
+    merge_markdown_files(input_dir, output_path)
 
 if __name__ == "__main__":
     app()

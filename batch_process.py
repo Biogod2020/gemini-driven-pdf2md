@@ -86,6 +86,14 @@ def process_all_pdfs(resources_dir: Path, output_base_dir: Path):
         
         # After finishing each PDF, we can log the final evolved registry path
         tqdm.write(f"🏁 Finished {pdf.name}. Evolved registry: {style_profile_path}")
+        
+        # 3. Merge Phase
+        tqdm.write(f"🔗 Merging pages for {pdf.name}...")
+        merge_cmd = [
+            "/Users/jay/micromamba/envs/pdf_process/bin/python", "src/gemini_driven_img2md/cli.py",
+            "merge", str(pdf_output_dir)
+        ]
+        subprocess.run(merge_cmd, env=env)
 
 if __name__ == "__main__":
     resources = Path("resources")

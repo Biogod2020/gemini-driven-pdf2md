@@ -34,9 +34,9 @@ Note that this page was extracted as part of a continuous document.
 - If the Markdown ends mid-sentence, check if it correctly captures up to the physical end of the target page.
 
 ### Criteria:
-1. **Content Accuracy**: Is all text on the TARGET image present and accurate in the Markdown?
+1. **Content Accuracy**: Is all text on the TARGET image present and accurate in the Markdown? (Strictly check for page numbers/headers that should be filtered).
 2. **Structural Fidelity**: Are headers, lists, and tables within the TARGET page correctly identified?
-3. **Multimodal Extraction**: Are all figures in the TARGET page identified?
+3. **Asset Coverage**: Are all figures fully captured? Check for any edge truncation or cut-off labels in the assets.
 4. **Formatting**: Is LaTeX used correctly for math?
 
 ### Extracted Markdown:
