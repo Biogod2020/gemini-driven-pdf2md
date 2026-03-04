@@ -7,8 +7,8 @@
 
 ## Phase 1: Triplet Extraction Engine
 - [x] Task: Implement Triplet Sliding Window logic in `batch_process.py` (a0e0bc9)
-- [ ] Task: Update Gemini client to handle multi-image payloads
-- [ ] Task: Integrate Style Registry into extraction prompts
+- [x] Task: Update Gemini client to handle multi-image payloads (22ca396)
+- [x] Task: Integrate Style Registry into extraction prompts (integrated)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Dynamic Adaptation & Realization
