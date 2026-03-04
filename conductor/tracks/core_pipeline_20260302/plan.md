@@ -18,6 +18,6 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3: Validation & Full Batch
-- [~] Task: Update QA Critic Agent for Triplet awareness
-- [ ] Task: Execute full batch processing for all resources
+- [x] Task: Update QA Critic Agent for Triplet awareness (ab22944)
+- [~] Task: Execute full batch processing for all resources
 - [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
