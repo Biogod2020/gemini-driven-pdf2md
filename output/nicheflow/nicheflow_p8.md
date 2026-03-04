@@ -4,7 +4,7 @@ the ablations in Sec. D.5 and D.6. We present results with a single value for $\
 
 **Results.** Our quantitative evaluation (Tab. 1) demonstrates that *NicheFlow* trained with the GLVFM objective consistently achieves strong performance across both spatial and semantic metrics. It outperforms all baselines in reconstructing spatial structure (PSD, SPD) and cell-type organization (1NN-F1) on developmental datasets, while remaining competitive on ageing data. These results highlight the importance of structured microenvironment modeling for capturing the spatiotemporal dynamics of complex tissues. We complement our quantitative results visually in Fig. 2 and Fig. 6 and 10 in the Appendix, where we show that SPFlow fails to capture tissue-level organization, producing blurry and spatially incoherent samples. In contrast, NicheFlow generates predictions that preserve spatial structure and cell-type organization, despite learning only from local microenvironments. In Sec. D.4 and Sec. D.7, we additionally demonstrate that NicheFlow produces conditionally consistent outputs with the source, while RPCFlow generates very diffused mappings across the slide, failing to preserve spatial consistency across time.
 
-### 5.2 Qualitative evaluation and biological analysis
+## 5.2 Qualitative evaluation and biological analysis
 
 We explore the capabilities of NicheFlow on the spatial trajectory inference task through qualitative and biological assessments. Specifically, we focus on validating whether our model captures compositional changes within fixed spatial structures and developmental trajectories.
 
@@ -15,4 +15,4 @@ We explore the capabilities of NicheFlow on the spatial trajectory inference tas
 
 **Baseline.** We compare NicheFlow with the spatiotemporal framework in moscot [20], which models spatial trajectories at the single-cell level. In contrast to NicheFlow, moscot integrates spatial
 
-9
+8

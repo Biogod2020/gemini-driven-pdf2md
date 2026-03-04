@@ -6,4 +6,4 @@ To directly assess the preservation of internal structure within generated micro
 
 Given the computational cost of GW and FGW, we restrict their evaluation to microenvironment-level generations. For each source niche, we sample predictions from the trained model and compute GW/FGW against the corresponding real microenvironment, averaging results across multiple runs.
 
-29
+<center>29</center>

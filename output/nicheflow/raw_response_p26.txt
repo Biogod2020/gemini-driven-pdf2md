@@ -1,16 +1,17 @@
+---
 ```json
 {
   "document_metadata": {
-    "title": "Visualization of spatial partitions via KMeans clustering",
-    "inferred_style": "academic/scientific paper"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Paper - Appendix",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
-      "id": "fig13",
-      "type": "figure",
-      "bbox": [88, 320, 732, 675],
-      "caption": "Figure 13: Visualization of spatial partitions obtained via KMeans clustering with $K = \\{4, 8, 16, 32, 64, 128, 256\\}$ on the embryonic development dataset. For low $K$, each region covers large heterogeneous areas; for high $K$, regions become small, dense, and highly overlapping, potentially degrading the diversity and utility of sampled microenvironments.",
-      "description": "A grid of embryonic tissue visualizations across three time points (T = E9.5, T = E10.5, T = E11.5) and seven different K-values for KMeans clustering (K=4 to K=256). As K increases, the color-coded spatial partitions become increasingly granular and fragmented."
+      "id": "fig_13",
+      "bbox": [94, 318, 731, 679],
+      "caption": "Figure 13: Visualization of spatial partitions obtained via KMeans clustering with $K = \\{4, 8, 16, 32, 64, 128, 256\\}$ on the embryonic development dataset. For low $K$, each region covers large heterogeneous areas; for high $K$, regions become small, dense, and highly overlapping, potentially degrading the diversity and utility of sampled microenvironments."
     }
   ]
 }
@@ -18,10 +19,12 @@
 
 ---
 
-![Figure 13: Visualization of spatial partitions obtained via KMeans clustering with $K = \{4, 8, 16, 32, 64, 128, 256\}$ on the embryonic development dataset. For low $K$, each region covers large heterogeneous areas; for high $K$, regions become small, dense, and highly overlapping, potentially degrading the diversity and utility of sampled microenvironments.](assets/fig13.png)
+![Figure 13: Visualization of spatial partitions obtained via KMeans clustering with $K = \{4, 8, 16, 32, 64, 128, 256\}$ on the embryonic development dataset. For low $K$, each region covers large heterogeneous areas; for high $K$, regions become small, dense, and highly overlapping, potentially degrading the diversity and utility of sampled microenvironments.](assets/fig_13.png)
 
 Conversely, using too few regions (e.g., $K = 4$) results in broad spatial partitions that may encompass multiple heterogeneous tissue compartments. This undermines the locality assumptions of our model and increases intra-region variability, which can impair the model's ability to learn.
 
 Given the trade-offs outlined above, we focus our evaluation on $K \in \{8, 16, 32, 64\}$, which spans a range of granularities that preserve both spatial interpretability and sampling robustness. Tab. 4 sum-
 
-<p align="center">27</p>
+<center>27</center>
+
+---

@@ -1,16 +1,17 @@
+---
 ```json
 {
   "document_metadata": {
-    "title": "Niche Flow Matching (NicheFlow) Introduction and Related Work",
-    "inferred_style": "academic paper"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Paper (NeurIPS)",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
       "id": "fig1",
-      "type": "figure",
-      "bbox": [268, 478, 454, 824],
-      "caption": "Figure 1: Overview of NicheFlow. At time $t_1$, we generate a target microenvironment $\\mathcal{M}^1$ by transforming Gaussian noise $\\mathcal{M}^z$ using a Variational Flow Matching model with a posterior $\\mu_t^\\theta$ conditioned on a source microenvironment $\\mathcal{M}^0$ at $t_0$. Source-target pairs are identified via entropic OT over pooled microenvironment coordinates and gene expression profiles.",
-      "description": "A conceptual diagram showing the transformation of a source microenvironment M0 at time t0 and noisy microenvironment Mz into a target microenvironment M1 at time t1 using a flow matching model."
+      "bbox": [268, 479, 456, 824],
+      "caption": "Figure 1: Overview of NicheFlow. At time $t_1$, we generate a target microenvironment $\\mathcal{M}^1$ by transforming Gaussian noise $\\mathcal{M}^z$ using a Variational Flow Matching model with a posterior $\\mu_t^\\theta$ conditioned on a source microenvironment $\\mathcal{M}^0$ at $t_0$. Source-target pairs are identified via entropic OT over pooled microenvironment coordinates and gene expression profiles."
     }
   ]
 }
@@ -42,4 +43,7 @@ Our approach consistently outperforms baselines in recovering cell-type organiza
 
 NicheFlow is at the interface between generative models and spatiotemporal transcriptomic data.
 
-**FM and single-cell transcriptomics.** We propose a model based on FM, a framework introduced by several seminal works [22–24]. Specifically, we adopt a variational view of the FM objective, following Eijkelboom et al. [25], but extend it to mixed-factorized distributions for point cloud generation. Our method, NicheFlow, combines FM with OT, a pairing that has proven effective in modeling cellular data [26–29]. Unlike these models, however, we focus on point clouds of
+##### FM and single-cell transcriptomics.
+We propose a model based on FM, a framework introduced by several seminal works [22–24]. Specifically, we adopt a variational view of the FM objective, following Eijkelboom et al. [25], but extend it to mixed-factorized distributions for point cloud generation. Our method, NicheFlow, combines FM with OT, a pairing that has proven effective in modeling cellular data [26–29]. Unlike these models, however, we focus on point clouds of
+
+<p align="center">2</p>

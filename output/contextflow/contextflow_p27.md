@@ -1,5 +1,3 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 ## H. Additional Experiments & Ablations
 
 ### H.1. Next Step Sampling for Axolotl Brain Regeneration
@@ -7,7 +5,7 @@
 *Table 11. Interpolation via Next Step Sampling at holdout time 3 for the Brain Regeneration dataset.*
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | | CFM | $-$ | $-$ | $2.618 \pm 0.142$ | $2.579 \pm 0.197$ | $0.043 \pm 0.003$ | $12.505 \pm 1.271$ |
 | | MOTFM | $-$ | $-$ | $2.567 \pm 0.088$ | $2.476 \pm 0.161$ | $0.040 \pm 0.003$ | $11.269 \pm 1.388$ |
 | Next Step | CTF-C | $1$ | $0.2$ | $2.503 \pm 0.071$ | $2.425 \pm 0.239$ | $0.037 \pm 0.003$ | $9.868 \pm 1.293$ |
@@ -23,12 +21,12 @@
 | | | $1$ | $-$ | $\mathbf{2.316 \pm 0.141}$ | $\mathbf{1.969 \pm 0.221}$ | $\mathbf{0.030 \pm 0.004}$ | $\mathbf{6.359 \pm 1.336}$ |
 | | | $0.5$ | $-$ | $2.519 \pm 0.167$ | $2.412 \pm 0.158$ | $0.039 \pm 0.004$ | $10.304 \pm 1.808$ |
 
-![Table 11. Interpolation via Next Step Sampling at holdout time 3 for the Brain Regeneration dataset.](assets/table11.png)
+<br>
 
 *Table 12. Extrapolation via Next Step Sampling at holdout time 5 for the Brain Regeneration dataset.*
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | | CFM | $-$ | $-$ | $7.124 \pm 0.443$ | $7.133 \pm 0.533$ | $0.276 \pm 0.011$ | $76.947 \pm 5.661$ |
 | | MOTFM | $-$ | $-$ | $7.487 \pm 0.698$ | $7.449 \pm 0.931$ | $0.266 \pm 0.010$ | $81.965 \pm 9.812$ |
 | Next Step | CTF-C | $1$ | $0.2$ | $7.257 \pm 0.597$ | $7.077 \pm 0.473$ | $0.257 \pm 0.004$ | $79.562 \pm 7.787$ |
@@ -43,5 +41,3 @@
 | | CTF-H | $0$ | $-$ | $\mathbf{6.914 \pm 0.471}$ | $7.198 \pm 0.726$ | $0.266 \pm 0.009$ | $\mathbf{76.149 \pm 8.436}$ |
 | | | $1$ | $-$ | $7.505 \pm 0.667$ | $7.338 \pm 0.601$ | $\mathbf{0.263 \pm 0.006}$ | $83.425 \pm 8.793$ |
 | | | $0.5$ | $-$ | $7.243 \pm 0.479$ | $7.157 \pm 0.641$ | $0.270 \pm 0.007$ | $79.826 \pm 8.067$ |
-
-![Table 12. Extrapolation via Next Step Sampling at holdout time 5 for the Brain Regeneration dataset.](assets/table12.png)

@@ -1,8 +1,11 @@
+---
 ```json
 {
   "document_metadata": {
-    "title": "Background - Optimal Transport with FM",
-    "inferred_style": "academic paper"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Paper (NeurIPS Style)",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
@@ -12,28 +15,38 @@
 
 spatially-resolved transcriptomic profiles. Closest to our approach is Wasserstein FM for point cloud generation [30], applied to reconstruct cellular niches. Yet, that work does not address joint generation of spatial coordinates and cellular states, nor OT-based temporal trajectory prediction, both of which are central to our contribution.
 
-**Generative models for spatial transcriptomics.** Generative models have been key to spatial tasks such as gene expression prediction from histology slides [31, 32], integration with dissociated single-cell data [32], spatial imputation [33, 34], and perturbation [35]. More recently, LUNA [36] demonstrated strong performance in predicting single-cell spatial coordinates using diffusion models [37] conditioned on transcription data. While related, our model addresses the distinct task of inferring niche trajectories, enabling the simultaneous generation of coordinates and cellular states.
+##### Generative models for spatial transcriptomics.
+Generative models have been key to spatial tasks such as gene expression prediction from histology slides [31, 32], integration with dissociated single-cell data [32], spatial imputation [33, 34], and perturbation [35]. More recently, LUNA [36] demonstrated strong performance in predicting single-cell spatial coordinates using diffusion models [37] conditioned on transcription data. While related, our model addresses the distinct task of inferring niche trajectories, enabling the simultaneous generation of coordinates and cellular states.
 
-**Trajectory inference for spatial transcriptomics.** Previous work has explored learning trajectories from spatial slides. Pham et al. [38] proposed a graph-based spatiotemporal algorithm for pseudotime inference, while others leveraged tissue-resolved transcriptomics to estimate cell velocity [17–19]. Closer to our approach, Klein et al. [20] and Bryan et al. [21] use discrete OT to link cells across time and infer the evolution of cell states from spatially-resolved gene expression. Similarly, DeST-OT [39] aligns spatial slides with semi-relaxed OT couplings, preserving transcriptomic and spatial proximity between ancestor and descendant cells, while SpaTrack [19] uses Fused Gromov-Wasserstein OT [40], balancing transcriptomic and spatial differences based on spatial autocorrelation of features. Unlike our mini-batch deep learning model, these methods do not operate on entire microenvironments and rely on exact OT at the single-cell level, resulting in limitations in scalability and generalization.
+##### Trajectory inference for spatial transcriptomics.
+Previous work has explored learning trajectories from spatial slides. Pham et al. [38] proposed a graph-based spatiotemporal algorithm for pseudotime inference, while others leveraged tissue-resolved transcriptomics to estimate cell velocity [17–19]. Closer to our approach, Klein et al. [20] and Bryan et al. [21] use discrete OT to link cells across time and infer the evolution of cell states from spatially-resolved gene expression. Similarly, DeST-OT [39] aligns spatial slides with semi-relaxed OT couplings, preserving transcriptomic and spatial proximity between ancestor and descendant cells, while SpaTrack [19] uses Fused Gromov-Wasserstein OT [40], balancing transcriptomic and spatial differences based on spatial autocorrelation of features. Unlike our mini-batch deep learning model, these methods do not operate on entire microenvironments and rely on exact OT at the single-cell level, resulting in limitations in scalability and generalization.
 
-# 3 Background
+## 3 Background
 
-## 3.1 Optimal Transport with FM
+### 3.1 Optimal Transport with FM
 
-FM [23] is a generative model that transforms a source density $p_0$ into a target density $p_1$. It operates by learning a time-dependent velocity field $u_t(\boldsymbol{x})$ for $t \in [0, 1]$ and $\boldsymbol{x} \in \mathbb{R}^D$, which generates a probability path $\{p_t\}_{t \in [0,1]}$. This path is constructed such that the marginals at time $t=0$ and $t=1$ match the source and target distributions, i.e., $p_0$ and $p_1$, respectively. The velocity field induces an Ordinary Differential Equation (ODE), whose solution $\phi_t(\boldsymbol{x})$ defines a *flow map* that transports samples from the source to the target distribution.
+FM [23] is a generative model that transforms a source density $p_0$ into a target density $p_1$. It operates by learning a time-dependent velocity field $u_t(\mathbf{x})$ for $t \in [0, 1]$ and $\mathbf{x} \in \mathbb{R}^D$, which generates a probability path $\{p_t\}_{t \in [0,1]}$. This path is constructed such that the marginals at time $t = 0$ and $t = 1$ match the source and target distributions, i.e., $p_0$ and $p_1$, respectively. The velocity field induces an Ordinary Differential Equation (ODE), whose solution $\phi_t(\mathbf{x})$ defines a *flow map* that transports samples from the source to the target distribution.
 
-In practice, FM approximates $u_t(\boldsymbol{x})$ with a time-conditioned neural network $v_t^\theta(\boldsymbol{x})$. While the exact marginal velocity field $u_t(\boldsymbol{x})$ is intractable, it can be expressed in terms of data-conditioned velocity fields and a joint distribution $\pi(\boldsymbol{x}_0, \boldsymbol{x}_1)$ over the source and target samples $\boldsymbol{x}_0 \sim p_0$ and $\boldsymbol{x}_1 \sim p_1$:
+In practice, FM approximates $u_t(\mathbf{x})$ with a time-conditioned neural network $v_t^\theta(\mathbf{x})$. While the exact marginal velocity field $u_t(\mathbf{x})$ is intractable, it can be expressed in terms of data-conditioned velocity fields and a joint distribution $\pi(\mathbf{x}_0, \mathbf{x}_1)$ over the source and target samples $\mathbf{x}_0 \sim p_0$ and $\mathbf{x}_1 \sim p_1$:
 
-$$u_t(\boldsymbol{x}) = \int u_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1) \frac{p_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1) \pi(\boldsymbol{x}_0, \boldsymbol{x}_1)}{p_t(\boldsymbol{x})} d\boldsymbol{x}_0 \, d\boldsymbol{x}_1, \tag{1}$$
+\begin{equation}
+u_t(\mathbf{x}) = \int u_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1) \frac{p_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1) \pi(\mathbf{x}_0, \mathbf{x}_1)}{p_t(\mathbf{x})} d\mathbf{x}_0 d\mathbf{x}_1,
+\end{equation}
 
-where $p_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1)$ is a pre-defined interpolating probability path. Here, we consider the tractable probability path $p_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1) = \delta(\boldsymbol{x} - g_t(\boldsymbol{x}_0, \boldsymbol{x}_1))$, where $g_t(\boldsymbol{x}_0, \boldsymbol{x}_1) = (1 - t)\boldsymbol{x}_0 + t\boldsymbol{x}_1$ is a linear interpolation and $\delta$ denotes a Dirac delta function, representing a deterministic conditional path.
+where $p_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1)$ is a pre-defined interpolating probability path. Here, we consider the tractable probability path $p_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1) = \delta(\mathbf{x} - g_t(\mathbf{x}_0, \mathbf{x}_1))$, where $g_t(\mathbf{x}_0, \mathbf{x}_1) = (1 - t)\mathbf{x}_0 + t\mathbf{x}_1$ is a linear interpolation and $\delta$ denotes a Dirac delta function, representing a deterministic conditional path.
 
-Lipman et al. [23] show that regressing the conditional field $u_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1)$ is equivalent to learning the marginal field $u_t(\boldsymbol{x})$ in expectation. Hence, the FM objective becomes the task of learning the velocity along the conditional probability path between any pair of source and target data points. For a linear conditional probability path, the velocity $u_t(\boldsymbol{x} \mid \boldsymbol{x}_0, \boldsymbol{x}_1)$ has a closed form, and the FM loss is:
+Lipman et al. [23] show that regressing the conditional field $u_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1)$ is equivalent to learning the marginal field $u_t(\mathbf{x})$ in expectation. Hence, the FM objective becomes the task of learning the velocity along the conditional probability path between any pair of source and target data points. For a linear conditional probability path, the velocity $u_t(\mathbf{x} \mid \mathbf{x}_0, \mathbf{x}_1)$ has a closed form, and the FM loss is:
 
-$$\mathcal{L}_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \mathcal{U}[0,1], (\boldsymbol{x}_0, \boldsymbol{x}_1) \sim \pi} \left[ \left\| v_t^\theta(g_t(\boldsymbol{x}_0, \boldsymbol{x}_1)) - \frac{\partial}{\partial t} g_t(\boldsymbol{x}_0, \boldsymbol{x}_1) \right\|_2^2 \right]. \tag{2}$$
+\begin{equation}
+\mathcal{L}_{\text{FM}}(\theta) = \mathbb{E}_{t \sim \mathcal{U}[0,1], (\mathbf{x}_0, \mathbf{x}_1) \sim \pi} \left[ \left\| v_t^\theta(g_t(\mathbf{x}_0, \mathbf{x}_1)) - \frac{\partial}{\partial t} g_t(\mathbf{x}_0, \mathbf{x}_1) \right\|_2^2 \right].
+\end{equation}
 
-In practice, the coupling $\pi(\boldsymbol{x}_0, \boldsymbol{x}_1)$ is instantiated using sample pairs drawn from a mini-batch estimate. When one chooses $\pi^*$ as the OT coupling under a squared Euclidean cost between samples from $p_0$ and $p_1$, FM approximates the dynamic OT map between source and target densities [41, 26]. Thus, the solution samples $(\boldsymbol{x}_0, \boldsymbol{x}_1) \sim \pi^*$ from the joint distribution approximately follow:
+In practice, the coupling $\pi(\mathbf{x}_0, \mathbf{x}_1)$ is instantiated using sample pairs drawn from a mini-batch estimate. When one chooses $\pi^*$ as the OT coupling under a squared Euclidean cost between samples from $p_0$ and $p_1$, FM approximates the dynamic OT map between source and target densities [41, 26]. Thus, the solution samples $(\mathbf{x}_0, \mathbf{x}_1) \sim \pi^*$ from the joint distribution approximately follow:
 
-$$\boldsymbol{x}_0 \sim p_0, \boldsymbol{x}_1 \sim \delta\left(\boldsymbol{x}_1 - \phi_1^\theta(\boldsymbol{x}_0)\right), \tag{3}$$
+\begin{equation}
+\mathbf{x}_0 \sim p_0, \mathbf{x}_1 \sim \delta(\mathbf{x}_1 - \phi_1^\theta(\mathbf{x}_0)),
+\end{equation}
 
 where $\phi_1^\theta$ is the solution of the ODE with velocity field $v_t^\theta$.
+
+---

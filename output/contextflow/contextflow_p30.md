@@ -1,9 +1,7 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 *Table 17. Interpolation via IVP Sampling at holdout time 5 for the Mouse Organogenesis dataset.*
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | IVP | MOTFM | $-$ | $-$ | $3.251 \pm 0.676$ | $3.418 \pm 0.727$ | $0.090 \pm 0.003$ | $9.226 \pm 0.648$ |
 | | CTF-C | $1$ | $0.2$ | $3.261 \pm 0.880$ | $5.264 \pm 3.060$ | $0.089 \pm 0.003$ | $10.724 \pm 1.288$ |
 | | | $1$ | $0.5$ | $3.137 \pm 0.407$ | $4.093 \pm 1.187$ | $0.086 \pm 0.004$ | $11.948 \pm 1.393$ |
@@ -18,12 +16,12 @@
 | | | $1$ | $-$ | $5.200 \pm 0.799$ | $6.306 \pm 1.037$ | $0.123 \pm 0.008$ | $45.862 \pm 13.765$ |
 | | | $0.5$ | $-$ | $\mathbf{2.814 \pm 0.414}$ | $\mathbf{3.233 \pm 0.567}$ | $0.093 \pm 0.005$ | $10.319 \pm 0.817$ |
 
-![Table 17. Interpolation via IVP Sampling at holdout time 5 for the Mouse Organogenesis dataset.](assets/table17.png)
+<br>
 
 *Table 18. Extrapolation via IVP Sampling at holdout time 8 for the Mouse Organogenesis dataset.*
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | IVP | MOTFM | $-$ | $-$ | $110835 \pm 211671$ | $1021005 \pm 2063905$ | $0.086 \pm 0.002$ | $14178 \pm 29475$ |
 | | CTF-C | $1$ | $0.2$ | $785586 \pm 1318212$ | $7598321 \pm 13497483$ | $0.088 \pm 0.002$ | $98199 \pm 150412$ |
 | | | $1$ | $0.5$ | $2691 \pm 3931$ | $28480 \pm 36483$ | $0.087 \pm 0.002$ | $1632 \pm 2090$ |
@@ -36,16 +34,14 @@
 | | | $0.5$ | $0.8$ | $1158 \pm 3023$ | $11138 \pm 30025$ | $0.084 \pm 0.002$ | $445 \pm 1085$ |
 | | CTF-H | $0$ | $-$ | $353428 \pm 952168$ | $3011396 \pm 8057131$ | $0.095 \pm 0.004$ | $22990 \pm 58936$ |
 | | | $1$ | $-$ | $\mathbf{15 \pm 10}$ | $\mathbf{53 \pm 53}$ | $0.098 \pm 0.006$ | $\mathbf{48 \pm 32}$ |
-| | | $0.5$ | $-$ | $107889 \pm 275882$ | $994606 \pm 2772756$ | $0.087 \pm 0.002$ | $8875 \pm 24264$ |
+| | | $0.5$ | $-$ | $107889 \pm 275882$ | $994606 \pm 2772756$ | $\mathbf{0.087 \pm 0.002}$ | $8875 \pm 24264$ |
 
-![Table 18. Extrapolation via IVP Sampling at holdout time 8 for the Mouse Organogenesis dataset.](assets/table18.png)
-
-### H.5. Liver Regeneration
+## H.5. Liver Regeneration
 
 *Table 19. Wasserstein distances for different model configurations*
 
 | Variant | $\lambda$ | $\alpha$ | $\mathcal{W}_2$ |
-| :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :--- |
 | EOT | $-$ | $-$ | $34.30348 \pm 1.44797$ |
 | CTF-C | $1$ | $0.2$ | $34.44455 \pm 1.19306$ |
 | CTF-C | $1$ | $0.5$ | $33.95671 \pm 1.64415$ |
@@ -59,5 +55,3 @@
 | CTF-H | $0$ | $-$ | $\mathbf{32.68215 \pm 1.47185}$ |
 | CTF-H | $1$ | $-$ | $33.48050 \pm 1.00149$ |
 | CTF-H | $0.5$ | $-$ | $33.41444 \pm 0.99501$ |
-
-![Table 19. Wasserstein distances for different model configurations](assets/table19.png)

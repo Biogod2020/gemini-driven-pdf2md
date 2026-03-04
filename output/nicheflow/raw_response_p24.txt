@@ -2,18 +2,12 @@
 ```json
 {
   "document_metadata": {
-    "title": "OT Ablation Study and Spatial Likelihood Estimation",
-    "inferred_style": "academic_technical_paper"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Paper - Appendix",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
-  "assets": [
-    {
-      "id": "table3",
-      "type": "table",
-      "bbox": [524, 176, 831, 824],
-      "caption": "Table 3: Ablation study on the feature-coordinate trade-off parameter λ in Eq. (12) across mouse embryonic development (MED), axolotl brain development (ABD), and mouse brain aging (MBA). We report 1NN-F1, PSD, and SPD for each training objective (CFM, GVFM, GLVFM) and model variant (RPCFlow, NicheFlow). All results are averaged over five evaluation runs. Bold indicates the best value per dataset and metric.",
-      "description": "A large comparative table showing performance metrics (1NN-F1, PSD, SPD) for different models (RPCFlow, NicheFlow) across three datasets (MED, ABD, MBA) under varying lambda values (0.10 to 0.75)."
-    }
-  ]
+  "assets": []
 }
 ```
 
@@ -21,40 +15,43 @@
 
 To assess whether the model accurately conditions on input microenvironments, we visualize the spatial distribution of generated samples given a fixed source microenvironment. Figure 11 illustrates such cases on the embryonic development dataset, showing the input region at time $t_1$, the corresponding target at time $t_2$, and 50 independently generated samples from NicheFlow. Directly computing the likelihood of ground truth cell coordinates under our generative model is intractable, as it would require evaluating the density of an implicitly defined distribution over point clouds. Instead, we approximate the spatial likelihood using kernel density estimation (KDE) over Monte Carlo samples drawn from the model. Given a set of generated coordinates $\{\hat{c}_i\}_{i=1}^N$, we estimate the likelihood at a ground truth location $c$ as:
 
-$$\hat{p}(c) = \frac{1}{N} \sum_{i=1}^N \exp \left( -\frac{\|c - \hat{c}_i\|^2}{2\sigma^2} \right), \tag{32}$$
+\begin{equation}
+\hat{p}(c) = \frac{1}{N} \sum_{i=1}^N \exp \left( -\frac{\|c - \hat{c}_i\|^2}{2\sigma^2} \right),
+\end{equation}
 
 where $\sigma$ is a fixed bandwidth parameter. The resulting KDE heatmap visualizes the spatial concentration of samples, allowing us to qualitatively assess whether the model produces consistent predictions conditioned on the source microenvironment.
 
-### D.5 OT Ablation Study
+## D.5 OT Ablation Study
 
 We begin by emphasizing that the optimal choice of the OT feature-weighting parameter $\lambda$ in Eq. (12) depends on the downstream application. This parameter determines the relative importance assigned to gene expression versus spatial coordinates during OT. For developmental processes such as organogenesis or regeneration, higher values of $\lambda$ prioritize transcriptional similarity, facilitating the reconstruction of continuous differentiation trajectories and capturing fate-driven transitions, which may span large spatial distances. In contrast, for applications that aim to monitor changes within a fixed spatial region, such as shifts in cell-type composition over time, a lower $\lambda$ is more appropriate. In such cases, emphasizing spatial locality helps avoid spurious long-range transport assignments caused by molecular noise.
 
-![Table 3: Ablation study on the feature-coordinate trade-off parameter λ in Eq. (12) across mouse embryonic development (MED), axolotl brain development (ABD), and mouse brain aging (MBA). We report 1NN-F1, PSD, and SPD for each training objective (CFM, GVFM, GLVFM) and model variant (RPCFlow, NicheFlow). All results are averaged over five evaluation runs. Bold indicates the best value per dataset and metric.](assets/table3.png)
+**Table 3: Ablation study on the feature-coordinate trade-off parameter $\lambda$ in Eq. (12) across mouse embryonic development (MED), axolotl brain development (ABD), and mouse brain aging (MBA). We report 1NN-F1, PSD, and SPD for each training objective (CFM, GVFM, GLVFM) and model variant (RPCFlow, NicheFlow). All results are averaged over five evaluation runs. Bold indicates the best value per dataset and metric.**
 
-| Model | Obj. | $\lambda$ | MED 1NN-F1 $\uparrow$ | MED PSD $\downarrow$ | MED SPD $\downarrow$ | ABD 1NN-F1 $\uparrow$ | ABD PSD $\downarrow$ | ABD SPD $\downarrow$ | MBA 1NN-F1 $\uparrow$ | MBA PSD $\downarrow$ | MBA SPD $\downarrow$ |
+| | | | MED | | | ABD | | | MBA | | |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| RPCFlow | CFM | 0.10 | $0.546 \pm 0.0012$ | $0.981 \pm 0.0024$ | $0.564 \pm 0.0015$ | $0.524 \pm 0.0020$ | $2.051 \pm 0.0039$ | $1.015 \pm 0.0036$ | $0.271 \pm 0.0004$ | $1.543 \pm 0.0016$ | $0.810 \pm 0.0000$ |
+| **Model** | **Obj.** | $\lambda$ | **1NN-F1 $\uparrow$** | **PSD $\downarrow$** | **SPD $\downarrow$** | **1NN-F1 $\uparrow$** | **PSD $\downarrow$** | **SPD $\downarrow$** | **1NN-F1 $\uparrow$** | **PSD $\downarrow$** | **SPD $\downarrow$** |
+| RPCFlow | CFM | 0.10 | $0.546 \pm 0.0012$ | $0.981 \pm 0.0024$ | $0.564 \pm 0.0015$ | $0.524 \pm 0.0020$ | $2.051 \pm 0.0039$ | $1.015 \pm 0.0036$ | $0.271 \pm 0.0004$ | $1.543 \pm 0.0016$ | $0.810 \pm 0.0010$ |
 | RPCFlow | CFM | 0.25 | $0.545 \pm 0.0004$ | $0.958 \pm 0.0040$ | $0.570 \pm 0.0011$ | $0.511 \pm 0.0015$ | $2.079 \pm 0.0053$ | $1.024 \pm 0.0046$ | $0.273 \pm 0.0005$ | $\mathbf{1.535 \pm 0.0009}$ | $0.818 \pm 0.0013$ |
 | RPCFlow | CFM | 0.50 | $0.554 \pm 0.0009$ | $0.988 \pm 0.0031$ | $0.562 \pm 0.0011$ | $0.507 \pm 0.0011$ | $2.077 \pm 0.0065$ | $1.023 \pm 0.0032$ | $0.273 \pm 0.0006$ | $1.546 \pm 0.0010$ | $0.810 \pm 0.0013$ |
-| RPCFlow | CFM | 0.75 | $0.537 \pm 0.0007$ | $0.981 \pm 0.0020$ | $0.595 \pm 0.0022$ | $0.517 \pm 0.0005$ | $2.033 \pm 0.0072$ | $1.026 \pm 0.0050$ | $0.275 \pm 0.0003$ | $1.553 \pm 0.0008$ | $0.801 \pm 0.0000$ |
+| RPCFlow | CFM | 0.75 | $0.537 \pm 0.0007$ | $0.981 \pm 0.0020$ | $0.595 \pm 0.0022$ | $0.517 \pm 0.0005$ | $2.033 \pm 0.0072$ | $1.026 \pm 0.0050$ | $0.275 \pm 0.0003$ | $1.553 \pm 0.0008$ | $0.801 \pm 0.0010$ |
 | RPCFlow | GLVFM | 0.10 | $0.586 \pm 0.0016$ | $0.979 \pm 0.0021$ | $0.586 \pm 0.0012$ | $0.554 \pm 0.0007$ | $2.053 \pm 0.0044$ | $1.038 \pm 0.0025$ | $0.265 \pm 0.0004$ | $1.723 \pm 0.0015$ | $0.779 \pm 0.0011$ |
 | RPCFlow | GLVFM | 0.25 | $0.593 \pm 0.0003$ | $0.924 \pm 0.0019$ | $0.575 \pm 0.0017$ | $0.555 \pm 0.0013$ | $2.076 \pm 0.0057$ | $1.036 \pm 0.0024$ | $0.267 \pm 0.0003$ | $1.728 \pm 0.0016$ | $0.777 \pm 0.0005$ |
 | RPCFlow | GLVFM | 0.50 | $0.586 \pm 0.0013$ | $0.934 \pm 0.0019$ | $0.569 \pm 0.0014$ | $0.551 \pm 0.0008$ | $2.038 \pm 0.0045$ | $1.032 \pm 0.0034$ | $0.269 \pm 0.0002$ | $1.715 \pm 0.0014$ | $0.783 \pm 0.0006$ |
 | RPCFlow | GLVFM | 0.75 | $0.593 \pm 0.0009$ | $0.948 \pm 0.0035$ | $0.570 \pm 0.0011$ | $0.561 \pm 0.0008$ | $\mathbf{2.014 \pm 0.0056}$ | $1.035 \pm 0.0047$ | $0.268 \pm 0.0005$ | $1.675 \pm 0.0019$ | $0.784 \pm 0.0013$ |
-| RPCFlow | GVFM | 0.10 | $0.503 \pm 0.0013$ | $1.155 \pm 0.0044$ | $0.578 \pm 0.0007$ | $0.477 \pm 0.0008$ | $2.260 \pm 0.0077$ | $1.036 \pm 0.0031$ | $0.249 \pm 0.0003$ | $1.753 \pm 0.0020$ | $0.784 \pm 0.0000$ |
+| RPCFlow | GVFM | 0.10 | $0.503 \pm 0.0013$ | $1.155 \pm 0.0044$ | $0.578 \pm 0.0007$ | $0.477 \pm 0.0008$ | $2.260 \pm 0.0077$ | $1.036 \pm 0.0031$ | $0.249 \pm 0.0003$ | $1.753 \pm 0.0020$ | $0.784 \pm 0.0010$ |
 | RPCFlow | GVFM | 0.25 | $0.520 \pm 0.0010$ | $1.223 \pm 0.0044$ | $0.566 \pm 0.0011$ | $0.478 \pm 0.0014$ | $2.364 \pm 0.0065$ | $1.030 \pm 0.0042$ | $0.246 \pm 0.0005$ | $1.710 \pm 0.0013$ | $0.787 \pm 0.0014$ |
 | RPCFlow | GVFM | 0.50 | $0.521 \pm 0.0012$ | $1.185 \pm 0.0032$ | $0.569 \pm 0.0009$ | $0.480 \pm 0.0008$ | $2.360 \pm 0.0036$ | $1.025 \pm 0.0015$ | $0.245 \pm 0.0004$ | $1.756 \pm 0.0025$ | $0.774 \pm 0.0007$ |
 | RPCFlow | GVFM | 0.75 | $0.514 \pm 0.0013$ | $1.202 \pm 0.0014$ | $0.573 \pm 0.0008$ | $0.471 \pm 0.0012$ | $2.476 \pm 0.0082$ | $1.037 \pm 0.0036$ | $0.248 \pm 0.0003$ | $1.831 \pm 0.0015$ | $0.780 \pm 0.0012$ |
-| NicheFlow | CFM | 0.10 | $\mathbf{0.609 \pm 0.0030}$ | $0.979 \pm 0.0228$ | $0.402 \pm 0.0036$ | $0.604 \pm 0.0018$ | $2.086 \pm 0.0058$ | $0.568 \pm 0.0030$ | $0.283 \pm 0.0003$ | $1.557 \pm 0.0014$ | $0.556 \pm 0.0028$ |
+| NicheFlow | CFM | 0.10 | $0.609 \pm 0.0010$ | $0.979 \pm 0.0228$ | $0.402 \pm 0.0036$ | $0.604 \pm 0.0018$ | $2.086 \pm 0.0058$ | $0.568 \pm 0.0030$ | $0.283 \pm 0.0003$ | $1.557 \pm 0.0014$ | $0.556 \pm 0.0028$ |
 | NicheFlow | CFM | 0.25 | $0.569 \pm 0.0031$ | $0.973 \pm 0.0074$ | $0.425 \pm 0.0062$ | $0.586 \pm 0.0013$ | $2.106 \pm 0.0072$ | $\mathbf{0.565 \pm 0.0039}$ | $0.281 \pm 0.0006$ | $1.546 \pm 0.0029$ | $0.612 \pm 0.0032$ |
 | NicheFlow | CFM | 0.50 | $0.551 \pm 0.0009$ | $1.051 \pm 0.0496$ | $0.471 \pm 0.0110$ | $0.585 \pm 0.0013$ | $2.089 \pm 0.0066$ | $0.591 \pm 0.0026$ | $0.283 \pm 0.0002$ | $1.588 \pm 0.0033$ | $0.604 \pm 0.0061$ |
 | NicheFlow | CFM | 0.75 | $0.519 \pm 0.0038$ | $1.103 \pm 0.0323$ | $0.515 \pm 0.0101$ | $0.571 \pm 0.0012$ | $2.126 \pm 0.0110$ | $0.592 \pm 0.0044$ | $0.278 \pm 0.0003$ | $1.566 \pm 0.0027$ | $0.616 \pm 0.0041$ |
 | NicheFlow | GVFM | 0.10 | $0.596 \pm 0.0027$ | $0.991 \pm 0.0137$ | $0.406 \pm 0.0025$ | $0.574 \pm 0.0015$ | $2.220 \pm 0.0107$ | $0.594 \pm 0.0046$ | $0.268 \pm 0.0003$ | $1.661 \pm 0.0033$ | $\mathbf{0.531 \pm 0.0010}$ |
 | NicheFlow | GVFM | 0.25 | $0.563 \pm 0.0027$ | $1.051 \pm 0.0117$ | $0.491 \pm 0.0105$ | $0.571 \pm 0.0009$ | $2.343 \pm 0.0136$ | $0.619 \pm 0.0061$ | $0.265 \pm 0.0006$ | $1.599 \pm 0.0032$ | $0.590 \pm 0.0018$ |
 | NicheFlow | GVFM | 0.50 | $0.533 \pm 0.0053$ | $1.034 \pm 0.0452$ | $0.800 \pm 0.0401$ | $0.556 \pm 0.0008$ | $2.283 \pm 0.0126$ | $0.742 \pm 0.0134$ | $0.269 \pm 0.0005$ | $1.607 \pm 0.0029$ | $0.605 \pm 0.0022$ |
-| NicheFlow | GVFM | 0.75 | $0.526 \pm 0.0028$ | $1.121 \pm 0.0112$ | $0.870 \pm 0.0536$ | $0.556 \pm 0.0013$ | $2.166 \pm 0.0091$ | $0.684 \pm 0.0128$ | $0.263 \pm 0.0004$ | $1.613 \pm 0.0031$ | $0.731 \pm 0.0040$ |
+| NicheFlow | GVFM | 0.75 | $0.526 \pm 0.0028$ | $1.121 \pm 0.0112$ | $0.870 \pm 0.0336$ | $0.556 \pm 0.0013$ | $2.166 \pm 0.0091$ | $0.684 \pm 0.0128$ | $0.263 \pm 0.0004$ | $1.613 \pm 0.0031$ | $0.731 \pm 0.0040$ |
 | NicheFlow | GLVFM | 0.10 | $\mathbf{0.664 \pm 0.0014}$ | $0.883 \pm 0.0094$ | $0.398 \pm 0.0023$ | $\mathbf{0.628 \pm 0.0013}$ | $2.079 \pm 0.0043$ | $0.576 \pm 0.0055$ | $\mathbf{0.285 \pm 0.0003}$ | $1.554 \pm 0.0021$ | $0.532 \pm 0.0009$ |
-| NicheFlow | GLVFM | 0.25 | $0.629 \pm 0.0023$ | $0.923 \pm 0.0109$ | $\mathbf{0.394 \pm 0.0035}$ | $0.618 \pm 0.0004$ | $2.102 \pm 0.0028$ | $0.577 \pm 0.0051$ | $0.284 \pm 0.0005$ | $1.599 \pm 0.0035$ | $0.549 \pm 0.0012$ |
+| NicheFlow | GLVFM | 0.25 | $0.629 \pm 0.0033$ | $0.923 \pm 0.0109$ | $\mathbf{0.394 \pm 0.0035}$ | $0.618 \pm 0.0014$ | $2.102 \pm 0.0028$ | $0.577 \pm 0.0051$ | $0.284 \pm 0.0005$ | $1.599 \pm 0.0035$ | $0.549 \pm 0.0012$ |
 | NicheFlow | GLVFM | 0.50 | $0.610 \pm 0.0036$ | $0.909 \pm 0.0107$ | $0.417 \pm 0.0060$ | $0.610 \pm 0.0008$ | $2.136 \pm 0.0025$ | $0.579 \pm 0.0014$ | $0.283 \pm 0.0005$ | $1.600 \pm 0.0039$ | $0.546 \pm 0.0009$ |
 | NicheFlow | GLVFM | 0.75 | $0.592 \pm 0.0019$ | $\mathbf{0.879 \pm 0.0054}$ | $0.472 \pm 0.0150$ | $0.603 \pm 0.0014$ | $2.106 \pm 0.0060$ | $0.592 \pm 0.0073$ | $0.281 \pm 0.0004$ | $1.573 \pm 0.0008$ | $0.595 \pm 0.0026$ |
 
@@ -62,4 +59,4 @@ In Tab. 3, we sweep the value of $\lambda$ across multiple models and training s
 
 Furthermore, Figure 12 visualizes the impact of varying $\lambda$ on the OT plans described in Sec. 4.2, where intermediate values yield more coherent and biologically plausible couplings.
 
-25
+<p align="center">25</p>

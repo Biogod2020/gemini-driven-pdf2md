@@ -4,20 +4,17 @@ The model operates on a source $\mathcal{M}^0$ and noisy $\mathcal{M}^z$ microen
     (a) **Feature Embedding:** A linear transformation is applied to the input features $\boldsymbol{x}_i$ of each cell.
     (b) **Coordinate Embedding:** Spatial coordinates $\boldsymbol{c}_i$ are linearly projected and concatenated to the feature embedding.
     (c) **Time Embedding:** For the noisy microenvironment only, time $t \in [0, 1]$ is encoded using sinusoidal functions $\cos(\omega t)$ and $\sin(\omega t)$, followed by a linear projection and concatenation with the input embedding.
-
 2.  **Transformer Encoder (Source Microenvironment):**
     (a) **Self-Attention:** A stack of transformer encoder blocks with multi-head self-attention processes the embedded source microenvironment.
     (b) **No Time Embedding:** Time information is *not* provided to the encoder, as it encodes the source $\mathcal{M}^0$.
     (c) **Residual Feedforward:** Each block contains a feedforward subnetwork with LeakyReLU activation and a residual connection.
     (d) **Layer Normalization:** Applied after both the attention and feedforward layers.
     (e) **Masking:** Binary masks are used to ignore padding in variable-length microenvironments.
-
 3.  **Transformer Decoder (Noisy Microenvironment):**
     (a) **Time Embedding:** Temporal context is injected into the decoder by embedding the time $t$ and concatenating it to the target point embedding.
     (b) **Cross-Attention:** Decoder layers apply cross-attention between the noisy microenvironment and the encoded source microenvironment.
     (c) **Self-Attention and Feedforward:** Each decoder block includes standard self-attention and residual feedforward layers.
     (d) **Layer Normalization and Masking:** As with the encoder, normalization, and masking are applied throughout.
-
 4.  **Final Output Projection:**
     (a) **Prediction Head:** A linear layer maps the decoder outputs to the desired dimensionality.
 
@@ -25,7 +22,8 @@ This architecture allows for flexible and expressive modeling of temporal dynami
 
 ### F.7 Hyperparameters and Computational Costs
 
-**Model hyperparameters.** For all experiments, we use the same configuration for the Microenvironment Transformer architecture. The full set of hyperparameters is as follows:
+##### Model hyperparameters.
+For all experiments, we use the same configuration for the Microenvironment Transformer architecture. The full set of hyperparameters is as follows:
 
 *   **Input feature dimension:** 50 PCA-based gene expression features concatenated with a one-hot encoding of the time-point, resulting in a total dimensionality of $50 + |\mathcal{T}|$, where $|\mathcal{T}|$ is the number of slides (timepoints) in the dataset.
 *   **Input coordinate dimension:** 2
@@ -37,4 +35,4 @@ This architecture allows for flexible and expressive modeling of temporal dynami
 *   **Dropout rate:** 0.1
 *   **Output dimension:** 52 (gene expressions features + coordinates)
 
-36
+<center>36</center>

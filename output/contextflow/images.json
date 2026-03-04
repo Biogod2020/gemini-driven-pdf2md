@@ -1,8 +1,8 @@
 [
   {
-    "id": "fig21",
-    "path": "assets/fig21.png",
-    "caption": "Figure 21. Performance variation with ϵ for interpolation on the Brain Regeneration dataset.",
-    "description": "Two line charts showing metric values across different epsilon values (log scale) from 10^-3 to 10^4. Subfigure (a) shows Next Step Sampling and subfigure (b) shows IVP Sampling. Both plots compare 'Wasserstein' and 'Weighted Wasserstein' metrics."
+    "id": "fig_21",
+    "path": "assets/fig_21.png",
+    "caption": "Figure 21. Performance variation with $\\epsilon$ for interpolation on the Brain Regeneration dataset.",
+    "description": null
   }
 ]

@@ -1,10 +1,4 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
-![ (a) MOTFM Implausible Transitions](assets/fig4a.png)
-
-![ (b) ContextFlow Implausible Transitions](assets/fig4b.png)
-
-*Figure 4.* Comparison of biologically implausible cell type couplings between Stage 0 and Stage 1 of the Brain Regeneration Dataset (Wei et al., 2022), under the Entropic-OT and ContextFlow Regularized-OT formulations. Biological implausibility is defined here as transitions involving excitatory–inhibitory lineage switches. Our formulation produces substantially fewer biologically implausible couplings (24) compared to MOTFM (54).
+![Comparison of biologically implausible cell type couplings between Stage 0 and Stage 1 of the Brain Regeneration Dataset (Wei et al., 2022), under the Entropic-OT and ContextFlow Regularized-OT formulations. Biological implausibility is defined here as transitions involving excitatory–inhibitory lineage switches. Our formulation produces substantially fewer biologically implausible couplings (24) compared to MOTFM (54).](assets/fig4.png)
 
 ## G. Biological Priors and Dataset Visualizations
 
@@ -12,6 +6,6 @@
 
 To demonstrate the need of integrating biological priors within a generative framework, we computed the Entropic-OT plan (Section 2.3) for the MOTFM framework and the PAER-OT plan (Section 3.3) for the ContextFlow framework. From these transport plans, we sampled couplings corresponding to the first two stages of the Brain Regeneration dataset (Wei et al., 2022) together with their associated cell types. Figures 4a and 4b illustrate the Excitatory–Inhibitory lineage switches present in these sampled couplings. Since excitatory and inhibitory neurons have mutually exclusive neurotransmitter functions and originate from distinct progenitor populations with different transcription factor profiles, a transition from excitatory to inhibitory identity is considered biologically implausible.
 
-In our transport plan couplings, we observed the following cell type lineage switches: (i) Immature MSN $\rightarrow$ Immature
+In our transport plan couplings, we observed the following cell type lineage switches: (i) Immature MSN $\rightarrow$ Immature nptXEX, (ii) Immature MSN $\rightarrow$ Immature dpEX, (iii) Immature MSN $\rightarrow$ Immature CMPN, (iv) Immature nptXEX $\rightarrow$ Immature cckIN, and (v) Immature nptXEX $\rightarrow$ Immature MSN
 
-<p align="center">24</p>
+<div style="text-align: center;">24</div>

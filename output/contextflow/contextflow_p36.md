@@ -1,4 +1,4 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+***
 
 *Table 23. Extrapolation for holdout timestep 5 on the Mouse Organogenesis dataset.*
 
@@ -10,11 +10,10 @@
 | 0.8 | $1.617 \pm 0.042$ | $1.680 \pm 0.094$ | $1.66 \times 10^5 \pm 3.92 \times 10^5$ | $1.43 \times 10^6 \pm 3.43 \times 10^6$ |
 | 1 | $1.906 \pm 0.071$ | $1.892 \pm 0.092$ | $1.89 \times 10^1 \pm 1.77 \times 10^1$ | $6.89 \times 10^1 \pm 7.36 \times 10^1$ |
 
-![Figure 14. Performance variation with λ for extrapolation on the Mouse Organogenesis dataset.](assets/fig14.png)
+![Figure 14. Performance variation with $\lambda$ for extrapolation on the Mouse Organogenesis dataset.](assets/fig_14.png)
+(a) Next Step Sampling \hspace{100pt} (b) IVP Sampling
 
-(a) Next Step Sampling \hspace{50pt} (b) IVP Sampling
-
----
+***
 
 *Table 25. Extrapolation with CTF-H at $\lambda = 1$ (only using the spatial smoothness prior) for the last holdout timestep on the Brain Regeneration dataset.*
 
@@ -28,6 +27,7 @@
 | 200 | $6.039 \pm 0.282$ | $5.764 \pm 0.272$ | $5.630 \pm 0.793$ | $5.000 \pm 0.735$ |
 | 250 | $6.804 \pm 1.011$ | $6.834 \pm 1.124$ | $6.578 \pm 1.611$ | $7.379 \pm 2.864$ |
 
-![Figure 16. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig16.png)
+![Figure 16. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig_16.png)
+(a) Next Step Sampling \hspace{100pt} (b) IVP Sampling
 
-(a) Next Step Sampling \hspace{50pt} (b) IVP Sampling
+37

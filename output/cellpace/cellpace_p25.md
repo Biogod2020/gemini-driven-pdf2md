@@ -1,0 +1,19 @@
+### Multimodal generation using CFGen
+
+Within our benchmark suite, CFGen [5] is the only method with native multimodal support, enabling joint RNA-ATAC generation. CFGen offers two multimodal configurations. In the default configuration, RNA and ATAC are each encoded into separate 100-dimensional latent spaces, and these embeddings are concatenated into a 200-dimensional vector that is passed directly to the flow-matching backbone. In an optional joint-latent configuration, the concatenated 200-dimensional vector is further mapped through a small multilayer perceptron to produce a shared 100-dimensional latent representation.
+
+In our experiments, we used this joint-latent configuration. This choice not only aligns CFGen with the MultiVI backbone used in CellPace, where RNA and ATAC are embedded into a shared latent space, but also reflects the structure of our 10x multiome data, which provide paired RNA-ATAC profiles rather than unpaired modalities. After encoding, the flow-matching backbone operated on the 100-dimensional joint latent space, and the decoder remained split by modality, using a negative binomial likelihood for RNA counts and a Bernoulli likelihood for ATAC peak accessibility. The total loss was the sum of RNA and ATAC reconstruction terms. Conditional generation used the same stage-conditional flow-matching backbone: joint latent samples were decoded into paired RNA and ATAC profiles, allowing CFGen to generate multimodal single cells conditioned on developmental stage or other categorical covariates.
+
+### Evaluation Metrics
+
+miLISI (median Local Inverse Simpson Index) quantifies mixing of "real" and "generated" data by first computing a joint t-SNE embedding (perplexity=30), and then measuring local diversity within k-nearest neighbor graphs (k=90, derived from $3 \times \text{perplexity}$) using an adaptive Gaussian kernel with perplexity-based bandwidth optimization; higher miLISI values (approaching 2.0) indicate better mixing between real and generated cells and a higher quality of data generation.
+
+2-Wasserstein distance measures distributional divergence using optimal transport, where we first compute a joint PCA on the concatenated real and generated data (selecting $\min(50, n\_samples-1)$ components), then split the transformed coordinates back to separate populations and compute exact earth mover's distance with squared Euclidean cost matrix (power=2); lower values indicate better distributional matching.
+
+1-Wasserstein distance follows the same joint PCA projection strategy but uses linear cost (power=1), providing a metric more robust to outliers.
+
+MMD (Maximum Mean Discrepancy) employs a multi-scale Gaussian kernel with data-adaptive bandwidths determined by the median heuristic: we estimate the median distance among the 25
+
+<br>
+
+26

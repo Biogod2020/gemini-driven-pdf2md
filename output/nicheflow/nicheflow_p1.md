@@ -22,4 +22,7 @@ Our approach consistently outperforms baselines in recovering cell-type organiza
 
 NicheFlow is at the interface between generative models and spatiotemporal transcriptomic data.
 
-**FM and single-cell transcriptomics.** We propose a model based on FM, a framework introduced by several seminal works [22–24]. Specifically, we adopt a variational view of the FM objective, following Eijkelboom et al. [25], but extend it to mixed-factorized distributions for point cloud generation. Our method, NicheFlow, combines FM with OT, a pairing that has proven effective in modeling cellular data [26–29]. Unlike these models, however, we focus on point clouds of
+##### FM and single-cell transcriptomics.
+We propose a model based on FM, a framework introduced by several seminal works [22–24]. Specifically, we adopt a variational view of the FM objective, following Eijkelboom et al. [25], but extend it to mixed-factorized distributions for point cloud generation. Our method, NicheFlow, combines FM with OT, a pairing that has proven effective in modeling cellular data [26–29]. Unlike these models, however, we focus on point clouds of
+
+<p align="center">2</p>

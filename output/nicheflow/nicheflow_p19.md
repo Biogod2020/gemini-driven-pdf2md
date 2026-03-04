@@ -1,4 +1,4 @@
-![Figure 6: Qualitative comparison of generated samples on the axolotl brain development dataset (Stage 44, 54, 57, Juvenile, Adult, Meta). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives. NicheFlow captures the spatial structure and cell-type organization more faithfully across developmental stages.](assets/fig6.png)
+![Figure 6: Qualitative comparison of generated samples on the axolotl brain development dataset (Stage 44, 54, 57, Juvenile, Adult, Meta). We show source and target samples alongside predictions from SPFlow and NicheFlow with different objectives. NicheFlow captures the spatial structure and cell-type organization more faithfully across developmental stages.](assets/figure_6.png)
 
 To further support our result, we propose a more in-depth qualitative analysis of the NicheFlow application on the axolotl brain development dataset. More specifically, in Fig. 7 we demonstrate that our model predicts the formation of crucial anatomical structures like the left and right lobes both spatially and compositionally. This vouches for flexibility in NicheFlow’s performance, which extends to non-trivial topology changes and simultaneously accounts for accurate cell state and coordinate generation in time. Similar results can be observed in Fig. 8, where we showcase the correct prediction of the formation of a left lobe cavity, predicting trajectories from an immature brain region.
 
@@ -6,4 +6,4 @@ Moreover, in Fig. 9 we predict the compositional and structural time evolution o
 
 Finally, similar to Fig. 2 and Fig. 6, in Fig. 10, we qualitatively show that NicheFlow with microenvironment sampling strategy and mixed-factorized VFM is the best approach for reconstructing mouse brain trajectories in time.
 
-<div style="text-align: center;">20</div>
+<center>20</center>

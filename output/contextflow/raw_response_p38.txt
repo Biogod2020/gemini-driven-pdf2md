@@ -1,24 +1,23 @@
+---
 ```json
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_technical_report"
+    "style": "Academic Paper - Appendix/Results Page",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
-      "id": "fig18",
-      "type": "figure",
-      "bbox": [304, 115, 548, 854],
-      "caption": "Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.",
-      "description": "Two line charts showing metric values (Wasserstein and Weighted Wasserstein) against Radius for (a) Next Step Sampling and (b) IVP Sampling. In (a), both metrics fluctuate between 6.0 and 7.5. In (b), the standard Wasserstein metric shows a significant spike at low radius values and higher overall variance compared to the Weighted Wasserstein metric."
+      "id": "fig_18",
+      "bbox": [304, 118, 746, 866],
+      "caption": "Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset."
     }
   ]
 }
 ```
 
 ---
-
-Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 
 *Table 27. Extrapolation for the last holdout timestep with CTF-H at $\lambda = 0.8$ on the Brain Regeneration dataset.*
 
@@ -32,10 +31,12 @@ Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 | 200 | $6.052 \pm 0.873$ | $6.129 \pm 1.052$ | $5.852 \pm 1.085$ | $6.247 \pm 1.731$ |
 | 250 | $6.449 \pm 0.909$ | $6.278 \pm 0.726$ | $6.151 \pm 0.986$ | $11.261 \pm 7.063$ |
 
-![Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig18.png)
+![Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.](assets/fig_18.png)
 
-(a) Next Step Sampling \hskip 100pt (b) IVP Sampling
+(a) Next Step Sampling $\quad$ (b) IVP Sampling
 
 *Figure 18. Performance variation with radius for extrapolation on the Brain Regeneration dataset.*
+
+<br>
 
 39

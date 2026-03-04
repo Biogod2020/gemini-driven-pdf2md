@@ -2,23 +2,21 @@
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_technical_appendix"
+    "style": "Academic Paper - Appendix/Results",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
-      "id": "fig21",
-      "type": "figure",
-      "bbox": [335, 134, 578, 856],
-      "caption": "Figure 21. Performance variation with \u03f5 for interpolation on the Brain Regeneration dataset.",
-      "description": "Two line charts showing metric values across different epsilon values (log scale) from 10^-3 to 10^4. Subfigure (a) shows Next Step Sampling and subfigure (b) shows IVP Sampling. Both plots compare 'Wasserstein' and 'Weighted Wasserstein' metrics."
+      "id": "fig_21",
+      "bbox": [335, 131, 576, 858],
+      "caption": "Figure 21. Performance variation with $\\epsilon$ for interpolation on the Brain Regeneration dataset."
     }
   ]
 }
 ```
 
----
-
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+***
 
 *Table 30. Interpolation for the middle holdout timestep on the Brain Regeneration dataset.*
 
@@ -33,11 +31,6 @@
 | 1000 | $3.104 \pm 0.663$ | $2.321 \pm 0.521$ | $5.109 \pm 0.948$ | $3.974 \pm 1.227$ |
 | 10000 | $2.838 \pm 0.281$ | $2.176 \pm 0.315$ | $4.557 \pm 0.710$ | $3.373 \pm 0.833$ |
 
-![Figure 21. Performance variation with \u03f5 for interpolation on the Brain Regeneration dataset.](assets/fig21.png)
+![Figure 21. Performance variation with $\epsilon$ for interpolation on the Brain Regeneration dataset. (a) Next Step Sampling (b) IVP Sampling](assets/fig_21.png)
 
-(a) Next Step Sampling \hskip 100pt (b) IVP Sampling
-
-*Figure 21. Performance variation with $\epsilon$ for interpolation on the Brain Regeneration dataset.*
-
----
-42
+<p align="center">42</p>

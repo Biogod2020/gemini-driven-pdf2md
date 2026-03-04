@@ -1,4 +1,4 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+***
 
 *Table 30. Interpolation for the middle holdout timestep on the Brain Regeneration dataset.*
 
@@ -13,11 +13,6 @@
 | 1000 | $3.104 \pm 0.663$ | $2.321 \pm 0.521$ | $5.109 \pm 0.948$ | $3.974 \pm 1.227$ |
 | 10000 | $2.838 \pm 0.281$ | $2.176 \pm 0.315$ | $4.557 \pm 0.710$ | $3.373 \pm 0.833$ |
 
-![Figure 21. Performance variation with \u03f5 for interpolation on the Brain Regeneration dataset.](assets/fig21.png)
+![Figure 21. Performance variation with $\epsilon$ for interpolation on the Brain Regeneration dataset. (a) Next Step Sampling (b) IVP Sampling](assets/fig_21.png)
 
-(a) Next Step Sampling \hskip 100pt (b) IVP Sampling
-
-*Figure 21. Performance variation with $\epsilon$ for interpolation on the Brain Regeneration dataset.*
-
----
-42
+<p align="center">42</p>

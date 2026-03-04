@@ -1,21 +1,21 @@
+---
 ```json
 {
   "document_metadata": {
-    "title": "Discretized microenvironments and Microenvironment Transformer",
-    "inferred_style": "academic/scientific paper appendix"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Appendix / Technical Report",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
       "id": "fig16",
-      "type": "figure",
-      "bbox": [449, 215, 591, 783],
-      "caption": "Figure 16: Discretized grid of microenvironments for the mouse embryonic development dataset. Each blue point denotes a centroid around which a microenvironment is constructed. To ensure consistent coverage across tissue sections, additional centroids are randomly sampled such that each slide contains the same number of microenvironments.",
-      "description": "Three anatomical shapes representing mouse embryos at stages E9.5, E10.5, and E11.5, filled with a regular grid of blue dots representing microenvironment centroids."
+      "bbox": [448, 214, 588, 783],
+      "caption": "Figure 16: Discretized grid of microenvironments for the mouse embryonic development dataset. Each blue point denotes a centroid around which a microenvironment is constructed. To ensure consistent coverage across tissue sections, additional centroids are randomly sampled such that each slide contains the same number of microenvironments."
     }
   ]
 }
 ```
-
 ---
 
 used for training our generative models: total count normalization, log-transformation, and PCA (see Sec. F.2). The resulting low-dimensional embeddings are used as input features for a simple multilayer perceptron (MLP), trained to predict discrete cell type labels.
@@ -37,3 +37,5 @@ We apply the same discretization procedure to all three datasets used in our exp
 ### F.6 Microenvironment Transformer
 
 To model the spatiotemporal evolution of local cellular neighborhoods, we design a permutation-invariant transformer-based architecture tailored to structured point cloud data. Our Microenvironment Transformer processes local microenvironments—sets of cells with gene expression features and spatial coordinates—and predicts time-dependent outputs such as velocity fields or future states.
+
+<p align="center">35</p>

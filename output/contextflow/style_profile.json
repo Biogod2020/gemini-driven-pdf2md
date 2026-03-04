@@ -1,0 +1,51 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, Bold, Large Font Size (~16-18pt), Title Case, positioned between horizontal rules on the first page.",
+      "example_text": "ContextFlow: Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data"
+    },
+    "h2": {
+      "visual_description": "Left-aligned, Bold, Numbered (e.g., 1., 2.), Font Size ~12pt.",
+      "example_text": "1. Introduction"
+    },
+    "h3": {
+      "visual_description": "Left-aligned, Bold, Hierarchical Numbering (e.g., 2.1., 3.2.), Font Size ~11pt.",
+      "example_text": "2.1. Flow Matching Basics"
+    },
+    "h4": {
+      "visual_description": "In-line or Block, Bold-Italic or Bold, often followed by a period, used for sub-sections or paragraph headers.",
+      "example_text": "Spatial Smoothness."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Numbered block with 'Algorithm' prefix, horizontal rules top/bottom, monospace font for logic.",
+      "semantic_meaning": "Pseudocode / Algorithm"
+    },
+    {
+      "pattern": "Centered table with 'Table X.' caption above, horizontal rules for header and footer, no vertical lines.",
+      "semantic_meaning": "Data Table"
+    },
+    {
+      "pattern": "Centered image or plot with 'Figure X.' caption below, often containing sub-labels like (a), (b).",
+      "semantic_meaning": "Figure / Visualization"
+    },
+    {
+      "pattern": "Indented block with 'Theorem X.' or 'Proposition X.' in bold-italic.",
+      "semantic_meaning": "Mathematical Theorem"
+    },
+    {
+      "pattern": "Centered equations with right-aligned parenthetical numbering.",
+      "semantic_meaning": "Numbered Equation"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX style. Inline: $...$, Block: $$...$$ or numbered environments.",
+    "table_style": "Standard Markdown pipe tables with alignment based on column content.",
+    "citation_format": "Author-Year format in blue text (e.g., Lipman et al., 2023)."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column",
+    "header_footer_pattern": "Header contains a centered running title above a horizontal rule; Footer contains a centered page number."
+  }
+}

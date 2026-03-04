@@ -1,0 +1,67 @@
+{
+  "registry": {
+    "heading_weights": {
+      "h1": {
+        "visual_description": "Centered, Bold, Large Font (approx 16-18pt), Title Case, often preceded and followed by horizontal rules on the first page.",
+        "example_text": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow"
+      },
+      "h2": {
+        "visual_description": "Left-aligned, Bold, Large Font (approx 12-14pt), Arabic numeral prefix (e.g., 1, 2, 3).",
+        "example_text": "1 Introduction"
+      },
+      "h3": {
+        "visual_description": "Left-aligned, Bold, Standard Font Size, Multi-level Arabic numeral prefix (e.g., 3.1, 4.2).",
+        "example_text": "3.1 Optimal Transport with FM"
+      },
+      "h4": {
+        "visual_description": "Left-aligned, Bold, Standard Font Size, Triple-level Arabic numeral prefix (e.g., 5.1.1).",
+        "example_text": "5.1.1 Training setup"
+      },
+      "h5": {
+        "visual_description": "In-line, Bold, followed by a period and then body text.",
+        "example_text": "Datasets. We assess model performance..."
+      }
+    },
+    "visual_matchers": [
+      {
+        "pattern": "Centered block with 'Abstract' label in bold",
+        "semantic_meaning": "Executive Summary / Abstract"
+      },
+      {
+        "pattern": "Numbered equations centered with right-aligned parentheses",
+        "semantic_meaning": "Mathematical Formula"
+      },
+      {
+        "pattern": "Table X: prefix in bold followed by descriptive text above a grid",
+        "semantic_meaning": "Data Table Caption"
+      },
+      {
+        "pattern": "Figure X: prefix in bold followed by descriptive text below an image",
+        "semantic_meaning": "Image/Diagram Caption"
+      },
+      {
+        "pattern": "Italicized text block following a question mark",
+        "semantic_meaning": "Research Question / Hypothesis"
+      },
+      {
+        "pattern": "Bulleted list with bold leading phrases",
+        "semantic_meaning": "Key Contributions / Highlights"
+      }
+    ],
+    "markdown_grammar": {
+      "math_environment": "LaTeX style using double dollar signs for display blocks and single dollar signs for inline notation. Use \\begin{equation} for numbered blocks.",
+      "table_style": "Standard Markdown pipes with bold headers; complex multi-column tables should be represented as HTML tables to preserve alignment.",
+      "citation_format": "Numerical indices in square brackets, e.g., [1, 2-5]. References section uses full bibliographic entries starting with [Number]."
+    },
+    "layout_info": {
+      "primary_flow": "single-column",
+      "header_footer_pattern": "First page contains conference footer (e.g., NeurIPS 2025); subsequent pages contain centered page numbers at the bottom."
+    },
+    "new_rule": "Algorithm blocks are delimited by horizontal rules, with 'Algorithm X' in bold followed by the title. Inputs and Outputs are listed before numbered steps. Comments are preceded by a triangle symbol (▷)."
+  },
+  "patches_applied": [
+    {
+      "new_rule": "Algorithm blocks are delimited by horizontal rules, with 'Algorithm X' in bold followed by the title. Inputs and Outputs are listed before numbered steps. Comments are preceded by a triangle symbol (▷)."
+    }
+  ]
+}

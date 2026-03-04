@@ -1,18 +1,19 @@
 performed element-wise across the matrix rows. For batched data, this generalizes to:
 
-$$\mathcal{M}^t = (1 - t)\mathcal{M}^z + t\mathcal{M}^1. \tag{35}$$
+\begin{equation}
+\mathcal{M}^t = (1 - t)\mathcal{M}^z + t\mathcal{M}^1.
+\end{equation}
 
----
-**Algorithm 1** $\text{SAMPLEANDINTERPOLATE}$
----
+**Algorithm 1** SAMPLEANDINTERPOLATE
+***
 **Input:** Number of samples $N$, feature dimension $D$, microenvironment size $k$, OT plan $\pi_{\epsilon, \lambda}^*$
 **Output:** Source ($\mathcal{M}^0$), target ($\mathcal{M}^1$), interpolated ($\mathcal{M}^t$), and noisy ($\mathcal{M}^z$) microenvironments
-1: $(\mathcal{M}^0, \mathcal{M}^1) \leftarrow \text{Sample from } K\text{-Means regions}$ $\triangleright$ Initial microenvironment pairs
-2: $(\mathcal{M}^0, \mathcal{M}^1) \leftarrow \pi_{\epsilon, \lambda}^*(\mathcal{M}^0, \mathcal{M}^1)$ $\triangleright$ Resample with OT plan
-3: $\mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{N \times k}$ $\triangleright$ Noisy initial states
-4: $t \sim \mathcal{U}(0, 1)$ $\triangleright$ Random interpolation time
-5: $\mathcal{M}^t \leftarrow (1 - t)\mathcal{M}^z + t\mathcal{M}^1$ $\triangleright$ Linearly interpolated states
----
+1: $(\mathcal{M}^0, \mathcal{M}^1) \leftarrow$ Sample from $K$-Means regions $\quad \triangleright$ Initial microenvironment pairs
+2: $(\mathcal{M}^0, \mathcal{M}^1) \leftarrow \pi_{\epsilon, \lambda}^*(\mathcal{M}^0, \mathcal{M}^1) \quad \triangleright$ Resample with OT plan
+3: $\mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{N \times k} \quad \triangleright$ Noisy initial states
+4: $t \sim \mathcal{U}(0, 1) \quad \triangleright$ Random interpolation time
+5: $\mathcal{M}^t \leftarrow (1 - t)\mathcal{M}^z + t\mathcal{M}^1 \quad \triangleright$ Linearly interpolated states
+***
 
 ### E.1 OT Conditional Flow Matching
 
@@ -20,30 +21,30 @@ The OT Conditional Flow Matching (OT-CFM) algorithm consists of a training and a
 
 We optimize the following loss:
 
-$$\mathcal{L}(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z; \theta) = \frac{1}{2} \sum_{\substack{\mathcal{M}^0 \in \mathcal{M}^0 \\ \mathcal{M}^z \in \mathcal{M}^z \\ \mathcal{M}^t \in \mathcal{M}^t \\ \mathcal{M}^1 \in \mathcal{M}^1}} \| u_t^\theta(\mathcal{M}^t, \mathcal{M}^0) - (\mathcal{M}^1 - \mathcal{M}^z) \|_2^2 \tag{36}$$
+\begin{equation}
+\mathcal{L}(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z; \theta) = \frac{1}{2} \sum_{\substack{\mathcal{M}^0 \in \mathbf{M}^0 \\ \mathcal{M}^z \in \mathbf{M}^z \\ \mathcal{M}^t \in \mathbf{M}^t \\ \mathcal{M}^1 \in \mathbf{M}^1}} \| u_t^\theta(\mathcal{M}^t, \mathcal{M}^0) - (\mathcal{M}^1 - \mathcal{M}^z) \|_2^2
+\end{equation}
 
 The full pseudocode for both phases is provided in Algs. 2 and 3.
 
----
 **Algorithm 2** OT CFM — Training
----
+***
 **Input:** Number of samples $N$, feature dimension $D$, microenvironment size $k$, OT plan $\pi_{\epsilon, \lambda}^*$, conditional velocity field $u_t^\theta$
 **Output:** Trained parameters $\theta$ of $u_t^\theta$
-1: $(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z) \leftarrow \text{SAMPLEANDINTERPOLATE}(N, D, k, \pi_{\epsilon, \lambda}^*)$ $\triangleright$ Microenvironments (Alg. 1)
-2: $\theta \leftarrow \nabla_\theta \mathcal{L}(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z; \theta)$ $\triangleright$ Compute loss (Eq. (36)) & update parameters $\theta$
----
+1: $(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z) \leftarrow \text{SAMPLEANDINTERPOLATE}(N, D, k, \pi_{\epsilon, \lambda}^*) \quad \triangleright$ Microenvironments (Alg. 1)
+2: $\theta \leftarrow \nabla_\theta \mathcal{L}(\mathcal{M}^0, \mathcal{M}^1, \mathcal{M}^t, \mathcal{M}^z; \theta) \quad \triangleright$ Compute loss (Eq. (36)) & update parameters $\theta$
+***
 
----
 **Algorithm 3** OT CFM — Generation
----
+***
 **Input:** Source microenvironment $\mathcal{M}^0$, learned conditional velocity field $u_t^\theta$
 **Output:** Generated microenvironment $\mathcal{M}^1$
-1: $\mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{1 \times k}$ $\triangleright$ Sample noisy sample
-2: $\mathcal{M}^1 \leftarrow \mathcal{M}^z + \int_0^1 u_t^\theta(\mathcal{M}^t, \mathcal{M}^0) dt$ $\triangleright$ Solve ODE
----
+1: $\mathcal{M}^z \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_{D+2})^{1 \times k} \quad \triangleright$ Sample noisy sample
+2: $\mathcal{M}^1 \leftarrow \mathcal{M}^z + \int_0^1 u_t^\theta(\mathcal{M}^t, \mathcal{M}^0) \, dt \quad \triangleright$ Solve ODE
+***
 
 ### E.2 OT Gaussian Variational Flow Matching
 
 The OT Gaussian Variational Flow Matching (OT-GVFM) algorithm adopts a variational perspective on Flow Matching. Instead of directly learning a time-dependent conditional velocity field, the model learns a factorized variational posterior $q_t^\theta(\mathcal{M}^1 \mid \mathcal{M}^t, \mathcal{M}^0)$ over target microenvironments $\mathcal{M}^1$, conditioned on an interpolated microenvironment $\mathcal{M}^t$ and a source microenvironment $\mathcal{M}^0$. The predicted velocity field is then computed as the difference between the posterior mean $\mu_t^\theta(\mathcal{M}^t, \mathcal{M}^0)$ and the current state $\mathcal{M}^1$.
 
-32
+<center>32</center>

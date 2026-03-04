@@ -1,5 +1,3 @@
-Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 *Table 26. Interpolation for the middle holdout timestep 3 for CTF-H at $\lambda = 1$ (only using the spatial smoothness prior) on the Brain Regeneration dataset.*
 
 | Radius | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
@@ -12,10 +10,8 @@ Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 | 200 | $4.548 \pm 0.780$ | $4.249 \pm 1.315$ | $3.751 \pm 0.725$ | $3.677 \pm 1.016$ |
 | 250 | $4.768 \pm 1.994$ | $4.782 \pm 4.129$ | $4.281 \pm 0.985$ | $4.103 \pm 1.081$ |
 
-![Figure 17. Performance variation with radius for interpolation on the Brain Regeneration dataset.](assets/fig17.png)
+![Figure 17. Performance variation with radius for interpolation on the Brain Regeneration dataset.](assets/fig_17.png)
 
 (a) Next Step Sampling $\quad$ (b) IVP Sampling
 
-*Figure 17. Performance variation with radius for interpolation on the Brain Regeneration dataset.*
-
-38
+<p align="center">38</p>

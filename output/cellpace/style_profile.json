@@ -1,0 +1,51 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large font size (~24pt), sans-serif, left-aligned, multi-line title on the first page.",
+      "example_text": "CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics"
+    },
+    "h2": {
+      "visual_description": "Bold, sans-serif, left-aligned, significantly larger than body text, used for major sections like Abstract, Introduction, Results.",
+      "example_text": "Introduction"
+    },
+    "h3": {
+      "visual_description": "Bold, sans-serif, left-aligned, same font size as body text or slightly larger, used for sub-sections within Results or Methods.",
+      "example_text": "CellPace is a generative framework for modeling continuous single-cell temporal dynamics"
+    },
+    "h4": {
+      "visual_description": "Italicized, sans-serif, left-aligned, often followed by a colon or used as a sub-header in Methods.",
+      "example_text": "Single-cell RNA-seq datasets:"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Bold 'Fig.' followed by a number and a vertical pipe",
+      "semantic_meaning": "Figure Caption Header"
+    },
+    {
+      "pattern": "Multi-panel diagrams with alphabetical labels (a, b, c...) in bold sans-serif",
+      "semantic_meaning": "Scientific Figure/Schematic"
+    },
+    {
+      "pattern": "Numbered list with hanging indents and italicized journal titles",
+      "semantic_meaning": "Reference Bibliography"
+    },
+    {
+      "pattern": "Superscript numbers following names or within text",
+      "semantic_meaning": "Author Affiliations or Citations"
+    },
+    {
+      "pattern": "Blue hyperlinked text at the top of every page",
+      "semantic_meaning": "bioRxiv Preprint Metadata/DOI"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX style inline (e.g., $X_{GEX}$) or block notation for variables and equations.",
+    "table_style": "Standard markdown tables with bold headers; often represented as heatmaps or dot plots in visual figures.",
+    "citation_format": "Numerical indices in square brackets, e.g., [1], [10-12]."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "header_footer_pattern": "Header contains preprint DOI and license info in small blue/black text; Footer contains right-aligned Arabic numeral page numbers."
+  }
+}

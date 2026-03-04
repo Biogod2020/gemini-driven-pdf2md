@@ -1,11 +1,9 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 ### F.1. Metric Comparison
 
 DeST-OT introduces an OT objective for aligning spatial transcriptomic tissue slices from different developmental timesteps, with an emphasis on modeling cell growth and tissue expansion/contraction. The growth distortion metric is designed to assess whether the inferred growth pattern aligns with the changes in cell-type abundance across timesteps. As shown in Table 7, for the growth distortion metric, we find that our CTF-H OT is competitive with DeST-OT and TOAST, despite DeST-OT being specifically developed with consideration for cell growth.
 
 | Table 7. Comparison on growth distortion. | | | |
-| :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: |
 | **Static Pair** | **DeST-OT** | **TOAST** | **CTF-H OT** |
 | 1/2 | 0.0007 | 0.0000 | 0.0000 |
 | 2/3 | 0.0042 | 0.0000 | 0.0000 |
@@ -17,7 +15,7 @@ DeST-OT introduces an OT objective for aligning spatial transcriptomic tissue sl
 The migration metric is another important metric introduced in DeST-OT, which measures whether the coupling results in realistic cell movements between timesteps. As seen in Table 8, DeST-OT achieves the best performance, highlighting the advantage of its growth-aware objective compared to TOAST and CTF-H OT, which do not explicitly model tissue expansion or contraction.
 
 | Table 8. Comparison on migration. | | | |
-| :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: |
 | **Static Pair** | **DeST-OT** | **TOAST** | **CTF-H OT** |
 | 1/2 | 308.97 | 793.71 | 780.16 |
 | 2/3 | 551.53 | 1103.29 | 1037.29 |

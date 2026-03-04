@@ -1,14 +1,14 @@
 ```json
 {
   "document_metadata": {
-    "title": "References Section - Page 12",
-    "inferred_style": "academic bibliography"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Bibliography",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
 ```
-
----
 
 resolved transcriptomics reveals the subcellular RNA kinetic landscape. *Nature Methods*, 20(5): 695–705, April 2023.
 
@@ -40,4 +40,4 @@ resolved transcriptomics reveals the subcellular RNA kinetic landscape. *Nature 
 
 [29] Dominik Klein, Théo Uscidda, Fabian Theis, and Marco Cuturi. Genot: Entropic (gromov) wasserstein flow matching with applications to single-cell genomics. *Advances in Neural Information Processing Systems*, 37:103897–103944, 2024.
 
-12
+<div style="text-align: center;">12</div>

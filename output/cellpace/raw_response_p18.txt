@@ -1,0 +1,24 @@
+---
+```json
+{
+  "document_metadata": {
+    "title": "CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics",
+    "style": "Scientific Preprint (bioRxiv)",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": []
+}
+```
+
+---
+
+separation of neuromesodermal progenitors into neural and mesodermal branches and the anterior-posterior patterning of gut progenitors. Spatial mapping to the MOSTA atlas further showed that CellPace-generated cells retain sufficient positional information to be assigned to anatomically specific regions with confidence comparable to real cells. Gene-regulatory networks inferred from generated data captured the degree distributions and stage-dependent activity profiles of key regulons. This indicates that the diffusion dynamics preserve not only marginal gene expression but also coordinated regulatory programs that drive lineage commitment. In the multiome setting, the model captured joint RNA-ATAC correlations at held-out late pseudotime bins, a regime where the alternative model struggled. This capacity to model joint dynamics from inferred pseudotime underscores the framework’s robustness to sparse or irregular temporal sampling, a common challenge in atlas-scale integration where dense experimental time series are often unavailable.
+
+In our analyses, we observed some models (particularly CFGen) to perform well during simulation based on observed timepoints, while struggling in interpolation or temporal forecasting. One should note that CFGen and other similar models are designed for class-conditional generation and do not naturally support temporal extrapolation. Our post-hoc approach represents a best-effort, user-level adaptation, rather than a task-specific redesign. As such, their performance in these regimes should be considered a practical reference point rather than a definitive statement about each method’s theoretical limits. However, this further underscores the necessity of frameworks like CellPace that explicitly model temporal continuity for predictive tasks.
+
+We believe CellPace represents a substantive step toward a more general family of temporal generative models for single-cell biology. One natural extension is to move beyond transcriptomic and chromatin accessibility to multi-layer representations in which additionally, genomic information, regulatory elements, and protein features are mapped into the shared latent space before temporal diffusion, enabling a unified treatment of the constraints on cell state. A second direction is to incorporate spatially resolved measurements so that CellPace models continuous spatiotemporal fields, learning not only how cell states change over time but also how they organize within developing tissues. Finally, the same architecture invites cross-species transfer learning: by aligning latent manifolds across species, one could train dynamics where core developmental programs are shared while species-specific adapters capture divergent trajectories. Together, these extensions point toward a more general, sequence-aware, and spatially grounded representation of cellular dynamics built on the foundations established here.
+
+<br>
+
+19

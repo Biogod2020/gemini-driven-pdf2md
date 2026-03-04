@@ -1,6 +1,4 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
-### G.2.3. LIVER REGENERATION
+#### G.2.3. LIVER REGENERATION
 
 ![Figure 7. Temporal progression of spatial distribution of fibrogenic states for Liver Regeneration. Here, 0/1 refers to the absence or presence of fibrogenic spots.](assets/fig7.png)
 
@@ -11,5 +9,3 @@ Figure 8 shows the ligand-receptor score of the NPTX2-NPTXR pair in two consecut
 ![Figure 8. Spatial distributions of LR activation for NPTX2-NPTXR in two consecutive slides from the Brain regeneration dataset. Similar activations are visible at structurally equal positions.](assets/fig8.png)
 
 Based on the activation of NPTX2–NPTXR in Figure 8, we observe that the corresponding communication pattern naturally
-
-26

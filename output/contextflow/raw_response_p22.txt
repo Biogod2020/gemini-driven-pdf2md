@@ -1,31 +1,28 @@
+---
 ```json
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_paper_appendix"
+    "style": "Academic Paper - Appendix/Results Section",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
-      "id": "fig_dist",
-      "type": "chart",
-      "bbox": [91, 558, 264, 868],
-      "caption": "Line chart showing Coupled Transcriptomic Distance across Static Pairs 1/2, 2/3, 3/4, and 4/5 for CTF-H OT, DeST-OT, and TOAST.",
-      "description": "A line graph plotting coupled transcriptomic distance for four static pairs. All three methods follow a similar trend, peaking at pair 3/4 and dipping at 2/3."
+      "id": "fig_coupled_transcriptomic_distance",
+      "bbox": [95, 558, 263, 868],
+      "caption": "Line plot showing Coupled Transcriptomic Distance across static pairs for CTF-H OT, DeST-OT, and TOAST."
     },
     {
-      "id": "fig_runtime",
-      "type": "chart",
-      "bbox": [536, 535, 733, 864],
-      "caption": "Line chart showing Runtime (s) vs Sample Size for CTF-H OT, DeST-OT, and TOAST.",
-      "description": "A line graph showing runtime in seconds as sample size increases from 0 to 1000. DeST-OT shows a steep non-linear increase, while TOAST and CTF-H OT remain relatively flat and low."
+      "id": "fig_runtime_analysis",
+      "bbox": [538, 530, 733, 868],
+      "caption": "Line plot showing Runtime (s) vs Sample Size for CTF-H OT, DeST-OT, and TOAST."
     }
   ]
 }
 ```
 
 ---
-
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 
 *Table 9. On coupled transcriptomic distance.*
 
@@ -36,7 +33,7 @@
 | 3/4 | 42.26 | 43.89 | 43.26 |
 | 4/5 | 18.47 | 20.54 | 20.14 |
 
-![Line chart showing Coupled Transcriptomic Distance across Static Pairs 1/2, 2/3, 3/4, and 4/5 for CTF-H OT, DeST-OT, and TOAST.](assets/fig_dist.png)
+![Line plot showing Coupled Transcriptomic Distance across static pairs for CTF-H OT, DeST-OT, and TOAST.](assets/fig_coupled_transcriptomic_distance.png)
 
 ### F.2. Runtime Analysis with Varying Sample Size
 
@@ -68,6 +65,8 @@ We also compare the runtime complexity of the above-mentioned OT methods, as sho
 | 950 | 5.0965 | 0.4206 | 0.0509 |
 | 1000 | 6.1452 | 0.4931 | 0.0375 |
 
-![Line chart showing Runtime (s) vs Sample Size for CTF-H OT, DeST-OT, and TOAST.](assets/fig_runtime.png)
+![Line plot showing Runtime (s) vs Sample Size for CTF-H OT, DeST-OT, and TOAST.](assets/fig_runtime_analysis.png)
 
 Tables 7-10 demonstrate that the design choices of ContextFlow enable it to be highly scalable compared to state-of-the-art spatiotemporal alignment methods, while remaining competitive across several spatiotemporal OT alignment metrics.
+
+---

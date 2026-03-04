@@ -1,35 +1,48 @@
-**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
-
 merous biological processes, including development, apoptosis, and the maintenance of homeostasis in health and disease (Armingol et al., 2024). A major type of CCC is ligand–receptor (LR) signaling, in which ligands expressed by one cell bind to cognate receptors on another, initiating intracellular cascades that ultimately affect the state of the cell (i.e., its expression profile) (Armingol et al., 2021). There are numerous databases of prior knowledge of ligand–receptor binding and computational methods that use these databases to systematically link gene expression with the activity of ligand–receptor-mediated communication.
 
 Specifically, we represent each cell $c_i$ by a feature vector $f_{LR} \in \mathbb{R}^p$, where each entry corresponds to one of $p$ possible ligand–receptor pairs and encodes the extent of $c_i$’s participation in communication through that pair. The transitional plausibility $\text{TP}(c_i, c_j)$ between cells in different tissue slices is higher when they exhibit similar ligand–receptor communication patterns $f_{LR}$ (see Figure 8 for an illustration). Formally, we define $\text{LR}(c_i, c_j)$, the dissimilarity between the ligand–receptor communication patterns in the microenvironments of cells $c_i$ and $c_j$, as:
 
-$$ \text{LR}(c_i, c_j) = \| f_{LR}(\mathcal{N}_r(c_i)) - f_{LR}(\mathcal{N}_r(c_j)) \|_2^2. \tag{10} $$
+$$
+\text{LR}(c_i, c_j) = \| f_{LR}(\mathcal{N}_r(c_i)) - f_{LR}(\mathcal{N}_r(c_j)) \|_2^2. \tag{10}
+$$
 
 ### 3.3. Flow Matching with Context-Aware OT Couplings
 
-Our proposed framework, graphically depicted in Figure 1, consists of the following three main steps:
+Our proposed framework, graphically depicted in Figure 1, consists of the following three steps:
 
-**Transitional Plausibility Matrix.** To begin with, we create a sequence of *transitional plausibility matrices* (TPMs) to encode the biological priors for each pair of consecutive time points. Specifically, denote by $\mathbf{M}_{i,i+1} \in \mathbb{R}^{n_i \times n_{i+1}}$ the TPM with respect to the set of cells measured at time $t_i$ and at time $t_{i+1}$, with size $n_i$ and $n_{i+1}$ respectively, where the $(k, l)$-th entry of $\mathbf{M}_{i,i+1}$ indicates how plausibly the $k$-th cell measured at $t_i$ will evolve to the $l$-th cell measured at $t_{i+1}$, defined as follows:
+#### Transitional Plausibility Matrix.
+To begin with, we create a sequence of *transitional plausibility matrices* (TPMs) to encode the biological priors for each pair of consecutive time points. Specifically, denote by $\mathbf{M}_{i,i+1} \in \mathbb{R}^{n_i \times n_{i+1}}$ the TPM with respect to the set of cells measured at time $t_i$ and at time $t_{i+1}$, with size $n_i$ and $n_{i+1}$ respectively, where the $(k, l)$-th entry of $\mathbf{M}_{i,i+1}$ indicates how plausibly the $k$-th cell measured at $t_i$ will evolve to the $l$-th cell measured at $t_{i+1}$, defined as follows:
 
-$$ [\mathbf{M}_{i,i+1}]_{kl} = \lambda \cdot \text{SS}\left(c_i(k), c_{i+1}(l)\right) + (1 - \lambda) \cdot \text{LR}\left(c_i(k), c_{i+1}(l)\right). \tag{11} $$
+$$
+\begin{aligned}
+[\mathbf{M}_{i,i+1}]_{kl} = \lambda \cdot \text{SS}\left(c_i(k), c_{i+1}(l)\right) \\
++ (1 - \lambda) \cdot \text{LR}\left(c_i(k), c_{i+1}(l)\right).
+\end{aligned} \tag{11}
+$$
 
 Here, $\lambda \in [0, 1]$ denotes a trade-off hyperparameter that balances the contribution of the spatial smoothness prior (SS) and the ligand–receptor communication prior (LR).
 
-**Prior-Regularized OT Couplings.** The transitional plausibility matrices capture our spatially informed prior over cell-cell transitions between consecutive time points, which can naturally be incorporated into the EOT formulation (Equation 7) to promote couplings that maintain the structural and functional properties of tissue organization. We propose two techniques for prior integration:
+#### Prior-Regularized OT Couplings.
+The transitional plausibility matrices capture our spatially informed prior over cell-cell transitions between consecutive time points, which can naturally be incorporated into the EOT formulation (Equation 7) to promote couplings that maintain the structural and functional properties of tissue organization. We propose two techniques for prior integration:
 
 *Prior-Aware Cost Matrix (PACM).* Consider the empirical counterpart of Equation 7 with respect to time $t_i$ and time $t_{i+1}$. Our first PACM approach incorporates the transitional plausibility matrix directly into the transport cost:
 
-$$ \min_{\Pi \in \mathbb{R}_+^{n_i \times n_{i+1}}} \langle \Pi, \mathbf{C}_{i,i+1} \rangle - \epsilon \sum_{k,l} \Pi_{kl} (\log \Pi_{kl} - 1), \tag{12} $$
+$$
+\min_{\mathbf{\Pi} \in \mathbb{R}_+^{n_i \times n_{i+1}}} \langle \mathbf{\Pi}, \mathbf{C}_{i,i+1} \rangle - \epsilon \sum_{k,l} \Pi_{kl} (\log \Pi_{kl} - 1), \tag{12}
+$$
 
-where the $(k, l)$-th entry of the new prior-aware cost matrix is $[\mathbf{C}_{i,i+1}]_{kl} = \alpha \| \boldsymbol{x}_i(k) - \boldsymbol{x}_{i+1}(l) \|_2^2 + (1 - \alpha) [\mathbf{M}_{i,i+1}]_{kl}$, the transport plan $\Pi$ needs to satisfy the boundary conditions: $\sum_l \Pi_{kl} = 1/n_i$ for any $k \in [n_i]$, and $\sum_k \Pi_{kl} = 1/n_{i+1}$ for any $l \in [n_{i+1}]$, and $\alpha \in [0, 1]$ controls the trade-off between the original Euclidean cost and the prior-aware cost derived from the transitional plausibility. If $[\mathbf{M}_{i,i+1}]_{kl}$ is high, Equation 12 will impose a higher transport cost between the $k$-cell at time $i$ to the $j$-cell at time $i + 1$. This observation aligns with our assumption that such transitions should be more biologically implausible.
+where the $(k, l)$-th entry of the new prior-aware cost matrix is $[\mathbf{C}_{i,i+1}]_{kl} = \alpha \| \boldsymbol{x}_i(k) - \boldsymbol{x}_{i+1}(l) \|_2^2 + (1 - \alpha) [\mathbf{M}_{i,i+1}]_{kl}$, the transport plan $\mathbf{\Pi}$ needs to satisfy the boundary conditions: $\sum_l \Pi_{kl} = 1/n_i$ for any $k \in [n_i]$, and $\sum_k \Pi_{kl} = 1/n_{i+1}$ for any $l \in [n_{i+1}]$, and $\alpha \in [0, 1]$ controls the trade-off between the original Euclidean cost and the prior-aware cost derived from the transitional plausibility. If $[\mathbf{M}_{i,i+1}]_{kl}$ is high, Equation 12 will impose a higher transport cost between the $k$-cell at time $i$ to the $j$-cell at time $i + 1$. This observation aligns with our assumption that such transitions should be more biologically implausible.
 
 *Prior-Aware Entropy Regularization (PAER).* While the previous PACM approach penalizes couplings according to our spatial priors, it defines a different OT problem with a modified cost function. Consequently, the standard interpretation of OT as minimizing the transport energy between two transcriptomic distributions no longer holds. Since the scales of the pairwise distances often differ, normalization of the cost terms is required to enable meaningful comparison. This normalization, however, may result in couplings that deviate from their original counterparts (see Proposition 1 and Corollary 1 in Appendix D). Besides, selecting an appropriate $\alpha$ in Equation 12 introduces an additional layer of tuning, increasing computational overhead. Therefore, we propose the second PAER approach to integrate the biological priors without introducing additional hyperparameters:
 
-$$ \min_{\Pi \in \mathbb{R}_+^{n_i \times n_{i+1}}} \underbrace{\sum_{k,l} \Pi_{kl} \| \boldsymbol{x}_i(k) - \boldsymbol{x}_{i+1}(l) \|_2^2 - \epsilon \sum_{k,l} \Pi_{kl} \left( \log \left( \Pi_{kl} / [\widehat{\mathbf{M}}_{i,i+1}]_{kl} \right) - 1 \right)}_{\text{Prior-Aware Entropy Regularization}}, \tag{13} $$
+$$
+\begin{aligned}
+\min_{\mathbf{\Pi} \in \mathbb{R}_+^{n_i \times n_{i+1}}} & \sum_{k,l} \Pi_{kl} \| \boldsymbol{x}_i(k) - \boldsymbol{x}_{i+1}(l) \|_2^2 \\
+& - \epsilon \underbrace{\sum_{k,l} \Pi_{kl} \left( \log \left( \Pi_{kl} / [\widehat{\mathbf{M}}_{i,i+1}]_{kl} \right) - 1 \right)}_{\text{Prior-Aware Entropy Regularization}},
+\end{aligned} \tag{13}
+$$
 
 where $[\widehat{\mathbf{M}}_{i,i+1}]_{kl} = \frac{\exp(-[\mathbf{M}_{i,i+1}]_{kl})}{\sum_l \exp(-[\mathbf{M}_{i,i+1}]_{kl})}$ denotes the $(k, l)$-th entry of the prior joint probability matrix induced by the originally constructed $\mathbf{M}_{i,i+1}$. Note that the lower the cost $[\mathbf{M}_{i,i+1}]_{kl}$, the larger the entry $[\widehat{\mathbf{M}}_{i,i+1}]_{kl}$, suggesting a higher plausibility of the transition from cell $k$ at $t_i$ to cell $l$ at $t_{i+1}$. The entropy regularization term in Equation 13 thus biases the learned transport plan toward the prior $\widehat{\mathbf{M}}_{i,i+1}$ rather than a uniform baseline, providing a soft mechanism for incorporating biological prior knowledge.
 
-**ContextFlow.** We apply the Sinkhorn algorithm (Cuturi, 2013) to solve the optimization problems defined in Equations 12 and 13 to obtain the spatial context-aware EOT couplings, and train the neural velocity vector field $u_\theta$ based on stochastic gradient descent by minimizing the multi-time
-
-5
+#### ContextFlow.
+We apply the Sinkhorn algorithm (Cuturi, 2013) to solve the optimization problems defined in Equations 12 and 13 to obtain the spatial context-aware EOT couplings, and train the neural velocity vector field $u_\theta$ based on stochastic gradient descent by minimizing the multi-time

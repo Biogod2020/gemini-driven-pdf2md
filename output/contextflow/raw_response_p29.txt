@@ -1,8 +1,11 @@
+---
 ```json
 {
-  "document_metadata": {
-    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_technical_appendix"
+  "document_metadata": { 
+    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data", 
+    "style": "Academic Paper - Appendix",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
@@ -10,48 +13,46 @@
 
 ---
 
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 ## H.3. Next Step Sampling for Mouse Embryo Organogenesis
 
 Table 15. Interpolation via Next Step Sampling at holdout time 5 for the Mouse Organogenesis dataset.
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | | MOTFM | $-$ | $-$ | $1.892 \pm 0.028$ | $1.873 \pm 0.086$ | $0.164 \pm 0.002$ | $11.615 \pm 0.092$ |
-| Next Step | CTF-C | $1$ | $0.2$ | $1.881 \pm 0.020$ | $1.922 \pm 0.078$ | $0.158 \pm 0.003$ | $11.529 \pm 0.197$ |
-| | | $1$ | $0.5$ | $\mathbf{1.865 \pm 0.030}$ | $1.852 \pm 0.093$ | $0.159 \pm 0.001$ | $11.482 \pm 0.108$ |
-| | | $1$ | $0.8$ | $1.889 \pm 0.024$ | $1.888 \pm 0.082$ | $0.161 \pm 0.002$ | $11.552 \pm 0.166$ |
-| | | $0$ | $0.2$ | $1.893 \pm 0.035$ | $1.912 \pm 0.057$ | $0.159 \pm 0.001$ | $11.462 \pm 0.154$ |
-| | | $0$ | $0.5$ | $1.877 \pm 0.039$ | $1.933 \pm 0.088$ | $0.162 \pm 0.002$ | $11.528 \pm 0.110$ |
-| | | $0$ | $0.8$ | $1.882 \pm 0.022$ | $1.869 \pm 0.049$ | $0.161 \pm 0.001$ | $\mathbf{11.399 \pm 0.119}$ |
-| | | $0.5$ | $0.2$ | $1.886 \pm 0.022$ | $1.927 \pm 0.111$ | $\mathbf{0.157 \pm 0.002}$ | $11.430 \pm 0.131$ |
-| | | $0.5$ | $0.5$ | $1.899 \pm 0.027$ | $1.899 \pm 0.072$ | $0.160 \pm 0.002$ | $11.517 \pm 0.097$ |
-| | | $0.5$ | $0.8$ | $1.888 \pm 0.033$ | $\mathbf{1.839 \pm 0.134}$ | $0.161 \pm 0.002$ | $11.475 \pm 0.159$ |
-| | CTF-H | $0$ | $-$ | $1.884 \pm 0.027$ | $1.862 \pm 0.123$ | $0.164 \pm 0.001$ | $11.499 \pm 0.123$ |
-| | | $1$ | $-$ | $1.898 \pm 0.029$ | $1.866 \pm 0.097$ | $0.167 \pm 0.002$ | $11.795 \pm 0.170$ |
-| | | $0.5$ | $-$ | $1.871 \pm 0.030$ | $1.919 \pm 0.067$ | $0.164 \pm 0.002$ | $11.639 \pm 0.182$ |
+| Next Step | CTF-C | 1 | 0.2 | $1.881 \pm 0.020$ | $1.922 \pm 0.078$ | $0.158 \pm 0.003$ | $11.529 \pm 0.197$ |
+| | | 1 | 0.5 | $\mathbf{1.865 \pm 0.030}$ | $1.852 \pm 0.093$ | $0.159 \pm 0.001$ | $11.482 \pm 0.108$ |
+| | | 1 | 0.8 | $1.889 \pm 0.024$ | $1.888 \pm 0.082$ | $0.161 \pm 0.002$ | $11.552 \pm 0.166$ |
+| | | 0 | 0.2 | $1.893 \pm 0.035$ | $1.912 \pm 0.057$ | $0.159 \pm 0.001$ | $11.462 \pm 0.154$ |
+| | | 0 | 0.5 | $1.877 \pm 0.039$ | $1.933 \pm 0.088$ | $0.162 \pm 0.002$ | $11.528 \pm 0.110$ |
+| | | 0 | 0.8 | $1.882 \pm 0.022$ | $1.869 \pm 0.049$ | $0.161 \pm 0.001$ | $\mathbf{11.399 \pm 0.119}$ |
+| | | 0.5 | 0.2 | $1.886 \pm 0.022$ | $1.927 \pm 0.111$ | $\mathbf{0.157 \pm 0.002}$ | $11.430 \pm 0.131$ |
+| | | 0.5 | 0.5 | $1.899 \pm 0.027$ | $1.899 \pm 0.072$ | $0.160 \pm 0.002$ | $11.517 \pm 0.097$ |
+| | | 0.5 | 0.8 | $1.888 \pm 0.033$ | $\mathbf{1.839 \pm 0.134}$ | $0.161 \pm 0.002$ | $11.475 \pm 0.159$ |
+| | CTF-H | 0 | $-$ | $1.884 \pm 0.027$ | $1.862 \pm 0.123$ | $0.164 \pm 0.001$ | $11.499 \pm 0.123$ |
+| | | 1 | $-$ | $1.898 \pm 0.029$ | $1.866 \pm 0.097$ | $0.167 \pm 0.002$ | $11.795 \pm 0.170$ |
+| | | 0.5 | $-$ | $1.871 \pm 0.030$ | $1.919 \pm 0.067$ | $0.164 \pm 0.002$ | $11.639 \pm 0.182$ |
 
 Table 16. Extrapolation via Next Step Sampling at holdout time 8 for Mouse Organogenesis.
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
 | | MOTFM | $-$ | $-$ | $1.626 \pm 0.066$ | $1.682 \pm 0.096$ | $0.084 \pm 0.007$ | $7.418 \pm 0.749$ |
-| Next Step | CTF-C | $1$ | $0.2$ | $1.683 \pm 0.058$ | $1.803 \pm 0.117$ | $0.087 \pm 0.006$ | $7.830 \pm 0.551$ |
-| | | $1$ | $0.5$ | $1.685 \pm 0.096$ | $1.714 \pm 0.159$ | $0.089 \pm 0.006$ | $8.056 \pm 1.033$ |
-| | | $1$ | $0.8$ | $1.703 \pm 0.063$ | $1.830 \pm 0.131$ | $0.095 \pm 0.005$ | $8.928 \pm 0.723$ |
-| | | $0$ | $0.2$ | $1.715 \pm 0.123$ | $1.860 \pm 0.267$ | $0.094 \pm 0.009$ | $9.021 \pm 1.740$ |
-| | | $0$ | $0.5$ | $1.725 \pm 0.082$ | $1.856 \pm 0.191$ | $0.093 \pm 0.006$ | $8.806 \pm 0.749$ |
-| | | $0$ | $0.8$ | $1.774 \pm 0.053$ | $1.897 \pm 0.175$ | $0.094 \pm 0.007$ | $9.466 \pm 0.957$ |
-| | | $0.5$ | $0.2$ | $1.818 \pm 0.096$ | $2.089 \pm 0.222$ | $0.084 \pm 0.008$ | $8.875 \pm 0.976$ |
-| | | $0.5$ | $0.5$ | $1.774 \pm 0.104$ | $1.899 \pm 0.280$ | $0.093 \pm 0.007$ | $9.139 \pm 1.437$ |
-| | | $0.5$ | $0.8$ | $1.768 \pm 0.058$ | $1.858 \pm 0.120$ | $0.101 \pm 0.006$ | $9.303 \pm 0.634$ |
-| | CTF-H | $0$ | $-$ | $\mathbf{1.505 \pm 0.057}$ | $\mathbf{1.397 \pm 0.088}$ | $0.087 \pm 0.005$ | $\mathbf{5.954 \pm 0.492}$ |
-| | | $1$ | $-$ | $1.890 \pm 0.046$ | $1.877 \pm 0.103$ | $0.147 \pm 0.006$ | $10.752 \pm 0.405$ |
-| | | $0.5$ | $-$ | $1.636 \pm 0.060$ | $1.684 \pm 0.099$ | $\mathbf{0.081 \pm 0.005}$ | $7.088 \pm 0.692$ |
+| Next Step | CTF-C | 1 | 0.2 | $1.683 \pm 0.058$ | $1.803 \pm 0.117$ | $0.087 \pm 0.006$ | $7.830 \pm 0.551$ |
+| | | 1 | 0.5 | $1.685 \pm 0.096$ | $1.714 \pm 0.159$ | $0.089 \pm 0.006$ | $8.056 \pm 1.033$ |
+| | | 1 | 0.8 | $1.703 \pm 0.063$ | $1.830 \pm 0.131$ | $0.095 \pm 0.005$ | $8.928 \pm 0.723$ |
+| | | 0 | 0.2 | $1.715 \pm 0.123$ | $1.860 \pm 0.267$ | $0.094 \pm 0.009$ | $9.021 \pm 1.740$ |
+| | | 0 | 0.5 | $1.725 \pm 0.082$ | $1.856 \pm 0.191$ | $0.093 \pm 0.006$ | $8.806 \pm 0.749$ |
+| | | 0 | 0.8 | $1.774 \pm 0.053$ | $1.897 \pm 0.175$ | $0.094 \pm 0.007$ | $9.466 \pm 0.957$ |
+| | | 0.5 | 0.2 | $1.818 \pm 0.096$ | $2.089 \pm 0.222$ | $0.084 \pm 0.008$ | $8.875 \pm 0.976$ |
+| | | 0.5 | 0.5 | $1.774 \pm 0.104$ | $1.899 \pm 0.280$ | $0.093 \pm 0.007$ | $9.139 \pm 1.437$ |
+| | | 0.5 | 0.8 | $1.768 \pm 0.058$ | $1.858 \pm 0.120$ | $0.101 \pm 0.006$ | $9.303 \pm 0.634$ |
+| | CTF-H | 0 | $-$ | $\mathbf{1.505 \pm 0.057}$ | $\mathbf{1.397 \pm 0.088}$ | $0.087 \pm 0.005$ | $\mathbf{5.954 \pm 0.492}$ |
+| | | 1 | $-$ | $1.890 \pm 0.046$ | $1.877 \pm 0.103$ | $0.147 \pm 0.006$ | $10.752 \pm 0.405$ |
+| | | 0.5 | $-$ | $1.636 \pm 0.060$ | $1.684 \pm 0.099$ | $\mathbf{0.081 \pm 0.005}$ | $7.088 \pm 0.692$ |
 
 ## H.4. IVP Sampling for Mouse Embryo Organogenesis
 
 Extrapolating to the last holdout time point of the mouse organogenesis dataset (Chen et al., 2022), particularly under IVP-Sampling, represents the most challenging setting among all our experiments. This difficulty arises because the target time point lies entirely outside the training horizon, requiring integration from the initial samples through to the end. As a result, the velocity field has more opportunity to drift in incorrect directions, often leading to generations that deviate substantially from the true dynamics. In our experiments, this instability was evident: across 10 runs, several produced highly unstable trajectories, reflecting the sensitivity of the system to initial conditions and numerical solvers. This variability is also captured in the performance metrics reported in Table 18.
 
----
+<center>30</center>

@@ -1,5 +1,3 @@
-**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
-
 Wagner, D. E. and Klein, A. M. Lineage tracing meets single-cell omics: opportunities and challenges. *Nature Reviews Genetics*, 21(7):410–427, 2020.
 
 Wei, X., Fu, S., Li, H., Liu, Y., Wang, S., Feng, W., Yang, Y., Liu, X., Zeng, Y.-Y., Cheng, M., et al. Single-cell stereo-seq reveals induced progenitor cells involved in axolotl brain regeneration. *Science*, 377(6610):eabp9444, 2022.
@@ -9,3 +7,7 @@ Zeira, R., Land, M., Strzalkowski, A., and Raphael, B. J. Alignment and integrat
 Zhang, Y., Su, Y., Wang, C., Li, T., Wefers, Z., Nirschl, J., Burgess, J., Ding, D., Lozano, A., Lundberg, E., et al. Cellflux: Simulating cellular morphology changes via flow matching. *arXiv preprint arXiv:2502.09775*, 2025.
 
 Zheng, Y., Schupp, J. C., Adams, T., Clair, G., Justet, A., Ahangari, F., Yan, X., Hansen, P., Carlon, M., Cortesi, E., et al. A deep generative model for deciphering cellular dynamics and in silico drug discovery in complex diseases. *Nature Biomedical Engineering*, pp. 1–26, 2025.
+
+<br>
+
+11

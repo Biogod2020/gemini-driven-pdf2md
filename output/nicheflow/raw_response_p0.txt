@@ -2,7 +2,9 @@
 {
   "document_metadata": {
     "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
-    "inferred_style": "academic paper"
+    "style": "NeurIPS Conference Paper",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
@@ -25,9 +27,7 @@ Correspondence to: `{k.sakalyan, a.palma, f.guerranti}@tum.de`
 
 Understanding the evolution of cellular microenvironments in spatiotemporal data is essential for deciphering tissue development and disease progression. While experimental techniques like spatial transcriptomics now enable high-resolution mapping of tissue organization across space and time, current methods that model cellular evolution operate at the single-cell level, overlooking the coordinated development of cellular states in a tissue. We introduce NicheFlow, a flow-based generative model that infers the temporal trajectory of cellular microenvironments across sequential spatial slides. By representing local cell neighborhoods as point clouds, NicheFlow jointly models the evolution of cell states and spatial coordinates using optimal transport and Variational Flow Matching. Our approach successfully recovers both global spatial architecture and local microenvironment composition across diverse spatiotemporal datasets, from embryonic to brain development$^1$.
 
----
-
-### 1 Introduction
+## 1 Introduction
 
 Uncovering the principles governing tissue organization across space and time remains one of the most fundamental challenges in biology, with profound implications for evolutionary and developmental studies [1, 2]. While individual cells form the basic units of biological systems, they operate not in isolation but as integral parts of spatially organized *microenvironments*, functionally distinct neighborhoods, or *niches*, shaped by cell-to-cell interactions and extracellular components [3–5]. These spatial microenvironments influence crucial biological processes, from tumor progression to immune infiltration and tissue regeneration [6–8].
 

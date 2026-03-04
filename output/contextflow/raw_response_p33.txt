@@ -1,24 +1,23 @@
+---
 ```json
 {
-  "document_metadata": {
-    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_paper_appendix"
+  "document_metadata": { 
+    "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data", 
+    "style": "Academic Paper - Appendix/Results Section",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
-  "assets": [
-    {
-      "id": "fig11",
-      "type": "figure",
-      "bbox": [281, 131, 517, 840],
-      "caption": "Figure 11. Performance variation with λ for extrapolation on the Brain Regeneration dataset.",
-      "description": "Two line charts showing metric values (log scale) against Lambda values ranging from 0.0 to 1.0. Left plot (a) shows Next Step Sampling, and right plot (b) shows IVP Sampling. Both plots compare 'Wasserstein' and 'Weighted Wasserstein' metrics."
-    }
+  "assets": [ 
+    { 
+      "id": "fig_11", 
+      "bbox": [281, 128, 504, 841], 
+      "caption": "Figure 11. Performance variation with λ for extrapolation on the Brain Regeneration dataset." 
+    } 
   ]
 }
 ```
 
 ---
-
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 
 *Table 20. Extrapolation on the last holdout timestep on the Brain Regeneration dataset.*
 
@@ -30,8 +29,15 @@
 | 0.8 | $7.333 \pm 0.605$ | $7.334 \pm 0.622$ | $6.598 \pm 0.892$ | $6.402 \pm 1.039$ |
 | 1 | $7.505 \pm 0.667$ | $7.338 \pm 0.601$ | $5.277 \pm 0.936$ | $6.021 \pm 1.192$ |
 
-![Figure 11. Performance variation with λ for extrapolation on the Brain Regeneration dataset.](assets/fig11.png)
+![ (a) Next Step Sampling (b) IVP Sampling Figure 11. Performance variation with λ for extrapolation on the Brain Regeneration dataset.](assets/fig_11.png)
 
-(a) Next Step Sampling \hspace{2cm} (b) IVP Sampling
+<p align="center">
+(a) Next Step Sampling &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (b) IVP Sampling
+</p>
 
-34
+<p align="center">
+<i>Figure 11. Performance variation with $\lambda$ for extrapolation on the Brain Regeneration dataset.</i>
+</p>
+
+<br>
+<p align="center">34</p>

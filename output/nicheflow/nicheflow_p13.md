@@ -1,6 +1,6 @@
 [44] Kok Hao Chen, Alistair N Boettiger, Jeffrey R Moffitt, Siyuan Wang, and Xiaowei Zhuang. Spatially resolved, highly multiplexed rna profiling in single cells. *Science*, 348(6233):aaa6090, 2015.
 
-[45] Titouan Vayer, Nicolas Courty, Romain Tavenard, and Rémi Flamary. Optimal Transport for Structured Data with Application on Graphs. In *Proceedings of the 36th International Conference on Machine Learning*, volume 97 of *Proceedings of Machine Learning Research*, pages 6275–6284. PMLR, 2019.
+[45] Tituan Vayer, Nicolas Courty, Romain Tavenard, and Rémi Flamary. Optimal Transport for Structured Data with Application on Graphs. In *Proceedings of the 36th International Conference on Machine Learning*, volume 97 of *Proceedings of Machine Learning Research*, pages 6275–6284. PMLR, 2019.
 
 [46] Haoqiang Fan, Hao Su, and Leonidas Guibas. A point set generation network for 3d object reconstruction from a single image. In *Computer Vision and Pattern Recognition*, 2016.
 
@@ -14,4 +14,4 @@
 
 <br>
 
-14
+<p align="center">14</p>

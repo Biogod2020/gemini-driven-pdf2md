@@ -1,8 +1,11 @@
+---
 ```json
 {
   "document_metadata": {
     "title": "ContextFlow: Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic paper"
+    "style": "Academic Paper (ArXiv)",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
@@ -12,12 +15,12 @@
 
 # ContextFlow: Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 
-**Santanu Subhash Rathod** $^1$ **Francesco Ceccarelli** $^2$ **Sean B. Holden** $^2$ **Pietro Liò** $^2$  
-**Xiao Zhang** $^1$ **Jovan Tanevski** $^{3,4}$
+**Santanu Subhash Rathod**$^1$ **Francesco Ceccarelli**$^2$ **Sean B. Holden**$^2$ **Pietro Liò**$^2$  
+**Xiao Zhang**$^1$ **Jovan Tanevski**$^{3,4}$
 
 ### Abstract
 
-Inferring trajectories from longitudinal spatially-resolved omics data is fundamental to understanding the dynamics of structural and functional tissue changes in development, regeneration and repair, disease progression, and response to treatment. We propose ContextFlow, a novel context-aware flow matching framework that incorporates prior knowledge to guide the inference of structural tissue dynamics from spatially resolved omics data. Specifically, ContextFlow integrates local tissue organization and ligand-receptor communication patterns into a transition plausibility matrix that regularizes the optimal transport objective. By embedding these contextual constraints, ContextFlow generates trajectories that are not only statistically consistent but also biologically meaningful, making it a generalizable framework for modeling spatiotemporal dynamics from longitudinal, spatially resolved omics data. Comprehensive experiments show that ContextFlow consistently outperforms state-of-the-art flow matching methods across multiple metrics of inference accuracy and biological coherence. Our code is available at: https://github.com/santanurathod/ContextFlow.
+Inferring trajectories from longitudinal spatially-resolved omics data is fundamental to understanding the dynamics of structural and functional tissue changes in development, regeneration and repair, disease progression, and response to treatment. We propose ContextFlow, a novel context-aware flow matching framework that incorporates prior knowledge to guide the inference of structural tissue dynamics from spatially resolved omics data. Specifically, ContextFlow integrates local tissue organization and ligand-receptor communication patterns into a transition plausibility matrix that regularizes the optimal transport objective. By embedding these contextual constraints, ContextFlow generates trajectories that are not only statistically consistent but also biologically meaningful, making it a generalizable framework for modeling spatiotemporal dynamics from longitudinal, spatially resolved omics data. Comprehensive experiments show that ContextFlow consistently outperforms state-of-the-art flow matching methods across multiple metrics of inference accuracy and biological coherence. Our code is available at: [https://github.com/santanurathod/ContextFlow](https://github.com/santanurathod/ContextFlow).
 
 ### 1. Introduction
 
@@ -29,3 +32,5 @@ The state and function of cells within a tissue are affected by interactions wit
 $^1$CISPA Helmholtz Center for Information Security, Saarbrücken, Germany $^2$Department of Computer Science and Technology, University of Cambridge, Cambridge, UK $^3$Institute for Computational Biomedicine, Heidelberg University, Germany $^4$Heidelberg University Hospital, Germany. Correspondence to: Santanu Subhash Rathod <santanu.rathod@cispa.de>.
 
 *Preprint. February 2, 2026.*
+
+<p align="center">1</p>

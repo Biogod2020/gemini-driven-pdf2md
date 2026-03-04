@@ -1,0 +1,25 @@
+---
+```json
+{
+  "document_metadata": { 
+    "title": "CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics", 
+    "style": "Scientific Preprint (bioRxiv)",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": []
+}
+```
+---
+
+pseudotime obtained using CellRank2 [4] followed by palantir [26] and binned cells into 50 intervals (Methods). We held out eight bins (5, 10, 15, 20, 25, 30, 35, 40) for interpolation analysis and the last four bins (46 to 49) for extrapolation analysis.
+
+Since CFGen is the only model in our cohort that supports multimodal generation, we used it as our baseline. Visually, both CellPace (multimodal) and CFGen (multimodal) performed well on the transcriptomic data (Fig. 5b), with extrapolation being the more challenging task. For scATAC generation, both CellPace and CFGen performed relatively well in the interpolation stages, but CFGen struggled in the extrapolation task (Fig. 5c). The real scATAC data displayed a multi-branched architecture representing diverging late-stage lineages. CellPace largely recovered this structure, populating the main path and the lower branch, although the intermediate secondary branch is only weakly represented (Fig. 5c). CFGen failed to populate the upper branches altogether, yielding a truncated manifold in which distinct late-stage lineages collapse into a single diffuse cloud.
+
+These observations were confirmed quantitatively. Both models achieved strong performance in transcriptomic generation (Fig. 5d). In generating scATAC data, however, CellPace outperformed CFGen in all metrics (Fig. 5e). Particularly in the extrapolation task, CellPace obtained mean miLISI and MMD of 1.85 and 3.6E-3, respectively, compared to CFGen with mean miLISI = 1.37 and mean MMD=5.2E-3. These analyses demonstrate the flexibility of the CellPace framework for generating multimodal data. Moreover, CellPace’s ability to generate realistic data using pseudotime underscores its broad utility, even for snapshot datasets lacking explicit temporal measurements.
+
+## Discussion
+
+CellPace is designed to bridge the gap between cross-sectional single-cell datasets and the continuous developmental processes they sample. Unlike existing generative models that treat developmental stages as discrete, independent categories, CellPace learns a continuous-time prior, enabling the generation of *de novo* cell populations at arbitrary developmental positions. Across four mouse lineages, CellPace reproduced the distribution and temporal organization of observed stages and maintained high fidelity when interpolating or extrapolating to held-out somite stages. In the more complex posterior embryo, it preserved multi-lineage structure, gene-regulatory programs, and spatial patterns. In a mouse palate 10x multiome dataset, CellPace extended naturally to paired RNA-ATAC generation, even when the temporal axis had to be reconstructed from pseudotime rather than explicit staging.
+
+Our analyses indicate that CellPace retains biologically meaningful structure at several levels. In the posterior embryo, the model recovered known developmental features, including the

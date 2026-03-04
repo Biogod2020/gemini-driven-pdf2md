@@ -2,15 +2,13 @@
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic_bibliography"
+    "style": "Academic Bibliography / References",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": []
 }
 ```
-
----
-
-**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
 
 Wagner, D. E. and Klein, A. M. Lineage tracing meets single-cell omics: opportunities and challenges. *Nature Reviews Genetics*, 21(7):410–427, 2020.
 
@@ -21,3 +19,7 @@ Zeira, R., Land, M., Strzalkowski, A., and Raphael, B. J. Alignment and integrat
 Zhang, Y., Su, Y., Wang, C., Li, T., Wefers, Z., Nirschl, J., Burgess, J., Ding, D., Lozano, A., Lundberg, E., et al. Cellflux: Simulating cellular morphology changes via flow matching. *arXiv preprint arXiv:2502.09775*, 2025.
 
 Zheng, Y., Schupp, J. C., Adams, T., Clair, G., Justet, A., Ahangari, F., Yan, X., Hansen, P., Carlon, M., Cortesi, E., et al. A deep generative model for deciphering cellular dynamics and in silico drug discovery in complex diseases. *Nature Biomedical Engineering*, pp. 1–26, 2025.
+
+<br>
+
+11

@@ -1,13 +1,13 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
+#### H.6. IVP Cell Type Progression over time
 
-## H.6. IVP Cell Type Progression over time
-
-![Figure 10. Temporal cell type predictions from ContextFlow for the major cell types in the Organogenesis dataset (Chen et al., 2022). Early progenitor populations (neural crest and mesenchyme) progressively diminish as development advances, while terminal fates (muscle, cartilage primordium, and liver) emerge at later stages. Major lineages such as brain, heart, and connective tissue remain continuous throughout. Overall, ContextFlow captures biologically coherent and temporally consistent developmental dynamics.](assets/fig10.png)
+![Figure 10. Temporal cell type predictions from ContextFlow for the major cell types in the Organogenesis dataset (Chen et al., 2022). Early progenitor populations (neural crest and mesenchyme) progressively diminish as development advances, while terminal fates (muscle, cartilage primordium, and liver) emerge at later stages. Major lineages such as brain, heart, and connective tissue remain continuous throughout. Overall, ContextFlow captures biologically coherent and temporally consistent developmental dynamics.](assets/fig_10.png)
 
 ## I. Hyperparameter Sensitivity Analysis
 
 ### I.1. Ablation on $\lambda$
 
-First, we conduct a sensitivity analysis on all three datasets for the trade-off parameter $\lambda$, which controls the relative importance of spatial smoothness (SS) and cell-cell communication (LR) priors. All the other hyperparameters are kept constant. From Tables 20-24 and their corresponding Figures 11-15, we observe that the best performance is usually achieved towards the extremities, at $\lambda = 0$ or $\lambda = 1$, with values near the latter dominating more often. We hypothesize that the SS prior (at $\lambda = 1$ only the SS prior is considered), acting as a proxy for spatial distance between cells from different slices, always carries relevant information, encoding the structural information present in the data. On the other hand, the informativeness of cell–cell communication patterns depends on how distinct the ligand–receptor features are at a given time step compared with those of neighboring ones. When LR features remain highly similar across consecutive
+First, we conduct a sensitivity analysis on all three datasets for the trade-off parameter $\lambda$, which controls the relative importance of spatial smoothness (SS) and cell-cell communication (LR) priors. All the other hyperparameters are kept constant. From Tables [20-24](https://example.com) and their corresponding Figures [11-15](https://example.com), we observe that the best performance is usually achieved towards the extremities, at $\lambda = 0$ or $\lambda = 1$, with values near the latter dominating more often. We hypothesize that the SS prior (at $\lambda = 1$ only the SS prior is considered), acting as a proxy for spatial distance between cells from different slices, always carries relevant information, encoding the structural information present in the data. On the other hand, the informativeness of cell–cell communication patterns depends on how distinct the ligand–receptor features are at a given time step compared with those of neighboring ones. When LR features remain highly similar across consecutive
 
-32
+<br>
+
+<p align="center">32</p>

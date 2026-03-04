@@ -1,6 +1,4 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
-Table 22. Interpolation for the holdout timestep 5 on the Mouse Organogenesis dataset.
+*Table 22. Interpolation for the holdout timestep 5 on the Mouse Organogenesis dataset.*
 
 | $\lambda$ | Next Step Sampling: Weighted $\mathcal{W}_2$ | Next Step Sampling: $\mathcal{W}_2$ | IVP Sampling: Weighted $\mathcal{W}_2$ | IVP Sampling: $\mathcal{W}_2$ |
 | :--- | :--- | :--- | :--- | :--- |
@@ -10,10 +8,18 @@ Table 22. Interpolation for the holdout timestep 5 on the Mouse Organogenesis da
 | 0.8 | $1.878 \pm 0.031$ | $1.890 \pm 0.064$ | $2.966 \pm 0.411$ | $3.345 \pm 0.508$ |
 | 1 | $1.898 \pm 0.029$ | $1.866 \pm 0.097$ | $5.200 \pm 0.799$ | $6.306 \pm 1.037$ |
 
-![Figure 13. Performance variation with λ for interpolation on the Mouse Organogenesis dataset.](assets/fig13.png)
+![Figure 13. Performance variation with λ for interpolation on the Mouse Organogenesis dataset.](assets/fig_13.png)
 
 (a) Next Step Sampling $\quad$ (b) IVP Sampling
 
-![Figure 15. Performance variation with λ for interpolation on the Liver Regeneration dataset.](assets/fig15.png)
+*Figure 13. Performance variation with $\lambda$ for interpolation on the Mouse Organogenesis dataset.*
+
+<br>
+
+![Figure 15. Performance variation with λ for interpolation on the Liver Regeneration dataset.](assets/fig_15.png)
+
+*Figure 15. Performance variation with $\lambda$ for interpolation on the Liver Regeneration dataset.*
+
+<br>
 
 36

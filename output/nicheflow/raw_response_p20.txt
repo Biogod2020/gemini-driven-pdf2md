@@ -1,16 +1,17 @@
+---
 ```json
 {
   "document_metadata": {
-    "title": "Prediction of hemisphere formation on the axolotl brain development",
-    "inferred_style": "academic/scientific publication"
+    "title": "Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow",
+    "style": "Academic Paper - Single Column",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
       "id": "fig7",
-      "type": "figure",
-      "bbox": [93, 244, 654, 755],
-      "caption": "Figure 7: Prediction of hemisphere formation on the axolotl brain development. We evaluate the ability of NicheFlow to generate the anatomical splitting of central brain structure upon the formation of the right and left brain regions. The top panel shows the reference source region and cell type composition. For each stage (St.54, St.57, Juvenile, Adult, and Meta), we show: (1) predicted vs. reference cell type frequencies, (2) the generated niche visualized via 2D embedding colored by cell type, and (3) spatial projection of the generated region onto the anatomical reference (right). We set $\\lambda = 0.5$.",
-      "description": "A multi-panel figure showing the progression of brain development across five stages (St.54, St.57, Juv., Adult, Meta). Each row contains a bar chart of predicted vs. reference cell frequencies, a 2D scatter plot of the generated niche, and a spatial projection map showing the anatomical splitting of the brain hemispheres."
+      "bbox": [98, 244, 654, 755],
+      "caption": "Figure 7: Prediction of hemisphere formation on the axolotl brain development. We evaluate the ability of NicheFlow to generate the anatomical splitting of central brain structure upon the formation of the right and left brain regions. The top panel shows the reference source region and cell type composition. For each stage (St.54, St.57, Juvenile, Adult, and Meta), we show: (1) predicted vs. reference cell type frequencies, (2) the generated niche visualized via 2D embedding colored by cell type, and (3) spatial projection of the generated region onto the anatomical reference (right). We set $\\lambda = 0.5$."
     }
   ]
 }
@@ -18,17 +19,8 @@
 
 ---
 
-### Source
-The top panel displays the ground truth reference source region and its corresponding cell type composition frequency.
-
-| Predicted frequencies | Generated niche | Generated region |
-| :--- | :--- | :--- |
-| **St.54** | (Cell type legend: CP, Immature cckIN, Immature dpEX, Immature mpEX, VLMC, dEGC, dNBL1, dNBL2, sstIN, wntEGC) | (Spatial projection) |
-| **St. 57** | (Cell type legend: CP, Immature dpEX, Immature mpEX, VLMC, dEGC, dNBL2, dpEX, sfrpEGC, sstIN, wntEGC) | (Spatial projection) |
-| **Juv.** | (Cell type legend: CMPN, CP, MSN, Unknown, VLMC, dpEX, mpEX, nptxEX, npyIN, scgnIN, sstIN, tINBL, wntEGC) | (Spatial projection) |
-| **Adult** | (Cell type legend: CP, Unknown, VLMC, dpEX, mpEX, mpiN, nptxEX, scgnIN, sstIN, wntEGC) | (Spatial projection) |
-| **Meta.** | (Cell type legend: CMPN, CP, MCG, MSN, Oligo, Unknown, VLMC, dpEX, mpEX, mpiN, nptxEX, npyIN, scgnIN, sfrpEGC, sstIN, tINBL, wntEGC) | (Spatial projection) |
-
 ![Figure 7: Prediction of hemisphere formation on the axolotl brain development. We evaluate the ability of NicheFlow to generate the anatomical splitting of central brain structure upon the formation of the right and left brain regions. The top panel shows the reference source region and cell type composition. For each stage (St.54, St.57, Juvenile, Adult, and Meta), we show: (1) predicted vs. reference cell type frequencies, (2) the generated niche visualized via 2D embedding colored by cell type, and (3) spatial projection of the generated region onto the anatomical reference (right). We set $\lambda = 0.5$.](assets/fig7.png)
 
-21
+**Figure 7: Prediction of hemisphere formation on the axolotl brain development.** We evaluate the ability of NicheFlow to generate the anatomical splitting of central brain structure upon the formation of the right and left brain regions. The top panel shows the reference source region and cell type composition. For each stage (St.54, St.57, Juvenile, Adult, and Meta), we show: (1) predicted vs. reference cell type frequencies, (2) the generated niche visualized via 2D embedding colored by cell type, and (3) spatial projection of the generated region onto the anatomical reference (right). We set $\lambda = 0.5$.
+
+<p align="center">21</p>

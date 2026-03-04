@@ -1,20 +1,18 @@
-**Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data**
-
-![Table 3. Extrapolation on the last holdout time point for the Brain Regeneration dataset.](assets/table3.png)
+*Table 3. Extrapolation on the last holdout time point for the Brain Regeneration dataset.*
 
 | Sampling | Method | $\lambda$ | $\alpha$ | Weighted $\mathcal{W}_2$ | $\mathcal{W}_2$ | MMD | Energy |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| | CFM | -- | -- | $7.124 \pm 0.443$ | $7.133 \pm 0.533$ | $0.275 \pm 0.011$ | $76.947 \pm 5.661$ |
+| :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- |
+| Next Step | CFM | -- | -- | $7.124 \pm 0.443$ | $7.133 \pm 0.533$ | $0.275 \pm 0.011$ | $76.947 \pm 5.661$ |
 | | MOTFM | -- | -- | $7.619 \pm 0.611$ | $7.769 \pm 0.763$ | $0.272 \pm 0.007$ | $85.352 \pm 8.140$ |
-| Next Step | CTF-C | 1 | 0.5 | $6.968 \pm 0.608$ | $6.969 \pm 0.628$ | $0.265 \pm 0.009$ | $77.025 \pm 6.056$ |
+| | CTF-C | 1 | 0.5 | $6.968 \pm 0.608$ | $6.969 \pm 0.628$ | $0.265 \pm 0.009$ | $77.025 \pm 6.056$ |
 | | | 0 | 0.5 | $7.244 \pm 0.804$ | $7.146 \pm 0.775$ | $0.265 \pm 0.003$ | $80.424 \pm 10.376$ |
 | | | 0.5 | 0.5 | $7.188 \pm 0.391$ | $\mathbf{6.931 \pm 0.260}$ | $0.267 \pm 0.005$ | $78.992 \pm 6.195$ |
 | | CTF-H | 0 | -- | $\mathbf{6.914 \pm 0.471}$ | $7.198 \pm 0.726$ | $0.266 \pm 0.009$ | $\mathbf{76.149 \pm 8.436}$ |
 | | | 1 | -- | $7.505 \pm 0.667$ | $7.338 \pm 0.601$ | $\mathbf{0.263 \pm 0.006}$ | $83.425 \pm 8.793$ |
 | | | 0.5 | -- | $7.243 \pm 0.479$ | $7.157 \pm 0.641$ | $0.270 \pm 0.007$ | $79.826 \pm 8.067$ |
-| | CFM | -- | -- | $6.633 \pm 1.312$ | $7.116 \pm 1.084$ | $0.143 \pm 0.037$ | $60.573 \pm 21.756$ |
+| IVP | CFM | -- | -- | $6.633 \pm 1.312$ | $7.116 \pm 1.084$ | $0.143 \pm 0.037$ | $60.573 \pm 21.756$ |
 | | MOTFM | -- | -- | $6.503 \pm 0.720$ | $6.352 \pm 0.592$ | $0.162 \pm 0.038$ | $56.452 \pm 15.932$ |
-| IVP | CTF-C | 1 | 0.5 | $6.260 \pm 0.616$ | $7.681 \pm 4.003$ | $0.157 \pm 0.039$ | $52.478 \pm 12.010$ |
+| | CTF-C | 1 | 0.5 | $6.260 \pm 0.616$ | $7.681 \pm 4.003$ | $0.157 \pm 0.039$ | $52.478 \pm 12.010$ |
 | | | 0 | 0.5 | $6.614 \pm 0.710$ | $6.854 \pm 0.740$ | $0.201 \pm 0.023$ | $70.370 \pm 9.099$ |
 | | | 0.5 | 0.5 | $6.696 \pm 0.427$ | $6.481 \pm 0.387$ | $0.195 \pm 0.024$ | $66.212 \pm 3.542$ |
 | | CTF-H | 0 | -- | $6.243 \pm 0.760$ | $6.220 \pm 0.751$ | $0.195 \pm 0.020$ | $61.316 \pm 10.288$ |
@@ -36,5 +34,3 @@ For extrapolation, we evaluate generation at the last holdout time point, which 
 We further evaluated ContextFlow on the larger Mouse Organogenesis Spatiotemporal Atlas (MOSTA) Stereo-seq dataset (Chen et al., 2022) spanning measurements from 8 developmental time points. For the interpolation study of this dataset, we held out time point 5 during training and evaluated its generation during testing. Table 4 shows the evaluation results. We observe that ContextFlow, with both integration strategies, outperforms MOTFM across all metrics, showcasing the effectiveness of the contextual information. While CTF-C shows stronger performance under next-step sampling—albeit only after fine-tuning the tradeoff parameter $\alpha$—CTF-H consistently outperforms it in the more challenging IVP-Sampling setting. On the extrapolation task, integrating to the final time point, CTF-H again achieves the strongest performance, underscoring that the entropy-regularized formulation not only removes the need for additional parameter tuning but also offers more robust generalization to unseen temporal horizons.
 
 Figure 2 reports the KL-Divergence between normalized his-
-
-7

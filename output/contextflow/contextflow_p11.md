@@ -1,5 +1,3 @@
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
-
 ## A. Related Work
 
 ### A.1. Flow Matching
@@ -8,22 +6,28 @@ Normalizing flows provide a parametric framework for characterizing transformati
 
 ### A.2. Optimal Transport
 
-Omics studies frequently generate uncoupled measurements across conditions, modalities, or time points, which must be integrated into a unified representation to provide a more comprehensive view of the underlying biology. Optimal transport (OT) has recently gained popularity for this task, as it provides a geometry-based approach to couple probability distributions (Bunne et al., 2024; Klein et al., 2025). In spatial transcriptomics (ST), several OT formulations have been introduced depending on context. For instance, Zeira et al. (2022) and Liu et al. (2023) proposed PASTE and PASTE2 to align ST data from adjacent tissue slices, while DeST-OT (Halmos et al., 2025) integrates spatio-temporal slices by modeling cell growth and differentiation. Rahimi et al. (2024) developed DOT, a multi-objective OT framework for mapping features across scRNA-seq and spatially resolved assays, and Ceccarelli et al. (2025) introduced TOAST, a spatially regularized OT framework for slice alignment and annotation transfer. While these methods are primarily designed to *align* biological data across space, time, or modality, they do not address the problem of trajectory inference toward biologically plausible solutions, leveraging biological priors to *constrain* or *bias* the transport plan.
+Omics studies frequently generate uncoupled measurements across conditions, modalities, or time points, which must be integrated into a unified representation to provide a more comprehensive view of the underlying biology. Optimal transport (OT) has recently gained popularity for this task, as it provides a geometry-based approach to couple probability distributions (Bunne et al., 2024; Klein et al., 2025). In spatial transcriptomics (ST), several OT formulations have been introduced depending on context. For instance, Zeira et al. (2022) and Liu et al. (2023) proposed `PASTE` and `PASTE2` to align ST data from adjacent tissue slices, while `DeST-OT` (Halmos et al., 2025) integrates spatio-temporal slices by modeling cell growth and differentiation. Rahimi et al. (2024) developed `DOT`, a multi-objective OT framework for mapping features across scRNA-seq and spatially resolved assays, and Ceccarelli et al. (2025) introduced `TOAST`, a spatially regularized OT framework for slice alignment and annotation transfer. While these methods are primarily designed to *align* biological data across space, time, or modality, they do not address the problem of trajectory inference toward biologically plausible solutions, leveraging biological priors to *constrain* or *bias* the transport plan.
 
 ## B. Additional Definitions
 
-### B.1. Kantorovich’s OT Formulation
+### B.1. Kantarovich’s OT Formulation
 
-Kantorovich’s formulation (Peyré et al., 2019) is a classical definition of the *optimal transport* (OT) problem that seeks a joint coupling to move a probability measure to another that minimizes the Euclidean distance cost, corresponding to the following minimization problem with respect to the 2-*Wasserstein distance*:
+Kantorovich’s formulation (Peyré et al., 2019) is a classical definition of the *optimal transport* (OT) problem that seeks a joint coupling to move a probability measure to another that minimizes the Euclidean distance cost, corresponding to the following minimization problem with respect to the 2-Wasserstein distance:
 
-$$\pi_{ot}^* := \text{argmin}_{\pi \in \Pi(q_0, q_1)} \int_{\mathbb{R}^d \times \mathbb{R}^d} \| \boldsymbol{x}_0 - \boldsymbol{x}_1 \|_2^2 \, d\pi(\boldsymbol{x}_0, \boldsymbol{x}_1), \tag{14}$$
+$$
+\pi_{\text{ot}}^* := \text{argmin}_{\pi \in \Pi(q_0, q_1)} \int_{\mathbb{R}^d \times \mathbb{R}^d} \| \boldsymbol{x}_0 - \boldsymbol{x}_1 \|_2^2 \, d\pi(\boldsymbol{x}_0, \boldsymbol{x}_1), \tag{14}
+$$
 
 where $\Pi(q_0, q_1)$ denotes the set of joint probability measures such that the left and right marginals are $q_0$ and $q_1$. Equation 14 can be solved in a mini-batch fashion using standard solvers such as POT (Flamary et al., 2021); however, the computational complexity is cubic in batch size.
 
 ### B.2. Evaluation Metrics
 
-**2-Wasserstein.** The 2-*Wasserstein distance* ($W_2$) between empirical distributions $\mu, \nu$ is defined as:
+**2-Wasserstein.** The 2-Wasserstein distance ($W_2$) between empirical distributions $\mu, \nu$ is defined as:
 
-$$W_2(\mu, \nu) = \inf_{\gamma \in \Pi(\mu, \nu)} \left( \sum_{(\boldsymbol{x}, \boldsymbol{y})} \gamma(\boldsymbol{x}, \boldsymbol{y}) \cdot \| \boldsymbol{x} - \boldsymbol{y} \|_2^2 \right)^{1/2},$$
+$$
+W_2(\mu, \nu) = \inf_{\gamma \in \Pi(\mu, \nu)} \left( \sum_{(\boldsymbol{x}, \boldsymbol{y})} \gamma(\boldsymbol{x}, \boldsymbol{y}) \cdot \| \boldsymbol{x} - \boldsymbol{y} \|_2^2 \right)^{1/2},
+$$
 
 where $\Pi(\mu, \nu)$ denotes the set of couplings between $\mu$ and $\nu$.
+
+<div align="center">12</div>

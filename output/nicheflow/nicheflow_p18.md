@@ -1,5 +1,3 @@
-# Mapping liver E10.5-E11.5
-
 ![Figure 5: Comparison between moscot and NicheFlow on mapping the liver structure from E10.5 to E11.5. The liver at time E10.5 is used as a source for trajectory prediction using the different models. The left column shows the source and expected target regions highlighted on the respective E10.5 and E11.5 embryos. The middle column displays the density of the prediction obtained by transporting niches from the source to the target slide. On the right, the aggregated cell type proportions according to the density in the middle column (see Sec. F.8).](assets/fig5.png)
 
 ### D.2 $\alpha$ parameter sweep in moscot
@@ -10,10 +8,10 @@ In Tab. 2, we report the proportion of source density mapped to the correct cell
 
 More specifically, when mapping fixed structures over time, values below $0.75$ caused excessive density dispersion outside the anatomical region. For migration, no value led to generally accurate transitions, though $\alpha = 0.5$ mapped the highest density to the expected cell type.
 
-Table 2: Effect of the parameter $\alpha$ balancing spatial and cell state preservation in moscot. The results in the table indicate the percentage of source density mapped to the correct cell type from the source anatomical structure (the higher, the better).
+**Table 2: Effect of the parameter $\alpha$ balancing spatial and cell state preservation in moscot. The results in the table indicate the percentage of source density mapped to the correct cell type from the source anatomical structure (the higher, the better).**
 
 | Tissue | $\alpha = 0.1$ | $\alpha = 0.25$ | $\alpha = 0.5$ | $\alpha = 0.75$ | $\alpha = 0.9$ |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: | :---: | :---: |
 | Spinal Cord | 0.146 | 0.190 | 0.712 | 0.729 | 0.725 |
 | Neural Crests | 0.159 | 0.160 | 0.162 | 0.155 | 0.112 |
 
@@ -21,4 +19,4 @@ Table 2: Effect of the parameter $\alpha$ balancing spatial and cell state prese
 
 We provide additional visualizations of the generated samples on the axolotl brain development dataset, presented in Fig. 6. As can be seen from the figure, NicheFlow correctly retrieves the spatial and anatomical characteristics of the brain, including hemisphere formation and cavity.
 
-19
+<center>19</center>

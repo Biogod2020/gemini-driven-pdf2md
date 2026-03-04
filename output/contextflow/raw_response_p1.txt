@@ -1,24 +1,23 @@
+---
 ```json
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "inferred_style": "academic paper"
+    "style": "Academic Paper - Multi-column",
+    "style_conformity": 1.0,
+    "style_patch": null
   },
   "assets": [
     {
       "id": "fig1",
-      "type": "figure",
-      "bbox": [249, 91, 388, 474],
-      "caption": "Figure 1. ContextFlow integrates local tissue organization and ligand–receptor communications to learn biologically meaningful trajectories from spatial omics data. Prior knowledge acts as a soft filter, discouraging implausible transitions while preserving flexibility in trajectory inference.",
-      "description": "A conceptual diagram showing spatial data at time 0 and time 1. It illustrates 'implausible' vs 'plausible' trajectories. Below, it shows 'Biologically constrained Optimal Transport' incorporating 'Spatial Smoothness' and 'Cell-Cell Communication' derived from 'Manually curated resources'."
+      "bbox": [251, 92, 351, 480],
+      "caption": "Figure 1. ContextFlow integrates local tissue organization and ligand–receptor communications to learn biologically meaningful trajectories from spatial omics data. Prior knowledge acts as a soft filter, discouraging implausible transitions while preserving flexibility in trajectory inference."
     }
   ]
 }
 ```
 
 ---
-
-# Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data
 
 *Table 1. Comparisons of state-of-the-art spatiotemporal OT and flow matching methods. In particular, ContextFlow excels at efficiently inferring biologically plausible trajectories by incorporating spatial priors into minibatch-OT-based flow-matching frameworks.*
 
@@ -49,6 +48,8 @@ In summary, our contributions are as follows:
 
 ### 2.1. Flow Matching Basics
 
-Flow matching (Lipman et al., 2023) is a simulation-free and sample-efficient generative framework for training continuous normalizing flows (Chen et al., 2018). Given a pair of source and target data distributions over $\mathbb{R}^d$ with densities $q_0 = q(x_0)$ and $q_1 = q(x_1)$, the problem task is to learn a time-varying velocity vector field $u_\theta : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$, whose continuous evolution is captured by a function in the form of a neural-net-based model with weights $\theta$, that can transform $q_0$ to $q_1$ through integration via an ordinary differential equation (ODE). To be more specific, *flow matching* (FM) seeks to optimize $\theta$ by minimizing a simple regression loss between $u_\theta$ and a target time-varying velocity vector field $u_t : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ as follows:
+Flow matching (Lipman et al., 2023) is a simulation-free and sample-efficient generative framework for training continuous normalizing flows (Chen et al., 2018). Given a pair of source and target data distributions over $\mathbb{R}^d$ with densities $q_0 = q(\boldsymbol{x}_0)$ and $q_1 = q(\boldsymbol{x}_1)$, the problem task is to learn a time-varying velocity vector field $u_\theta : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$, whose continuous evolution is captured by a function in the form of a neural-net-based model with weights $\theta$, that can transform $q_0$ to $q_1$ through integration via an ordinary differential equation (ODE). To be more specific, *flow matching* (FM) seeks to optimize $\theta$ by minimizing a simple regression loss between $u_\theta$ and a target time-varying velocity vector field $u_t : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ as follows:
 
-$$\min_\theta \mathbb{E}_{t \sim \mathcal{U}(0,1), x \sim p_t(x)} \| u_\theta(t, x) - u_t(x) \|^2. \quad (1)$$
+$$\min_\theta \mathbb{E}_{t \sim \mathcal{U}(0,1), \boldsymbol{x} \sim p_t(\boldsymbol{x})} \| u_\theta(t, \boldsymbol{x}) - u_t(\boldsymbol{x}) \|^2. \tag{1}$$
+
+---

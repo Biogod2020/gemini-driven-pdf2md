@@ -17,3 +17,5 @@ We apply the same discretization procedure to all three datasets used in our exp
 ### F.6 Microenvironment Transformer
 
 To model the spatiotemporal evolution of local cellular neighborhoods, we design a permutation-invariant transformer-based architecture tailored to structured point cloud data. Our Microenvironment Transformer processes local microenvironments—sets of cells with gene expression features and spatial coordinates—and predicts time-dependent outputs such as velocity fields or future states.
+
+<p align="center">35</p>

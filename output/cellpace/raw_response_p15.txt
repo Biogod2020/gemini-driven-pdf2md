@@ -1,0 +1,28 @@
+---
+```json
+{
+  "document_metadata": {
+    "title": "CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics",
+    "style": "Scientific Preprint (bioRxiv)",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig5",
+      "bbox": [102, 121, 555, 878],
+      "caption": "Fig. 5 | Multimodal temporal generation of the mouse palate data. a, Multimodal generation framework of CellPace. Paired scRNA-seq and scATAC-seq profiles are encoded into a shared latent space via MultiVI. The TDiF module denoises latent sequences conditioned on pseudotime, and modality-specific decoders generate aligned gene expression (ZINB distribution) and chromatin accessibility (Bernoulli distribution) profiles from the denoised latent representations. b-c, Temporal manifold visualization. UMAP embeddings of scRNA-seq (b) and scATAC-seq (c) profiles. Columns compare real data (left) with generated samples from CellPace (center) and CFGen (right). Generated cells (colored by pseudotime bins) are overlaid onto the real manifold (grey background) to visualize temporal alignment in the shared embedding space. d-e, Quantitative assessment of data generation. Box plots summarizing generation quality across held-out temporal stages (n = 12), including both interpolation and extrapolation settings for RNA (d) and ATAC (e). Metrics include miLISI (higher is better), Maximum Mean Discrepancy (MMD; lower is better), and 2-Wasserstein distance (lower is better)."
+    }
+  ]
+}
+```
+
+---
+
+![Fig. 5 | Multimodal temporal generation of the mouse palate data. a, Multimodal generation framework of CellPace. Paired scRNA-seq and scATAC-seq profiles are encoded into a shared latent space via MultiVI. The TDiF module denoises latent sequences conditioned on pseudotime, and modality-specific decoders generate aligned gene expression (ZINB distribution) and chromatin accessibility (Bernoulli distribution) profiles from the denoised latent representations. b-c, Temporal manifold visualization. UMAP embeddings of scRNA-seq (b) and scATAC-seq (c) profiles. Columns compare real data (left) with generated samples from CellPace (center) and CFGen (right). Generated cells (colored by pseudotime bins) are overlaid onto the real manifold (grey background) to visualize temporal alignment in the shared embedding space. d-e, Quantitative assessment of data generation. Box plots summarizing generation quality across held-out temporal stages (n = 12), including both interpolation and extrapolation settings for RNA (d) and ATAC (e). Metrics include miLISI (higher is better), Maximum Mean Discrepancy (MMD; lower is better), and 2-Wasserstein distance (lower is better).](assets/fig5.png)
+
+### CellPace captures data manifold, developmental trajectory and regulatory signals
+
+We next evaluated the ability of CellPace in reconstructing the data manifold and its topology in unseen stages. We first used PAGA [21] to reconstruct a graph pertaining to the underlying data
+
+<p align="right">16</p>

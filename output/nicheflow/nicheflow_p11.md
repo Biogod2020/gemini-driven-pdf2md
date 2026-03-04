@@ -28,4 +28,4 @@ resolved transcriptomics reveals the subcellular RNA kinetic landscape. *Nature 
 
 [29] Dominik Klein, Théo Uscidda, Fabian Theis, and Marco Cuturi. Genot: Entropic (gromov) wasserstein flow matching with applications to single-cell genomics. *Advances in Neural Information Processing Systems*, 37:103897–103944, 2024.
 
-12
+<div style="text-align: center;">12</div>

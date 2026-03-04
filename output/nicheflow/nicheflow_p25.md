@@ -1,16 +1,19 @@
-![Figure 12: Visualization of OT couplings computed under varying values of the pooling parameter λ in eq. (12), which balances spatial coordinates and gene expression in microenvironment matching. Lower λ values prioritize spatial proximity, resulting in more dispersed and less structured alignments, while intermediate values yield tighter, biologically consistent mappings. Very high λ settings ignore spatial context and may lead to implausible long-range matches.](assets/fig12.png)
+![Figure 12: Visualization of OT couplings computed under varying values of the pooling parameter $\lambda$ in eq. (12), which balances spatial coordinates and gene expression in microenvironment matching. Lower $\lambda$ values prioritize spatial proximity, resulting in more dispersed and less structured alignments, while intermediate values yield tighter, biologically consistent mappings. Very high $\lambda$ settings ignore spatial context and may lead to implausible long-range matches.](assets/fig12.png)
 
-### D.6 $K$-Means regions ablation study
+## D.6 $K$-Means regions ablation study
 
 To ensure diverse and spatially distributed sampling during training, we partition each tissue section into $K$ spatial regions using $K$-Means clustering over the 2D cell coordinates (see Sec. 5.1.1). At each training step, microenvironments are sampled uniformly from within these regions, encouraging broad spatial coverage and preventing oversampling of densely populated areas. In this ablation study, we investigate how varying the number of spatial regions, $K$, affects model performance.
 
-Table 4: Ablation study of the number of spatial regions $K$ defined over the datasets. We evaluate NicheFlow with the GLVFM objective across three datasets: mouse embryonic development (MED), axolotl brain development (ABD), and mouse brain aging (MBA). Results are reported as mean $\pm$ standard deviation over five evaluation runs.
+**Table 4: Ablation study of the number of spatial regions $K$ defined over the datasets. We evaluate NicheFlow with the GLVFM objective across three datasets: mouse embryonic development (MED), axolotl brain development (ABD), and mouse brain aging (MBA). Results are reported as mean $\pm$ standard deviation over five evaluation runs.**
 
-| $K$ | MED INN-F1 $\uparrow$ | MED PSD $\downarrow (10^2)$ | MED SPD $\downarrow (10^2)$ | ABD INN-F1 $\uparrow$ | ABD PSD $\downarrow (10^2)$ | ABD SPD $\downarrow (10^2)$ | MBA INN-F1 $\uparrow$ | MBA PSD $\downarrow (10^2)$ | MBA SPD $\downarrow (10^2)$ |
+| $K$ | MED | | | ABD | | | MBA | | |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| | 1NN-F1 $\uparrow$ | PSD $\downarrow (10^2)$ | SPD $\downarrow (10^2)$ | 1NN-F1 $\uparrow$ | PSD $\downarrow (10^2)$ | SPD $\downarrow (10^2)$ | 1NN-F1 $\uparrow$ | PSD $\downarrow (10^2)$ | SPD $\downarrow (10^2)$ |
 | 8 | $0.640 \pm 0.0043$ | $\mathbf{0.876 \pm 0.0055}$ | $0.441 \pm 0.0058$ | $0.617 \pm 0.0017$ | $1.954 \pm 0.0057$ | $0.631 \pm 0.0073$ | $0.283 \pm 0.0005$ | $1.561 \pm 0.0018$ | $0.571 \pm 0.0019$ |
-| 16 | $0.661 \pm 0.0033$ | $0.881 \pm 0.0068$ | $0.393 \pm 0.0056$ | $\mathbf{0.633 \pm 0.0008}$ | $\mathbf{1.936 \pm 0.0027}$ | $0.628 \pm 0.0104$ | $0.283 \pm 0.0003$ | $1.564 \pm 0.0035$ | $0.538 \pm 0.0021$ |
+| 16 | $0.661 \pm 0.0033$ | $0.881 \pm 0.0068$ | $\mathbf{0.393 \pm 0.0056}$ | $\mathbf{0.633 \pm 0.0008}$ | $\mathbf{1.936 \pm 0.0027}$ | $0.628 \pm 0.0104$ | $0.283 \pm 0.0003$ | $1.564 \pm 0.0035$ | $0.538 \pm 0.0021$ |
 | 32 | $0.659 \pm 0.0025$ | $0.899 \pm 0.0120$ | $\mathbf{0.391 \pm 0.0029}$ | $0.622 \pm 0.0005$ | $1.968 \pm 0.0036$ | $0.640 \pm 0.0124$ | $0.279 \pm 0.0005$ | $1.600 \pm 0.0040$ | $0.537 \pm 0.0015$ |
 | 64 | $\mathbf{0.664 \pm 0.0014}$ | $0.883 \pm 0.0094$ | $0.398 \pm 0.0023$ | $0.628 \pm 0.0013$ | $2.079 \pm 0.0043$ | $\mathbf{0.576 \pm 0.0055}$ | $\mathbf{0.285 \pm 0.0003}$ | $\mathbf{1.554 \pm 0.0021}$ | $\mathbf{0.532 \pm 0.0009}$ |
 
 As shown in Figure 13, increasing $K$ leads to increasingly fine-grained spatial partitions. While moderate values of $K$ help improve spatial resolution, excessively high values (e.g., $K = 128$ or $256$) result in overly small and fragmented regions. This can cause significant overlap between sampled microenvironments and reduce sampling diversity. Moreover, in sparsely populated tissue sections, high $K$ values may yield regions with insufficient cells, degrading both representativeness and stability.
+
+<p align="center">26</p>

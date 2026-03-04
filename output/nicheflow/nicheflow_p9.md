@@ -1,6 +1,7 @@
 coordinates directly into the OT formulation using a Fused Gromov-Wasserstein cost [45], where the hyperparameter $\alpha$ controls the trade-off between spatial and feature-based distances (see Sec. F.8). A high $\alpha$ increases the influence of spatial distances, whereas in our framework this role is played by the hyperparameter $\lambda$ (see Sec. 4.2). We provide more details on the selection of the hyperparameter $\alpha$ for our experiments in Sec. D.2. Notably, moscot relies on exact OT and learns a transition matrix between source and target samples. As such, it is not a generative model over point clouds like NicheFlow. However, given the overlap in downstream tasks, we consider the comparison relevant.
 
-**Evaluation and results.** For both scenarios (1) and (2), we have prior knowledge of the ground truth regions that the source microenvironments are expected to occupy at later developmental stages, as well as their corresponding biological compositions. For both moscot and NicheFlow, we assess whether the transported mass of source samples concentrates within the correct anatomical region at the target time point, and whether the predicted descendant cell types are biologically consistent (see Sec. F.8). Results are summarized in Fig. 3. When modeling the evolution of the spinal cord, moscot assigns considerable mass to unrelated regions such as the urogenital ridge and branchial arches, whereas NicheFlow correctly maps source niches to the maturing spinal cord. Similarly, NicheFlow captures the differentiation of neural crest cells into mesenchymal and cranial tissues within the head region, while moscot exhibits substantial off-target leakage towards lower regions.
+##### Evaluation and results.
+For both scenarios (1) and (2), we have prior knowledge of the ground truth regions that the source microenvironments are expected to occupy at later developmental stages, as well as their corresponding biological compositions. For both moscot and NicheFlow, we assess whether the transported mass of source samples concentrates within the correct anatomical region at the target time point, and whether the predicted descendant cell types are biologically consistent (see Sec. F.8). Results are summarized in Fig. 3. When modeling the evolution of the spinal cord, moscot assigns considerable mass to unrelated regions such as the urogenital ridge and branchial arches, whereas NicheFlow correctly maps source niches to the maturing spinal cord. Similarly, NicheFlow captures the differentiation of neural crest cells into mesenchymal and cranial tissues within the head region, while moscot exhibits substantial off-target leakage towards lower regions.
 
 ## 6 Conclusions and Discussion
 
@@ -8,7 +9,7 @@ We introduce NicheFlow, a point-cloud-based generative model designed to capture
 
 ### Acknowledgments
 
-A.P. is supported by the Helmholtz Association under the joint research school Munich School for Data Science (MUDS). A.P., F.G., S.G. and F.J.T. also acknowledge support from the German Federal Ministry of Education and Research (BMFTR) through grant numbers 031L0289A and 031L0289C. F.J.T. acknowledges support from the Helmholtz Association's Initiative and Networking Fund via the CausalCellDynamics project (grant number Interlabs-0029) and the European Union (ERC, DeepCell, grant number 101054957). The authors of this work take full responsibility for its content.
+A.P. is supported by the Helmholtz Association under the joint research school Munich School for Data Science (MUDS). A.P., F.G., S.G. and F.J.T. also acknowledge support from the German Federal Ministry of Education and Research (BMFTR) through grant numbers 031L0289A and 031L0289C. F.J.T. acknowledges support from the Helmholtz Association’s Initiative and Networking Fund via the CausalCellDynamics project (grant number Interlabs-0029) and the European Union (ERC, DeepCell, grant number 101054957). The authors of this work take full responsibility for its content.
 
 ### References
 
@@ -18,4 +19,4 @@ A.P. is supported by the Helmholtz Association under the joint research school M
 
 [3] Yanming Ren, Zongyao Huang, Lingling Zhou, Peng Xiao, Junwei Song, Ping He, Chuanxing Xie, Ran Zhou, Menghan Li, Xiangqun Dong, Qing Mao, Chao You, Jianguo Xu, Yanhui Liu, Zhigang Lan, Tiejun Zhang, Qi Gan, Yuan Yang, Tengyun Chen, Bowen Huang, Xiang Yang, Anqi Xiao, Yun Ou, Zhengzheng Su, Lu Chen, Yan Zhang, Yan Ju, Yuekang Zhang, and Yuan Wang. Spatial transcriptomics reveals niche-specific enrichment and vulnerabilities of radial glial stem-like cells in malignant gliomas. *Nature Communications*, 14(1), February 2023.
 
-10
+<div style="text-align: center;">10</div>
