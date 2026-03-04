@@ -22,4 +22,15 @@ def test_get_profiler_prompt():
     assert "Style Registry" in prompt
     assert "Heading Weights" in prompt
     assert "Visual Matcher" in prompt
-    assert "json" in prompt.lower()
+    assert "visual_matchers" in prompt
+    assert "layout_info" in prompt
+
+def test_get_extraction_prompt_triplet():
+    """Verify that extraction prompt mentions triplet context."""
+    from gemini_driven_img2md.prompts import get_extraction_prompt
+    prompt = get_extraction_prompt(style_profile='{"rules": "test"}')
+    assert "GLOBAL STYLE REGISTRY" in prompt
+    assert "TARGET PAGE" in prompt
+    assert "PREVIOUS PAGE" in prompt
+    assert "NEXT PAGE" in prompt
+    assert "Target-Only Extraction" in prompt

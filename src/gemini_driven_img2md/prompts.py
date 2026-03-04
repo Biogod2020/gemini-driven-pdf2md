@@ -50,55 +50,43 @@ def get_extraction_prompt(style_profile: str = "") -> str:
         style_instruction = f"\n### GLOBAL STYLE REGISTRY:\nUse the following project-specific rules for this document:\n{style_profile}\n"
 
     return f"""
-You are a SOTA Multimodal Document Intelligence Engine. Your mission is to perform high-fidelity, structural transformation of the provided document (PDF/Image) into a unified, standard Markdown format.
-{style_instruction}
-### 1. MISSION CRITICAL RULES:
-- **Literal Extraction**: Transcribe all text EXACTLY as written. No paraphrasing, no corrections, and no summarization.
-- **Visual Layout Inference**: Analyze the visual layout. Handle multi-column text flows correctly. Ignore non-content artifacts like running headers, footers, and page numbers unless they are part of the core text.
-- **Markdown Consistency**: Infer a unified styling (Heading levels H1-H6, list nesting, blockquotes) based on the document's visual hierarchy.
+You are a SOTA Multimodal Document Intelligence Engine. Your mission is to perform high-fidelity, structural transformation of the provided document into a unified, standard Markdown format.
 
+### TRIPLET CONTEXT INSTRUCTIONS:
+You will receive up to three images labeled as:
+1. **PREVIOUS PAGE**: (Reference Only) Use this to resolve cross-page paragraph breaks or list continuity.
+2. **TARGET PAGE**: (PRIMARY EXTRACTION TARGET) This is the only page you will extract content from.
+3. **NEXT PAGE**: (Reference Only) Use this to verify if tables, equations, or paragraphs continue beyond the target page.
+
+### 1. MISSION CRITICAL RULES:
+- **Target-Only Extraction**: Your output MUST contain content ONLY from the **TARGET PAGE**. Do not repeat headers or text from the Previous Page. Do not include content from the Next Page.
+- **Semantic Stitching**: Use the Previous Page to determine if the first paragraph of the Target Page is a continuation. If it is, do not create a new header or break the flow.
+- **Literal Extraction**: Transcribe text EXACTLY as written. No paraphrasing.
+- **Visual Layout Inference**: Handle multi-column text flows. Ignore non-content artifacts like running headers/footers.
+{style_instruction}
 ### 2. MATHEMATICAL NOTATION:
-- Convert ALL mathematical expressions to LaTeX.
-- **Inline**: Use single dollar signs (e.g., $E=mc^2$).
-- **Display**: Use double dollar signs for centered/numbered equations (e.g., $$\\int_a^b f(x) dx$$).
-- **Fidelity**: Ensure subscripts, superscripts, and complex symbols are accurately mapped to LaTeX syntax.
+- Convert ALL mathematical expressions to LaTeX ($ for inline, $$ for blocks).
 
 ### 3. TABULAR DATA:
-- Convert tables into standard Markdown tables.
-- If a table is too complex for Markdown (e.g., merged cells), describe it as accurately as possible within the table structure or use a nested list representation if necessary.
+- Convert tables into standard Markdown tables. 
+- Use the Next Page to detect if a table is cut off at the bottom.
 
-### 4. MULTIMODAL ASSET EXTRACTION (CRITICAL):
-For every figure, chart, illustration, or significant image:
-1.  **Detection**: Identify the exact region of the asset.
-2.  **Bounding Box**: Provide normalized coordinates `[ymin, xmin, ymax, xmax]` where 0-1000 represents the full height and width of the page.
-3.  **Caption**: Extract the literal caption from the original text (e.g., "Figure 1: ...").
-4.  **Markdown Placeholder**: Insert `![{{literal_caption}}](assets/{{asset_id}}.png)` at the semantic location.
-5.  **JSON Index**: Every identified asset MUST be listed in the JSON index at the end.
+### 4. MULTIMODAL ASSET EXTRACTION:
+For every figure/chart in the **TARGET PAGE**:
+1. Identify the region and provide normalized coordinates `[ymin, xmin, ymax, xmax]` (0-1000).
+2. Extract the literal caption.
+3. Insert `![caption](assets/asset_id.png)` in the Markdown.
 
 ### 5. OUTPUT PROTOCOL:
-Respond with two distinct sections:
-
+Respond with:
 ---
 ```json
 {{
-  "document_metadata": {{
-    "title": "Extracted Title",
-    "inferred_style": "academic/technical/etc"
-  }},
-  "assets": [
-    {{
-      "id": "fig1",
-      "type": "figure",
-      "bbox": [ymin, xmin, ymax, xmax],
-      "caption": "Literal text of the caption",
-      "description": "Visual summary for accessibility"
-    }}
-  ]
+  "document_metadata": {{ "title": "...", "style": "..." }},
+  "assets": [ {{ "id": "...", "bbox": [...], "caption": "..." }} ]
 }}
 ```
 ---
-{{The full Markdown content here}}
+{{Markdown content for TARGET PAGE only}}
 ---
-
-Begin the extraction now.
 """
