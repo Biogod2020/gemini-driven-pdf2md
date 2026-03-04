@@ -11,13 +11,13 @@
 - [x] Task: Integrate Style Registry into extraction prompts (integrated)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
-## Phase 2: Dynamic Adaptation & Realization
+## Phase 2: Dynamic Adaptation ## Phase 2: Dynamic Adaptation & Realization Realization [checkpoint: 3bb92e7]
 - [x] Task: Implement Style Conformity Scorer and Delta Patching (198e832)
 - [x] Task: Refine physical BBox cropping using high-res sources (verified)
 - [x] Task: Automate `images.json` and Markdown assembly (integrated)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3: Validation & Full Batch
-- [ ] Task: Update QA Critic Agent for Triplet awareness
+- [~] Task: Update QA Critic Agent for Triplet awareness
 - [ ] Task: Execute full batch processing for all resources
 - [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
