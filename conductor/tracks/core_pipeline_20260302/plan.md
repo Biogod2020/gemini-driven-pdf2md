@@ -12,9 +12,9 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Dynamic Adaptation & Realization
-- [ ] Task: Implement Style Conformity Scorer and Delta Patching
-- [ ] Task: Refine physical BBox cropping using high-res sources
-- [ ] Task: Automate `images.json` and Markdown assembly
+- [x] Task: Implement Style Conformity Scorer and Delta Patching (198e832)
+- [x] Task: Refine physical BBox cropping using high-res sources (verified)
+- [x] Task: Automate `images.json` and Markdown assembly (integrated)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3: Validation & Full Batch
