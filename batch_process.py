@@ -83,6 +83,9 @@ def process_all_pdfs(resources_dir: Path, output_base_dir: Path):
                     tqdm.write(f"  🔥 Extraction FAILED for Page {page}: {result.stderr}")
                     # Optional: retry once
                     time.sleep(30)
+        
+        # After finishing each PDF, we can log the final evolved registry path
+        tqdm.write(f"🏁 Finished {pdf.name}. Evolved registry: {style_profile_path}")
 
 if __name__ == "__main__":
     resources = Path("resources")

@@ -34,3 +34,5 @@ def test_get_extraction_prompt_triplet():
     assert "PREVIOUS PAGE" in prompt
     assert "NEXT PAGE" in prompt
     assert "Target-Only Extraction" in prompt
+    assert "style_conformity" in prompt
+    assert "style_patch" in prompt

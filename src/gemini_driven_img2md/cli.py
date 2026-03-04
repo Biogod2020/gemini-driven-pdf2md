@@ -75,11 +75,10 @@ def extract(
         typer.echo(f"Error loading document pages: {e}", err=True)
         raise typer.Exit(code=1)
 
-    # 2. Load Style Profile
-    profile_data = ""
-    if style_profile and style_profile.exists():
-        with open(style_profile, "r", encoding="utf-8") as f:
-            profile_data = f.read()
+    # 2. Load Style Registry
+    from gemini_driven_img2md.registry import StyleRegistryManager
+    registry_mgr = StyleRegistryManager(style_profile)
+    profile_data = registry_mgr.get_current_profile_json()
 
     # 3. Prepare Gemini call
     client = get_gemini_client()
@@ -128,14 +127,26 @@ def extract(
         typer.echo(f"Error calling Gemini API: {e}", err=True)
         raise typer.Exit(code=1)
 
-    # 4. Parse and Process
+    # 5. Parse and Process
     try:
         metadata, markdown_content = parse_gemini_response(response_text)
         
+        # Handle Style Evolution
+        patch = metadata.get("document_metadata", {}).get("style_patch")
+        if patch:
+            typer.echo(f"  ✨ Style Patch detected! Updating registry...")
+            registry_mgr.apply_patch(patch)
+            if style_profile:
+                registry_mgr.save(style_profile)
+        
+        conformity = metadata.get("document_metadata", {}).get("style_conformity", 1.0)
+        if conformity < 0.7:
+            typer.echo(f"  ⚠️ Low Style Conformity detected: {conformity}")
+
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # Save assets and generate images.json
-        process_assets(metadata, page_image, output_dir)
+        process_assets(metadata, target_image, output_dir)
         
         # Save final Markdown
         output_md_path = output_dir / f"{input_path.stem}_p{page}.md"

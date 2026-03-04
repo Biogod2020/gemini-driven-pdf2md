@@ -77,12 +77,21 @@ For every figure/chart in the **TARGET PAGE**:
 2. Extract the literal caption.
 3. Insert `![caption](assets/asset_id.png)` in the Markdown.
 
-### 5. OUTPUT PROTOCOL:
+### 5. STYLE EVOLUTION (SOTA):
+- **Style Conformity**: Rate how well the current page adheres to the Global Style Registry on a scale of 0.0 to 1.0.
+- **Style Patch**: If you detect a NEW visual style or an evolution not covered by the registry (e.g., a new sidebar type or heading style), provide a "patch" object to update the registry for future pages.
+
+### 6. OUTPUT PROTOCOL:
 Respond with:
 ---
 ```json
 {{
-  "document_metadata": {{ "title": "...", "style": "..." }},
+  "document_metadata": {{ 
+    "title": "...", 
+    "style": "...",
+    "style_conformity": 0.0-1.0,
+    "style_patch": null or {{ "new_rule": "..." }}
+  }},
   "assets": [ {{ "id": "...", "bbox": [...], "caption": "..." }} ]
 }}
 ```
