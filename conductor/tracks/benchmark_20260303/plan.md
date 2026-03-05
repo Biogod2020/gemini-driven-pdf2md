@@ -27,6 +27,6 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) (manual)
 
 ## Phase 4: Execution & Baseline
-- [ ] Task: Run benchmark against a standard dataset
-- [ ] Task: Document baseline results in the project
-- [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
+- [x] Task: Run benchmark against a standard dataset (done)
+- [x] Task: Document baseline results in the project (89.66% accuracy)
+- [x] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md) (manual)
