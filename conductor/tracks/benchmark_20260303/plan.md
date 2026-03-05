@@ -6,9 +6,9 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2: Core Integration Logic
-- [ ] Task: Implement Dataset Loader for `opendataloader-bench`
-    - [ ] Write unit tests for data loading
-    - [ ] Implement loading logic in `src/gemini_driven_img2md/benchmark/loader.py`
+- [~] Task: Implement Dataset Loader for `opendataloader-bench`
+    - [x] Write unit tests for data loading (done)
+    - [x] Implement loading logic in `src/gemini_driven_img2md/benchmark/loader.py` (done)
 - [ ] Task: Implement Extraction Bridge
     - [ ] Write tests for the bridge (mocking VLM)
     - [ ] Implement bridge logic to connect our pipeline to the bench tool
