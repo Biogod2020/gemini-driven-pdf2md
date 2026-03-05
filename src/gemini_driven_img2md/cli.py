@@ -184,5 +184,48 @@ def merge(
     output_path = input_dir / output_name
     merge_markdown_files(input_dir, output_path)
 
+@app.command()
+def benchmark(
+    bench_dir: Path = typer.Option(Path("./vendor/opendataloader-bench"), "--bench-dir", help="Path to the benchmark dataset."),
+    output_dir: Path = typer.Option(Path("./output/benchmark"), "--output", "-o", help="Directory to save results."),
+    max_docs: int = typer.Option(5, "--max-docs", help="Limit the number of documents to process."),
+):
+    """
+    Run benchmark evaluation against opendataloader-bench.
+    """
+    from gemini_driven_img2md.benchmark.loader import BenchmarkLoader
+    from gemini_driven_img2md.benchmark.bridge import ExtractionBridge
+    from gemini_driven_img2md.benchmark.aggregator import MetricAggregator
+    from gemini_driven_img2md.benchmark.reporter import HybridReporter
+    
+    typer.echo(f"📊 Starting benchmark against {bench_dir}...")
+    
+    loader = BenchmarkLoader(bench_dir)
+    bridge = ExtractionBridge(output_dir / "predictions")
+    aggregator = MetricAggregator()
+    reporter = HybridReporter(output_dir)
+    
+    available_pdfs = loader.list_available_pdfs()
+    pdfs_to_process = available_pdfs[:max_docs]
+    
+    with typer.progressbar(pdfs_to_process, label="Benchmarking") as progress:
+        for pdf_name in progress:
+            pdf_path = bench_dir / "pdfs" / pdf_name
+            ground_truth = loader.get_ground_truth(pdf_name)
+            
+            if not ground_truth:
+                typer.echo(f"  ⚠️ Skipping {pdf_name}: No ground truth found.")
+                continue
+                
+            result = bridge.run_extraction(pdf_path, pdf_name)
+            aggregator.add_result(result, ground_truth)
+            
+    summary = aggregator.get_summary()
+    json_path, md_path = reporter.generate_report(summary)
+    
+    typer.echo(f"\n✅ Benchmark complete!")
+    typer.echo(f"  Markdown Report: {md_path}")
+    typer.echo(f"  JSON Data: {json_path}")
+
 if __name__ == "__main__":
     app()
