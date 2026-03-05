@@ -1,0 +1,19 @@
+{
+  "total_documents": 2,
+  "average_latency": 5.774321675300598,
+  "average_accuracy": 0.8966266291847687,
+  "results": [
+    {
+      "doc_id": "01030000000119.pdf",
+      "latency": 7.40946626663208,
+      "accuracy": 0.8372093023255813,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000125.pdf",
+      "latency": 4.139177083969116,
+      "accuracy": 0.9560439560439561,
+      "assets_count": 0
+    }
+  ]
+}
