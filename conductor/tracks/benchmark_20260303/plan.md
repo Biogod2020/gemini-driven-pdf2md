@@ -15,16 +15,16 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (manual)
 
 ## Phase 3: Reporting & CLI
-- [ ] Task: Implement Metric Aggregator (Accuracy, Latency)
+- [~] Task: Implement Metric Aggregator (Accuracy, Latency)
     - [ ] Write tests for aggregation
     - [ ] Implement aggregation logic
-- [ ] Task: Implement Hybrid Reporter (Markdown + JSON)
+- [x] Task: Implement Hybrid Reporter (Markdown + JSON) (integrated)
     - [ ] Write tests for report generation
     - [ ] Implement Markdown and JSON exporters
-- [ ] Task: Add `benchmark` command to CLI
+- [x] Task: Add `benchmark` command to CLI (done)
     - [ ] Update `cli.py` with the new command
     - [ ] Write CLI integration tests
-- [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) (manual)
 
 ## Phase 4: Execution & Baseline
 - [ ] Task: Run benchmark against a standard dataset
