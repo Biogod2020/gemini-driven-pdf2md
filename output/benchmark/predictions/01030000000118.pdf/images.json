@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p0_fig_1",
+    "path": "assets/p0_fig_1.png",
+    "caption": "Cellular Replication",
+    "description": null
+  },
+  {
+    "id": "p0_fig_2",
+    "path": "assets/p0_fig_2.png",
+    "caption": "Cellular Cycle and Replication",
+    "description": null
+  },
+  {
+    "id": "p0_fig_3",
+    "path": "assets/p0_fig_3.png",
+    "caption": "A step by step guide to growing a human!",
+    "description": null
+  },
+  {
+    "id": "p0_fig_4",
+    "path": "assets/p0_fig_4.png",
+    "caption": "Mitosis and Meiosis: Similiar processes with VERY different results!",
+    "description": null
+  }
+]

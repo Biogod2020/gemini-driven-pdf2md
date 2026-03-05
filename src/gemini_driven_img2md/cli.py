@@ -189,16 +189,18 @@ def benchmark(
     bench_dir: Path = typer.Option(Path("./vendor/opendataloader-bench"), "--bench-dir", help="Path to the benchmark dataset."),
     output_dir: Path = typer.Option(Path("./output/benchmark"), "--output", "-o", help="Directory to save results."),
     max_docs: int = typer.Option(5, "--max-docs", help="Limit the number of documents to process."),
+    concurrency: int = typer.Option(4, "--concurrency", "-c", help="Number of parallel extraction tasks."),
 ):
     """
-    Run benchmark evaluation against opendataloader-bench.
+    Run benchmark evaluation against opendataloader-bench with parallel support.
     """
     from gemini_driven_img2md.benchmark.loader import BenchmarkLoader
     from gemini_driven_img2md.benchmark.bridge import ExtractionBridge
     from gemini_driven_img2md.benchmark.aggregator import MetricAggregator
     from gemini_driven_img2md.benchmark.reporter import HybridReporter
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     
-    typer.echo(f"📊 Starting benchmark against {bench_dir}...")
+    typer.echo(f"📊 Starting parallel benchmark (c={concurrency}) against {bench_dir}...")
     
     loader = BenchmarkLoader(bench_dir)
     bridge = ExtractionBridge(output_dir / "predictions")
@@ -208,22 +210,42 @@ def benchmark(
     available_pdfs = loader.list_available_pdfs()
     pdfs_to_process = available_pdfs[:max_docs]
     
-    with typer.progressbar(pdfs_to_process, label="Benchmarking") as progress:
-        for pdf_name in progress:
-            pdf_path = bench_dir / "pdfs" / pdf_name
-            ground_truth = loader.get_ground_truth(pdf_name)
-            
-            if not ground_truth:
-                typer.echo(f"  ⚠️ Skipping {pdf_name}: No ground truth found.")
-                continue
+    def process_one(pdf_name):
+        pdf_path = bench_dir / "pdfs" / pdf_name
+        ground_truth = loader.get_ground_truth(pdf_name)
+        if not ground_truth:
+            return None, ground_truth
+        result = bridge.run_extraction(pdf_path, pdf_name)
+        return result, ground_truth
+
+    results_count = 0
+    with ThreadPoolExecutor(max_workers=concurrency) as executor:
+        future_to_pdf = {executor.submit(process_one, pdf): pdf for pdf in pdfs_to_process}
+        
+        with typer.progressbar(length=len(pdfs_to_process), label="Benchmarking") as progress:
+            for future in as_completed(future_to_pdf):
+                pdf_name = future_to_pdf[future]
+                try:
+                    result, gt = future.result()
+                    if result:
+                        aggregator.add_result(result, gt)
+                        results_count += 1
+                        # Calculate individual accuracy for logging
+                        from rapidfuzz import fuzz
+                        acc = fuzz.ratio(result["markdown"], gt) / 100.0
+                        status_icon = "✅" if acc > 0.8 else "⚠️"
+                        typer.echo(f"  {status_icon} [{results_count:02d}] {pdf_name}: Acc={acc*100:.2f}%, Latency={result['latency']:.2f}s")
+                    else:
+                        typer.echo(f"  ❌ {pdf_name}: No ground truth found.")
+                except Exception as e:
+                    typer.echo(f"  🔥 {pdf_name}: Error during benchmark: {e}")
                 
-            result = bridge.run_extraction(pdf_path, pdf_name)
-            aggregator.add_result(result, ground_truth)
+                progress.update(1)
             
     summary = aggregator.get_summary()
     json_path, md_path = reporter.generate_report(summary)
     
-    typer.echo(f"\n✅ Benchmark complete!")
+    typer.echo(f"\n✅ Benchmark complete! Processed {results_count} documents.")
     typer.echo(f"  Markdown Report: {md_path}")
     typer.echo(f"  JSON Data: {json_path}")
 

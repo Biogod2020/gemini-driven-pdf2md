@@ -1,19 +1,187 @@
 {
-  "total_documents": 2,
-  "average_latency": 5.774321675300598,
-  "average_accuracy": 0.8966266291847687,
+  "total_documents": 30,
+  "average_latency": 9.612653732299805,
+  "average_accuracy": 0.8470897796240652,
   "results": [
     {
+      "doc_id": "01030000000125.pdf",
+      "latency": 5.449199914932251,
+      "accuracy": 0.9560439560439561,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000045.pdf",
+      "latency": 6.643528938293457,
+      "accuracy": 0.6669912366114898,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000051.pdf",
+      "latency": 7.819666147232056,
+      "accuracy": 0.7533276692155197,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000131.pdf",
+      "latency": 9.790789127349854,
+      "accuracy": 0.8039312039312039,
+      "assets_count": 2
+    },
+    {
       "doc_id": "01030000000119.pdf",
-      "latency": 7.40946626663208,
+      "latency": 9.932155132293701,
       "accuracy": 0.8372093023255813,
       "assets_count": 0
     },
     {
-      "doc_id": "01030000000125.pdf",
-      "latency": 4.139177083969116,
-      "accuracy": 0.9560439560439561,
+      "doc_id": "01030000000086.pdf",
+      "latency": 10.856415033340454,
+      "accuracy": 0.972744856690698,
       "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000079.pdf",
+      "latency": 12.09086298942566,
+      "accuracy": 0.9721054642720672,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000044.pdf",
+      "latency": 5.70042610168457,
+      "accuracy": 0.8674033149171271,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000092.pdf",
+      "latency": 14.731571912765503,
+      "accuracy": 0.9836105378171665,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000093.pdf",
+      "latency": 9.103394031524658,
+      "accuracy": 0.9818393142525061,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000087.pdf",
+      "latency": 11.04802417755127,
+      "accuracy": 0.9496096522356281,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000050.pdf",
+      "latency": 8.8366858959198,
+      "accuracy": 0.9509713228492137,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000124.pdf",
+      "latency": 7.715508937835693,
+      "accuracy": 0.885186852769023,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000130.pdf",
+      "latency": 10.906787872314453,
+      "accuracy": 0.7437256981265467,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000118.pdf",
+      "latency": 8.488650798797607,
+      "accuracy": 0.8640883977900553,
+      "assets_count": 4
+    },
+    {
+      "doc_id": "01030000000126.pdf",
+      "latency": 7.888190031051636,
+      "accuracy": 0.859504132231405,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000085.pdf",
+      "latency": 6.638110160827637,
+      "accuracy": 0.92573402417962,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000052.pdf",
+      "latency": 8.93976092338562,
+      "accuracy": 0.7274837511606314,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000046.pdf",
+      "latency": 11.082873106002808,
+      "accuracy": 0.7711657593392154,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000132.pdf",
+      "latency": 12.78675889968872,
+      "accuracy": 0.8765645230902028,
+      "assets_count": 2
+    },
+    {
+      "doc_id": "01030000000078.pdf",
+      "latency": 20.244471073150635,
+      "accuracy": 0.7962520668748851,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000084.pdf",
+      "latency": 7.496256113052368,
+      "accuracy": 0.5469924812030076,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000090.pdf",
+      "latency": 9.258301734924316,
+      "accuracy": 0.7705366922234392,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000091.pdf",
+      "latency": 11.37083101272583,
+      "accuracy": 0.9750522648083624,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000053.pdf",
+      "latency": 7.491466045379639,
+      "accuracy": 0.768305439330544,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000047.pdf",
+      "latency": 7.877384185791016,
+      "accuracy": 0.7619764233759718,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000127.pdf",
+      "latency": 10.604146003723145,
+      "accuracy": 0.6742801994531125,
+      "assets_count": 0
+    },
+    {
+      "doc_id": "01030000000133.pdf",
+      "latency": 10.924590826034546,
+      "accuracy": 0.9733104417043859,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000123.pdf",
+      "latency": 7.687130928039551,
+      "accuracy": 0.8463054187192118,
+      "assets_count": 1
+    },
+    {
+      "doc_id": "01030000000137.pdf",
+      "latency": 8.975673913955688,
+      "accuracy": 0.9504409911801764,
+      "assets_count": 1
     }
   ]
 }
