@@ -7,5 +7,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: 尝试使用opendataloader-bench进行benchmark**
+- [~] **Track: 尝试使用opendataloader-bench进行benchmark**
 *Link: [./tracks/benchmark_20260303/](./tracks/benchmark_20260303/)*

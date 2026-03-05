@@ -1,8 +1,8 @@
 [
   {
-    "id": "fig_21",
-    "path": "assets/fig_21.png",
-    "caption": "Figure 21. Performance variation with $\\epsilon$ for interpolation on the Brain Regeneration dataset.",
+    "id": "p1_fig1",
+    "path": "assets/p1_fig1.png",
+    "caption": "Figure 1. ContextFlow integrates local tissue organization and ligand–receptor communications to learn biologically meaningful trajectories from spatial omics data. Prior knowledge acts as a soft filter, discouraging implausible transitions while preserving flexibility in trajectory inference.",
     "description": null
   }
 ]

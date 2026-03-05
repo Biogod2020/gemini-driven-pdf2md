@@ -3,7 +3,6 @@
 {
   "document_metadata": {
     "title": "Context-Aware Flow Matching for Trajectory Inference from Spatial Omics Data",
-    "style": "Academic Paper - Multi-column",
     "style_conformity": 1.0,
     "style_patch": null
   },
@@ -21,20 +20,67 @@
 
 *Table 1. Comparisons of state-of-the-art spatiotemporal OT and flow matching methods. In particular, ContextFlow excels at efficiently inferring biologically plausible trajectories by incorporating spatial priors into minibatch-OT-based flow-matching frameworks.*
 
-| Method | Generative | Prior Knowledge | Unified Velocity Field | OT Runtime |
-| :--- | :---: | :---: | :---: | :---: |
-| DeST-OT (Halmos et al., 2025) | ✗ | ✗ | ✗ | $O(N^3)$ |
-| TOAST (Ceccarelli et al., 2025) | ✗ | ✗ | ✗ | $O(N^3)$ |
-| PASTE (Zeira et al., 2022) | ✗ | ✗ | ✗ | $O(N^3)$ |
-| CFM (Lipman et al., 2022) | ✓ | ✗ | ✓ | — |
-| MOTFM (Tong et al., 2024) | ✓ | ✗ | ✓ | $O(N^2)$ |
-| **ContextFlow (ours)** | ✓ | ✓ | ✓ | $O(N^2)$ |
+<table style="width:100%; border-collapse: collapse; border-top: 2px solid black; border-bottom: 2px solid black; font-size: 0.9em;">
+  <thead>
+    <tr style="border-bottom: 1px solid black;">
+      <th style="text-align:left;">Method</th>
+      <th style="text-align:center;">Generative</th>
+      <th style="text-align:center;">Prior Knowledge</th>
+      <th style="text-align:center;">Unified Velocity Field</th>
+      <th style="text-align:center;">OT Runtime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left;">DeST-OT <span style="color:blue;">(Halmos et al., 2025)</span></td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">$O(N^3)$</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">TOAST <span style="color:blue;">(Ceccarelli et al., 2025)</span></td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">$O(N^3)$</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">PASTE <span style="color:blue;">(Zeira et al., 2022)</span></td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">$O(N^3)$</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">CFM <span style="color:blue;">(Lipman et al., 2022)</span></td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">—</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">MOTFM <span style="color:blue;">(Tong et al., 2024)</span></td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">✗</td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">$O(N^2)$</td>
+    </tr>
+    <tr style="font-weight:bold;">
+      <td style="text-align:left;">ContextFlow (ours)</td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">✓</td>
+      <td style="text-align:center;">$O(N^2)$</td>
+    </tr>
+  </tbody>
+</table>
 
 ![Figure 1. ContextFlow integrates local tissue organization and ligand–receptor communications to learn biologically meaningful trajectories from spatial omics data. Prior knowledge acts as a soft filter, discouraging implausible transitions while preserving flexibility in trajectory inference.](assets/fig1.png)
 
-2021; Wei et al., 2022), disease progression (Kukanja et al., 2024), and treatment response (Liu et al., 2024).
+<span style="color:blue;">2021; Wei et al., 2022</span>), disease progression (<span style="color:blue;">Kukanja et al., 2024</span>), and treatment response (<span style="color:blue;">Liu et al., 2024</span>).
 
-Optimal transport (OT) has become a foundational framework for aligning spatially resolved samples and inferring putative developmental or temporal couplings (Zeira et al., 2022; Liu et al., 2023). As a result, state-of-the-art flow matching frameworks such as minibatch-OT flow matching (MOTFM) (Tong et al., 2024) use OT-derived couplings to define conditional paths for training velocity fields, thereby overcoming the lack of generative capabilities in optimal transport. The OT formulation adopted in MOTFM, however, does not account for the contextual richness of spatial transcriptomics and can yield trajectories that are statistically optimal yet biologically implausible (see Figure 4a in Appendix G.1 for an illustration). While recent studies (Halmos et al., 2025; Ceccarelli et al., 2025) have extended OT objectives to spatial transcriptomics, they primarily focus on pairwise alignment of populations across conditions or modalities and do not explicitly incorporate the cell–cell communication patterns that drive cellular state transitions.
+Optimal transport (OT) has become a foundational framework for aligning spatially resolved samples and inferring putative developmental or temporal couplings (<span style="color:blue;">Zeira et al., 2022; Liu et al., 2023</span>). As a result, state-of-the-art flow matching frameworks such as minibatch-OT flow matching (MOTFM) (<span style="color:blue;">Tong et al., 2024</span>) use OT-derived couplings to define conditional paths for training velocity fields, thereby overcoming the lack of generative capabilities in optimal transport. The OT formulation adopted in MOTFM, however, does not account for the contextual richness of spatial transcriptomics and can yield trajectories that are statistically optimal yet biologically implausible (see Figure 4a in Appendix G.1 for an illustration). While recent studies (<span style="color:blue;">Halmos et al., 2025; Ceccarelli et al., 2025</span>) have extended OT objectives to spatial transcriptomics, they primarily focus on pairwise alignment of populations across conditions or modalities and do not explicitly incorporate the cell–cell communication patterns that drive cellular state transitions.
 
 To address the above limitations, we introduce a novel flow matching-based framework, *ContextFlow*, that incorporates spatial priors to model temporal tissue dynamics (Figure 1). By encoding local tissue organization and ligand-receptor-derived spatial communication patterns into prior-regularized optimal transport formulations, ContextFlow fully exploits the contextual richness of spatial omics data and embeds both structural and functional aspects of tissue organization into its objective, thereby generating more biologically informed trajectories. Table 1 highlights the key advantages of ContextFlow, compared with the aforementioned existing methods, where detailed discussions on related works are postponed to Appendix A.
 
@@ -48,8 +94,6 @@ In summary, our contributions are as follows:
 
 ### 2.1. Flow Matching Basics
 
-Flow matching (Lipman et al., 2023) is a simulation-free and sample-efficient generative framework for training continuous normalizing flows (Chen et al., 2018). Given a pair of source and target data distributions over $\mathbb{R}^d$ with densities $q_0 = q(\boldsymbol{x}_0)$ and $q_1 = q(\boldsymbol{x}_1)$, the problem task is to learn a time-varying velocity vector field $u_\theta : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$, whose continuous evolution is captured by a function in the form of a neural-net-based model with weights $\theta$, that can transform $q_0$ to $q_1$ through integration via an ordinary differential equation (ODE). To be more specific, *flow matching* (FM) seeks to optimize $\theta$ by minimizing a simple regression loss between $u_\theta$ and a target time-varying velocity vector field $u_t : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ as follows:
+Flow matching (<span style="color:blue;">Lipman et al., 2023</span>) is a simulation-free and sample-efficient generative framework for training continuous normalizing flows (<span style="color:blue;">Chen et al., 2018</span>). Given a pair of source and target data distributions over $\mathbb{R}^d$ with densities $q_0 = q(\boldsymbol{x}_0)$ and $q_1 = q(\boldsymbol{x}_1)$, the problem task is to learn a time-varying velocity vector field $u_{\theta} : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$, whose continuous evolution is captured by a function in the form of a neural-net-based model with weights $\theta$, that can transform $q_0$ to $q_1$ through integration via an ordinary differential equation (ODE). To be more specific, *flow matching* (FM) seeks to optimize $\theta$ by minimizing a simple regression loss between $u_{\theta}$ and a target time-varying velocity vector field $u_t : [0, 1] \times \mathbb{R}^d \rightarrow \mathbb{R}^d$ as follows:
 
-$$\min_\theta \mathbb{E}_{t \sim \mathcal{U}(0,1), \boldsymbol{x} \sim p_t(\boldsymbol{x})} \| u_\theta(t, \boldsymbol{x}) - u_t(\boldsymbol{x}) \|^2. \tag{1}$$
-
----
+$$ \min_{\theta} \mathbb{E}_{t \sim \mathcal{U}(0,1), \boldsymbol{x} \sim p_t(\boldsymbol{x})} \| u_{\theta}(t, \boldsymbol{x}) - u_t(\boldsymbol{x}) \|^2. \quad (1) $$
