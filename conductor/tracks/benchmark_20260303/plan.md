@@ -1,6 +1,6 @@
 # Implementation Plan: Benchmark Integration with opendataloader-bench
 
-## Phase 1: Environment Setup & Tool Research
+## Phase 1: Environment Setup ## Phase 1: Environment Setup & Tool Research Tool Research [checkpoint: dbcc1d8]
 - [x] Task: Research `opendataloader-bench` API and data format (66f3ebb)
 - [~] Task: Install `opendataloader-bench` and its dependencies
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
