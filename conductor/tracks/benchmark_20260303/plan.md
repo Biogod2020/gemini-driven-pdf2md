@@ -1,7 +1,7 @@
 # Implementation Plan: Benchmark Integration with opendataloader-bench
 
 ## Phase 1: Environment Setup & Tool Research
-- [ ] Task: Research `opendataloader-bench` API and data format
+- [~] Task: Research `opendataloader-bench` API and data format
 - [ ] Task: Install `opendataloader-bench` and its dependencies
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
