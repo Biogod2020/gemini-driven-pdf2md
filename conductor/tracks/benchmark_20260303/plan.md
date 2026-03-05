@@ -9,10 +9,10 @@
 - [~] Task: Implement Dataset Loader for `opendataloader-bench`
     - [x] Write unit tests for data loading (done)
     - [x] Implement loading logic in `src/gemini_driven_img2md/benchmark/loader.py` (done)
-- [ ] Task: Implement Extraction Bridge
-    - [ ] Write tests for the bridge (mocking VLM)
-    - [ ] Implement bridge logic to connect our pipeline to the bench tool
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Implement Extraction Bridge (9d2c11e)
+    - [x] Write tests for the bridge (mocking VLM) (done)
+    - [x] Implement bridge logic to connect our pipeline to the bench tool (done)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (manual)
 
 ## Phase 3: Reporting & CLI
 - [ ] Task: Implement Metric Aggregator (Accuracy, Latency)
