@@ -6,7 +6,7 @@ from pathlib import Path
 from gemini_driven_img2md.gemini_client import get_gemini_client
 from gemini_driven_img2md.prompts import get_extraction_prompt
 from gemini_driven_img2md.utils import get_page_image, image_to_base64
-from gemini_driven_img2md.extraction import parse_gemini_response, process_assets
+from gemini_driven_img2md.extraction import parse_gemini_response, process_assets, process_pdf_page
 from gemini_driven_img2md.profiler import calculate_page_density, select_representative_pages
 from langchain_core.messages import HumanMessage
 from PIL import Image
@@ -47,109 +47,17 @@ def extract(
 
     typer.echo(f"Processing {input_path} (Target: Page {page}, Context: {prev_page}, {next_page})...")
     
-    # 1. Load Images
     try:
-        # Load Target
-        target_image = get_page_image(input_path, page)
-        
-        # Load Contexts
-        prev_image = None
-        if prev_page is not None:
-            prev_image = get_page_image(input_path, prev_page)
-            
-        next_image = None
-        if next_page is not None:
-            next_image = get_page_image(input_path, next_page)
-            
-    except Exception as e:
-        typer.echo(f"Error loading document pages: {e}", err=True)
-        raise typer.Exit(code=1)
-
-    # 2. Load Style Registry
-    from gemini_driven_img2md.registry import StyleRegistryManager
-    registry_mgr = StyleRegistryManager(style_profile)
-    profile_data = registry_mgr.get_current_profile_json()
-
-    # 3. Prepare Gemini call
-    client = get_gemini_client()
-    prompt = get_extraction_prompt(style_profile=profile_data)
-    
-    # Multimodal content list
-    content = [{"type": "text", "text": prompt}]
-    
-    # Add Previous Page Context
-    if prev_image:
-        content.append({"type": "text", "text": "### [CONTEXT] PREVIOUS PAGE (Reference Only)"})
-        content.append({
-            "type": "image_url",
-            "image_url": f"data:image/png;base64,{image_to_base64(prev_image)}"
-        })
-        
-    # Add Target Page (The one to extract)
-    content.append({"type": "text", "text": "### [TARGET] THE CURRENT PAGE TO EXTRACT"})
-    content.append({
-        "type": "image_url",
-        "image_url": f"data:image/png;base64,{image_to_base64(target_image)}"
-    })
-    
-    # Add Next Page Context
-    if next_image:
-        content.append({"type": "text", "text": "### [CONTEXT] NEXT PAGE (Reference Only)"})
-        content.append({
-            "type": "image_url",
-            "image_url": f"data:image/png;base64,{image_to_base64(next_image)}"
-        })
-    
-    message = HumanMessage(content=content)
-
-    # 4. Call Gemini
-    typer.echo("Calling Gemini API with Triplet Context...")
-    try:
-        response = client.invoke([message])
-        response_text = response.content
-        
-        # DEBUG: Always save raw response
-        output_dir.mkdir(parents=True, exist_ok=True)
-        with open(output_dir / f"raw_response_p{page}.txt", "w", encoding="utf-8") as f:
-            f.write(response_text)
-            
-    except Exception as e:
-        typer.echo(f"Error calling Gemini API: {e}", err=True)
-        raise typer.Exit(code=1)
-
-    # 5. Parse and Process
-    try:
-        metadata, markdown_content = parse_gemini_response(response_text)
-        
-        # Ensure asset IDs are unique across pages and sync Markdown text
-        for asset in metadata.get("assets", []):
-            old_id = asset.get("id")
-            if old_id:
-                new_id = f"p{page}_{old_id}"
-                # 1. Update the ID in metadata for physical cropping
-                asset["id"] = new_id
-                # 2. Sync the Markdown content to use the new unique path
-                # Replacing assets/old_id.png with assets/new_id.png
-                old_path = f"assets/{old_id}.png"
-                new_path = f"assets/{new_id}.png"
-                markdown_content = markdown_content.replace(old_path, new_path)
-        
-        # Handle Style Evolution
-        patch = metadata.get("document_metadata", {}).get("style_patch")
-        if patch:
-            typer.echo(f"  ✨ Style Patch detected! Updating registry...")
-            registry_mgr.apply_patch(patch)
-            if style_profile:
-                registry_mgr.save(style_profile)
-        
-        conformity = metadata.get("document_metadata", {}).get("style_conformity", 1.0)
-        if conformity < 0.7:
-            typer.echo(f"  ⚠️ Low Style Conformity detected: {conformity}")
-
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Save assets and generate images.json
-        process_assets(metadata, target_image, output_dir)
+        metadata, markdown_content = process_pdf_page(
+            input_path=input_path,
+            page=page,
+            output_dir=output_dir,
+            style_profile_path=style_profile,
+            prev_page=prev_page,
+            next_page=next_page
+        )
         
         # Save final Markdown
         output_md_path = output_dir / f"{input_path.stem}_p{page}.md"
@@ -215,7 +123,6 @@ def profile(
         response = client.invoke([message])
         registry_text = response.content
         
-        # Extract JSON from response (handling markdown blocks)
         json_match = re.search(r"```json\s*(.*?)\s*```", registry_text, re.DOTALL)
         if json_match:
             registry_json = json_match.group(1)

@@ -1,21 +1,18 @@
 import json
 import re
+import os
 from pathlib import Path
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from PIL import Image
-from gemini_driven_img2md.utils import crop_image_normalized
+from gemini_driven_img2md.utils import crop_image_normalized, get_page_image, image_to_base64
+from gemini_driven_img2md.gemini_client import get_gemini_client
+from gemini_driven_img2md.prompts import get_extraction_prompt
+from gemini_driven_img2md.registry import StyleRegistryManager
+from langchain_core.messages import HumanMessage
 
 def parse_gemini_response(response_text: str) -> Tuple[Dict[str, Any], str]:
     """
     Parses the dual-section response from Gemini.
-    Expected format is flexible but usually:
-    ---
-    ```json
-    { ... }
-    ```
-    ---
-    Markdown content
-    ---
     """
     # 1. Find the JSON block
     json_match = re.search(r"```json\s*(.*?)\s*```", response_text, re.DOTALL)
@@ -28,28 +25,12 @@ def parse_gemini_response(response_text: str) -> Tuple[Dict[str, Any], str]:
         raise ValueError(f"Failed to parse JSON metadata: {e}")
 
     # 2. Extract Markdown content
-    # The prompt asks for:
-    # ---
-    # JSON
-    # ---
-    # Markdown
-    # ---
-    
-    # We look for the Markdown content after the closing ``` of the JSON block.
-    # We also need to handle the potential trailing ---
-    
     remaining_text = response_text[json_match.end():].strip()
-    
-    # Remove leading --- if present
     remaining_text = re.sub(r"^\s*---\s*", "", remaining_text)
-    
-    # Remove trailing --- if present (usually at the very end)
     markdown_content = re.sub(r"\s*---\s*$", "", remaining_text).strip()
 
     if not markdown_content:
-        # If still empty, maybe it's between two --- after the JSON
         parts = response_text.split("---")
-        # Try to find a part that is not JSON and not empty
         for part in parts:
             part = part.strip()
             if part and not part.startswith("```json"):
@@ -67,7 +48,6 @@ def process_assets(metadata: Dict[str, Any], page_image: Image.Image, output_dir
     
     index_path = output_dir / "images.json"
     
-    # Load existing index if it exists
     current_index = []
     if index_path.exists():
         try:
@@ -81,14 +61,8 @@ def process_assets(metadata: Dict[str, Any], page_image: Image.Image, output_dir
         asset_id = asset.get("id")
         bbox = asset.get("bbox")
         if asset_id and bbox:
-            # Ensure unique ID by checking current_index
             final_id = asset_id
-            # If ID already exists, it might be a multi-page table or same ID used by model
-            # We skip if it's identical path or modify ID
             output_path = assets_dir / f"{final_id}.png"
-            
-            # Simple check to avoid redundant cropping of same file
-            # though usually each page's assets are unique
             crop_image_normalized(page_image, bbox, output_path)
             
             asset_entry = {
@@ -97,19 +71,79 @@ def process_assets(metadata: Dict[str, Any], page_image: Image.Image, output_dir
                 "caption": asset.get("caption"),
                 "description": asset.get("description")
             }
-            
-            # Update or append
-            # For simplicity, we append. In SOTA, we should deduplicate.
             new_assets.append(asset_entry)
     
-    # Merge new assets into current index (avoid duplicates based on ID and Path)
     existing_paths = {a["path"] for a in current_index}
     for na in new_assets:
         if na["path"] not in existing_paths:
             current_index.append(na)
     
-    # Save the updated cumulative images.json
     with open(index_path, "w", encoding="utf-8") as f:
         json.dump(current_index, f, indent=2, ensure_ascii=False)
     
     return new_assets
+
+def process_pdf_page(
+    input_path: Path,
+    page: int,
+    output_dir: Path,
+    style_profile_path: Optional[Path] = None,
+    prev_page: Optional[int] = None,
+    next_page: Optional[int] = None,
+) -> Tuple[Dict[str, Any], str]:
+    """
+    Core extraction logic for a single PDF page.
+    """
+    # 1. Load Images
+    target_image = get_page_image(input_path, page)
+    prev_image = get_page_image(input_path, prev_page) if prev_page is not None else None
+    next_image = get_page_image(input_path, next_page) if next_page is not None else None
+
+    # 2. Load Style Registry
+    registry_mgr = StyleRegistryManager(style_profile_path)
+    profile_data = registry_mgr.get_current_profile_json()
+
+    # 3. Prepare Gemini call
+    client = get_gemini_client()
+    prompt = get_extraction_prompt(style_profile=profile_data)
+    
+    content = [{"type": "text", "text": prompt}]
+    if prev_image:
+        content.append({"type": "text", "text": "### [CONTEXT] PREVIOUS PAGE (Reference Only)"})
+        content.append({"type": "image_url", "image_url": f"data:image/png;base64,{image_to_base64(prev_image)}"})
+        
+    content.append({"type": "text", "text": "### [TARGET] THE CURRENT PAGE TO EXTRACT"})
+    content.append({"type": "image_url", "image_url": f"data:image/png;base64,{image_to_base64(target_image)}"})
+    
+    if next_image:
+        content.append({"type": "text", "text": "### [CONTEXT] NEXT PAGE (Reference Only)"})
+        content.append({"type": "image_url", "image_url": f"data:image/png;base64,{image_to_base64(next_image)}"})
+    
+    message = HumanMessage(content=content)
+
+    # 4. Call Gemini
+    response = client.invoke([message])
+    response_text = response.content
+
+    # 5. Parse and Process
+    metadata, markdown_content = parse_gemini_response(response_text)
+    
+    # Ensure unique asset IDs
+    for asset in metadata.get("assets", []):
+        old_id = asset.get("id")
+        if old_id:
+            new_id = f"p{page}_{old_id}"
+            asset["id"] = new_id
+            markdown_content = markdown_content.replace(f"assets/{old_id}.png", f"assets/{new_id}.png")
+    
+    # Handle Style Evolution
+    patch = metadata.get("document_metadata", {}).get("style_patch")
+    if patch:
+        registry_mgr.apply_patch(patch)
+        if style_profile_path:
+            registry_mgr.save(style_profile_path)
+            
+    # Save assets
+    process_assets(metadata, target_image, output_dir)
+    
+    return metadata, markdown_content
