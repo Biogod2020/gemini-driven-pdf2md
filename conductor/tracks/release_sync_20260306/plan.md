@@ -12,8 +12,8 @@
 - [x] Task: Implement MCP server scaffolding in Python (2deb1de)
     - [ ] Write unit tests for MCP tool registration
     - [ ] Implement `extract` and `profile` as MCP tools
-- [ ] Task: Add MCP configuration and startup scripts
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Add MCP configuration and startup scripts (done)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (manual)
 
 ## Phase 3: GitHub Sync & CI/CD
 - [ ] Task: Prepare repository for GitHub

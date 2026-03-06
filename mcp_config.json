@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "gemini-driven-img2md": {
+      "command": "/Users/jay/micromamba/envs/pdf_process/bin/python",
+      "args": ["/Users/jay/LocalProjects/gemini_driven_img2md/src/gemini_driven_img2md/mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "/Users/jay/LocalProjects/gemini_driven_img2md/src",
+        "GEMINI_API_ENDPOINT": "http://localhost:8888",
+        "GEMINI_API_KEY": "123456"
+      }
+    }
+  }
+}
