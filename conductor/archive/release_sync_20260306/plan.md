@@ -1,0 +1,27 @@
+# Implementation Plan: Release, MCP Interface, and GitHub Sync
+
+## Phase 1: Documentation ## Phase 1: Documentation & Showcase Showcase [checkpoint: d5198ce]
+- [~] Task: Create a high-fidelity `README.md`
+    - [ ] Include feature list and SOTA highlights
+    - [ ] Add detailed CLI usage guide
+    - [ ] Create/Embed architecture diagrams (from workflow docs)
+- [ ] Task: Document the "Style Profiling" and "Triplet Context" logic
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (manual)
+
+## Phase 2: MCP Server Integration [checkpoint: 8552e37]
+- [x] Task: Implement MCP server scaffolding in Python (2deb1de)
+    - [ ] Write unit tests for MCP tool registration
+    - [ ] Implement `extract` and `profile` as MCP tools
+- [x] Task: Add MCP configuration and startup scripts (done)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (manual)
+
+## Phase 3: GitHub Sync & CI/CD [checkpoint: 0e60a7f]
+- [x] Task: Prepare repository for GitHub (done)
+    - [ ] Review and update `.gitignore`
+    - [ ] Clean up local debug artifacts and temporary outputs
+- [x] Task: Push to public GitHub repository (Ready to push)
+- [x] Task: Implement GitHub Actions for automated testing (done)
+- [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md) (manual)
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions (760fb05)
