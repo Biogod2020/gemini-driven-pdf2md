@@ -1,8 +1,0 @@
-[
-  {
-    "id": "p0_fig1",
-    "path": "assets/p0_fig1.png",
-    "caption": "Game tree for the Escalation Game with incomplete information",
-    "description": "A game tree diagram starting with a 'Nature' node. Nature branches into 'Player 2 weak' with probability p and 'Player 2 Strong' with probability (1-p). Both branches lead to an information set for Player 1 (indicated by a dashed green line). From this information set, Player 1 can choose 'Invade' or 'Concede'. If Player 1 concedes, the payoff is (0, 1). If Player 1 invades, the game proceeds to Player 2's decision. In the 'weak' branch, Player 2 chooses 'Concede' leading to (1, 0). In the 'strong' branch, Player 2 chooses 'Fight' leading to (-0.2, 0.8)."
-  }
-]

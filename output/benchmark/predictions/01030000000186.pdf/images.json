@@ -1,8 +1,0 @@
-[
-  {
-    "id": "p0_fig1",
-    "path": "assets/p0_fig1.png",
-    "caption": "Figure 1: Depth up-scaling for the case with $n = 32, s = 48$, and $m = 8$. Depth up-scaling is achieved through a dual-stage process of depthwise scaling followed by continued pretraining.",
-    "description": "A diagram illustrating the two-step process of depth up-scaling. Step 1-1 shows a 32-layer base model being copied. Step 1-2 shows the removal of 8 layers from each copy and merging them to form a 48-layer model. Step 2 shows the continued pretraining of the 48-layer model."
-  }
-]

@@ -1,8 +1,0 @@
-[
-  {
-    "id": "p0_table2",
-    "path": "assets/p0_table2.png",
-    "caption": "Table 2: Evaluation results for SOLAR 10.7B and SOLAR 10.7B-Instruct along with other top-performing models. We report the scores for the six tasks mentioned in Sec. 4.1 along with the H6 score (average of six tasks). We also report the size of the models in units of billions of parameters. The type indicates the training stage of the model and is chosen from {Pretrained, Instruction-tuned, Alignment-tuned}. Models based on SOLAR 10.7B are colored purple. The best scores for H6 and the individual tasks are shown in bold.",
-    "description": "A comprehensive table comparing SOLAR 10.7B models against other LLMs like Qwen, Mixtral, Yi, Llama 2, and Falcon across various benchmarks (ARC, HellaSwag, MMLU, TruthfulQA, Winogrande, GSM8K) and an average H6 score."
-  }
-]
