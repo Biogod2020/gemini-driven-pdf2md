@@ -79,8 +79,7 @@ def profile(
     """
     Stage 0: Analyze the document to generate a Global Style Registry.
     """
-    from gemini_driven_img2md.prompts import get_profiler_prompt
-    import fitz
+    from gemini_driven_img2md.profiler import run_profiling
     
     if not input_path.exists() or input_path.suffix.lower() != ".pdf":
         typer.echo(f"Error: {input_path} is not a valid PDF file.", err=True)
@@ -88,53 +87,8 @@ def profile(
 
     typer.echo(f"🚀 Starting Style Profiling for {input_path.name}...")
     
-    # 1. Calculate Densities
-    doc = fitz.open(str(input_path))
-    num_pages = len(doc)
-    densities = []
-    
-    typer.echo(f"  📊 Scanning {num_pages} pages for visual density...")
-    with typer.progressbar(range(num_pages), label="Scanning") as progress:
-        for i in progress:
-            page_image = get_page_image(input_path, i, dpi=72) # Low res for speed
-            densities.append(calculate_page_density(page_image))
-    
-    # 2. Select Samples
-    sample_indices = select_representative_pages(densities, max_samples=15)
-    typer.echo(f"  🎯 Selected {len(sample_indices)} representative pages: {sample_indices}")
-    
-    # 3. Call Gemini Profiler
-    client = get_gemini_client()
-    prompt = get_profiler_prompt()
-    
-    content = [{"type": "text", "text": prompt}]
-    for idx in sample_indices:
-        img = get_page_image(input_path, idx, dpi=100) # Medium res for AI analysis
-        base64_img = image_to_base64(img)
-        content.append({
-            "type": "image_url",
-            "image_url": f"data:image/png;base64,{base64_img}"
-        })
-        
-    message = HumanMessage(content=content)
-    
-    typer.echo("  🧠 Generating Global Style Registry...")
     try:
-        response = client.invoke([message])
-        registry_text = response.content
-        
-        json_match = re.search(r"```json\s*(.*?)\s*```", registry_text, re.DOTALL)
-        if json_match:
-            registry_json = json_match.group(1)
-        else:
-            registry_json = registry_text
-            
-        output_dir.mkdir(parents=True, exist_ok=True)
-        profile_path = output_dir / "style_profile.json"
-        
-        with open(profile_path, "w", encoding="utf-8") as f:
-            f.write(registry_json)
-            
+        profile_path = run_profiling(input_path, output_dir)
         typer.echo(f"  ✅ Style Registry saved to {profile_path}")
         
     except Exception as e:

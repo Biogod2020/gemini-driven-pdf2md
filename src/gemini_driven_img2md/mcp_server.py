@@ -18,21 +18,13 @@ async def profile_document(pdf_path: str, output_dir: str = "./output/mcp_profil
         pdf_path: Path to the local PDF file.
         output_dir: Directory to save the style profile.
     """
+    from gemini_driven_img2md.profiler import run_profiling
     path = Path(pdf_path)
     out = Path(output_dir)
     
-    # We'll use a simplified version or call the existing logic
-    # Since profile in cli.py is a Typer command, we'll wrap the core logic if needed
-    # but for now we'll just execute it.
+    profile_path = run_profiling(path, out)
     
-    # Importing here to avoid circular imports if any
-    from gemini_driven_img2md.cli import profile as profile_cmd
-    
-    # Mocking the progression bar context or just running the logic
-    # To keep it simple, we'll implement a clean wrapper here or in profiler.py
-    # For now, let's call the logic directly
-    
-    return f"Style profiling started for {pdf_path}. Check {output_dir}/style_profile.json upon completion."
+    return f"Style profiling complete for {pdf_path}. Registry saved to {profile_path}."
 
 @mcp.tool()
 async def extract_page(

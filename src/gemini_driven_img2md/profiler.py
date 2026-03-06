@@ -1,4 +1,5 @@
 from typing import List
+from pathlib import Path
 from PIL import Image
 import numpy as np
 import math
@@ -76,3 +77,60 @@ def select_representative_pages(densities: List[float], max_samples: int = 15) -
             selected.add(idx)
             
     return sorted(list(selected))
+
+def run_profiling(pdf_path: Path, output_dir: Path) -> Path:
+    """
+    Executes the full Stage 0 profiling logic.
+    Returns the path to the generated style_profile.json.
+    """
+    import fitz
+    import re
+    from pathlib import Path
+    from gemini_driven_img2md.utils import get_page_image, image_to_base64
+    from gemini_driven_img2md.gemini_client import get_gemini_client
+    from gemini_driven_img2md.prompts import get_profiler_prompt
+    from langchain_core.messages import HumanMessage
+
+    # 1. Calculate Densities
+    doc = fitz.open(str(pdf_path))
+    num_pages = len(doc)
+    densities = []
+    for i in range(num_pages):
+        page_image = get_page_image(pdf_path, i, dpi=72)
+        densities.append(calculate_page_density(page_image))
+    doc.close()
+
+    # 2. Select Samples
+    sample_indices = select_representative_pages(densities, max_samples=15)
+
+    # 3. Call Gemini Profiler
+    client = get_gemini_client()
+    prompt = get_profiler_prompt()
+    
+    content = [{"type": "text", "text": prompt}]
+    for idx in sample_indices:
+        img = get_page_image(pdf_path, idx, dpi=100)
+        base64_img = image_to_base64(img)
+        content.append({
+            "type": "image_url",
+            "image_url": f"data:image/png;base64,{base64_img}"
+        })
+        
+    message = HumanMessage(content=content)
+    response = client.invoke([message])
+    registry_text = response.content
+    
+    # Handle list response if needed
+    if isinstance(registry_text, list):
+        registry_text = "".join([p.get('text', '') if isinstance(p, dict) else str(p) for p in registry_text])
+
+    # Extract JSON
+    json_match = re.search(r"```json\s*(.*?)\s*(?:```|$)", registry_text, re.DOTALL)
+    registry_json = json_match.group(1) if json_match else registry_text
+    
+    output_dir.mkdir(parents=True, exist_ok=True)
+    profile_path = output_dir / "style_profile.json"
+    with open(profile_path, "w", encoding="utf-8") as f:
+        f.write(registry_json)
+        
+    return profile_path

@@ -58,24 +58,11 @@ def test_extract_flow(mock_get_page, mock_get_client, tmp_path):
     assert (output_dir / "test_p0.md").exists()
     assert (output_dir / "images.json").exists()
 
-@patch("gemini_driven_img2md.cli.get_gemini_client")
-@patch("gemini_driven_img2md.cli.get_page_image")
-@patch("fitz.open")
-def test_profile_command(mock_fitz, mock_get_page, mock_get_client, tmp_path):
+@patch("gemini_driven_img2md.profiler.run_profiling")
+def test_profile_command(mock_run_profiling, tmp_path):
     # Mocking
-    mock_doc = MagicMock()
-    mock_doc.__len__.return_value = 5
-    mock_fitz.return_value = mock_doc
-    
-    mock_image = Image.new("RGB", (100, 100), color="white")
-    mock_get_page.return_value = mock_image
-    
-    mock_client = MagicMock()
-    mock_get_client.return_value = mock_client
-    
-    mock_response = MagicMock()
-    mock_response.content = '```json\n{"heading_weights": {}}\n```'
-    mock_client.invoke.return_value = mock_response
+    mock_run_profiling.return_value = tmp_path / "style_profile.json"
+    (tmp_path / "style_profile.json").touch()
     
     dummy_pdf = tmp_path / "test.pdf"
     dummy_pdf.touch()
