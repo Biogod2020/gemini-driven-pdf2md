@@ -15,7 +15,7 @@
 - [x] Task: Add MCP configuration and startup scripts (done)
 - [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md) (manual)
 
-## Phase 3: GitHub Sync & CI/CD
+## Phase 3: GitHub Sync & CI/CD [checkpoint: 0e60a7f]
 - [x] Task: Prepare repository for GitHub (done)
     - [ ] Review and update `.gitignore`
     - [ ] Clean up local debug artifacts and temporary outputs
