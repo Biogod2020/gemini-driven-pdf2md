@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, black, serif font, left-aligned at the top of the page; used for primary document titles.",
+      "example_text": "Contents"
+    },
+    "h2": {
+      "visual_description": "Blue, serif font, underlined; prefixed with 'Part [Roman Numeral]. Chapter [Word] - '; represents major structural divisions.",
+      "example_text": "Part I. Chapter One - Exploring Your Data"
+    },
+    "h3": {
+      "visual_description": "Blue, serif font, not underlined; prefixed with 'Section [Number].[Number]: '; represents sub-section level content.",
+      "example_text": "Section 1.1: Data and Types of Statistical Variables"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Part [IVXLC]+\\. Chapter [A-Za-z ]+ - .*$",
+      "semantic_meaning": "Major Part and Chapter heading"
+    },
+    {
+      "pattern": "^Section \\d+\\.\\d+: .*$",
+      "semantic_meaning": "Sub-section heading"
+    },
+    {
+      "pattern": "\\s+[ivx\\d]+$",
+      "semantic_meaning": "Page number reference (Roman numerals for front matter, Arabic for body)"
+    },
+    {
+      "pattern": "color: blue",
+      "semantic_meaning": "Interactive navigational link or TOC entry"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "APA (inferred from statistical/academic context)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Right-aligned page numbers; standard top/bottom margins with no visible running headers/footers on this page."
+  }
+}

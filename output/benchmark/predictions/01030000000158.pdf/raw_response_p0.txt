@@ -1,0 +1,26 @@
+**Refining JSON Output**
+
+I'm now structuring the output as a JSON object. I've included the markdown content, document metadata (title and style conformity), and a list of assets, specifically the callout box. Currently, I'm verifying the JSON is valid and double-quoted. Next, I will remove the footer to filter out margins and then I will finalize the document.
+
+
+{
+  "markdown": "to expand this section to include notes, tips and feedback from TWP instructors. If you use these materials, please let me know how it went, what worked for you, and any suggested changes or additions. I’d love to hear from you at chwixson (at) plymouth (dot) edu or fill out as much of [this form] as you’d like.\n\n# Introduction\n\nThroughout the chapters, I tried to generate Reflection & Discussion Questions that could be used either as in class (whole group or think/pair/share) discussion prompts or as written reflections assigned out of class. If your students generate any written answers to any of the Reflection & Discussion Questions in this chapter, I would be very interested to see them.\n\n## Our Mental Shortcuts\n\nIf you’d like to reinforce Kahneman’s ideas about System 1 and System 2 thinking the [video below](//www.youtube.com/embed/UBVV8pch1dM) (12 minutes) is very good, (thanks to Mike Davidson for this suggestion.)\n\n[//www.youtube.com/embed/UBVV8pch1dM](//www.youtube.com/embed/UBVV8pch1dM)\n\n### *Reflection & Discussion Question 1: Taking Stock of What You Already Know*",
+  "document_metadata": {
+    "title": "Instructor Resources: Introduction and Mental Shortcuts",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "callout1",
+      "bbox": [
+        724,
+        142,
+        834,
+        857
+      ],
+      "caption": "Reflection & Discussion Question 1: Taking Stock of What You Already Know",
+      "description": "A solid dark blue rectangular callout block containing white italicized text for a discussion question."
+    }
+  ]
+}

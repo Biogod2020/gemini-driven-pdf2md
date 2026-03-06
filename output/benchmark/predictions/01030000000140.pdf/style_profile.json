@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in the provided sample page; the page consists of body text and figures.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present in the provided sample page.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Figure \\d+\\.\\d+:",
+      "semantic_meaning": "Figure caption label and numbering, typically followed by italicized descriptive text."
+    },
+    {
+      "pattern": "\\([A-Za-z\\s]+ et al\\. \\d{4}(; [A-Za-z\\s]+ et al\\. \\d{4})*\\)",
+      "semantic_meaning": "In-text parenthetical academic citations referencing multiple authors and years."
+    },
+    {
+      "pattern": "Long description\\.",
+      "semantic_meaning": "Blue, underlined hyperlink providing accessibility descriptions for graphical figures."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none detected",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical Author-Year (e.g., Coleman et al. 1996)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column with complex text wrapping around side-aligned pie charts",
+    "margin_noise_patterns": "Footer at the bottom of the page containing the page number and section title separated by a vertical pipe (e.g., '312 | Grouper and Spawning Aggregations')."
+  }
+}

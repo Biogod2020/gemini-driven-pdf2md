@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this specific page, but typically reserved for chapter or section titles in this report style.",
+      "example_text": "1. REGIONAL MIGRATION TRENDS"
+    },
+    "h2": {
+      "visual_description": "Blue sans-serif font. The prefix 'Figure X.X.' is bold, followed by the title in regular weight.",
+      "example_text": "Figure 1.6. Alien temporary work permits, Thailand"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.",
+      "semantic_meaning": "Figure caption header"
+    },
+    {
+      "pattern": "^Source:",
+      "semantic_meaning": "Data source attribution text, typically in a smaller, grey font below charts."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Source: [Organization/Department], [Location] ([Year])."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer contains 'ASEAN Migration Outlook' on the left and a page number on the right, separated by a horizontal line."
+  }
+}

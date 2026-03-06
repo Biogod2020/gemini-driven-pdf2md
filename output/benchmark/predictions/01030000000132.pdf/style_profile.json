@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but inferred as chapter titles based on footer context.",
+      "example_text": "Public Aquariums and Their Role in Education, Science, and Conservation"
+    },
+    "h2": {
+      "visual_description": "Bold, white text on a dark charcoal/black rectangular background spanning the width of the associated element (table header style).",
+      "example_text": "Fish species on IUCN Red List"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Italicized text followed by a colon at the start of a block below an image or table.",
+      "semantic_meaning": "Figure or Table Caption"
+    },
+    {
+      "pattern": "Text wrapped around rectangular image assets in a two-column-like flow within a single-column master layout.",
+      "semantic_meaning": "Side-aligned Figure with Text Wrap"
+    },
+    {
+      "pattern": "Scientific names in italics within parentheses or following common names.",
+      "semantic_meaning": "Taxonomic Nomenclature"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (inline $...$ or block $$...$$)",
+    "table_style": "markdown (simple grid with horizontal separators)",
+    "citation_format": "Author-Date parenthetical (e.g., Moyer et al. 2015)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column with dynamic image wrapping",
+    "margin_noise_patterns": "Page number followed by a vertical pipe and the chapter/book title at the bottom of the page (e.g., '132 | Public Aquariums...')"
+  }
+}

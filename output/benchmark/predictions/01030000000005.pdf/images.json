@@ -1,0 +1,38 @@
+[
+  {
+    "id": "p0_figure_1_5",
+    "path": "assets/p0_figure_1_5.png",
+    "caption": "FIGURE 1.5. The San Mateo Ixtatán men’s jacket, lopil (Spanish capixay). Photo by Elizabeth Purdum.",
+    "description": null
+  },
+  {
+    "id": "p0_figure_1_6",
+    "path": "assets/p0_figure_1_6.png",
+    "caption": "FIGURE 1.6. Vegetation along the trail from San Mateo Ixtatán to Bulej, May 1965. Photo by author.",
+    "description": null
+  },
+  {
+    "id": "p0_fig1_5",
+    "path": "assets/p0_fig1_5.png",
+    "caption": "FIGURE 1.5. The San Mateo Ixtatán men's jacket, lopil (Spanish capixay). Photo by Elizabeth Purdum.",
+    "description": "A heavy brown wool jacket with a V-neck and short sleeves, featuring multi-colored geometric embroidery along the collar and cuffs, and a small woven cross hanging from the neck."
+  },
+  {
+    "id": "p0_fig1_6",
+    "path": "assets/p0_fig1_6.png",
+    "caption": "FIGURE 1.6. Vegetation along the trail from San Mateo Ixtatán to Bulej, May 1965. Photo by author.",
+    "description": "A color photograph of a lush, green, foggy mountain landscape in Guatemala, featuring a dirt trail winding through dense tropical vegetation."
+  },
+  {
+    "id": "p0_fig1.5",
+    "path": "assets/p0_fig1.5.png",
+    "caption": "FIGURE 1.5. The San Mateo Ixtatán men’s jacket, lopil (Spanish capixay). Photo by Elizabeth Purdum.",
+    "description": "A brown wool jacket with colorful embroidery around the neck and cuffs, laid flat against a white background."
+  },
+  {
+    "id": "p0_fig1.6",
+    "path": "assets/p0_fig1.6.png",
+    "caption": "FIGURE 1.6. Vegetation along the trail from San Mateo Ixtatán to Bulej, May 1965. Photo by author.",
+    "description": "A photograph of a dirt trail winding through lush, green tropical vegetation under a heavy mist or fog."
+  }
+]

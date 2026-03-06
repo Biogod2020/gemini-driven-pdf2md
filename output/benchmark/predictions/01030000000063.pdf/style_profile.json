@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page; typically top-level section titles in similar reports are bold, larger font, and centered or left-aligned.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; typically sub-section titles are bold and left-aligned.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.",
+      "semantic_meaning": "Figure caption identifier, bolded text at the start of a caption block."
+    },
+    {
+      "pattern": "([A-Z][a-z]+ [a-z]+|[A-Z]\\. [a-z]+)",
+      "semantic_meaning": "Scientific species names, rendered in italics (e.g., Mytilopsis sallei, M. adamsi)."
+    },
+    {
+      "pattern": "\\(From .* \\d{4}\\)",
+      "semantic_meaning": "Source citation for figures, typically at the end of the caption in parentheses."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none observed; standard LaTeX $...$ recommended for inline variables if present.",
+    "table_style": "markdown",
+    "citation_format": "Author-Year style in parentheses, e.g., (Trinidad et al 2019)."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Isolated Arabic numeral at the bottom right corner representing the page number."
+  }
+}

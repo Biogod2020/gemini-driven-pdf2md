@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, all-caps, serif font with wide letter spacing, typically used for chapter titles.",
+      "example_text": "CHAPTER 1"
+    },
+    "h2": {
+      "visual_description": "Not present on this page, but inferred as standard serif bold or italic for sub-sections.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Centered image followed by small-caps 'FIGURE' label and italicized description.",
+      "semantic_meaning": "Figure Caption"
+    },
+    {
+      "pattern": "Small-caps text for labels within captions.",
+      "semantic_meaning": "Emphasis/Labeling"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Author-date or descriptive photo credits within captions (e.g., 'Photo by author.')"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers at the top left/right corners; Running headers centered at the top (e.g., 'CHAPTER 1')."
+  }
+}

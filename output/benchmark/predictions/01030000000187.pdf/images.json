@@ -1,0 +1,8 @@
+[
+  {
+    "id": "p0_table1",
+    "path": "assets/p0_table1.png",
+    "caption": "Table 1: Training datasets used for the instruction and alignment tuning stages, respectively. For the instruction tuning process, we utilized the Alpaca-GPT4 (Peng et al., 2023), OpenOrca (Mukherjee et al., 2023), and Synth. Math-Instruct datasets, while for the alignment tuning, we employed the Orca DPO Pairs (Intel, 2023), Ultrafeedback Cleaned (Cui et al., 2023; Ivison et al., 2023), and Synth. Math-Alignment datasets. The ‘Total # Samples’ indicates the total number of samples in the entire dataset. The ‘Maximum # Samples Used’ indicates the actual maximum number of samples that were used in training, which could be lower than the total number of samples in a given dataset. ‘Open Source’ indicates whether the dataset is open-sourced.",
+    "description": "A table summarizing the properties of training datasets used for instruction and alignment tuning, including sample counts and open-source status."
+  }
+]

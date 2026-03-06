@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but inferred as Chapter Title: Large, centered, serif font, likely on a new page.",
+      "example_text": "CHAPTER 1: THE LAND"
+    },
+    "h2": {
+      "visual_description": "Running header style: Centered, italicized serif font at the top of the page.",
+      "example_text": "Chuj Country"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Centered image followed by a caption starting with 'FIGURE' in small caps.",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "Italicized text within parentheses inside captions.",
+      "semantic_meaning": "native_language_term"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex_inline",
+    "table_style": "markdown",
+    "citation_format": "Author-date or descriptive attribution within captions (e.g., 'Photo by the author.')"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top margin contains centered running title ('Chuj Country') and outer-aligned page numbers ('19')."
+  }
+}

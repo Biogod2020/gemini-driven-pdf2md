@@ -1,0 +1,27 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, medium-weight sans-serif font, left-aligned with significant leading space.",
+      "example_text": "The Scholarly Publishing Cycle"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Small centered dot bullets followed by indented body text.",
+      "semantic_meaning": "Unordered list items"
+    },
+    {
+      "pattern": "Complex diagram featuring colored elliptical nodes (grey, blue, green, red, teal, purple) with all-caps labels and interconnecting arrows with colored text labels.",
+      "semantic_meaning": "System ecosystem or workflow diagram"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "In-text narrative (no formal citations visible on this page)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-aligned footer containing a page number followed by a vertical pipe and the document/section title (e.g., '10 | The Scholarly Publishing Ecosystem')."
+  }
+}

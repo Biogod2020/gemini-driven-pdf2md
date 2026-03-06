@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, serif font, large size, sentence case, typically ending with a period.",
+      "example_text": "Humanity’s Home Base."
+    },
+    "h2": {
+      "visual_description": "Centered, serif font, identical in style to h1 but used for secondary topical divisions on the page.",
+      "example_text": "Earth and Moon, Drawn to Scale."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.",
+      "semantic_meaning": "Bolded prefix indicating the start of a figure caption."
+    },
+    {
+      "pattern": "blue underlined text",
+      "semantic_meaning": "Interactive hyperlink for cross-referencing figures or external links."
+    },
+    {
+      "pattern": "\\(credit: .*\\)",
+      "semantic_meaning": "Source attribution for images, usually placed at the end of a caption."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical media credits"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom footer containing page number and chapter/section metadata (e.g., '10 | Chapter 1 Section 1.6: A Tour of the Universe')."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font. Typically spans two lines: 'Chapter [Number]' followed by the chapter title in a larger font size.",
+      "example_text": "Chapter 3\nNumerical differentiation"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, smaller than h1. Prefixed with a hierarchical section number (e.g., 3.1, 3.2).",
+      "example_text": "3.1 Introduction"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "italicized text within paragraphs",
+      "semantic_meaning": "Introduction of key technical terms or definitions (e.g., 'numerical derivatives', 'truncation error')."
+    },
+    {
+      "pattern": "Section [Number].[Number]",
+      "semantic_meaning": "Internal cross-reference to other parts of the document."
+    },
+    {
+      "pattern": "Centered block equations with variables in italics",
+      "semantic_meaning": "Formal mathematical definitions or derivations."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (use $...$ for inline and $$...$$ for display blocks)",
+    "table_style": "markdown",
+    "citation_format": "Section-based cross-referencing (e.g., Section 3.3)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Standard academic margins; no headers or footers visible on this specific page, but likely contains page numbers in a full view."
+  }
+}

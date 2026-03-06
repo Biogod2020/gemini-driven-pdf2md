@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this specific page; likely a large, bold serif font used for chapter titles.",
+      "example_text": "CHAPTER 10: ANGLER DYNAMICS"
+    },
+    "h2": {
+      "visual_description": "Not present on this specific page; likely a medium-sized, bold serif font for section headers.",
+      "example_text": "10.2 Motivations and Characteristics"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+:",
+      "semantic_meaning": "Figure caption identifier, typically followed by italicized descriptive text."
+    },
+    {
+      "pattern": "\\([A-Za-z]+( et al\\.)? \\d{4}[a-z]?\\)",
+      "semantic_meaning": "In-text parenthetical citation following Author-Date format."
+    },
+    {
+      "pattern": "^\\d+ \\| .*",
+      "semantic_meaning": "Page footer containing the page number and the book/chapter title separated by a vertical pipe."
+    },
+    {
+      "pattern": "^\\* Stage \\d+:",
+      "semantic_meaning": "Bolded list item prefix for sequential stages or steps."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Author-Date (e.g., McKenna 2013; Bryan 1977)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom margin contains a running footer with page number and document title (e.g., '216 | Recreational Fishing and Keep Fish Wet')."
+  }
+}

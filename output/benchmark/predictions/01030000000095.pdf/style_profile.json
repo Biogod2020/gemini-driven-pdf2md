@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in this sample; likely large, bold, centered or left-aligned serif font.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present in this sample; likely medium-sized bold serif font.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\((?:[A-Z][a-z]+(?: and [A-Z][a-z]+)? \\d{4})\\)",
+      "semantic_meaning": "Figure source or in-text citation, often styled as a blue hyperlink."
+    },
+    {
+      "pattern": "^\\d+\\.\\s",
+      "semantic_meaning": "Footnote entry located at the bottom of the page, set in a smaller font size than body text."
+    },
+    {
+      "pattern": "[A-Z\\s]+\\s\\d+$",
+      "semantic_meaning": "Page footer containing the publication title in all-caps followed by the page number."
+    },
+    {
+      "pattern": "\\w+^{\\d+}$",
+      "semantic_meaning": "Superscript numerical reference for footnotes."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Standard LaTeX for inline and block equations.",
+    "table_style": "markdown",
+    "citation_format": "Author-date parenthetical citations (e.g., Author and Author Year)."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Uppercase running footer at the bottom right containing the book title and page number (e.g., 'BEHAVIORAL ECONOMICS PRACTICUM 111')."
+  }
+}

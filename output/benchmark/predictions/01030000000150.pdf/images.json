@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_logo_eco_circle",
+    "path": "assets/p0_logo_eco_circle.png",
+    "caption": "ECO Circle Logo",
+    "description": "Logo for the ECO Circle project featuring a green and blue circular motif."
+  },
+  {
+    "id": "p0_logo_eu_cofunded",
+    "path": "assets/p0_logo_eu_cofunded.png",
+    "caption": "EU Co-funded Logo",
+    "description": "European Union flag with the text 'Co-funded by the European Union'."
+  }
+]

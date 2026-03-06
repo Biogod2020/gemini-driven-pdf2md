@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, dark blue sans-serif font, serving as the primary slide title.",
+      "example_text": "Base Model Performance Evaluation of Upstage OCR Pack"
+    },
+    "h2": {
+      "visual_description": "Medium, light purple sans-serif font, positioned at the top left as a section or category header.",
+      "example_text": "Overview of OCR Pack"
+    },
+    "h3": {
+      "visual_description": "Medium-weight, dark grey sans-serif font, used for specific chart or sub-section titles.",
+      "example_text": "Upstage universal OCR model E2E performance evaluation¹"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "superscript digits (e.g., ¹, ², ³)",
+      "semantic_meaning": "Footnote reference markers linking body text to bottom-of-page explanations."
+    },
+    {
+      "pattern": "small, blue-colored text blocks at the bottom",
+      "semantic_meaning": "Footnote definitions, technical caveats, and source citations."
+    },
+    {
+      "pattern": "Upstage | logo in bottom right corner",
+      "semantic_meaning": "Corporate branding and page footer element."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Standard LaTeX ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Numeric superscript citations corresponding to a numbered list at the bottom of the page."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column layout for visual data and charts)",
+    "margin_noise_patterns": "Top-left section labels, bottom-right corporate logos, and centered page numbers (e.g., '11') should be treated as layout metadata/noise."
+  }
+}

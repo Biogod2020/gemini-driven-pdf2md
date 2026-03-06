@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig8.6",
+    "path": "assets/p0_fig8.6.png",
+    "caption": "Figure 8.6: Growth in length of Alligator Gar in Texas. Figure 8.7: Growth in weight of Alligator Gar in Texas. Long description.",
+    "description": "A line graph showing the length of gar fish by age, with illustrations of fish increasing in size along the curve."
+  },
+  {
+    "id": "p0_fig8.7",
+    "path": "assets/p0_fig8.7.png",
+    "caption": "Figure 8.7: Growth in weight of Alligator Gar in Texas.",
+    "description": "A line graph showing the weight of gar fish by age, with a specific data point for a record catch."
+  }
+]

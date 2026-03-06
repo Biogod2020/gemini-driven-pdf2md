@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Comparison with Beauty Commerce Recommendation Models",
+    "description": "Horizontal bar chart showing UpStage models outperforming AWS Personalize and current service algorithms by 1.7x and 2.6x respectively."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Comparison Case of Domestic Subscription Platform Recommendation Model",
+    "description": "Horizontal bar chart comparing multiple recommendation models, highlighting UpStage's superior performance with a 14.3% lift over AWS."
+  },
+  {
+    "id": "p0_fig3",
+    "path": "assets/p0_fig3.png",
+    "caption": "Education Content Platform PoC Case",
+    "description": "Vertical bar chart showing UpStage DKT model achieving 0.882 accuracy compared to 0.735 for traditional IRT models, a 20% improvement."
+  }
+]

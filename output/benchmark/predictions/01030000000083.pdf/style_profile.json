@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Red, sans-serif, right-aligned text located in the top margin, denoting a major document section.",
+      "example_text": "Appendices"
+    },
+    "h2": {
+      "visual_description": "Red, all-caps, bold serif font, left-aligned, used specifically for table titles.",
+      "example_text": "TABLE 35: UNION-STATE BREAKDOWN OF IMPRISONMENT CLAUSES BY CATEGORIES"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Red background with white bold serif text",
+      "semantic_meaning": "Table header row"
+    },
+    {
+      "pattern": "Alternating light peach and white background rows",
+      "semantic_meaning": "Table data rows for visual separation"
+    },
+    {
+      "pattern": "Small black serif text starting with an asterisk immediately below a table",
+      "semantic_meaning": "Table-specific footnote or source note"
+    },
+    {
+      "pattern": "Red centered numeral at the bottom of the page",
+      "semantic_meaning": "Page number"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "standard markdown",
+    "table_style": "markdown",
+    "citation_format": "asterisk-prefixed footnotes"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Section header 'Appendices' in the top right margin and page number in the bottom center margin."
+  }
+}

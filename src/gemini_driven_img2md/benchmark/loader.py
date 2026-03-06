@@ -18,8 +18,8 @@ class BenchmarkLoader:
                 self.reference_data = json.load(f)
 
     def list_available_pdfs(self) -> List[str]:
-        """Returns a list of PDF filenames available in the benchmark."""
-        return [p.name for p in self.pdfs_dir.glob("*.pdf")]
+        """Returns a list of PDF filenames available in the benchmark, sorted alphabetically."""
+        return sorted([p.name for p in self.pdfs_dir.glob("*.pdf")])
 
     def get_ground_truth(self, pdf_filename: str) -> Optional[str]:
         """Returns the ground truth markdown for a given PDF."""

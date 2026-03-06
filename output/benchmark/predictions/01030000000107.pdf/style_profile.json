@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, sans-serif font, left-aligned at the top of a section.",
+      "example_text": "Print vs. Digital"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, bold, sans-serif font, centered above data visualizations.",
+      "example_text": "Q11 What factors influence your choice of print? (select all that apply)"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Answered: \\d+ Skipped: \\d+",
+      "semantic_meaning": "Survey response metadata displayed in small, centered, grey text below question headers."
+    },
+    {
+      "pattern": "Q\\d+ .*",
+      "semantic_meaning": "Numbered survey question header."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "none"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page footer text located at the bottom right, following the format 'Online Survey | [page_number]'."
+  }
+}

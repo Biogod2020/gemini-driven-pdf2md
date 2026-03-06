@@ -1,0 +1,27 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, sans-serif font, left-aligned, significantly larger than body text with generous spacing above and below.",
+      "example_text": "Filipino Women in Electoral Politics"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "First-line indentation on paragraphs following the initial paragraph of a section.",
+      "semantic_meaning": "Standard paragraph break."
+    },
+    {
+      "pattern": "Parenthetical references containing a name and a four-digit year, e.g., (Camagay 1998).",
+      "semantic_meaning": "In-text academic citation."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running header at the top of the page containing the page number and author names (e.g., '8 Encinas Franco and Laguna') in a smaller, lighter sans-serif font."
+  }
+}

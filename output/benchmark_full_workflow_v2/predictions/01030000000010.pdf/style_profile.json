@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "All-caps, serif font, centered at the top of the page as a running head.",
+      "example_text": "CIRCULATING THINGS, CIRCULATING STEREOTYPES"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; typically would be bold serif, larger than body text.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "FIGURE [NUMBER] followed by bold/regular serif caption text, often with a 'PUBLISHED BY' line in small caps.",
+      "semantic_meaning": "Image Caption and Metadata"
+    },
+    {
+      "pattern": "Small numerical superscript in body text corresponding to a numbered list at the bottom of a column, separated by a horizontal rule.",
+      "semantic_meaning": "Footnotes / Citations"
+    },
+    {
+      "pattern": "Parenthetical references containing 'fig.' and numbers.",
+      "semantic_meaning": "Internal Cross-references to Figures"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "N/A (Academic Humanities style)",
+    "table_style": "markdown",
+    "citation_format": "Chicago-style footnotes (Author, Title, Page) located at the base of the text column."
+  },
+  "layout_info": {
+    "primary_flow": "two-column",
+    "margin_noise_patterns": "Top left: Chapter/Section Title; Top right: Page Number. Both are in small-caps/all-caps serif."
+  }
+}

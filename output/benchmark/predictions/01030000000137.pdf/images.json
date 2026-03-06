@@ -4,5 +4,11 @@
     "path": "assets/p0_figure_10_5.png",
     "caption": "Figure 10.5: Frequency distribution displays the number of angler days resulting in differing catch per day for a hypothetical 8 fish per day creel limit and estimated change if creel limit is reduced to 4 fish per day. Long description.",
     "description": null
+  },
+  {
+    "id": "p0_fig10_5",
+    "path": "assets/p0_fig10_5.png",
+    "caption": "Figure 10.5: Frequency distribution displays the number of angler days resulting in differing catch per day for a hypothetical 8 fish per day creel limit and estimated change if creel limit is reduced to 4 fish per day. Long description.",
+    "description": "A bar chart showing the proportion of anglers for various catch per day amounts (0 to >8). It compares two scenarios: 'No Daily Limit' (olive green) and 'Daily Limit-4' (brown). The 'Daily Limit-4' scenario shows a significant spike at 4 fish per day compared to the 'No Daily Limit' scenario, which tapers off more gradually."
   }
 ]

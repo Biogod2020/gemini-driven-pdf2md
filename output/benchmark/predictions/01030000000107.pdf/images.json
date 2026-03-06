@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Q11 What factors influence your choice of print? (select all that apply)",
+    "description": "A horizontal bar chart showing factors for choosing print. Reading experience is the highest factor at approximately 65%, followed by Convenience at 50%, Habit/personal preference at 48%, Access options via my library at 42%, Workflow at 35%, and Other at 18%."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Q12 What factors influence your choice of digital? (select all that apply)",
+    "description": "A horizontal bar chart showing factors for choosing digital. Convenience is the highest factor at approximately 75%, followed by Access options via my library at 58%, Workflow at 40%, Reading experience at 18%, Habit/personal preference at 18%, and Other at 15%."
+  }
+]

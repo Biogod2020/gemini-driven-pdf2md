@@ -1,0 +1,14 @@
+**Filtering for Content**
+
+I've extracted the main text blocks from the provided page image, now excluding both the running header and page number. The markdown field is ready with the core content, and the document metadata is prepped. The text from the image has been neatly formatted into paragraphs. I've also preserved the italicized book title as requested.
+
+
+{
+  "markdown": "gesture in honour of local culture. Few of the artefacts were authentically part of this area. It told us nothing of any interest or with any authority. We wondered whose culture we were looking at.\n\nAt the central railway station, we tried to question officials, in German and English, about the location of Steinkirche. But only Polish was spoken at the information office and other counters. Nor could we locate the correct train line on the information screens.\n\nOn our walk back to the centre of town, past the dilapidated theatre where my mother had attended performances, John spotted another bookshop. Surprisingly it was trading busily on a Polish Catholic Sunday. It sold old maps and books. We found old pictures of Breslau labelled in Polish and English. We found descriptions in both Polish and English of Neumarkt Platz (Novi Targ). Various maps showed clear plans of its location. They also showed the Neptune fountain I had been seeking. For centuries it had a conspicuous place in town maps as a well drawing water from the Oder, whose tributaries flowed together and separated the town into different quarters, spanned by a multitude of bridges.\n\nI was thrilled. Before this find, my family had begun to question whether the fountain had actually existed. ‘You and your fountain!’ they cried. But I always knew it was there, in my memory and beyond.\n\nWhen we walked to Novi Targ, we found the old houses by the square had been destroyed totally by the War. So, to my disappointment, had the Neptune fountain . In *Microcosm*, his history of Wroclaw, Norman Davies tells how, after the War, the rubble of Breslau had been removed in trainloads to rebuild Warsaw in its original style. Some fine Breslau buildings left standing by War were even knocked down for their old bricks.\n\nI viewed this horrible information as being akin to the punishment Dante dished out to sinners in his Purgatory. Atonement was to be made only by suffering punishment that fitted the spirit of a crime.\n\nWe then looked for the air-raid shelters in which my grandmother and aunt Else had sheltered from the fire-bombs that rained down on the city in early 1945.",
+  "document_metadata": {
+    "title": "The Lost Homeland",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": []
+}

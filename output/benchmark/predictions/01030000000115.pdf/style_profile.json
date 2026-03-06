@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, orange, all-caps serif font located at the top of the page above a horizontal divider line.",
+      "example_text": "MOHAVE COMMUNITY COLLEGE"
+    },
+    "h2": {
+      "visual_description": "Bold, black serif font, slightly larger than body text, typically followed by a colon to introduce a section.",
+      "example_text": "Steps for Using the Microscope:"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Bold text within paragraphs",
+      "semantic_meaning": "Emphasis on key terms, specific numerical values, or names of equipment components (e.g., 'coarse adjustment knob')."
+    },
+    {
+      "pattern": "Red text",
+      "semantic_meaning": "Critical warnings, essential safety instructions, or mandatory prerequisites for a procedure."
+    },
+    {
+      "pattern": "Numbered list (1., 2., 3.)",
+      "semantic_meaning": "Sequential procedural steps or primary list of observations."
+    },
+    {
+      "pattern": "Lettered sub-list (a., b., c.)",
+      "semantic_meaning": "Specific details or secondary effects related to a primary numbered point."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "inline_plain_text_with_bolding",
+    "table_style": "markdown",
+    "citation_format": "none_present"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top margin contains a running header with institution name and course ID separated by a thin orange horizontal line. Bottom margin contains a centered page number."
+  }
+}

@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": "p0_dropcap_i",
+    "path": "assets/p0_dropcap_i.png",
+    "caption": "Drop Cap I",
+    "description": "Large decorative initial letter 'I' at the start of the executive summary text block."
+  }
+]

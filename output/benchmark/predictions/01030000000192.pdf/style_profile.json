@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page; typically bold, centered, and larger font size (approx. 14-16pt) in academic paper formats.",
+      "example_text": "References"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; typically bold, left-aligned, and slightly larger than body text (approx. 12pt).",
+      "example_text": "1 Introduction"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Italicized text at the end of an entry",
+      "semantic_meaning": "Publication venue, journal name, or conference proceedings (e.g., *arXiv preprint*, *Advances in neural information processing systems*)."
+    },
+    {
+      "pattern": "Blue, underlined text",
+      "semantic_meaning": "Direct URL hyperlink to an external web resource."
+    },
+    {
+      "pattern": "Blue text (not underlined)",
+      "semantic_meaning": "Hyperlinked title of a cited work within the reference list."
+    },
+    {
+      "pattern": "Text block starting with 'Author Name(s). Year.'",
+      "semantic_meaning": "Individual bibliographic entry with a hanging indent."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX-style (e.g., $...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Author-Year style (e.g., [Author et al., 2023])"
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column layout)",
+    "margin_noise_patterns": "No headers, footers, or page numbers are visible on this specific page; clean margins."
+  }
+}

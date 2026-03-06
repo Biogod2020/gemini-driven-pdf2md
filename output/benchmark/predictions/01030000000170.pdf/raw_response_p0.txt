@@ -1,0 +1,27 @@
+**Synthesizing the Output**
+
+I'm now generating the complete JSON object, paying close attention to every detail in the original document, including formatting, image representation, and table structure. All requirements from the instructions are meticulously followed to produce valid and accurate JSON output.
+
+
+{
+  "markdown": "cropping.\n\n<table>\n  <thead>\n    <tr>\n      <th></th>\n      <th colspan=\"2\">Contour Farming</th>\n      <th colspan=\"3\">Contour Strip Cropping</th>\n    </tr>\n    <tr>\n      <th>Slope Gradient (%)</th>\n      <th>Max Slope Length (ft)</th>\n      <th>P Value</th>\n      <th>Strip Width (ft)</th>\n      <th>P Value, RGMM</th>\n      <th>P Value, RRGM</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1 - 2</td>\n      <td>400</td>\n      <td>0.6</td>\n      <td>130</td>\n      <td>0.30</td>\n      <td>0.45</td>\n    </tr>\n    <tr>\n      <td>3 - 5</td>\n      <td>300</td>\n      <td>0.5</td>\n      <td>100</td>\n      <td>0.25</td>\n      <td>0.38</td>\n    </tr>\n    <tr>\n      <td>6 - 8</td>\n      <td>200</td>\n      <td>0.5</td>\n      <td>100</td>\n      <td>0.25</td>\n      <td>0.38</td>\n    </tr>\n    <tr>\n      <td>9 - 12</td>\n      <td>120</td>\n      <td>0.6</td>\n      <td>80</td>\n      <td>0.30</td>\n      <td>0.45</td>\n    </tr>\n    <tr>\n      <td>13 - 16</td>\n      <td>100</td>\n      <td>0.7</td>\n      <td>80</td>\n      <td>0.35</td>\n      <td>0.52</td>\n    </tr>\n    <tr>\n      <td>17 - 20</td>\n      <td>100</td>\n      <td>0.8</td>\n      <td>60</td>\n      <td>0.40</td>\n      <td>0.60</td>\n    </tr>\n  </tbody>\n</table>\n\nTable adapted from Jones et al. (1988) with permission. †Strip cropping uses a four-year rotation of row crop followed by one year of a small grain and two years of meadow (forages) for RGMM, or uses two years of row crops followed by one year of small grain and one year of meadow for RRGM. Meadow includes alfalfa, clover, grass, etc.\n\n> ⛏️ How does the erosion rate under contour tillage compare to the tolerable erosion rate?\n\n> ⛏️ How does the erosion rate under contour tillage compare to the erosion rate under conservation tillage alone?\n\nNext we will test the impact of installing terraces on the landscape. Using Table 16.5, determine the Pt factor. When terraces are installed, contour tillage is usually used as well. Also, note that installing a terrace results in a shorter length of the slope (because the terrace stops water from continuing to run down slope), so this calculation is performed for each terrace individually. Also note that the net P factor is determined by multiplying the Pc and Pt values together, or writing the RUSLE as follows:\n\n$$A4 = R \\times K \\times LS \\times Pc \\times Pt$$\n\n## Table 16.5. Conservation practice (P) values for terraces with underground outlets or waterways.\n\n<table>\n  <thead>\n    <tr>\n      <th rowspan=\"2\">Terrace Interval (ft)</th>\n      <th>Underground Outlets</th>\n      <th colspan=\"3\">Waterways with percent grade of:</th>\n    </tr>\n    <tr>\n      <th></th>\n      <th>0.1-0.3</th>\n      <th>0.4-0.7</th>\n      <th>0.8</th>\n    </tr>\n    <tr>\n      <th></th>\n      <th>Pt Values</th>\n      <th>Pt Values</th>\n      <th>Pt Values</th>\n      <th>Pt Values</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>&lt;110</td>\n      <td>0.5</td>\n      <td>0.6</td>\n      <td>0.7</td>\n      <td>1.0</td>\n    </tr>\n    <tr>\n      <td>110-140</td>\n      <td>0.6</td>\n      <td>0.7</td>\n      <td>0.8</td>\n      <td>1.0</td>\n    </tr>\n    <tr>\n      <td>140-180</td>\n      <td>0.7</td>\n      <td>0.8</td>\n      <td>0.9</td>\n      <td>1.0</td>\n    </tr>\n    <tr>\n      <td>180-225</td>\n      <td>0.8</td>\n      <td>0.8</td>\n      <td>0.9</td>\n      <td>1.0</td>\n    </tr>\n    <tr>\n      <td>225-300</td>\n      <td>0.9</td>\n      <td>0.9</td>\n      <td>1.0</td>\n      <td>1.0</td>\n    </tr>\n    <tr>\n      <td>300+</td>\n      <td>1.0</td>\n      <td>1.0</td>\n      <td>1.0</td>\n      <td>1.0</td>\n    </tr>\n  </tbody>\n</table>",
+  "document_metadata": {
+    "title": "Soil Erosion and Conservation - Terrace and Contour Practice Values",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "shovel_icon_1",
+      "bbox": [388, 90, 412, 128],
+      "caption": "Shovel icon",
+      "description": "A small graphic of a shovel indicating a question or exercise prompt."
+    },
+    {
+      "id": "shovel_icon_2",
+      "bbox": [448, 90, 472, 128],
+      "caption": "Shovel icon",
+      "description": "A small graphic of a shovel indicating a question or exercise prompt."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+**Creating Output Structure**
+
+I'm now satisfied with the markdown and the assets identified.  The JSON structure has been validated; ensuring it's well-formed and ready for the final construction.  The next step involves populating the 'markdown', 'document_metadata', and 'assets' keys.
+
+
+{
+  "markdown": "should adopt two separate designators to mark no-cost vs. low-cost, but the council felt it was better to simplify the process and allow for some OER providers that have fees associated with their services.\n\nAt this point in time, the application of the #NOLO designator was a manual process. It required the addition of the designator to the section title prior to registration and then its removal after add/drop to ensure the label didn’t appear on the student transcript. This process severely hampered our long-term reporting abilities. In total, four colleges adopted the #NOLO designator in this fashion.\n\nTo assist in greater faculty and institutional adoption as well as improve data capture, the CSCU OER Advisory Council made a formal recommendation to the provost’s academic council in Spring 2018 to implement the #NOLO designator as a course section attribute within the student information system. In addition to adding a course section attribute, a student-facing course search filter was added as well as an additional column within the course search results page.\n\n![Figure 2.1: Filtered Search Option for NOLO Sections.](fig2_1)\n\n*Figure 2.1: Filtered Search Option for NOLO Sections.*\n\n![Figure 2.2: Added Column in Results for NOLO Designator.](fig2_2)\n\n*Figure 2.2: Added Column in Results for NOLO Designator.*\n\nThe request to implement the designator within the student information system was supported in Fall 2018 by the president’s cabinet. The ability to mark courses was enabled late Fall 2018 and the student-facing features were enabled in January 2019. Each institutional representative on the OER council engaged with their local governance structures to request a vote for adoption.",
+  "document_metadata": {
+    "title": "CSCU OER Advisory Council Report",
+    "style_conformity": 0.95,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig2_1",
+      "bbox": [
+        321,
+        341,
+        558,
+        651
+      ],
+      "caption": "Figure 2.1: Filtered Search Option for NOLO Sections.",
+      "description": "A screenshot of a course materials selection interface showing options for OER/Zero cost courses."
+    },
+    {
+      "id": "fig2_2",
+      "bbox": [
+        588,
+        354,
+        846,
+        648
+      ],
+      "caption": "Figure 2.2: Added Column in Results for NOLO Designator.",
+      "description": "A screenshot of a course search results table with a magnifying glass highlighting the 'NoLo' column."
+    }
+  ]
+}

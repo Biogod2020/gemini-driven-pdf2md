@@ -1,0 +1,37 @@
+**Structuring the Output**
+
+I'm now focusing on the final JSON construction.  I've double-checked the Markdown formatting, ensuring table structure and asset placement.  The critical adjustment is incorporating caption text within the `assets` objects, as required by the schema, and also including it as table content. I am now preparing the final JSON structure for the document, including markdown, assets and metadata.
+
+
+{
+  "markdown": "![diag5]\n\n| Diagram 5 | Distribution of Komnas HAM's YouTube Content (2019-2020) |\n| :--- | :--- |\n\nAs of 1 December 2021, the Komnas HAM's YouTube channel has 2,290 subscribers with 185,676 total views. In the 2019-2020 period, content that specifically discusses the SDGs explicitly cannot be found on the Komnas HAM's YouTube. Nevertheless, on 15 December 2021, the Tanggap Rasa Podcast with the title of \"Podcast #EP32: SDGs dan Anak Muda\" (Translation: \"Podcast #EP32: SDGs and Youth\") has been broadcast and can increase the awareness and understanding of the citizen on the SDGs, especially towards young generations.\n\n![fig4]\n\n| Figure 4 | Komnas HAM's YouTube channel as of 1 December 2021 |\n| :--- | :--- |",
+  "document_metadata": {
+    "title": "Komnas HAM YouTube Content Analysis",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "diag5",
+      "bbox": [
+        93,
+        181,
+        335,
+        811
+      ],
+      "caption": "Distribution of Komnas HAM's YouTube Content (2019-2020)",
+      "description": "A bar chart comparing the number of YouTube content uploads by category (Event, Celebration, Information, Videograph) for the years 2019 and 2020."
+    },
+    {
+      "id": "fig4",
+      "bbox": [
+        548,
+        120,
+        776,
+        879
+      ],
+      "caption": "Komnas HAM's YouTube channel as of 1 December 2021",
+      "description": "A screenshot of the Komnas HAM YouTube channel interface showing the home tab, subscriber count, and recent video uploads."
+    }
+  ]
+}

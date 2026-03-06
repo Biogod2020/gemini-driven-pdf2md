@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, left-aligned with significant vertical whitespace above and below.",
+      "example_text": "Types of Sources"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\((.*?)\\)",
+      "semantic_meaning": "Parenthetical references used for cross-referencing chapters, specific questions, or providing supplementary context."
+    },
+    {
+      "pattern": "italicized text",
+      "semantic_meaning": "Used for emphasis on specific terms (e.g., 'iterative') or titles of chapters and methods (e.g., 'SIFTing Information')."
+    },
+    {
+      "pattern": "indented first line",
+      "semantic_meaning": "Indicates a subsequent paragraph within the same section; the first paragraph following a heading is typically not indented."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical in-text citations and cross-references."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer text at the bottom of the page containing a page number, a vertical separator, and a section title (e.g., '102 | Instructor Resources')."
+  }
+}

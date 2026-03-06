@@ -1,0 +1,27 @@
+**Verifying JSON Structure**
+
+I'm now carefully reviewing the final JSON structure for compliance, particularly the use of standard JSON formatting rules, especially double quotes for all strings. The markdown is checked for validity as well, ensuring it will render correctly. I'll also double check the bboxes to make sure they are correct.
+
+
+{
+  "markdown": "# Appendices\n\n## TABLE 28: BREAKDOWN OF IMPRISONMENT CLAUSES IN STATE LAWS\n\n| Imprisonment terms | Number of clauses | Percentage of all states | Percentage of total |\n| :--- | :---: | :---: | :---: |\n| Less than 3 months | 4,448 | 21.3% | 17.0% |\n| 3 months to less than 1 year | 4,806 | 23.0% | 18.4% |\n| 1 year to less than 3 years | 9,766 | 46.7% | 37.4% |\n| 3 years to less than 5 years | 834 | 4.0% | 3.2% |\n| 5 years to less than 10 years | 1,021 | 4.9% | 3.9% |\n| More than 10 years | 20 | 0.1% | 0.1% |\n\n*Source: TeamLease Regtech*\n\n## TABLE 29: STATES WITH MORE THAN 1,000 IMPRISONMENT CLAUSES\n\n| State | Number of clauses | GSDP (In Rs lakh crore) | GSDP (In $ billion) |\n| :--- | :---: | :---: | :---: |\n| Gujarat | 1469 | 15.6 | 200.4 |\n| Punjab | 1273 | 5.3 | 70.2 |\n| Maharashtra | 1210 | 26.3 | 351.0 |\n| Karnataka | 1175 | 15.4 | 205.9 |\n| Tamil Nadu | 1043 | 16.3 | 217.4 |\n\n*Sources: TeamLease Regtech, and Reserve Bank of India for GSDPs*\n*Exchange rate: Rs 75 to USD*",
+  "document_metadata": {
+    "title": "Appendices",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "table_28",
+      "bbox": [115, 166, 370, 832],
+      "caption": "TABLE 28: BREAKDOWN OF IMPRISONMENT CLAUSES IN STATE LAWS",
+      "description": "A data table showing the breakdown of imprisonment terms by number of clauses and percentages."
+    },
+    {
+      "id": "table_29",
+      "bbox": [426, 166, 695, 832],
+      "caption": "TABLE 29: STATES WITH MORE THAN 1,000 IMPRISONMENT CLAUSES",
+      "description": "A data table listing states with over 1,000 imprisonment clauses along with their GSDP in INR and USD."
+    }
+  ]
+}

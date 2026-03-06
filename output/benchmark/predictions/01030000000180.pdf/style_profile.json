@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, red, sans-serif font followed by a full-width thin red horizontal rule.",
+      "example_text": "Version History"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, red, sans-serif font, typically used to introduce sections or tables.",
+      "example_text": "Version History"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "red text",
+      "semantic_meaning": "Used for headings and inline hyperlinks."
+    },
+    {
+      "pattern": "bold text",
+      "semantic_meaning": "Used for table headers and primary identifiers (e.g., version numbers) within data rows."
+    },
+    {
+      "pattern": "centered bold text above table",
+      "semantic_meaning": "Acts as a table caption or title."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "none"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "none identified in the provided sample"
+  }
+}

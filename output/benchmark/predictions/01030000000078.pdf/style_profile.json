@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, blue sans-serif font used for figure and table titles. Includes a numbered prefix followed by a period.",
+      "example_text": "Figure 1.10. Migrant remittances inflows (in US$ billion)"
+    },
+    "h2": {
+      "visual_description": "Bold, blue sans-serif font, slightly smaller than H1, used for table titles with a horizontal rule separator.",
+      "example_text": "Table 1.4. Growth in migrant remittance inflows"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Blue bold text followed by a chart or graph",
+      "semantic_meaning": "Figure Caption"
+    },
+    {
+      "pattern": "Blue bold text followed by a horizontal line and a data grid",
+      "semantic_meaning": "Table Caption"
+    },
+    {
+      "pattern": "Small, grey, italicized or regular sans-serif text starting with 'Source:'",
+      "semantic_meaning": "Attribution/Source Note"
+    },
+    {
+      "pattern": "Alternating light blue and white horizontal row shading",
+      "semantic_meaning": "Table Row Zebra-Striping"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Latex (inline for currency and percentages)",
+    "table_style": "html",
+    "citation_format": "Author-Date parenthetical (e.g., World Bank and KNOMAD (2021))"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers in bold blue at the bottom outer corners; 'ASEAN Migration Outlook' running footer in blue italics at the bottom center/right, separated by a thin grey horizontal line."
+  }
+}

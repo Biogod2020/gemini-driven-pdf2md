@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, all-caps sans-serif font in black. Positioned at the top of a section, followed by a full-width horizontal rule.",
+      "example_text": "THIS BOOK'S APPROACH"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, all-caps sans-serif font in a muted blue/slate color. No horizontal rule.",
+      "example_text": "HOMO ECONOMICUS VS. HOMO SAPIENS"
+    },
+    "h3": {
+      "visual_description": "Not explicitly distinct in this sample, but likely follows the h2 color scheme in a smaller point size or sentence case.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Small-font numbered list at the bottom of the page, separated from main text by whitespace.",
+      "semantic_meaning": "Footnotes / Endnotes providing citations or supplementary commentary."
+    },
+    {
+      "pattern": "Italicized Latin terms within body text.",
+      "semantic_meaning": "Scientific nomenclature or specific terminology (e.g., Homo sapiens)."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Inline LaTeX for simple variables; block LaTeX for complex equations (none present in sample).",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical style (e.g., Harari 2015) with corresponding numbered footnotes for detailed references."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-right footer containing the book title in all-caps sans-serif followed by Roman numeral page numbers (e.g., BEHAVIORAL ECONOMICS PRACTICUM XIX)."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, centered at the top of the page with significant white space above and below.",
+      "example_text": "Contents"
+    },
+    "h2": {
+      "visual_description": "Standard weight serif font, left-aligned, used for front matter sections and chapter titles within the list. Chapter titles are preceded by a number and a period.",
+      "example_text": "Author’s Note to the 2021 Edition"
+    },
+    "h3": {
+      "visual_description": "Italicized serif font within the list, used for specific chapter titles that are in a foreign language or require emphasis.",
+      "example_text": "Das Lager"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Text followed by a series of dots (leader dots) and a right-aligned number.",
+      "semantic_meaning": "Table of Contents entry linking a title to a page number."
+    },
+    {
+      "pattern": "Roman numerals (ix, xi, xv) at the end of leader dots.",
+      "semantic_meaning": "Front matter page numbering."
+    },
+    {
+      "pattern": "Arabic numerals (1, 5, 13...) at the end of leader dots.",
+      "semantic_meaning": "Main body page numbering."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "not_detected",
+    "table_style": "markdown (for simple lists with leader dots, represent as a list or a two-column table)",
+    "citation_format": "not_detected"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers are integrated into the content flow (right-aligned in TOC); no running headers or footers visible on this specific page."
+  }
+}

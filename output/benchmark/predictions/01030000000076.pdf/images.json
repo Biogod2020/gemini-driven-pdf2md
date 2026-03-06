@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p0_fig1.6",
+    "path": "assets/p0_fig1.6.png",
+    "caption": "Figure 1.6. Alien temporary work permits, Thailand",
+    "description": "A bar chart showing the monthly number of alien temporary work permits in Thailand from January 2019 to January 2022. The values range between approximately 95,000 and 125,000."
+  },
+  {
+    "id": "p0_fig1.7",
+    "path": "assets/p0_fig1.7.png",
+    "caption": "Figure 1.7. Non-citizen population in Malaysia (in thousands)",
+    "description": "A bar chart showing the non-citizen population in Malaysia from 2016 to 2021. The population peaked in 2018 at 3,323,000 and declined to 2,693,000 by 2021."
+  },
+  {
+    "id": "p0_fig1.8",
+    "path": "assets/p0_fig1.8.png",
+    "caption": "Figure 1.8. Singapore foreign workforce stock (in thousands)",
+    "description": "A bar chart showing the Singapore foreign workforce stock in December of each year from 2016 to 2021. The stock peaked in 2019 at 1,427,000 and decreased to 1,200,000 by 2021."
+  }
+]

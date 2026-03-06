@@ -1,0 +1,34 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, numbered (e.g., '3.'), largest font size on page, left-aligned with hanging indent for text.",
+      "example_text": "3. Perspective of supply and demand balance of wood pellets and cost structure in Japan"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.",
+      "semantic_meaning": "figure_caption",
+      "visual_description": "Bold, centered text placed above a graphic."
+    },
+    {
+      "pattern": "^Note:|^Source:",
+      "semantic_meaning": "figure_metadata",
+      "visual_description": "Smaller font size, plain text located directly below a graphic or its legend."
+    },
+    {
+      "pattern": "^[A-Z]+ = .+$",
+      "semantic_meaning": "abbreviation_definition",
+      "visual_description": "Plain text defining acronyms, typically found below figures."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical references to figures (e.g., '(Figure 4.5)') and explicit 'Source:' attributions below graphics."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Centered Arabic numerals at the bottom of the page representing page numbers."
+  }
+}

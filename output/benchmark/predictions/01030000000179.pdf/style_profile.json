@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not visible on this specific page; likely reserved for top-level chapter titles in a similar red sans-serif style.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Medium-large, red, sans-serif font, left-aligned; used for primary section headings or guiding questions.",
+      "example_text": "What tool(s) do you typically use in your course?"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.",
+      "semantic_meaning": "Figure caption label, bolded and followed by descriptive text in a smaller, dark grey sans-serif font."
+    },
+    {
+      "pattern": "red underlined text",
+      "semantic_meaning": "Hyperlink to internal chapters or external resources."
+    },
+    {
+      "pattern": "^\\d+ \\| [A-Z ]+$",
+      "semantic_meaning": "Page footer containing the page number and the current section title in red uppercase text."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Descriptive in-text hyperlinks (e.g., 'See Chapter 15...')"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom margin contains a page number and section title separated by a vertical pipe (e.g., '164 | SUPPORTING OER ADOPTION')."
+  }
+}

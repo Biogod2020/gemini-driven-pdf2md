@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, light-weight sans-serif font, preceded by a section number, contained within a thin-lined rectangular box spanning the width of the page.",
+      "example_text": "3. Impact on Business Operations"
+    },
+    "h2": {
+      "visual_description": "Bold, medium-sized sans-serif font, preceded by a hierarchical subsection number (e.g., 3.1).",
+      "example_text": "3.1. Status of Business Operations"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.\\d+: .*",
+      "semantic_meaning": "Figure caption, bolded label followed by descriptive text."
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page footer / Page number located at the bottom outer margin."
+    },
+    {
+      "pattern": "Colored square icon followed by text",
+      "semantic_meaning": "Chart legend item"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Internal cross-references to Figures and Tables (e.g., Figure 3.1.1, Table 3.1.1)"
+  },
+  "layout_info": {
+    "primary_flow": "two-column",
+    "margin_noise_patterns": "Isolated integers at the bottom left/right corners representing page numbers."
+  }
+}

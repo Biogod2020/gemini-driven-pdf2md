@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not visible on this page; typically reserved for chapter titles in a larger, bold, sans-serif font.",
+      "example_text": "6. EMPLOYMENT AND LABOR"
+    },
+    "h2": {
+      "visual_description": "Bold, sans-serif font, numbered (e.g., 6.2.), left-aligned, serves as a section header.",
+      "example_text": "6.2. Expectations for Re-Hiring Employees"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.\\d+:.*",
+      "semantic_meaning": "Figure caption/title, bold sans-serif text located above charts."
+    },
+    {
+      "pattern": "^\\d+\\.\\s.*",
+      "semantic_meaning": "Footnote text, smaller serif font at the bottom of the page, preceded by a horizontal separator line."
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page number, located in the bottom-left or bottom-right margin."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "superscript numerical footnotes"
+  },
+  "layout_info": {
+    "primary_flow": "two-column for body text; single-column/full-width for figures and section headings",
+    "margin_noise_patterns": "page numbers at bottom corners; horizontal rule above footnotes"
+  }
+}

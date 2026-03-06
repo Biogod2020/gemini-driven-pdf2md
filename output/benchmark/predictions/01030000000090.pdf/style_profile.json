@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, grey serif font, title case, located at the very top of the page as a running header.",
+      "example_text": "Restrictions on Land Ownership by Foreigners in Selected Jurisdictions"
+    },
+    "h2": {
+      "visual_description": "Bold, black serif font, used as column headers within a table with a light yellow background fill.",
+      "example_text": "Restrictions on Foreign Ownership"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Table with light yellow header row and thin black grid lines",
+      "semantic_meaning": "Comparative legal data across jurisdictions"
+    },
+    {
+      "pattern": "Single character 'Y' or 'N' in table cells",
+      "semantic_meaning": "Boolean status indicators (Yes/No)"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none_detected",
+    "table_style": "markdown",
+    "citation_format": "In-text parenthetical years (e.g., 1994)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column (tabular)",
+    "margin_noise_patterns": "Top: Centered grey title text. Bottom: 'The Law Library of Congress' on the left, Arabic numeral page number on the right."
+  }
+}

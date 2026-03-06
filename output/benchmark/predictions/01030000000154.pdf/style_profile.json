@@ -1,0 +1,27 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "All-caps, bold, sans-serif font, left-aligned with significant vertical whitespace above and below.",
+      "example_text": "IMPLEMENTATION"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+: .*",
+      "semantic_meaning": "Figure caption, rendered in italics directly below the associated graphic."
+    },
+    {
+      "pattern": "^\\d+ [A-Z, ]+",
+      "semantic_meaning": "Page footer containing the page number followed by a list of authors in uppercase sans-serif font."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none observed",
+    "table_style": "markdown",
+    "citation_format": "none observed in body text"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-aligned footer text consisting of a page number and a string of author names."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, serif font, significantly larger than body text, prefixed with a single uppercase letter (e.g., 'A', 'B').",
+      "example_text": "A Contributions"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, slightly larger than body text, prefixed with an alphanumeric section code (e.g., 'B.1', 'B.2').",
+      "example_text": "B.1 Large Language Models"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^\\s*\\u2022\\s+\\*\\*.*?:\\*\\*",
+      "semantic_meaning": "Bullet point list item starting with a bolded key term or phrase followed by a colon."
+    },
+    {
+      "pattern": "\\([A-Za-z\\s]+ et al\\., \\d{4}[a-z]?\\)",
+      "semantic_meaning": "In-text citation, rendered in blue text, following the (Author et al., Year) format."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Author-year parenthetical citations with blue hyperlinking."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column",
+    "margin_noise_patterns": "No headers, footers, or page numbers are visible in this specific page segment."
+  }
+}

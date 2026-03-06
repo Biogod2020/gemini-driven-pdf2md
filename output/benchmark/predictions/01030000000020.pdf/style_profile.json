@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this specific page; typically reserved for chapter titles in a larger serif font.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present on this specific page; likely used for sub-sections within chapters.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^At Home in Exile$",
+      "semantic_meaning": "running_header"
+    },
+    {
+      "pattern": "^[ivxlcdm]+$",
+      "semantic_meaning": "front_matter_page_number"
+    },
+    {
+      "pattern": "\\n\\n",
+      "semantic_meaning": "paragraph_separator_block_style"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex_inline",
+    "table_style": "markdown",
+    "citation_format": "narrative (e.g., 'Dr Pedram Khosronejad ... in 2019')"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top-left running header (book title); bottom-left lowercase Roman numeral page numbering."
+  }
+}

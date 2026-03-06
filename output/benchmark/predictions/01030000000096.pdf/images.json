@@ -1,0 +1,8 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Comparison of Perceived Ability vs. Actual Test Score by Quartile",
+    "description": "A bar chart with 'Percentile' on the y-axis (0-100) and 'Quartile' (Q1-Q4) on the x-axis. It shows two bars for each quartile: 'Perceived Ability' in blue and 'Actual Test Score' in orange. In Q1 and Q2, perceived ability significantly exceeds actual score. In Q3, they are closer. In Q4, actual score exceeds perceived ability."
+  }
+]

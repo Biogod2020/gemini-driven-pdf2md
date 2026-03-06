@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, larger font size, prefixed with Roman numerals (e.g., III.)",
+      "example_text": "III. Electrophorese Digests"
+    },
+    "h2": {
+      "visual_description": "Bold, larger font size than body text, sentence case, no numbering",
+      "example_text": "Load the Gel"
+    },
+    "h3": {
+      "visual_description": "Bold text followed by a colon, same font size as body text, used for section labels",
+      "example_text": "Reagents:"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^NOTE:.*",
+      "semantic_meaning": "Important instructional warning or clarification"
+    },
+    {
+      "pattern": "^\\d+\\.\\s.*",
+      "semantic_meaning": "Numbered procedural step"
+    },
+    {
+      "pattern": "^\\u2022\\s.*",
+      "semantic_meaning": "Unordered list item for materials, equipment, or sub-instructions"
+    },
+    {
+      "pattern": "^For use with .*:",
+      "semantic_meaning": "Table title or contextual header"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX for scientific units and temperatures (e.g., $37 \\, ^\\circ\\text{C}$, $3 \\, \\mu\\text{L}$)",
+    "table_style": "markdown",
+    "citation_format": "N/A"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Header contains 'MOHAVE COMMUNITY COLLEGE' (left) and 'BIO181' (right) in orange/red text above a horizontal rule; Footer contains a centered numeric page number."
+  }
+}

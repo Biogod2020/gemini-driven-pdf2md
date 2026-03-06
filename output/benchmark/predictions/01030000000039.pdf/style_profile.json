@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, sans-serif font, left-aligned, prefixed with hierarchical section numbering (e.g., 9.5.)",
+      "example_text": "9.5. Adapting to the New Normal: Changing Business Models"
+    },
+    "h2": {
+      "visual_description": "Bold, sans-serif font, centered above figures, prefixed with 'Figure' and numbering",
+      "example_text": "Figure 9.4.1: Challenges in importing amongst tourism MSMEs who import – all survey phases (%)"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.\\d+: .*",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "^\\d+\\.\\d+\\. .*",
+      "semantic_meaning": "section_heading"
+    },
+    {
+      "pattern": "^\\d+\\. .*",
+      "semantic_meaning": "footnote_entry"
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "page_number"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "superscript_footnote (e.g., text^6)"
+  },
+  "layout_info": {
+    "primary_flow": "multi-column",
+    "margin_noise_patterns": "Page numbers located in the bottom-left corner; footnotes positioned at the bottom of the page below a horizontal separator line."
+  }
+}

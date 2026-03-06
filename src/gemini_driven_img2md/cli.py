@@ -6,7 +6,7 @@ from pathlib import Path
 from gemini_driven_img2md.gemini_client import get_gemini_client
 from gemini_driven_img2md.prompts import get_extraction_prompt
 from gemini_driven_img2md.utils import get_page_image, image_to_base64
-from gemini_driven_img2md.extraction import parse_gemini_response, process_assets, process_pdf_page
+from gemini_driven_img2md.extraction import parse_gemini_json_response, process_assets, process_pdf_page
 from gemini_driven_img2md.profiler import calculate_page_density, select_representative_pages
 from langchain_core.messages import HumanMessage
 from PIL import Image

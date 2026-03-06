@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, serif font, grey color, positioned at the very top as a document-level header.",
+      "example_text": "Restrictions on Land Ownership by Foreigners in Selected Jurisdictions"
+    },
+    "h2": {
+      "visual_description": "Bold, black serif font, contained within table header cells with a light yellow background fill.",
+      "example_text": "Restrictions on Foreign Ownership"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Jurisdiction Name (e.g., Canada, Chile)",
+      "semantic_meaning": "Primary row identifier located in the leftmost column."
+    },
+    {
+      "pattern": "Y / N / N (Year)",
+      "semantic_meaning": "Boolean or status indicators for legal reservations and permissions."
+    },
+    {
+      "pattern": "Light Yellow Cell Fill",
+      "semantic_meaning": "Indicates a table header row."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Institutional footer attribution (The Law Library of Congress)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top running title text; bottom footer containing 'The Law Library of Congress' and a right-aligned page number."
+  }
+}

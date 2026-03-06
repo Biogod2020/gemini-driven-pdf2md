@@ -1,0 +1,26 @@
+**Verifying Final Output**
+
+My final check involves ensuring the JSON is both valid and accurately reflects the extracted data, including formatting. I've re-examined the markdown, assets, and document metadata to confirm they adhere to the specified structure and that all details are included, particularly italicized text and correct spacing. After double checking all of the details against the prompt instructions, I'm confident in the JSON output, which should be error-free.
+
+
+{
+  "markdown": "![Figure 6](fig6)\n\nFigure 6. *Mytella strigata* biofouling green mussel farms in Bacoor City, Cavite, Manila Bay Photo from https://businessmirror.com.ph/2020/02/17/fake-tahong-invades-bacoor-mussel-farms/\n\n# 5. Natural dispersal\n\nDispersal by purely natural means is not included as a pathway of biological invasions (Gaston 1996). Examples include range expansion by flight or any other medium of natural locomotion or transport. However if human created or crafted material is involved in rafting dispersal of IAS, then this may be considered as a case of biological invasion. The 2011 Great East Japan earthquake generated a large tsunami that caused an unprecedented biological transoceanic rafting event from the northwestern Pacific coastline of Japan towards North America on the eastern Pacific(Carlton et al. 2017). Millions of human made objects from small plastics to large docks and whole ships were cast adrift in the Pacific (Murray et al. 2018). This provided a substrate for biofoulers. Large debris could carry up to 20 to 30 mega-species of biofoulers (Carlton et al. 2017). These biofouled debris can constitute an IAS risk (Therriault 2017).\n\nWhile a tsunami is a relatively rare event, a more common one is fouler dispersal by rafting on coastal currents of floating plastic debris, wood and, bamboo. Marine litter often originate from",
+  "document_metadata": {
+    "title": "Natural dispersal and biological invasions",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig6",
+      "bbox": [
+        91,
+        117,
+        425,
+        882
+      ],
+      "caption": "Figure 6. Mytella strigata biofouling green mussel farms in Bacoor City, Cavite, Manila Bay Photo from https://businessmirror.com.ph/2020/02/17/fake-tahong-invades-bacoor-mussel-farms/",
+      "description": "A photograph showing vertical bamboo poles in a body of water, heavily encrusted with dark-colored mussels (Mytella strigata)."
+    }
+  ]
+}

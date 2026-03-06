@@ -1,0 +1,28 @@
+**Processing Image to JSON**
+
+\n\n
+
+I've successfully identified the text blocks, figures, and footnotes, and mapped them to Markdown. I am now finalizing the asset definition, bounding boxes, and metadata. Next I will construct the JSON object with the "markdown", "document_metadata", and "assets" fields, ensuring its validity and adherence to formatting standards.
+
+
+{
+  "markdown": "In this content, DPN Argentina provides a brief explanation of the SDGs and the 2030 Agenda action plans, and most importantly, their role in advancing the 2030 Agenda through the SDGs Monitoring and Evaluation Program with a focus on certain thematic areas. These focuses allow DPN Argentina to investigate through monitoring and preparing reports on the development of public policies and actions of organizations responsible for compliance with the SDGs, as well as proposals, and recommendations to strengthen related processes.\n\nFurthermore, DPN Argentina also regularly uploads commemorations of days related to the SDGs by also including the SDGs logo in each of these uploads. Examples of such greetings are as follows:\n\n![Figure 6](fig6)\n\n***\n\n⁹⁸ DPN Argentina, “Día Mundial de la #Salud”, accessed on 5 December 2021,https://twitter.com/DPNArgentina/status/1379765916259483648.",
+  "document_metadata": {
+    "title": "DPN Argentina SDGs Monitoring and Evaluation Report",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig6",
+      "bbox": [
+        291,
+        122,
+        601,
+        879
+      ],
+      "caption": "Figure 6 DPN Argentina Content: World Health Day Celebration (7 April 2021).⁹⁸",
+      "description": "A screenshot of a Twitter post from Defensoría del Pueblo (DPN Argentina) celebrating World Health Day on April 7, 2021. The tweet includes text in Spanish about universal health coverage and an image featuring a stethoscope over a globe with the SDG logo and the date '7 de Abril'."
+    }
+  ]
+}

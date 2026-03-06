@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, numbered, sans-serif font, slightly larger than body text.",
+      "example_text": "1. Shipping as a vector for marine IAS"
+    },
+    "h2": {
+      "visual_description": "Bold and italicized sans-serif font, used for secondary headings or important notes.",
+      "example_text": "List of Philippine Ports is in Appendix 3"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\..*",
+      "semantic_meaning": "Figure caption, rendered in a smaller, blue, italicized font below images."
+    },
+    {
+      "pattern": "\\([A-Z][a-z]+ et al\\. \\d{4}[; ]?.*\\)",
+      "semantic_meaning": "In-text academic citation in author-date format."
+    },
+    {
+      "pattern": "_[A-Z][a-z]+ [a-z]+_",
+      "semantic_meaning": "Scientific binomial nomenclature (genus and species) rendered in italics."
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page number located at the bottom right margin."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical author-date (e.g., Vallejo et al. 2017)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column with right-aligned image wrapping",
+    "margin_noise_patterns": "Isolated page numbers at the bottom right corner of the page."
+  }
+}

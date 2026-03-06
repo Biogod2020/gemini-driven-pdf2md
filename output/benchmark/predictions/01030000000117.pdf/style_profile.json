@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, serif font, sentence case, followed by a colon. Used for primary section headers.",
+      "example_text": "Employing Steps in the Scientific Method:"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, identical in weight to h1, used for secondary procedural sections.",
+      "example_text": "Procedure:"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "__________________________________________________________________________",
+      "semantic_meaning": "Fill-in-the-blank response area for student input."
+    },
+    {
+      "pattern": "Bold + Underlined text (e.g., **Question**, **Hypothesis**)",
+      "semantic_meaning": "Key scientific method terminology or specific required elements of a response."
+    },
+    {
+      "pattern": "Red/Orange serif text in header and footer",
+      "semantic_meaning": "Institutional branding (College Name, Course Code) and pagination."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "plain_text",
+    "table_style": "markdown",
+    "citation_format": "none"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Header text 'MOHAVE COMMUNITY COLLEGE' and 'BIO181' above the horizontal rule; red page number at the bottom center."
+  }
+}

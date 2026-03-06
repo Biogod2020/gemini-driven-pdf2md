@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page; typically bold, centered, and significantly larger serif font in this document style.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; typically bold, left-aligned serif font.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\([A-Z][a-z]+ (et al\\. )?\\d{4}\\)",
+      "semantic_meaning": "In-text parenthetical citation (Author-Date format), sometimes hyperlinked in blue."
+    },
+    {
+      "pattern": "\\^\\d+",
+      "semantic_meaning": "Superscript numerical reference for footnotes."
+    },
+    {
+      "pattern": "^\\d+\\.\\s.+",
+      "semantic_meaning": "Footnote text located at the bottom of the page, set in a smaller font size than the body text."
+    },
+    {
+      "pattern": "^\\d+\\s[A-Z\\s\\.]+$",
+      "semantic_meaning": "Page footer containing the page number followed by the author's name in all caps."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical (e.g., (Tiseo, 2021))"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom footer line (e.g., '234 ARTHUR J. CAPLAN') and footnote blocks at the bottom of the page."
+  }
+}

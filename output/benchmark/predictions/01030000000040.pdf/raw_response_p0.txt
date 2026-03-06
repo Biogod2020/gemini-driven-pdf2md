@@ -1,0 +1,26 @@
+**Summarizing Content Flow**
+
+I'm now integrating the text columns into a single, cohesive flow. I've correctly joined the disparate sentences. I'm also preparing for Markdown formatting, remembering the italicized word and the placement of the figure. Finally, I'm confirming the JSON structure for the final output.
+
+
+{
+  "markdown": "Thailand, Philippines and Indonesia in particular, identifying known experts at the national, subnational and community level. The survey and interviews with key informants asked key questions to regional experts on violent extremism to ascertain if hostile sentiments espoused are exacerbating insecurities for women.\n\nThe survey was made available in English, Bahasa, Thai and Tagalog. We used the Qualtrics platform to facilitate the ease of dissemination and response from home computers, iPads or mobile phone survey options. Qualtrics, one of the most widely used research platforms, supports the implementation of both large-scale survey and experimental study designs. It is administered online with responses gathered into a central and privacy protected database that only the approved researchers have access to.\n\nThe platform allows for the easy migration of data into various statistical packages, including STATA, the main statistical analysis package that we will use to analyse the data. A limitation of this study is that we were unable to translate the survey in all ASEAN languages, and there is a selection bias in that we are focussing the survey in areas of the region that most experience violent extremism and terrorism. However, through our networks, where possible, we disseminated the survey throughout all ASEAN countries.\n\nIt is important to note the limitations of this six-month study. Although the survey was disseminated among all member states, the majority of expert respondents came from Indonesia, the Philippines and Thailand. While this can be regarded as highly selective rather than representative, it is important to note that Indonesia, the Philippines and Thailand are the countries that continue to face the most pressing threat of ongoing violent extremism and conflict.\n\nThis is with the exception of Myanmar. Given the current political circumstances and challenges posed by COVID-19, on top of the short project time span, it was unfeasible to include Myanmar within the scope of this study. It is also important to note the data derived from the surveys and interviews were based on the *perceptions* of experts and key informants, who are involved in peacebuilding, and on P/CVE strategies throughout the region. As a result, it is important to note the subjectivity of responses.\n\n## Figure 1: Age by gender of respondents\n\n![Figure 1: Age by gender of respondents](fig1)",
+  "document_metadata": {
+    "title": "Gender Analysis of Violent Extremism and the Impact of COVID-19 on Peace and Security in ASEAN",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig1",
+      "bbox": [
+        698,
+        108,
+        938,
+        892
+      ],
+      "caption": "Figure 1: Age by gender of respondents",
+      "description": "A horizontal bar chart showing the distribution of respondents by age group (25-30, 31-40, 41-50, and OVER 50) and gender (Male, Female). The chart indicates that the largest group of respondents were females over 50."
+    }
+  ]
+}

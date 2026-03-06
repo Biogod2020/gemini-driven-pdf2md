@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_shovel_icon_1",
+    "path": "assets/p0_shovel_icon_1.png",
+    "caption": "Instructional prompt icon",
+    "description": "A small icon of a shovel used to indicate an action item."
+  },
+  {
+    "id": "p0_shovel_icon_2",
+    "path": "assets/p0_shovel_icon_2.png",
+    "caption": "Instructional prompt icon",
+    "description": "A small icon of a shovel used to indicate an action item."
+  }
+]

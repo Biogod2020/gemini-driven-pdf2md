@@ -1,0 +1,27 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, centered at the top of the section with significant leading space.",
+      "example_text": "Author’s Note to the 2021 Edition"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Italicized text",
+      "semantic_meaning": "Used for book titles, publication names, and specific essay titles."
+    },
+    {
+      "pattern": "Parenthetical text containing a year (e.g., 2006, 2010)",
+      "semantic_meaning": "Bibliographic citations or publication details."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "In-text parenthetical citations including publisher/editor and year."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Lower-case Roman numeral page numbers located in the bottom right corner (e.g., 'ix')."
+  }
+}

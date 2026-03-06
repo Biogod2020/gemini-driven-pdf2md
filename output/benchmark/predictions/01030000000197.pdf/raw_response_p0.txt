@@ -1,0 +1,37 @@
+**Generating the JSON Output**
+
+I'm now finalizing the JSON structure. I've double-checked all the markdown formatting, ensuring the run-in headings and table syntax are correct. I've incorporated the blue-text/hyperlink considerations by using proper markdown for references. Finally, I'm setting the bounding box coordinates to the 0-1000 scale and finalizing the JSON object, ready for output.
+
+
+{
+  "markdown": "# C Additional Information\n\nWe present additional information for the sake of space in the main paper.\n\n## Filtered task names. We present task names we use to filter FLAN dervied datasets such as OpenOrca in Table 8.\n\n| Filtered Task Name |\n| :--- |\n| task228_arc_answer_generation_easy |\n| ai2_arcARCChallenge:1.0.0 |\n| ai2_arcARCEasy:1.0.0 |\n| task229_arc_answer_generation_hard |\n| hellaswag:1.1.0 |\n| task1389_hellaswag_completion |\n| cot_gsm8k |\n| cot_gsm8k_ii |\n| drop:2.0.0 |\n| winogrande:1.1.0 |\n\nTable 8: Task names that we use to filter data for FLAN derived datasets such as OpenOrca.\n\n| ARC | HellaSwag | MMLU | TruthfulQA | Winogrande | GSM8K |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 0.06 | N/A | 0.15 | 0.28 | N/A | 0.70 |\n\nTable 9: Data contamination test results for SOLAR 10.7B-Instruct. We show 'result < 0.1, %' values where a value higher than 0.9 indicates high probability of data contamination. HellaSwag and Winogrande datasets are not currently supported. We set SOLAR 10.7B as our reference model when performing the data contamination tests.\n\n## Results on data contamination. To show the integrity of SOLAR 10.7B-Instruct, we also report the data contamination test (Shi et al., 2023) results in Table. 9. All four tested benchmark datasets yield results well below the contamination threshold, affirming the absence of data contamination in our model. One interesting point is that the value for GSM8K is noticeably higher than for other datasets, even without contamination. One potential reason for this is the stronger data similarity in math-related instruction datasets.",
+  "document_metadata": {
+    "title": "SOLAR 10.7B: Scaling Large Language Models with Simple Upcycling",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "table8",
+      "bbox": [
+        212,
+        118,
+        400,
+        408
+      ],
+      "caption": "Table 8: Task names that we use to filter data for FLAN derived datasets such as OpenOrca.",
+      "description": "A single-column table listing various task names used for filtering datasets."
+    },
+    {
+      "id": "table9",
+      "bbox": [
+        465,
+        118,
+        495,
+        488
+      ],
+      "caption": "Table 9: Data contamination test results for SOLAR 10.7B-Instruct. We show 'result < 0.1, %' values where a value higher than 0.9 indicates high probability of data contamination. HellaSwag and Winogrande datasets are not currently supported. We set SOLAR 10.7B as our reference model when performing the data contamination tests.",
+      "description": "A table showing contamination test results across different benchmarks like ARC, MMLU, TruthfulQA, and GSM8K."
+    }
+  ]
+}

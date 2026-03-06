@@ -1,0 +1,14 @@
+**Examining Extraction and Filtering**
+
+I've carefully examined the extracted text. I've removed the extraneous content. I've re-written the markdown to match. I've double checked the footnote and the surrounding text to ensure it looks right. I also have to ensure that the document metadata is included in the final JSON structure, as well as the 'assets' field. I'm now verifying the final JSON object before providing it.
+
+
+{
+  "markdown": "ways. Review Figure 2.16^8 below, which is a line graph of the percentage of Canadian vs. foreign television programmes watched in New Brunswick from 2000 to 2004. Because of the similar colours of the lines, it is difficult for the reader to understand which line graph corresponds to which colour from the legend.\n\n***\n\n8. Statistics Canada. Table 22-10-0097-01 Television viewing time of all television stations, by province, content and type of programme. Data is reproduced and distributed on an \"as is\" basis with the permission of Statistics Canada. Retrieved February 2nd, 2022. DOI: https://doi.org/10.25318/2210009701-eng. Statistics Canada Open Licence: https://www.statcan.gc.ca/en/reference/licence",
+  "document_metadata": {
+    "title": "Misleading Data Visualizations",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": []
+}

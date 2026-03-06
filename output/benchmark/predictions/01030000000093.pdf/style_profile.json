@@ -1,0 +1,42 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but inferred as large, centered, serif, all-caps based on footer style.",
+      "example_text": "BEHAVIORAL ECONOMICS PRACTICUM"
+    },
+    "h2": {
+      "visual_description": "Not present in sample; likely bold serif with significant leading.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Superscript Arabic numerals following punctuation",
+      "semantic_meaning": "Footnote reference"
+    },
+    {
+      "pattern": "Numbered paragraph at the bottom of the page, smaller font size than body text",
+      "semantic_meaning": "Footnote content"
+    },
+    {
+      "pattern": "Italicized Latin phrases or book titles",
+      "semantic_meaning": "Emphasis or nomenclature (e.g., Homo sapiens, a priori)"
+    },
+    {
+      "pattern": "Text enclosed in quotation marks for specific terminology",
+      "semantic_meaning": "Defined concepts or specific labels (e.g., 'Response Card')"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX inline ($...$) or block ($$...$$) for statistical notation.",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical style (e.g., Kahneman (2011))"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": {
+      "footer_left": "Arabic numeral followed by period and text (Footnote)",
+      "footer_right": "All-caps serif text followed by Roman numerals (Running title and page number, e.g., BEHAVIORAL ECONOMICS PRACTICUM XXV)"
+    }
+  }
+}

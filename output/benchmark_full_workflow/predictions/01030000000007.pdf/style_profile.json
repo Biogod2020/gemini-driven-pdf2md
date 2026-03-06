@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, all-caps, small-caps style, preceded by 'CHAPTER' and a number, underlined by a horizontal rule.",
+      "example_text": "CHAPTER 2"
+    },
+    "h2": {
+      "visual_description": "Centered, large serif font, title case, significant vertical whitespace above and below.",
+      "example_text": "Narratives in Chuj"
+    },
+    "h3": {
+      "visual_description": "Centered, medium serif font, title case, no horizontal rule.",
+      "example_text": "Introduction to the Texts"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Large initial drop cap spanning approximately 4 lines of text.",
+      "semantic_meaning": "Section or Chapter Opening"
+    },
+    {
+      "pattern": "First line of a section following a drop cap is in small-caps.",
+      "semantic_meaning": "Opening Paragraph Emphasis"
+    },
+    {
+      "pattern": "Text enclosed in square brackets containing alphanumeric codes (e.g., [CAC 002 R022]).",
+      "semantic_meaning": "Archive Reference Code"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "not_observed",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical style (e.g., Diarassouba 2007)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Centered Arabic numerals at the bottom of the page (footer) representing page numbers."
+  }
+}

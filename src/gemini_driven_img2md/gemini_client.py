@@ -1,7 +1,7 @@
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-def get_gemini_client(model_name: str = "gemini-3-flash-preview-nothinking", temperature: float = 0.0, **kwargs) -> ChatGoogleGenerativeAI:
+def get_gemini_client(model_name: str = "gemini-3-flash-preview", temperature: float = 0.0, **kwargs) -> ChatGoogleGenerativeAI:
     """
     Returns a LangChain ChatGoogleGenerativeAI client configured to use the native Gemini API proxy.
     """

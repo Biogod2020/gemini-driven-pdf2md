@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_diag5",
+    "path": "assets/p0_diag5.png",
+    "caption": "Distribution of Komnas HAM's YouTube Content (2019-2020)",
+    "description": "A bar chart comparing the number of YouTube content uploads by category (Event, Celebration, Information, Videograph) for the years 2019 and 2020."
+  },
+  {
+    "id": "p0_fig4",
+    "path": "assets/p0_fig4.png",
+    "caption": "Komnas HAM's YouTube channel as of 1 December 2021",
+    "description": "A screenshot of the Komnas HAM YouTube channel interface showing the home tab, subscriber count, and recent video uploads."
+  }
+]

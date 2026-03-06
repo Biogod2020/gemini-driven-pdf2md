@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold sans-serif font, positioned at the top of the page, often accompanied by a distinctive cross-hair or 'L-shaped' graphic element consisting of a vertical and horizontal line intersection.",
+      "example_text": "Table of Contents"
+    },
+    "h2": {
+      "visual_description": "Bold sans-serif font, slightly smaller than H1, used for major section titles. In the TOC, these are underlined by a full-width horizontal rule.",
+      "example_text": "Executive Summary"
+    },
+    "h3": {
+      "visual_description": "Standard bold sans-serif font, used for sub-sections within the main flow (inferred from TOC structure).",
+      "example_text": "Legal Framework"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Intersection of a long horizontal line and a shorter vertical line in the top-left margin.",
+      "semantic_meaning": "Section Header Graphic / Page Start Marker"
+    },
+    {
+      "pattern": "Full-width horizontal grey/black lines separating text rows.",
+      "semantic_meaning": "Table of Contents Row Separator / List Delineator"
+    },
+    {
+      "pattern": "Short vertical tick marks intersecting horizontal lines on the right side of the page.",
+      "semantic_meaning": "Visual alignment guide for page numbers"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex (inline: $...$, block: $$...$$)",
+    "table_style": "markdown",
+    "citation_format": "Numeric or Author-Date (inferred from formal report style)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers located at the far right of the line, aligned with section titles; graphic cross-hair elements in the top-left margin."
+  }
+}

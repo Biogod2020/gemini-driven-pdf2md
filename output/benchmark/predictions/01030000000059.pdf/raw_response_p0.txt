@@ -1,0 +1,37 @@
+**Processing into Markdown**
+
+I've successfully converted the image content into Markdown, incorporating figure descriptions and notes. The flow adheres to the specified order, with LaTeX formatting for units. I'm satisfied that I've filtered out the unwanted page number. I am now beginning the construction of the JSON object.
+
+
+{
+  "markdown": "## Figure 4.6. Input Biomass Fuel for Each Type of Biomass Power Generation\n\n![Figure 4.6](fig4_6)\n\nPKS = palm kernel shell.\nHeat value used: Domestic logs and wood chips: $19.4\\ MJ/kg$; Domestic wood pellets, Import pellets, chips: $15.5\\ MJ/kg$; PKS: $18\\ MJ/kg$; Construction wood waste, Other waste, and Others: assuming the same with wood pellets.\nSource: Depicted by IEEJ based on Japan Woody Bioenergy Association, 2020.\n\nAccording to Japan’s trade statistics, its import of wood pellets has increased around 16 times from 2014 to 2019. Viet Nam and Canada are the largest suppliers of Japan’s wood pellet imports (Figure 4.7). On the other hand, domestic wood pellet production stayed almost the same over the same period (Figure 4.8).\n\n## Figure 4.7. Wood Pellets Import\n\n![Figure 4.7](fig4_7)\n\nSource: Trade Statistics of Japan.",
+  "document_metadata": {
+    "title": "Biomass Fuel and Wood Pellet Import Statistics",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig4_6",
+      "bbox": [
+        102,
+        212,
+        358,
+        752
+      ],
+      "caption": "Figure 4.6. Input Biomass Fuel for Each Type of Biomass Power Generation",
+      "description": "A stacked bar chart showing the percentage distribution of different biomass fuel types (Domestic logs, pellets, PKS, etc.) across various power generation categories like Unutilised wood and General wood."
+    },
+    {
+      "id": "fig4_7",
+      "bbox": [
+        562,
+        212,
+        818,
+        738
+      ],
+      "caption": "Figure 4.7. Wood Pellets Import",
+      "description": "A stacked bar chart illustrating the significant increase in wood pellet imports to Japan from 2014 to 2019, categorized by country of origin including Viet Nam and Canada."
+    }
+  ]
+}

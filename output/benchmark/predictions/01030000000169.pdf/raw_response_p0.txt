@@ -1,0 +1,26 @@
+**Finalizing the Output**
+
+I'm now generating the JSON output, carefully adhering to the specified format and ensuring all content is accurately represented in Markdown, with appropriate LaTeX rendering for the formula and chemical compounds, and the shovel icon marked as an asset. All edge cases are double checked. The JSON structure is also carefully verified, including proper escaping and the exclusion of extraneous text.
+
+
+{
+  "markdown": "* Lime is recommended if pH < 5.8\n\n## Target pH of 5.5 =\n\n$$ [6,405 - (1,590 \\times \\text{buffer pH}) + (98 \\times \\text{buffer pH} \\times \\text{buffer pH})] \\times \\text{depth} $$\n\n* Depth is in inches\n* Used if cash flow is limited or in lime availability problem areas in Central and Western Kansas\n* Lime is recommended if pH < 5.5\n\nThis buffer contains chromium (Cr), a toxic heavy metal. Therefore, your lab instructor will perform the SMP buffer analysis. As a class, determine which soil-water mixtures from Activity 1 need lime (pH $\\le$ 6.4). To those solutions, add 10 ml of the SMP buffer solution, and stir with a glass rod. Allow the mixtures to stand for 30 minutes, which should be enough time for the acid cations to be displaced from the CEC and forced into solution. Read the pH on meter.\n\n> [!instructional_task_or_exercise_prompt]\n> Assuming the desired pH is 6.0 (i.e. use the middle equation), calculate the lime requirement, show your work below, and record your results in Table 14.1.\n\n# Activity 5: Evaluating Liming Materials\n\nThe type of liming material and the size or fineness of the material determine how efficiently liming materials raise soil pH. This experiment was actually initiated earlier in the semester to allow time for the liming agents to react. Amending the soil with several different liming agents allows us assess the effects of particle size and liming material based on the relative changes in soil. The treatments included the following:\n\n* Reagent grade $CaCO_3$\n* Reagent grade $CaO$\n* Reagent grade $CaSO_4$\n* Coarse dolomitic limestone (35 mesh)\n* Fine dolomitic limestone (120 mesh)\n* Control (no amendments)\n\nWhen this experiment was initiated, each lab section was divided into six groups, with each group responsible for one of the six treatments. Your laboratory instructor assigned a treatment to your group, and you completed the following steps:\n\n1. Label four plastic bags\n2. Weigh 20 g of air-dry soil into each plastic bag.\n3. Weigh 0.1 gram of designated liming material onto weighing paper.\n4. Add the liming material to the soil and mix thoroughly to distribute evenly in the soil.\n5. Add a few mL of water to each bag and mix.\n6. Close the bags to start incubation.\n\nNow that the liming agents have had time to react, you will collect the results.",
+  "document_metadata": {
+    "title": "Soil Acidity and Adjusting Soil pH",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "icon1",
+      "bbox": [
+        325,
+        90,
+        355,
+        125
+      ],
+      "caption": "Small shovel icon",
+      "description": "A small icon of a shovel used to indicate an instructional task or exercise prompt."
+    }
+  ]
+}

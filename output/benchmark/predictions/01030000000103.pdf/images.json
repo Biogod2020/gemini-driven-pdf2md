@@ -1,0 +1,44 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "OER COMMONS",
+    "description": "Icon for OER Commons inside a light blue organic shape."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Prepare Your Content Icon",
+    "description": "Icon of a document and a lightbulb inside a yellow organic shape."
+  },
+  {
+    "id": "p0_fig3",
+    "path": "assets/p0_fig3.png",
+    "caption": "ChatGPT Icon",
+    "description": "ChatGPT logo inside a light blue organic shape."
+  },
+  {
+    "id": "p0_fig4",
+    "path": "assets/p0_fig4.png",
+    "caption": "Code Icon",
+    "description": "Code brackets icon inside a yellow organic shape."
+  },
+  {
+    "id": "p0_fig5",
+    "path": "assets/p0_fig5.png",
+    "caption": "Google Apps Script Icon",
+    "description": "Google Apps Script logo inside a light blue organic shape."
+  },
+  {
+    "id": "p0_fig6",
+    "path": "assets/p0_fig6.png",
+    "caption": "Edit Icon",
+    "description": "Pencil and paper icon inside a light grey organic shape."
+  },
+  {
+    "id": "p0_fig7",
+    "path": "assets/p0_fig7.png",
+    "caption": "Koala Illustration",
+    "description": "Illustration of a koala hanging on a tree branch in the top right corner."
+  }
+]

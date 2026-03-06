@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, black text, left-aligned, featuring a thin purple vertical accent line to its left.",
+      "example_text": "Upstage aims to enrich your business by providing Easy-to-Apply AI solutions"
+    },
+    "h2": {
+      "visual_description": "Small, purple-colored text used as section labels or category headers.",
+      "example_text": "Our Purpose"
+    },
+    "h3": {
+      "visual_description": "Medium-sized, bold, black text positioned directly beneath purple section labels.",
+      "example_text": "Making AI Beneficial"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Purple vertical line on the left margin",
+      "semantic_meaning": "Indicates the primary page title or core value proposition."
+    },
+    {
+      "pattern": "Purple font color",
+      "semantic_meaning": "Used for structural labels and section categorization."
+    },
+    {
+      "pattern": "Standard black bullet points",
+      "semantic_meaning": "Detailed list of features, services, or technical capabilities."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "standard LaTeX ($...$ or $$...$$)",
+    "table_style": "markdown",
+    "citation_format": "none observed"
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (3-column grid for main content)",
+    "margin_noise_patterns": "Numeric page indicators located in the bottom right corner (e.g., '3')."
+  }
+}

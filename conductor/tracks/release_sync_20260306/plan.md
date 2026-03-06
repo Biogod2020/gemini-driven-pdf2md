@@ -1,7 +1,7 @@
 # Implementation Plan: Release, MCP Interface, and GitHub Sync
 
 ## Phase 1: Documentation & Showcase
-- [ ] Task: Create a high-fidelity `README.md`
+- [~] Task: Create a high-fidelity `README.md`
     - [ ] Include feature list and SOTA highlights
     - [ ] Add detailed CLI usage guide
     - [ ] Create/Embed architecture diagrams (from workflow docs)

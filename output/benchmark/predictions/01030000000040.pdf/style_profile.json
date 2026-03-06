@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page, but inferred from footer style: Bold, red, sans-serif font.",
+      "example_text": "Gender Analysis of Violent Extremism and the Impact of COVID-19 on Peace and Security in ASEAN"
+    },
+    "h2": {
+      "visual_description": "Bold, bright blue, sans-serif font, centered above graphical elements.",
+      "example_text": "Figure 1: Age by gender of respondents"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+:",
+      "semantic_meaning": "Figure Caption/Title"
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page Number (Folio)"
+    },
+    {
+      "pattern": "italicized words within body text",
+      "semantic_meaning": "Emphasis on key terms or subjective concepts (e.g., 'perceptions')"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "not observed",
+    "table_style": "markdown",
+    "citation_format": "not observed"
+  },
+  "layout_info": {
+    "primary_flow": "two-column",
+    "margin_noise_patterns": "Footer contains a horizontal decorative line with blue and red segments, a running document title in red on the left, and a page number on the right."
+  }
+}

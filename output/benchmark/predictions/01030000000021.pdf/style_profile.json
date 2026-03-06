@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, centered, bold serif font for chapter title, preceded by a large centered chapter number.",
+      "example_text": "2\nThe Lost Homeland"
+    },
+    "h2": {
+      "visual_description": "Not present on sample page; typically smaller bold serif subheadings in similar book layouts.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Italicized text",
+      "semantic_meaning": "Foreign language terms (e.g., 'Heimat') or emphasis."
+    },
+    {
+      "pattern": "Single quotation marks",
+      "semantic_meaning": "Colloquialisms or specific terms (e.g., 'local')."
+    },
+    {
+      "pattern": "Bottom-right aligned numeral",
+      "semantic_meaning": "Page number."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "none"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers located in the bottom right corner should be excluded from the main body text."
+  }
+}

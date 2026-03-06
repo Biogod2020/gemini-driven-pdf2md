@@ -1,0 +1,8 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Figure 1. The same part of the sky looks different when observed with instruments that are sensitive to different bands of the spectrum. (a) Visible light: this shows part of the Orion region as the human eye sees it, with dotted lines added to show the figure of the mythical hunter, Orion. (b) X-rays: here, the view emphasizes the point-like X-ray sources nearby. The colors are artificial, changing from yellow to white to blue with increasing energy of the X-rays. The bright, hot stars in Orion are still seen in this image, but so are many other objects located at very different",
+    "description": "A composite figure showing three side-by-side images of the Orion constellation region. (a) shows the visible light view with the constellation outline in dotted lines. (b) shows an X-ray view with numerous point sources. (c) shows a third view, likely infrared, revealing dense gas and dust clouds."
+  }
+]

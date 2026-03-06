@@ -1,0 +1,8 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Fraction of putts made vs Distance to hole (inches)",
+    "description": "A line graph showing the fraction of putts made for par versus birdie as a function of distance to the hole in inches. Both lines show a decreasing trend as distance increases, with 'Putt for par' generally staying above 'Putt for birdie'."
+  }
+]

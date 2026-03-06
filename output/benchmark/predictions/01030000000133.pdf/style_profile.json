@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, serif font, left-aligned, preceded by a numerical section identifier.",
+      "example_text": "7.6 Examples of Women’s Impact"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, same size as body text, run-in with the paragraph (inline), followed by a period.",
+      "example_text": "Sportfishing."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Image with right-aligned text wrapping and a caption below starting with 'Figure X.X:'",
+      "semantic_meaning": "Figure with Caption"
+    },
+    {
+      "pattern": "Text enclosed in parentheses containing a name and a year",
+      "semantic_meaning": "In-text Citation"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (not explicitly shown, but standard for academic serif layouts)",
+    "table_style": "markdown",
+    "citation_format": "Author-Date (APA-style), e.g., (Burkett and Carter 2020)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column with occasional text wrapping around right-aligned images",
+    "margin_noise_patterns": "Footer contains 'Chapter Title | Page Number' aligned to the bottom right (e.g., 'Gender and Fishing | 155')"
+  }
+}

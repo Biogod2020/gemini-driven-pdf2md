@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_table6",
+    "path": "assets/p0_table6.png",
+    "caption": "Table 6: Performance comparison amongst the merge candidates. ‘Cand. 1’ and ‘Cand. 2’ are trained using the same setting as ‘DPO v2’ and ‘DPO v3’, respectively, but with slightly different hyper-parameters. The best scores for H6 and the individual tasks are shown in bold.",
+    "description": "A table comparing the performance of two candidate models across several benchmarks including H6, ARC, HellaSwag, MMLU, TruthfulQA, Winogrande, and GSM8K."
+  },
+  {
+    "id": "p0_table7",
+    "path": "assets/p0_table7.png",
+    "caption": "Table 7: Ablation studies on the different merge methods used for obtaining the final model. We use ‘Cand. 1’ and ‘Cand. 2’ from Tab. 6 as our two models for merging. We name the merged models with the ‘Merge’ prefix to indicate they are merged. The best scores for H6 and the individual tasks are shown in bold.",
+    "description": "A table showing ablation results for different model merging methods (Average with different weights and SLERP) across the same set of benchmarks as Table 6."
+  }
+]

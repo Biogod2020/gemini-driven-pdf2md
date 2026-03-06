@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, sans-serif font, likely in blue to match the document's primary accent color.",
+      "example_text": "REGIONAL LABOUR MIGRATION TRENDS"
+    },
+    "h2": {
+      "visual_description": "Medium-large, bold, sans-serif font, blue color, used for section headers.",
+      "example_text": "Impact of the COVID-19 Pandemic"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.",
+      "semantic_meaning": "Figure caption title; styled in bold blue sans-serif font."
+    },
+    {
+      "pattern": "^Source: ",
+      "semantic_meaning": "Data source attribution; located below figures in a smaller, grey, sans-serif font."
+    },
+    {
+      "pattern": "^\\d\\s",
+      "semantic_meaning": "Footnote entry; located at the bottom of the page below a horizontal divider, using a smaller serif font."
+    },
+    {
+      "pattern": "\\(\\w+ (and \\w+ )?\\d{4}[a-z]?\\)",
+      "semantic_meaning": "In-text citation using the Author-Date format."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical author-date (e.g., Lee and David, 2021)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer contains the document title 'ASEAN Migration Outlook' on the left and the page number on the right, separated by a blue horizontal line."
+  }
+}

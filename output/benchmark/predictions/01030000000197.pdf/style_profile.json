@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, larger serif font, prefixed with a capital letter indicating an appendix section.",
+      "example_text": "C Additional Information"
+    },
+    "h2": {
+      "visual_description": "Bold serif font, same size as body text, formatted as a run-in heading followed by a period and immediate paragraph text.",
+      "example_text": "Filtered task names."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Table \\d+:",
+      "semantic_meaning": "Table caption prefix, typically located below the table."
+    },
+    {
+      "pattern": "blue colored text",
+      "semantic_meaning": "Hyperlinked cross-references (e.g., to tables) or citations."
+    },
+    {
+      "pattern": "^\\*\\*.*?\\.\\*\\*",
+      "semantic_meaning": "Bolded run-in paragraph header."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX style (inline $...$, block $$...$$)",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical author-year format, e.g., (Shi et al., 2023)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Standard academic margins; ignore potential page numbers or running headers if present in full document."
+  }
+}

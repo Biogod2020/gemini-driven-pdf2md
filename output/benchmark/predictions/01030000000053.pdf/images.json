@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "p0_table_01",
+    "path": "assets/p0_table_01.png",
+    "caption": "Source: HOR 2022. Computations made by the authors.",
+    "description": null
+  },
+  {
+    "id": "p0_table_1",
+    "path": "assets/p0_table_1.png",
+    "caption": "Source: HOR 2022. Computations made by the authors.",
+    "description": "A table showing regional distribution of women in politics, including Party-List and totals."
+  }
+]

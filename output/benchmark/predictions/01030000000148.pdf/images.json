@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Education Level Survey Results",
+    "description": "A pie chart showing the distribution of education levels among 122 respondents. The largest segment is 'Bachelor's Degree or Higher' at 76.2%, followed by 'Upper Secondary' at 18%."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Profession Survey Results",
+    "description": "A pie chart showing the distribution of professions among 122 respondents. Key segments include 'Youth Worker' and 'Project Manager' both at 19.7%, 'Social Entrepreneur' at 18.9%, and 'Educator/Trainer' at 12.3%."
+  }
+]

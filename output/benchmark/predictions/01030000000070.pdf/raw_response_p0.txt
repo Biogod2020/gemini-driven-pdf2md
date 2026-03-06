@@ -1,0 +1,37 @@
+**Analyzing Final Output Structure**
+
+I'm now carefully examining the JSON structure I've constructed. I've confirmed valid JSON formatting, ensuring there are no comments, proper string quoting, and no extraneous text. I have verified the inclusion of LaTeX for math, the removal of page numbers and the correct placement of footnotes. The style conformity checks out, too. My current focus is refining the markdown content with the diagrams and captions to make sure the final output reflects the page's layout accurately.
+
+
+{
+  "markdown": "two meetings are related to the initial meeting of VNR and as particular human rights focus.$^{73}$\n\n![Diagram 2](fig1)\n\n## Diagram 2 Participation of Institutions in the VNR Meeting of Indonesia 2021.$^{74}$\n\nThe distribution of participating institutions in VNR-related meetings are as follows:\n\n![Diagram 3](fig2)\n\n## Diagram 3 Distribution of Participating Institutions within VNR Meeting of Indonesia 2021.$^{75}$\n\n***\n\n$^{74}$ Data is processed based on: ibid., 332-345.\n$^{75}$ Data is processed based on: Kementerian PPN / Bappenas, “Annexes Indonesia’s VNR 2021” (n. 68), 332-345.",
+  "document_metadata": {
+    "title": "Participation and Distribution of Institutions in VNR Meetings",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig1",
+      "bbox": [
+        143,
+        161,
+        433,
+        841
+      ],
+      "caption": "Diagram 2 Participation of Institutions in the VNR Meeting of Indonesia 2021.74",
+      "description": "A bar chart showing the frequency of meeting participation by institutions. The x-axis represents 'Meeting Participation Frequency' (1x to 24x) and the y-axis represents 'Number of Participating Institutions'. The highest bar is for 1x participation with 160 institutions."
+    },
+    {
+      "id": "fig2",
+      "bbox": [
+        539,
+        161,
+        794,
+        841
+      ],
+      "caption": "Diagram 3 Distribution of Participating Institutions within VNR Meeting of Indonesia 2021.75",
+      "description": "A pie chart showing the distribution of participating institutions by category. Categories include Government (24%), Other State Institutions (7%), Civil Society Organizations (3%), Philanthropic Foundation (13%), Educational Institution (8%), Private and State-Owned Companies (37%), and Other Institutions (8%)."
+    }
+  ]
+}

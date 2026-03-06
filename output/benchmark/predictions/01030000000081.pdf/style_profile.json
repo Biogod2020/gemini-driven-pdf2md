@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Red, serif font, title case, positioned as a running header at the top of the page.",
+      "example_text": "Jailed for Doing Business"
+    },
+    "h2": {
+      "visual_description": "All-caps, bold, red, serif font, used for major section titles such as table headers.",
+      "example_text": "TABLE 22: COMMERCIAL LAWS WITH MORE THAN 100 IMPRISONMENT CLAUSES"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^TABLE \\d+: .*",
+      "semantic_meaning": "Table Title"
+    },
+    {
+      "pattern": "^Source: .*",
+      "semantic_meaning": "Table Source Attribution"
+    },
+    {
+      "pattern": "^NOTE: .*",
+      "semantic_meaning": "Explanatory Note"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Source: [Organization Name]"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running header text 'Jailed for Doing Business' at the top; centered red page numbers at the bottom margin."
+  }
+}

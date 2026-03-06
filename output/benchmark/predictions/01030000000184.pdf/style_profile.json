@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, black sans-serif font, serving as the primary page headline.",
+      "example_text": "SS Pack allows businesses to access further data more rapidly"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, purple sans-serif font, positioned at the top left as a section or category label.",
+      "example_text": "Semantic Search Pack: Value"
+    },
+    "h3": {
+      "visual_description": "Standard-sized, bold, black sans-serif font, used for sub-headers within columns.",
+      "example_text": "Higher Return of Information"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Purple vertical line on the far left margin",
+      "semantic_meaning": "Visual container/anchor for the page header section."
+    },
+    {
+      "pattern": "Large purple text above column headers",
+      "semantic_meaning": "Key performance metrics or high-level value propositions."
+    },
+    {
+      "pattern": "Superscript numbers (e.g., ¹, ²)",
+      "semantic_meaning": "Reference markers for technical footnotes or citations."
+    },
+    {
+      "pattern": "Small, light-grey text at the bottom",
+      "semantic_meaning": "Footnotes, methodology descriptions, and legal disclaimers."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Superscript numeric footnotes (e.g., [^1])"
+  },
+  "layout_info": {
+    "primary_flow": "Mixed: Single-column header and intro text, transitioning into a three-column grid for feature details.",
+    "margin_noise_patterns": "Page number in the bottom right corner; light grey footnote block at the bottom left margin."
+  }
+}

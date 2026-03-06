@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, all-caps, sans-serif font, prefixed with a single digit and period.",
+      "example_text": "7. THEORY"
+    },
+    "h2": {
+      "visual_description": "Bold, all-caps, sans-serif font, slightly smaller than h1, prefixed with hierarchical numbering (e.g., 7.1.).",
+      "example_text": "7.1. FREE VORTEX"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+:.*",
+      "semantic_meaning": "Figure caption; rendered in a smaller, italicized serif font directly below images."
+    },
+    {
+      "pattern": ".*\\(\\d+\\)$",
+      "semantic_meaning": "Numbered mathematical equation; centered on its own line with the index in parentheses at the right margin."
+    },
+    {
+      "pattern": "^\\d+ APPLIED FLUID MECHANICS LAB MANUAL$",
+      "semantic_meaning": "Page footer; contains the page number followed by the manual title in small-caps/all-caps sans-serif."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (e.g., $$v = \\frac{k}{r} \\quad (1)$$) with right-aligned numbering.",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical references to figures (e.g., Figure 8.2) and equations (e.g., Equation (1))."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page number and document title 'APPLIED FLUID MECHANICS LAB MANUAL' located at the bottom margin."
+  }
+}

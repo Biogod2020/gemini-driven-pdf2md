@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, serif font, prefixed with a three-level hierarchical number (e.g., 3.7.3), followed by title text, sometimes ending with an asterisk.",
+      "example_text": "3.7.3 Formulae of higher accuracy from Richardson’s extrapolation *"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, prefixed with 'Example' followed by a three-level hierarchical number and a descriptive title in parentheses.",
+      "example_text": "Example 3.7.2 (Forward difference of higher accuracy)"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^\\s*-\\s+",
+      "semantic_meaning": "Unordered list item using a hyphen as a bullet point."
+    },
+    {
+      "pattern": "\\(\\d+\\.\\d+[a-z]?\\)$",
+      "semantic_meaning": "Right-aligned equation label/reference number."
+    },
+    {
+      "pattern": "Theorem\\s+\\d+\\.\\d+\\.\\d+",
+      "semantic_meaning": "Formal reference to a mathematical theorem."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX-style block math ($$ ... $$) for centered equations and inline math ($ ... $) for variables and expressions within text.",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical numeric references for equations (e.g., (3.10)) and named/numbered references for theorems."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running header containing the chapter number/title on the left and the page number on the right, separated by a horizontal rule."
+  }
+}

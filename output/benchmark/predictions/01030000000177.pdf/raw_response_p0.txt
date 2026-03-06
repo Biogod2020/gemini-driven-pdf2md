@@ -1,0 +1,37 @@
+**Framing the Content**
+
+I'm now focusing on synthesizing the image data. I'm extracting the salient content: the images (book and tablet logos), headings, paragraphs, and captions, and planning how to represent them as Markdown for the `markdown` field. The next steps will involve forming the markdown strings and assigning assets.
+
+
+{
+  "markdown": "![KSU OER icon](fig7.3)\n\n**Figure 7.3.** You can read more about KSU’s marketing approach in [Marking Open and Affordable Courses](https://example.com) (Hare, Kirschner, and Reed 2020).\n\nFor an even simpler graphic, we can look to Kansas State University. KSU’s Open/Alternative Textbook Initiative developed their OER icon, a book with an “O” on the cover, to be recognizable even at a small scale. This was done because it would be used as a marking denoting the use of open materials in their course schedule. This graphic is clear, easy to read, and emblematic of the initiative itself, by representing open textbooks with a book icon.\n\n## Aligning with Your Identity\n\nLike KSU did with their OER icon, your branding should be reflective of your initiative’s work in some way. Think about your audience and what you want them to feel when they see your program’s marketing on campus. Does your program have a unique name or tagline that influences the way you present it (e.g., playful, bold, colorful, or innovative)?\n\n![CVCC OpenEd logo on a tablet](fig7.4)\n\n**Figure 7.4.** You can read more about CVCC’s marketing approach in [Marking Open and Affordable Courses](https://example.com) (Hare, Kirschner, and Reed 2020).\n\nA great example of a program whose name and messaging align clearly with their work is Central Virginia Community College (CVCC). CVCC uses the tagline “OpenEd CVCC: Innovation and Affordability” as their program’s name and their icon features this theme of innovation through graphics of light bulbs, gears, and representations of various disciplines.\n\nCVCC’s logo is more complex than the ones we shared in our “simple” section. However, this isn’t a problem in their case. Keep in mind that the simplicity of any graphic will depend on where and how it’s used. CVCC’s logo might have more going on than KSU’s icon, but it is meant to be used at a larger scale, so it can accommodate this complexity. If your logo will be used in print materials or as a smaller icon, that’s when you’ll want to focus on simpler designs. For graphics that will be displayed more prominently, though, a larger graphic works fine.",
+  "document_metadata": {
+    "title": "Program Management",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig7.3",
+      "bbox": [
+        73,
+        411,
+        205,
+        585
+      ],
+      "caption": "Figure 7.3. You can read more about KSU’s marketing approach in Marking Open and Affordable Courses (Hare, Kirschner, and Reed 2020).",
+      "description": "A purple icon of a book with a large white 'O' on the front cover."
+    },
+    {
+      "id": "fig7.4",
+      "bbox": [
+        540,
+        114,
+        788,
+        354
+      ],
+      "caption": "Figure 7.4. You can read more about CVCC’s marketing approach in Marking Open and Affordable Courses (Hare, Kirschner, and Reed 2020).",
+      "description": "A tablet displaying a colorful logo for 'OpenEd CVCC' featuring a tree growing from a book with various academic and innovation icons as leaves."
+    }
+  ]
+}

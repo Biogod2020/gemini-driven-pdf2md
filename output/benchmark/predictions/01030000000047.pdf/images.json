@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": "p0_table_1",
+    "path": "assets/p0_table_1.png",
+    "caption": "Comparison of provisional and official registration results by political party",
+    "description": "A table showing the number of communes and candidates for various political parties between March 7 and April 29, including the difference in candidate numbers."
+  }
+]

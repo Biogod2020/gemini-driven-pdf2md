@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Normal hemoglobin molecules",
+    "description": "A cluster of several hemoglobin protein structures shown in a molecular model style."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Disk-shaped red blood cell",
+    "description": "Microscopic view of a healthy, biconcave disk-shaped red blood cell."
+  },
+  {
+    "id": "p0_fig3",
+    "path": "assets/p0_fig3.png",
+    "caption": "Clumping sickle cell hemoglobin",
+    "description": "Molecular model showing sickle cell hemoglobin proteins aggregating into a long, rigid rod structure."
+  },
+  {
+    "id": "p0_fig4",
+    "path": "assets/p0_fig4.png",
+    "caption": "Sickle-shaped red blood cell",
+    "description": "Microscopic view of a distorted, crescent-shaped (sickle) red blood cell."
+  }
+]

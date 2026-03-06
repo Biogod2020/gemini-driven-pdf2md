@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this specific page, but typically represents a Chapter title in this style, likely larger and bold.",
+      "example_text": "1 Introduction"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, significantly larger than body text, prefixed with hierarchical numbering (e.g., 1.3).",
+      "example_text": "1.3 Why numerical mathematics?"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "italicized text",
+      "semantic_meaning": "Introduction of new technical terms, definitions, or emphasis."
+    },
+    {
+      "pattern": "centered block with right-aligned parenthetical numbering (x.y)",
+      "semantic_meaning": "Numbered mathematical equation or formula."
+    },
+    {
+      "pattern": "superscript numeric digits",
+      "semantic_meaning": "Footnote reference markers."
+    },
+    {
+      "pattern": "parenthetical references like (Section 1.4) or (Chapter 5)",
+      "semantic_meaning": "Internal cross-references to other document parts."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX/MathJax (e.g., $...$ for inline, $$...$$ or equation environments for blocks).",
+    "table_style": "markdown",
+    "citation_format": "Numeric superscripts for external links/footnotes; parenthetical text for internal section/equation references."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Header contains a horizontal rule with the page number on the outer edge and the book title ('Numerical Methods for Ordinary Differential Equations') on the inner edge. Footer contains footnotes separated by a short horizontal line."
+  }
+}

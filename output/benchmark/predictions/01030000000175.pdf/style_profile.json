@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page, but typically reserved for Chapter titles in this textbook style.",
+      "example_text": "Chapter 6 Astronomical Instruments"
+    },
+    "h2": {
+      "visual_description": "Centered, serif font, larger than body text, used for figure group titles or sub-sections.",
+      "example_text": "Orion Region at Different Wavelengths."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "blue colored text",
+      "semantic_meaning": "Internal cross-reference hyperlink (e.g., to figures or other chapters)."
+    },
+    {
+      "pattern": "bold text within body paragraph",
+      "semantic_meaning": "Introduction or definition of a key technical term."
+    },
+    {
+      "pattern": "bold text at the start of a block below an image",
+      "semantic_meaning": "Figure label and number prefix for a caption."
+    },
+    {
+      "pattern": "parenthetical letters (a), (b), (c)",
+      "semantic_meaning": "Sub-figure identifiers within a multi-part image or caption."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical blue links for internal figures; standard text for external references."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom footer containing 'Page Number | Chapter Title Section Number: Section Title'."
+  }
+}

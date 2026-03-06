@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this representative page; likely used for chapter or section titles in a larger font size.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present on this representative page; likely used for sub-sections.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\w+\\^\\d+",
+      "semantic_meaning": "Footnote reference (superscript number following a word)"
+    },
+    {
+      "pattern": "^\\d+\\.\\s.+",
+      "semantic_meaning": "Footnote text located at the bottom of the page"
+    },
+    {
+      "pattern": "\\([A-Z][a-z]+(?:\\s[A-Z][a-z]+)?\\s\\d{4}[a-z]?\\)",
+      "semantic_meaning": "In-text parenthetical citation (Author Year)"
+    },
+    {
+      "pattern": "_.+?_",
+      "semantic_meaning": "Italicized text used for book titles, species names, or emphasis"
+    },
+    {
+      "pattern": ".+?\\s\\|\\s\\d+",
+      "semantic_meaning": "Page footer containing the document/chapter title and page number"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "None observed; default to standard LaTeX $...$ for inline math.",
+    "table_style": "markdown",
+    "citation_format": "Author-Date (e.g., Brown 2015; Monnett 1993)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running footer at the bottom right containing 'Fly-Fishing’s Legacy for Conservation | [Page Number]'. Footnotes are positioned at the bottom left, separated from the main body by a line or significant whitespace."
+  }
+}

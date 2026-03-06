@@ -1,0 +1,16 @@
+**Structuring the JSON**
+
+\n\n
+
+My primary focus is now on constructing the final JSON output. I'm verifying the structure and ensuring proper formatting. Specifically, I'm checking for valid JSON syntax, including the use of double quotes for all strings and the absence of comments. The final output will be a single JSON object encompassing all extracted and formatted data.
+
+
+{
+  "markdown": "16. Place the tubes in a balanced configuration in the microcentrifuge and spin for 3 minutes.\n\n17. Carefully pour off the supernatant from both tubes. Do not disturb the nucleic acid pellets. Invert the tubes and tap them gently on the surface of a clean paper towel to drain them thoroughly.\n\n18. Briefly spin the tubes in a balanced configuration in the microcentrifuge to bring any remaining ethanol to the bottom of the tube. Then use the micropipette to remove any remaining ethanol. Use a fresh tip for each tube. Be careful not to disturb the nucleic acid pellet.\n\n19. Allow the tubes to dry by leaving the tube caps open for 3–5 minutes. Inspect each tube carefully to ensure that the tube interior is completely dry.\n\n***Congratulations, you have just completed the miniprep plasmid DNA extraction!!!***\n\n## Restriction Enzyme Digest Prep (switch to the 1- 20-µL micropipette):\n\n20. Use a micropipette to add 10 µL of tris–EDTA solution (TE) to each tube. Use a new tip for each tube. Dissolve the pellets by pipetting in and out. Rinse the sides of the tube several times, concentrating on the area where the nucleic acid pellet or particles were observed. Check that no particles remain in the pipet tip or on the side of the tube. Use the entire contents of each tube in the restriction digest that follows.\n\n# II. Set Up the Restriction Digests of the “Suspect” and “Evidence” DNA\n\n| Reagents | Supplies and Equipment |\n| :--- | :--- |\n| **At each student station:**<br>Resuspended DNA or ethanol precipitates from Part 1*<br><br>**To be shared by all groups:**<br>“Evidence A” DNA*<br>“Evidence B” DNA*<br>Restriction Buffer–RNase A* BamHI–HindIII restriction enzyme mixture*<br>Sterile distilled or deionized water | Microcentrifuge tube rack<br>3 1.5-mL microcentrifuge tubes Micropipet, 1- 20 µL<br>Micropipet tips<br>Beaker or similar container for waste<br>Beaker or similar container filled with ice<br>Permanent marker<br>Water bath at 37°C |\n\n*Store on ice\n\nNOTE: Your instructor will assign you to use either “Evidence A” DNA or “Evidence B” DNA\n\n1. Label the three 1.5-mL microcentrifuge tubes in which you will perform the restriction digests: “S1” for Suspect 1, “S2” for Suspect 2, and either “EA” for Evidence A or “EB” for Evidence B. All three samples will be digested by the restriction enzymes BamHI and HindIII.\n\n2. Use the table below (next page) as a checklist while adding reagents to each reaction. Read down each column, adding the same reagent to all appropriate tubes. To avoid cross contamination, use a fresh pipet tip each time you add a reagent to a tube.",
+  "document_metadata": {
+    "title": "Set Up the Restriction Digests of the “Suspect” and “Evidence” DNA",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": []
+}

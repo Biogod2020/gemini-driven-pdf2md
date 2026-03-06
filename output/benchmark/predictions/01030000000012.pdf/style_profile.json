@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but typically inferred as the chapter title in this academic monograph style.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present in sample; the document transitions directly from figures to body text.",
+      "example_text": "N/A"
+    },
+    "h3": {
+      "visual_description": "Small caps, bold-weight serif, used for figure labels.",
+      "example_text": "FIGURE 5.1"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "FIGURE [Number] [Description]",
+      "semantic_meaning": "Image caption with figure numbering and descriptive metadata in a smaller serif font."
+    },
+    {
+      "pattern": "[Number] [Footnote Text]",
+      "semantic_meaning": "Footnote located at the bottom of the page, separated by whitespace, using a smaller font size than body text."
+    },
+    {
+      "pattern": "Italicized text within body",
+      "semantic_meaning": "Emphasis or titles of theatrical works and foreign terms (e.g., 'Aladdin', 'changshan')."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "N/A (Humanities/Art History context)",
+    "table_style": "markdown",
+    "citation_format": "Chicago-style footnotes with superscript numbering in body text."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column body text below full-width or side-by-side figures)",
+    "margin_noise_patterns": {
+      "top_left": "Page number (e.g., 96)",
+      "top_right": "Author surname in all caps (e.g., MACDONALD)",
+      "bottom": "Footnotes positioned at the base of the right-hand column."
+    }
+  }
+}

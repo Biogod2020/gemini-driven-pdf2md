@@ -1,0 +1,37 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large bold Arabic numeral followed by text in a serif font, slightly larger than body text, with significant leading space.",
+      "example_text": "4 Al-Sadu Symbols and Social Significance"
+    },
+    "h2": {
+      "visual_description": "Not present in sample; typically would follow h1 styling with smaller font or different indentation.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "FIGURE [NUMBER] [LETTER] [CAPTION_TEXT]",
+      "semantic_meaning": "Image caption; uses small-caps for the 'FIGURE' label and a smaller serif font for the description.",
+      "example": "FIGURE 8.7A–C A gazelle horn used in al-Sadu weaving."
+    },
+    {
+      "pattern": "Horizontal rule followed by small-font numbered list at bottom of column",
+      "semantic_meaning": "Footnotes/Citations; provides bibliographic details or expanded commentary linked to superscript numbers in body text.",
+      "example": "24 For more details on the symbols..."
+    },
+    {
+      "pattern": "Italicized terms within body text",
+      "semantic_meaning": "Foreign language terms or specific nomenclature (e.g., al-Sadu, kilims)."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex (inline $...$ or block $$...$$)",
+    "table_style": "markdown",
+    "citation_format": "Superscript numerical endnotes/footnotes with full bibliographic details at the bottom of the page."
+  },
+  "layout_info": {
+    "primary_flow": "two-column (asymmetric); images and main text occupy primary columns, while footnotes and some captions occupy a narrower secondary column or specific quadrants.",
+    "margin_noise_patterns": "Top left: Page number (e.g., 150). Top right: Author names in small caps (e.g., AL-OGAYYEL AND OSKAY)."
+  }
+}

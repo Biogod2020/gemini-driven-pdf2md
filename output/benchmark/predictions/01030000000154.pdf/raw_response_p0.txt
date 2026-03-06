@@ -1,0 +1,26 @@
+**Defining the Output**
+
+I'm now finalizing the JSON structure. The `markdown` field will contain the complete markdown rendition, incorporating the figure, caption, heading, and body text.  I'm also building out the `document_metadata` with title and style information. Then, of course, the `assets` key, and the bounding box.
+
+
+{
+  "markdown": "![Figure 7.1: Texas OER landscape survey results show terms used in course schedules](fig7_1)\n\n*Figure 7.1: Texas OER landscape survey results show terms used in course schedules*\n\n# IMPLEMENTATION\n\nLocally, we implemented a quick and free solution that reflects the constraints of system capabilities, no financial support, and a local directive to vet every course to be tagged. Based on what was feasible in the short term and conversations with key stakeholders (i.e., registrar, early OER adopters, curriculum coordinators, student representatives, and the campus store), we incorporated an “educational resources cost” option into an existing “course attribute” drop-down menu under the system’s advanced search options.",
+  "document_metadata": {
+    "title": "Texas OER Landscape Survey Results and Implementation",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig7_1",
+      "bbox": [
+        71,
+        92,
+        411,
+        907
+      ],
+      "caption": "Figure 7.1: Texas OER landscape survey results show terms used in course schedules",
+      "description": "A bar chart displaying the percentage of various terms used in course schedules to identify low-cost or open educational resources. The categories and their percentages are: No textbook required (6%), Affordable (8%), Zero cost (12%), Free (18%), Low cost (24%), and OER (66%)."
+    }
+  ]
+}

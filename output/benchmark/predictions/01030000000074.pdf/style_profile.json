@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not visible on this page; likely a large, bold, blue-colored title for main sections or chapters.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Bold, blue sans-serif font, used for figure and table titles. Prefixed with 'Figure' or 'Table' followed by a numbering scheme.",
+      "example_text": "Figure 1.2. Per capita GDP growth in 2020"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\.",
+      "semantic_meaning": "Figure Caption Title"
+    },
+    {
+      "pattern": "^Source:",
+      "semantic_meaning": "Data Source Attribution (typically in grey, smaller font below graphics)"
+    },
+    {
+      "pattern": "^\\d+\\s",
+      "semantic_meaning": "Footnote reference at the bottom of the page"
+    },
+    {
+      "pattern": "ASEAN Migration Outlook",
+      "semantic_meaning": "Running Footer Document Title"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "inline-latex",
+    "table_style": "markdown",
+    "citation_format": "Author-date parenthetical citations (e.g., World Bank, 2022a)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Horizontal separator line above footnotes; page number in bold blue at bottom right; document title in blue italics at bottom left."
+  }
+}

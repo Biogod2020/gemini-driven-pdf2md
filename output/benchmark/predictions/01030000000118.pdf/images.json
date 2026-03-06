@@ -22,5 +22,29 @@
     "path": "assets/p0_fig_4.png",
     "caption": "Mitosis and Meiosis: Similiar processes with VERY different results!",
     "description": null
+  },
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Fluorescently labeled chromosomes during cell division",
+    "description": "A high-contrast micrograph showing yellow-stained chromosomes being pulled apart by blue-stained spindle fibers during anaphase."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Cellular Cycle and Replication",
+    "description": "A circular diagram illustrating the stages of the cell cycle: Interphase (G1, S, G2) and the Mitotic phase."
+  },
+  {
+    "id": "p0_fig3",
+    "path": "assets/p0_fig3.png",
+    "caption": "A step by step guide to growing a human!",
+    "description": "A circular micrograph showing several animal cells with visible nuclei."
+  },
+  {
+    "id": "p0_fig4",
+    "path": "assets/p0_fig4.png",
+    "caption": "Mitosis and Meiosis",
+    "description": "A circular micrograph of an onion root tip showing cells in various stages of mitosis."
   }
 ]

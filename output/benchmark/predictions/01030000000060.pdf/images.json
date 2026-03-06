@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig4_8",
+    "path": "assets/p0_fig4_8.png",
+    "caption": "Figure 4.8. Domestic Wood Pellets Production",
+    "description": "A bar chart showing domestic wood pellet production in Japan from 2014 to 2019, measured in 1,000 tonnes. Production shows a slight upward trend from 126 in 2014 to 147 in 2019."
+  },
+  {
+    "id": "p0_fig4_9",
+    "path": "assets/p0_fig4_9.png",
+    "caption": "Figure 4-9. Average Cost, Insurance, and Freight Prices of Wood Pellets and Wood Chips",
+    "description": "A line chart comparing the average CIF prices in Yen/tonne for wood pellets, coniferous wood chips, and non-coniferous wood chips from 2012 to 2020."
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not explicitly present on this page, but inferred as top-level chapter titles in a textbook format.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, slightly larger than body text, used for table titles and captions.",
+      "example_text": "Table 16.5. Conservation practice (P) values for terraces with underground outlets or waterways."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Shovel icon graphic",
+      "semantic_meaning": "Indicates an interactive question or exercise prompt for the student."
+    },
+    {
+      "pattern": "Centered serif text with mathematical operators",
+      "semantic_meaning": "Mathematical formula or equation block."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX block style using double dollar signs ($$ ... $$) for centered equations.",
+    "table_style": "html (required for complex headers with merged cells and multi-level column labels as seen in Table 16.5)",
+    "citation_format": "Author-date parenthetical or narrative style (e.g., Jones et al. (1988))."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer containing page number and book title separated by a vertical bar (e.g., '146 | Soil Erosion and Conservation')."
+  }
+}

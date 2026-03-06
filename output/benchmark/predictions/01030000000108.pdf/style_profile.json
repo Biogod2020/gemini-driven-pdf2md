@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, all-caps, sans-serif font, followed by a full-width horizontal rule.",
+      "example_text": "CONTENTS"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, all-caps, sans-serif font, blue color, used for major section groupings within the document structure.",
+      "example_text": "LAB MANUAL"
+    },
+    "h3": {
+      "visual_description": "Standard-sized, mixed-case, sans-serif font, blue color (hyperlinked), used for individual chapters, experiments, or front/back matter sections.",
+      "example_text": "Experiment #1: Hydrostatic Pressure"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Experiment #\\d+:",
+      "semantic_meaning": "Numbered lab experiment title"
+    },
+    {
+      "pattern": "\\s+[ivx\\d]+$",
+      "semantic_meaning": "Right-aligned page number (Roman or Arabic numerals)"
+    },
+    {
+      "pattern": "^[A-Z\\s]+$",
+      "semantic_meaning": "Major document section header"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline, $$...$$ for block equations)",
+    "table_style": "markdown",
+    "citation_format": "Numeric (implied by 'References' section in technical manual context)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "No recurring header/footer noise identified on this page; content is centered with generous white space."
+  }
+}

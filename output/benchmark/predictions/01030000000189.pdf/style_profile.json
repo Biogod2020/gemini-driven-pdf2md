@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not visible on this page; typically the main paper title, centered and large.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Bold, numbered (e.g., 4.3.2), larger than body text, left-aligned with significant leading space.",
+      "example_text": "4.3.2 Alignment Tuning"
+    },
+    "h3": {
+      "visual_description": "Bold run-in heading at the start of a paragraph, same font size as body text, followed by a period.",
+      "example_text": "Ablation on the training datasets."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Bold text within table data cells",
+      "semantic_meaning": "Represents the best-performing metric or score in a comparison."
+    },
+    {
+      "pattern": "Green circle symbol (O)",
+      "semantic_meaning": "Indicates a specific dataset or feature was included in the model training configuration."
+    },
+    {
+      "pattern": "Red cross symbol (X)",
+      "semantic_meaning": "Indicates a specific dataset or feature was excluded from the model training configuration."
+    },
+    {
+      "pattern": "^Table \\d+:",
+      "semantic_meaning": "Table caption prefix followed by descriptive text, located below the table."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX-style inline ($...$) for variables and metrics like 'H6'.",
+    "table_style": "markdown",
+    "citation_format": "Internal cross-references to tables using 'Tab. [Number]' (e.g., Tab. 4)."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column text layout with tables that may span one or both columns)",
+    "margin_noise_patterns": "Standard academic margins; potential for page numbers or running headers at the extreme top or bottom edges."
+  }
+}

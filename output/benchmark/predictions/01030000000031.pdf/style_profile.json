@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, larger font size, left-aligned, prefixed with a section number followed by a period.",
+      "example_text": "8. Numerical computations in the combinatorial multiverse"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\(\\d+\\)\\s*at\\s*right\\s*margin",
+      "semantic_meaning": "Equation numbering"
+    },
+    {
+      "pattern": "Figure\\s+\\d+\\.",
+      "semantic_meaning": "Figure caption label (often followed by italicized description)"
+    },
+    {
+      "pattern": "bold\\s+text\\s+referencing\\s+figures",
+      "semantic_meaning": "Internal cross-reference to a figure (e.g., **Figure 3**)"
+    },
+    {
+      "pattern": "italicized\\s+text\\s+in\\s+body",
+      "semantic_meaning": "Mathematical variables or specific emphasis"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (inline: $...$, block: centered with right-aligned numbering in parentheses)",
+    "table_style": "markdown",
+    "citation_format": "Numeric in square brackets, e.g., [4]"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running header at top left (e.g., 'Probability, Combinatorics and Control'); Page number at bottom left (e.g., '318')"
+  }
+}

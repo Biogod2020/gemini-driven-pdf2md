@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "All-caps, centered, serif font, tracking/letter-spacing applied. Used as a running header.",
+      "example_text": "CIRCULATING THINGS, CIRCULATING STEREOTYPES"
+    },
+    "h2": {
+      "visual_description": "Small-caps, serif font, used for figure labels and metadata.",
+      "example_text": "FIGURE 4.2 William Hogarth, Taste in High Life [graphic]."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Horizontal line spanning column width above small-font text blocks at the bottom of the page.",
+      "semantic_meaning": "Footnotes / Citations"
+    },
+    {
+      "pattern": "Italicized text within body paragraphs followed by a slash (/) and capitalization.",
+      "semantic_meaning": "Poetic verse or block quotation integrated into text"
+    },
+    {
+      "pattern": "Small-caps block text below a figure title.",
+      "semantic_meaning": "Image provenance and metadata"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "not_present",
+    "table_style": "markdown",
+    "citation_format": "Numerical superscripts in body text corresponding to a numbered list in the footer (Chicago/Oxford style)."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column layout with text wrapping around images)",
+    "margin_noise_patterns": "Top left/center: Chapter/Section title in all-caps; Top right: Arabic numeral page number."
+  }
+}

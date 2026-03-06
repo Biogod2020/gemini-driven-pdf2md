@@ -4,5 +4,11 @@
     "path": "assets/p0_figure_4_3.png",
     "caption": "Figure 4.3- Ontario area (in square feet) used to harvest mushrooms over the years.",
     "description": null
+  },
+  {
+    "id": "p0_fig4.3",
+    "path": "assets/p0_fig4.3.png",
+    "caption": "Figure 4.3- Ontario area (in square feet) used to harvest mushrooms over the years.",
+    "description": "A line graph titled 'Area Harvested for Mushrooms in Ontario' showing a steady increase from 2016 to 2019. The y-axis represents 'Total Area Harvested (Square Feet)' ranging from 28,000,000 to 35,000,000. The x-axis represents 'Year' from 2016 to 2019."
   }
 ]

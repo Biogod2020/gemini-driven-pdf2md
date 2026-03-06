@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, typically used for chapter titles (inferred from footer content).",
+      "example_text": "Angling and Conservation of Living Fishy Dinosaurs"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, centered directly above charts or figures.",
+      "example_text": "Length of Gar Fish by Age"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+:",
+      "semantic_meaning": "figure_caption_prefix"
+    },
+    {
+      "pattern": "Long description\\.",
+      "semantic_meaning": "accessibility_hyperlink"
+    },
+    {
+      "pattern": "\\(.*? \\d{4}\\)",
+      "semantic_meaning": "in_text_citation"
+    },
+    {
+      "pattern": ".*? \\| \\d+$",
+      "semantic_meaning": "page_footer_with_number"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex_inline",
+    "table_style": "markdown",
+    "citation_format": "Author-Date (e.g., Butler et al. 2018)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-right footer containing the book title and page number separated by a vertical pipe."
+  }
+}

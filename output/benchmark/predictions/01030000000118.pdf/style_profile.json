@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Centered, red serif font, medium weight, located at the top of the page content area.",
+      "example_text": "Cellular Replication"
+    },
+    "h2": {
+      "visual_description": "Left-aligned, orange sans-serif font, larger than body text, positioned above main paragraphs.",
+      "example_text": "Growth and the Creation of Life"
+    },
+    "h3": {
+      "visual_description": "White, bold serif font on a solid red background (sidebar context).",
+      "example_text": "Cellular Cycle and Replication"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Solid red vertical column on the right side of the page containing circular images and white text.",
+      "semantic_meaning": "Sidebar / Navigation / Key Concepts"
+    },
+    {
+      "pattern": "Thin horizontal white lines within the red sidebar.",
+      "semantic_meaning": "Section dividers for sidebar content"
+    },
+    {
+      "pattern": "Images with a subtle drop shadow and white border frame.",
+      "semantic_meaning": "Primary illustrative figures"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Inline LaTeX for biological phases and chemical notations (e.g., $G_1$, $S$, $G_2$)",
+    "table_style": "markdown",
+    "citation_format": "Not explicitly shown; assume standard academic parenthetical if present in full text."
+  },
+  "layout_info": {
+    "primary_flow": "Two-column asymmetrical (Main content 75% width, Sidebar 25% width)",
+    "margin_noise_patterns": "Header: 'MOHAVE COMMUNITY COLLEGE' (left) and 'BIO181' (right) separated by a red horizontal rule. Footer: Centered red page number."
+  }
+}

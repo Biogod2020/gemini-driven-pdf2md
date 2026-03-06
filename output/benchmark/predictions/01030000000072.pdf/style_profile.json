@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this specific page; typically reserved for chapter or main section titles.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present on this specific page; likely used for sub-sections.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Two-cell horizontal box structure: left cell with light-red background and bold 'Diagram/Figure #' text; right cell with white background and bold descriptive text.",
+      "semantic_meaning": "Visual asset caption and title"
+    },
+    {
+      "pattern": "Centered numeric value at the bottom of the page.",
+      "semantic_meaning": "Page number / Footer"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none visible",
+    "table_style": "markdown (captions are structured as simple 1x2 tables)",
+    "citation_format": "Narrative in-text references (e.g., 'As of 1 December 2021...')"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Centered page numbers at the bottom margin (e.g., '21')."
+  }
+}

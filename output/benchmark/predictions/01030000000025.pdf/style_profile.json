@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Running header located at the top right of the page; serif font, same size as body text, prefixed with a chapter number.",
+      "example_text": "2. The Lost Homeland"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Italicized text within body paragraphs",
+      "semantic_meaning": "book titles or specific emphasis (e.g., 'Microcosm')"
+    },
+    {
+      "pattern": "Single numeric value at the bottom right corner",
+      "semantic_meaning": "page_number"
+    },
+    {
+      "pattern": "Text block with no first-line indentation and vertical spacing between blocks",
+      "semantic_meaning": "standard_paragraph"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "Inline italics for book titles; no formal bibliography visible on this page."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running header at top right (Chapter number and title); Page number at bottom right."
+  }
+}

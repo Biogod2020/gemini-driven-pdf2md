@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, dark blue sans-serif font, left-aligned, enclosed within a light blue rectangular border. Used for major section titles.",
+      "example_text": "2. General Profile of MSMEs"
+    },
+    "h2": {
+      "visual_description": "Bolded sans-serif text at the start of a paragraph, acting as a run-in heading, followed by a period.",
+      "example_text": "Business characteristics."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+:.*",
+      "semantic_meaning": "Figure caption, typically bolded label followed by descriptive text in a smaller sans-serif font."
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page number located at the bottom right corner of the page."
+    },
+    {
+      "pattern": "\\(Section \\d+(\\.\\d+)?\\)",
+      "semantic_meaning": "Internal cross-reference to other document sections."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "dollar_sign",
+    "table_style": "markdown",
+    "citation_format": "Internal section references (e.g., Section 2.4)"
+  },
+  "layout_info": {
+    "primary_flow": "two-column",
+    "margin_noise_patterns": "Page numbers at the bottom right; section header boxes at the top of new sections."
+  }
+}

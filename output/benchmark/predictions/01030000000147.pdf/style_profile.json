@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, uppercase, sans-serif font, prefixed with a number and period.",
+      "example_text": "3. RECOLLECTION OF NATIONAL INITIATIVES"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Circular national flag icon centered horizontally",
+      "semantic_meaning": "Country-specific section header/divider"
+    },
+    {
+      "pattern": "Blue, underlined text",
+      "semantic_meaning": "External hyperlink to source documentation"
+    },
+    {
+      "pattern": "Small blue text at the bottom of the page",
+      "semantic_meaning": "EU funding disclaimer and project metadata"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "Direct URL links provided within table cells"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Header logos (ECO Circle and EU flag) and footer text containing the project number and funding disclaimer."
+  }
+}

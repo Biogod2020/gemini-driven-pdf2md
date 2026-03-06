@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p0_fig_8_15",
+    "path": "assets/p0_fig_8_15.png",
+    "caption": "FIGURE 8.15 Typical black-and-white Bedouin tent.",
+    "description": null
+  },
+  {
+    "id": "p0_fig_8_16",
+    "path": "assets/p0_fig_8_16.png",
+    "caption": "FIGURE 8.16 Typical three-poled Bedouin tent",
+    "description": null
+  },
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "FIGURE 8.15 Typical black-and-white Bedouin tent.",
+    "description": "A photograph of a traditional black and white Bedouin tent set in a desert environment."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "FIGURE 8.16 Typical three-poled Bedouin tent",
+    "description": "A technical diagram illustrating the interior divisions and structural layout of a three-poled Bedouin tent."
+  }
+]

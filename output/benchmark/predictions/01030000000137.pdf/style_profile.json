@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but inferred as larger serif bold centered text.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Centered, serif font, larger than body text, significant whitespace above and below.",
+      "example_text": "Catch Per Day"
+    },
+    "h3": {
+      "visual_description": "Not present in sample; likely flush-left bold serif.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Figure [Number]: [Italicized Text]",
+      "semantic_meaning": "Figure Caption"
+    },
+    {
+      "pattern": "Blue hyperlinked text within captions",
+      "semantic_meaning": "Accessibility/Extended Description Link"
+    },
+    {
+      "pattern": "Bar chart with dual-color coding (Olive/Brown) and horizontal grid lines",
+      "semantic_meaning": "Data Visualization / Comparative Statistics"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (inline $...$ or block $$...$$)",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical style (e.g., Cook et al. 2001; Beard et al. 2011)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page number followed by vertical pipe and chapter/section title at the bottom left (e.g., '226 | Recreational Fishing and Keep Fish Wet')"
+  }
+}

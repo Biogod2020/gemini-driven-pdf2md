@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_shovel_icon_1",
+    "path": "assets/p0_shovel_icon_1.png",
+    "caption": "Instructional prompt icon",
+    "description": "A small black silhouette of a shovel pointing downwards to the left, used to indicate a data recording step."
+  },
+  {
+    "id": "p0_shovel_icon_2",
+    "path": "assets/p0_shovel_icon_2.png",
+    "caption": "Instructional prompt icon",
+    "description": "A small black silhouette of a shovel pointing downwards to the left, used to indicate a data recording step."
+  }
+]

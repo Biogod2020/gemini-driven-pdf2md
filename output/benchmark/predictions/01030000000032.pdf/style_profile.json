@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, left-aligned with significant top margin. Used for chapter or major section titles.",
+      "example_text": "Prologue"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, bold, serif font, left-aligned. Used for sub-headings within a section.",
+      "example_text": "Programming and Understanding"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "superscript numeric digit",
+      "semantic_meaning": "Footnote reference marker within body text."
+    },
+    {
+      "pattern": "horizontal rule above bottom text",
+      "semantic_meaning": "Separator line indicating the start of the footnote section."
+    },
+    {
+      "pattern": "\\[\\d+\\]",
+      "semantic_meaning": "Bibliographic citation reference (e.g., [13])."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX-style display math for centered equations; inline LaTeX for mathematical variables and symbols (e.g., $L$, $q$, $\\dot{q}$).",
+    "table_style": "markdown",
+    "citation_format": "Numerical citations in square brackets and superscript footnote markers."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footnote content located at the bottom of the page, separated from the main body by a thin horizontal line."
+  }
+}

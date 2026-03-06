@@ -4,5 +4,11 @@
     "path": "assets/p0_law_library_logo.png",
     "caption": "LAW LIBRARY LIBRARY OF CONGRESS",
     "description": null
+  },
+  {
+    "id": "p0_logo_loc",
+    "path": "assets/p0_logo_loc.png",
+    "caption": "Law Library of Congress Logo",
+    "description": "Top-left aligned logo with 'LAW LIBRARY' in bold sans-serif and 'LIBRARY OF CONGRESS' in orange/red sub-text."
   }
 ]

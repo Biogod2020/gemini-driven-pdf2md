@@ -1,0 +1,31 @@
+{
+  "heading_weights": {
+    "h3": {
+      "visual_description": "Bold, left-aligned, prefixed with multi-level decimal numbering (e.g., 3.2.6.).",
+      "example_text": "3.2.6. SDGs Dissemination in Social Media"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Diagram \\d+",
+      "semantic_meaning": "Caption label for charts or diagrams, typically contained within a shaded rectangular box."
+    },
+    {
+      "pattern": "^\\d{2,3}\\s.*",
+      "semantic_meaning": "Footnote entry located at the bottom of the page, corresponding to superscript numbers in the body text."
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "Page number located in the bottom center margin."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX",
+    "table_style": "markdown",
+    "citation_format": "Superscript numeric indices (e.g., text^94) with corresponding bibliographic details in a footer section."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Centered page numbers at the bottom; multi-line footnote blocks at the bottom of the text area."
+  }
+}

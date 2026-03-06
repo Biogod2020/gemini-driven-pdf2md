@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, sans-serif font, significantly larger than body text, used for section titles or table captions. Includes a colon after the label.",
+      "example_text": "Table: The number of accredited observers as of 28 April 2022"
+    },
+    "h2": {
+      "visual_description": "Not explicitly present in this snippet, but inferred as bold sans-serif of slightly smaller scale than H1.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Alternating light blue and white row shading in tables",
+      "semantic_meaning": "Data row differentiation for readability."
+    },
+    {
+      "pattern": "Horizontal rules at the top and bottom of table headers and at the end of the table",
+      "semantic_meaning": "Table boundary definition."
+    },
+    {
+      "pattern": "Superscript numerals in body text and table titles",
+      "semantic_meaning": "Footnote reference."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "N/A",
+    "table_style": "markdown (standard grid with alignment; use HTML if cell shading must be preserved)",
+    "citation_format": "Footnote style with a horizontal separator line at the bottom of the page, using numerical indices and URLs."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top-right running header (e.g., 'Civil Society Engagement'), bottom-left footnote area separated by a short line, and bottom-right page numbering."
+  }
+}

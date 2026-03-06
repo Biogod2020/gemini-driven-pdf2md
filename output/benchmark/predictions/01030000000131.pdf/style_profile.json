@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but inferred as chapter-level titles based on footer content.",
+      "example_text": "Chapter 17. Land Investments"
+    },
+    "h2": {
+      "visual_description": "Bold, sans-serif, centered between horizontal rules, used for figure captions.",
+      "example_text": "Figure 17.2. Year-to-year changes in housing prices."
+    },
+    "h3": {
+      "visual_description": "Italicized, serif, inline with the start of a paragraph, followed by a period.",
+      "example_text": "Inflationary, nominal, and real interest rates."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Horizontal line spanning the full width of the text block above and below an element.",
+      "semantic_meaning": "Figure or Table container/separator."
+    },
+    {
+      "pattern": "Bar chart with green (positive) and red (negative) bars, labeled with years at a 45-degree angle.",
+      "semantic_meaning": "Economic data visualization (Year-to-year changes)."
+    },
+    {
+      "pattern": "Line graph with vertical text labels on the x-axis and percentage labels on the y-axis.",
+      "semantic_meaning": "Time-series trend analysis (Annual % Change)."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "Inline LaTeX for variables (e.g., $i$, $r$, $r^*$); block LaTeX for equations (inferred from 'so that:' lead-in).",
+    "table_style": "markdown",
+    "citation_format": "Narrative citation style (e.g., 'Recall from your earlier training...')."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Right-aligned footer containing chapter title and page number separated by a pipe (e.g., 'Ch. 17. Land Investments | 385')."
+  }
+}

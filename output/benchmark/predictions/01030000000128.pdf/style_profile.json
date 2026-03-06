@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Chapter-level heading, inferred from footer metadata; likely bold, centered, and significantly larger than body text on its primary page.",
+      "example_text": "Ch. 13. Homogeneous Investment Types"
+    },
+    "h2": {
+      "visual_description": "Bold, centered text used for figure and table captions, often preceded and followed by horizontal rules.",
+      "example_text": "Figure 13.3. Graph of Projection Estimates"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Figure \\d+\\.\\d+\\..*",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "Open Template in .*",
+      "semantic_meaning": "external_resource_hyperlink"
+    },
+    {
+      "pattern": "\\d+ \\| Ch\\. \\d+\\..*",
+      "semantic_meaning": "page_footer_metadata"
+    },
+    {
+      "pattern": "---",
+      "semantic_meaning": "section_separator_rule"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "inline_latex",
+    "table_style": "markdown",
+    "citation_format": "Figure [Chapter].[Sequence]"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Horizontal rules separating figures from body text; footer text at the bottom margin containing page number and chapter context."
+  }
+}

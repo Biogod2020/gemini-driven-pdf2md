@@ -1,0 +1,26 @@
+**Reviewing JSON Output**
+
+I've carefully reviewed the generated markdown and am satisfied with its structure and content. The table data, heading, and body text are all correctly formatted. The footnote and source are in place. Now, I am structuring the JSON output, including the markdown and asset details. I will also make a final check to ensure all requirements are met.
+
+
+{
+  "markdown": "decline in 2020 in absolute numbers and as a percentage of 2019 deployment (Figure 1.9b).[^9]\n\n**Figure 1.9b. Deployment of Overseas Foreign Workers by sex, new hires only (in thousands)**\n\n| Year | Male | Female |\n| :--- | :--- | :--- |\n| 2016 | 187 | 374 |\n| 2017 | 128 | 331 |\n| 2018 | 102 | 319 |\n| 2019 | 102 | 335 |\n| 2020 (to September) | 22 | 55 |\n\nSource: Philippine Statistics Authority (2022)\n\n## 1.5. Migrant Workers More at Risk of COVID-19 Infection\n\nCOVID-19 infection among migrants appears to be higher than among non-migrant groups (Hintermeier et al., 2020). Migrant workers are disproportionately exposed to COVID-19 because of the nature of their work and their living conditions. Many migrant workers performed essential services, including jobs in healthcare, selected manufacturing, transportation, logistics, construction, and maintenance, which continued during periods of movement restrictions (OECD, ADBI and ILO, 2021). Many migrant workers also have less access to personal protective equipment and testing and treatment facilities (OECD, ADBI and ILO, 2021). The lack of access was especially true for undocumented migrants.\n\nAdditionally, migrant workers employed in plantations far away from urban centres had limited access to information and testing. High rates of infection were also linked to overcrowded housing conditions, including shared facilities and sleeping areas, which increase the risk of transmission (ASEAN MP, 2021). Many workers in processing or assembly plants worked in conditions where physical distancing was rarely observed.\n\nIn Malaysia, out of 2,188 positive cases recorded nationwide on 25 November 2020, 1,511 were foreign workers employed by Top Glove Corporation Bhd., one of the world’s largest personal protective equipment (PPE) manufacturers (*The Straits Times*, 2020; Ngui, 2020). Many other migrant workers were employed as delivery agents, public transport drivers, or restaurant waiters, and are in constant contact with the general public. Infection risk is also higher\n\n[^9]: Keeping in mind that for 2020 the figures are only up to October of the year.",
+  "document_metadata": {
+    "title": "ASEAN Migration Outlook",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "fig1_9b",
+      "bbox": [
+        128,
+        188,
+        430,
+        878
+      ],
+      "caption": "Figure 1.9b. Deployment of Overseas Foreign Workers by sex, new hires only (in thousands)",
+      "description": "A grouped bar chart showing the number of new hires for overseas foreign workers from 2016 to 2020, categorized by sex (Male and Female). The bars are color-coded by year: 2016 (blue), 2017 (red), 2018 (yellow), 2019 (green), and 2020 to September (light blue)."
+    }
+  ]
+}

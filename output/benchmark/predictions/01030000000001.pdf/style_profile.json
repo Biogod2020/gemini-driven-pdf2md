@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, serif font, centered or left-aligned with a numerical prefix followed by significant whitespace. Larger than body text.",
+      "example_text": "7       Variants of SJ Observer Models"
+    },
+    "h2": {
+      "visual_description": "Not present in sample, but likely bold serif with smaller indentation than H1.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Small superscript numbers within body text",
+      "semantic_meaning": "Footnote reference"
+    },
+    {
+      "pattern": "Horizontal rule at the bottom of the page followed by small-font text starting with a number",
+      "semantic_meaning": "Footnote content"
+    },
+    {
+      "pattern": "Italicized text within parentheses or sentences",
+      "semantic_meaning": "Emphasis or mathematical variables (e.g., p value, Δt)"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX inline for variables (e.g., $\\Delta t$)",
+    "table_style": "markdown",
+    "citation_format": "Numeric superscript for footnotes; parenthetical author-date style for internal references (e.g., BCa approach)."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Running headers containing page numbers on the outer edges and author surnames (e.g., '314' and 'YARROW') at the top margin."
+  }
+}

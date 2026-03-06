@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, centered, sans-serif font, used for Table and Figure titles. Includes numbering (e.g., Table 15.6).",
+      "example_text": "Table 15.6. Observations of Returns on the Firm’s Portfolio of Investments..."
+    },
+    "h2": {
+      "visual_description": "Not explicitly present as a section header in this sample, but inferred as bold sans-serif left-aligned text based on figure caption style.",
+      "example_text": "Figure 15.3. Scatter Graph of Returns..."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Horizontal rule (thin line) spanning the width of the text block.",
+      "semantic_meaning": "Separator used to bookend tables, figures, or distinct content blocks."
+    },
+    {
+      "pattern": "Shaded gray header row in tables.",
+      "semantic_meaning": "Table column headers."
+    },
+    {
+      "pattern": "Parenthetical number at the far left of a centered equation.",
+      "semantic_meaning": "Equation reference number."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (inline for variables like $r_t^P$, block for numbered equations using $$...$$)",
+    "table_style": "markdown (simple structure with shaded headers)",
+    "citation_format": "Numeric figure/table references (e.g., Figure 15.3) within the body text."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer contains chapter number, chapter title, and page number separated by a vertical pipe (e.g., 'Ch. 15. Homogeneous Risk Measures | 349')."
+  }
+}

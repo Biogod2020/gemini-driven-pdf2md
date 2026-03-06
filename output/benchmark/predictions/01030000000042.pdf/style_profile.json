@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h3": {
+      "visual_description": "Bold, blue, sans-serif font, typically used for figure captions and labels.",
+      "example_text": "Figure 5: Importance of a male guardian accompanying women when travelling to conflict zones"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+:",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "Italicized serif text block with a blue vertical left border and a blue double-quote icon at the top left.",
+      "semantic_meaning": "blockquote_or_interview_excerpt"
+    },
+    {
+      "pattern": "Donut chart with blue and orange segments, containing percentage labels within the segments and a legend below.",
+      "semantic_meaning": "data_visualization"
+    },
+    {
+      "pattern": "Red/orange sans-serif text at the bottom margin.",
+      "semantic_meaning": "footer_document_title"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "narrative (e.g., 'one interviewee from Indonesia observed...')"
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column layout)",
+    "margin_noise_patterns": "Bottom footer contains the document title 'Gender Analysis of Violent Extremism and the Impact of COVID-19 on Peace and Security in ASEAN' and the page number."
+  }
+}

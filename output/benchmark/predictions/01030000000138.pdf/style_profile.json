@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page; inferred from footer as serif, title case, standard weight.",
+      "example_text": "Integrating Fishers in the Management of Arapaima"
+    },
+    "h2": {
+      "visual_description": "Not present in the provided sample page.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+: .*",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "\\([A-Z][a-z]+ (?:et al\\. )?\\d{4}[a-z]?(?:; [A-Z][a-z]+ (?:et al\\. )?\\d{4}[a-z]?)*\\)",
+      "semantic_meaning": "in-text_citation"
+    },
+    {
+      "pattern": "Italicized Latin binomials or genus names",
+      "semantic_meaning": "scientific_nomenclature"
+    },
+    {
+      "pattern": "Bold lowercase terms within body text",
+      "semantic_meaning": "key_term_emphasis"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Author-Date (parenthetical, semicolon-delimited for multiple entries)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-right footer containing chapter title and page number separated by a vertical pipe (e.g., 'Integrating Fishers... | 251')"
+  }
+}

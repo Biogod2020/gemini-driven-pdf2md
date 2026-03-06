@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present on this page; typically reserved for chapter titles in this document style.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Bold, centered text used for figure titles, positioned above the graphic.",
+      "example_text": "Figure 4.2. Operating Capacity under the FIT Scheme"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^Figure \\d+\\.\\d+\\..*",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "^Source:.*|^[A-Z]+ = .*",
+      "semantic_meaning": "figure_metadata_or_notes"
+    },
+    {
+      "pattern": "^\\d\\s.*",
+      "semantic_meaning": "footnote_text"
+    },
+    {
+      "pattern": "^\\d+$",
+      "semantic_meaning": "page_number"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX-style ($...$ for inline, $$...$$ for block)",
+    "table_style": "markdown",
+    "citation_format": "Author-date (e.g., METI (2021a)) with superscript footnote references (e.g., ^4)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page numbers centered at the bottom margin; footnotes at the bottom left separated from main text by a short horizontal rule."
+  }
+}

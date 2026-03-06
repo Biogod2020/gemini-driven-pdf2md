@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Italicized serif font, typically found in the running header at the top of the page.",
+      "example_text": "Prologue"
+    },
+    "h2": {
+      "visual_description": "Not present on this sample page; likely bold or larger serif font for chapter/section starts.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Superscript digits (e.g., ^5, ^6) following punctuation or words.",
+      "semantic_meaning": "Footnote reference"
+    },
+    {
+      "pattern": "Centered blocks of mathematical notation with vertical spacing above and below.",
+      "semantic_meaning": "Display equation"
+    },
+    {
+      "pattern": "Small-font text at the bottom of the page, preceded by a horizontal rule and starting with a superscript digit.",
+      "semantic_meaning": "Footnote content"
+    },
+    {
+      "pattern": "Italicized lowercase and uppercase letters within text and equations.",
+      "semantic_meaning": "Mathematical variables and functions"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (use $...$ for inline and $$...$$ for display math)",
+    "table_style": "markdown",
+    "citation_format": "Footnotes"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top running header containing roman numeral page numbers (left) and section titles (right); bottom area containing footnotes separated by a thin horizontal rule."
+  }
+}

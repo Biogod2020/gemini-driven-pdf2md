@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "All-caps, sans-serif or light serif, small font size, used as a running head at the top of the page.",
+      "example_text": "FROM CRADLE TO GRAVE"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; likely large serif font for chapter titles.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "FIGURE [NUMBER].[NUMBER] followed by descriptive text in a smaller serif font, justified, positioned below an image.",
+      "semantic_meaning": "figure_caption"
+    },
+    {
+      "pattern": "Horizontal rule at the bottom of a column followed by a superscript number and citation text.",
+      "semantic_meaning": "footnote"
+    },
+    {
+      "pattern": "Italicized words within standard serif body text.",
+      "semantic_meaning": "foreign_terminology_or_emphasis"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "N/A",
+    "table_style": "markdown",
+    "citation_format": "Footnote style with superscript numbering in-text; full citation at bottom of page (Author, Title, Page)."
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (two-column) below full-width or column-width imagery.",
+    "margin_noise_patterns": "Top left: Book/Chapter title in all caps. Top right: Page number (Arabic numerals)."
+  }
+}

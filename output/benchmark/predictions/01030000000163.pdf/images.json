@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Boat and dolphin illustration",
+    "description": "A blue and white boat on the water with a dolphin jumping in the background."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Manatee illustration",
+    "description": "A hand-drawn illustration of a manatee swimming in blue water, eating seagrass."
+  },
+  {
+    "id": "p0_fig3",
+    "path": "assets/p0_fig3.png",
+    "caption": "Circular QR Code",
+    "description": "A large circular QR code for 'PRIVACY.FLOWCODE.COM' to access further resources."
+  },
+  {
+    "id": "p0_fig4",
+    "path": "assets/p0_fig4.png",
+    "caption": "Marine life illustration",
+    "description": "A colorful illustration of marine life including a manatee, sea turtle, various fish, and lush green seagrass at the bottom."
+  }
+]

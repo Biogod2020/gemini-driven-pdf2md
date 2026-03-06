@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "All-caps, sans-serif font, light blue/lavender color, increased letter spacing, left-aligned.",
+      "example_text": "THE TEXTBOOK’S DIFFERENT LEVELS OF RIGOR"
+    },
+    "h2": {
+      "visual_description": "Not present in sample, but likely a smaller version of H1 or bold serif based on academic styling.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Superscript numbers in body text corresponding to bottom-of-page blocks.",
+      "semantic_meaning": "Footnote reference"
+    },
+    {
+      "pattern": "Italicized Latin phrases or species names.",
+      "semantic_meaning": "Scientific/Technical terminology (e.g., Homo sapiens, inter alia)"
+    },
+    {
+      "pattern": "Small-caps or distinct sans-serif font at the very bottom of the page.",
+      "semantic_meaning": "Running footer / Author attribution"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX inline for variables and superscripts (e.g., $n^{th}$), though the text describes mathematical rigor, no complex block equations are present in this sample.",
+    "table_style": "markdown",
+    "citation_format": "Author-Date parenthetical style (e.g., Camerer (2003), Cartwright (2018))."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-left corner contains page-specific metadata: Roman numeral page numbers followed by author name (e.g., 'XX ARTHUR J. CAPLAN'). Footnotes are separated from the main body by a short horizontal rule or whitespace at the bottom."
+  }
+}

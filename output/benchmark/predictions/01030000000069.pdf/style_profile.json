@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Green, bold, sans-serif font, larger than body text, used for primary section headers.",
+      "example_text": "Replace"
+    },
+    "h2": {
+      "visual_description": "Bold, black text at the start of a paragraph, typically preceded by a lowercase letter and period.",
+      "example_text": "l. Replace Plastics with Recyclable Materials."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^[a-z]\\.\\s",
+      "semantic_meaning": "Sub-section list item identifier (alphabetical)."
+    },
+    {
+      "pattern": "^•\\s",
+      "semantic_meaning": "Unordered bullet point list item."
+    },
+    {
+      "pattern": "^Figure\\s\\d+\\.",
+      "semantic_meaning": "Figure caption, typically in a teal/blue color and smaller font."
+    },
+    {
+      "pattern": "^\\d{2,3}\\s+https?://",
+      "semantic_meaning": "Footnote citation entry at the bottom of the page."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "superscript numeric indices in-text corresponding to a numbered list of URLs in the footer."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Page number and document title ('Study on Plastics Use and Waste Management in the Food Service Industry') located in the bottom footer margin; numbered source URLs located just above the footer."
+  }
+}

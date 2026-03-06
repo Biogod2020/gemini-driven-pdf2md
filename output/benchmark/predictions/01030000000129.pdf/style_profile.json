@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not explicitly present on this page, but inferred from footer as a potential chapter title style.",
+      "example_text": "Ch. 15. Homogeneous Risk Measures"
+    },
+    "h2": {
+      "visual_description": "Not present on this page; text consists of body paragraphs and equations.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^\\(\\d+\\.\\d+\\)",
+      "semantic_meaning": "Equation numbering, positioned at the left margin preceding block math."
+    },
+    {
+      "pattern": "\\$\\d{1,3}(,\\d{3})*",
+      "semantic_meaning": "Currency values (USD) used within financial examples."
+    },
+    {
+      "pattern": "\\d+%",
+      "semantic_meaning": "Percentage values used in statistical descriptions."
+    },
+    {
+      "pattern": "\\(\\.\\d+\\)",
+      "semantic_meaning": "Probability values enclosed in parentheses within equations."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (use $$ for block equations with manual numbering, $ for inline variables and expressions)",
+    "table_style": "markdown",
+    "citation_format": "Not observed on this page"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer text containing page number and chapter title (e.g., '340 | Ch. 15. Homogeneous Risk Measures') should be ignored during content extraction."
+  }
+}

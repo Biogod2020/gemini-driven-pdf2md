@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, maroon-red, sans-serif font, left-aligned with significant top margin",
+      "example_text": "Promotional Materials"
+    },
+    "h2": {
+      "visual_description": "Bold, centered, black serif font, used as a table caption prefix",
+      "example_text": "Table 7.1. Types of promotional materials"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "maroon-red text",
+      "semantic_meaning": "Primary section headings and footer metadata"
+    },
+    {
+      "pattern": "underlined maroon-red text",
+      "semantic_meaning": "Hyperlinks to external resources"
+    },
+    {
+      "pattern": "bold text in table first column/header",
+      "semantic_meaning": "Table headers and primary row categories"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "APA-style parenthetical citations (e.g., Author, n.d.)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer text containing page number and section title (e.g., '92 | PROGRAM MANAGEMENT') in maroon-red"
+  }
+}

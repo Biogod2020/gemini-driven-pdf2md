@@ -1,0 +1,8 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Figure 13.3. Graph of Projection Estimates",
+    "description": "A line chart showing observed data in blue from time 0 to 7, and forecasted data with upper and lower confidence intervals in orange from time 7 to 13. The x-axis represents time and the y-axis represents values."
+  }
+]

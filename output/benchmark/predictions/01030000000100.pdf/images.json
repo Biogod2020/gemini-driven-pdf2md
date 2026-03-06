@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig_a",
+    "path": "assets/p0_fig_a.png",
+    "caption": "Participation in public good by housing type (House vs. Apartment) under Anonymous and Observable conditions.",
+    "description": "A bar chart showing participation rates in a public good. For houses, participation is ~2.5% (Anonymous) and ~4% (Observable). For apartments, participation is ~5% (Anonymous) and ~11.5% (Observable)."
+  },
+  {
+    "id": "p0_fig_b",
+    "path": "assets/p0_fig_b.png",
+    "caption": "Participation in public good by tenure (Renter vs. Owner) under Anonymous and Observable conditions.",
+    "description": "A bar chart showing participation rates in a public good. For renters, participation is ~4.5% (Anonymous) and ~6% (Observable). For owners, participation is ~2.5% (Anonymous) and ~10% (Observable)."
+  }
+]

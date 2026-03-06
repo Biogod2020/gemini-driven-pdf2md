@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Top-of-page header in orange/red uppercase sans-serif font, split between left and right alignment, positioned above a full-width horizontal rule.",
+      "example_text": "MOHAVE COMMUNITY COLLEGE BIO181"
+    },
+    "h2": {
+      "visual_description": "Bold, centered text within the top row of a bordered table.",
+      "example_text": "Genes in DNA"
+    },
+    "h3": {
+      "visual_description": "Bold alphanumeric prefix (number followed by lowercase letter and period) at the start of an instruction or question.",
+      "example_text": "29a."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^\\d+[a-z]\\.",
+      "semantic_meaning": "Exercise or question identifier"
+    },
+    {
+      "pattern": "→",
+      "semantic_meaning": "Indicates biological process flow (e.g., transcription/translation) or a causal consequence"
+    },
+    {
+      "pattern": "\\+",
+      "semantic_meaning": "Indicates the combination of multiple factors or processes"
+    },
+    {
+      "pattern": "•",
+      "semantic_meaning": "Unordered list item for supporting details"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "inline unicode symbols for arrows and operators",
+    "table_style": "html (recommended to maintain the specific 5-column layout where columns 2 and 4 are dedicated to flow arrows)",
+    "citation_format": "not applicable"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Header text (Institution and Course ID) above a red horizontal line; centered numeric page footer."
+  }
+}

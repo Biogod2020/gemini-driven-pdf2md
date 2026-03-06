@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p0_fig1",
+    "path": "assets/p0_fig1.png",
+    "caption": "Upstage universal OCR model E2E performance evaluation¹",
+    "description": "A vertical bar chart comparing the E2E performance of Company A, Company B, and Upstage across 'Scene' and 'Document' image categories. Upstage shows the highest performance in both."
+  },
+  {
+    "id": "p0_fig2",
+    "path": "assets/p0_fig2.png",
+    "caption": "Upstage universal OCR model performance details: Document criteria",
+    "description": "A horizontal bar chart detailing performance metrics (Recall, Precision, F1, and Parsing-F1) for Company A, Company B, and Upstage. Upstage leads in all metrics shown."
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Inferred as larger, bold, possibly centered chapter titles (not present on this specific page).",
+      "example_text": "CHAPTER 5: INTERTEMPORAL CHOICE"
+    },
+    "h2": {
+      "visual_description": "All-caps, sans-serif font, blue-purple color, left-aligned with significant leading space.",
+      "example_text": "ARE CIGARETTE SMOKERS HYPERBOLIC TIME DISCOUNTERS?"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\([A-Z][a-z]+ and [A-Z][a-z]+ \\d{4}\\)",
+      "semantic_meaning": "In-text citation in blue hyperlinked text using Author-Year format."
+    },
+    {
+      "pattern": "^\\d+\\.\\s[A-Z].*",
+      "semantic_meaning": "Footnote text located at the bottom of the page, prefixed by a number and period."
+    },
+    {
+      "pattern": "[A-Z\\s]+ \\d+$",
+      "semantic_meaning": "Page footer containing the book/section title and the page number in the bottom right corner."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical (Author and Author Year)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-right running footer (e.g., 'BEHAVIORAL ECONOMICS PRACTICUM 193'); bottom-aligned footnote blocks."
+  }
+}

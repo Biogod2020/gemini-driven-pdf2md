@@ -1,0 +1,26 @@
+**Confirming JSON and Bounding Boxes**
+
+I've reviewed the JSON structure again, confirming the table's HTML format for shading and correct data. Refined the bounding box for the table and double-checked the markdown and metadata. I am confident in its validity.
+
+
+{
+  "markdown": "election integrity. The registration of local election observers runs until 25 May, and the NEC is still reviewing the application of nearly 5,000 observers.\n\n# Table: The number of accredited observers as of 28 April 2022¹⁵\n\n<table>\n  <thead>\n    <tr>\n      <th style=\"text-align: center;\">No.</th>\n      <th style=\"text-align: left;\">Name of organization</th>\n      <th style=\"text-align: center;\">Number of accredited observers</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"text-align: center;\">1</td>\n      <td>Union of Youth Federations of Cambodia (UYFC)</td>\n      <td style=\"text-align: center;\">17,266</td>\n    </tr>\n    <tr style=\"background-color: #e7f3ff;\">\n      <td style=\"text-align: center;\">2</td>\n      <td>Cambodian Women for Peace and Development</td>\n      <td style=\"text-align: center;\">9,835</td>\n    </tr>\n    <tr>\n      <td style=\"text-align: center;\">3</td>\n      <td>Association of Democratic Students of Cambodia</td>\n      <td style=\"text-align: center;\">711</td>\n    </tr>\n    <tr style=\"background-color: #e7f3ff;\">\n      <td style=\"text-align: center;\">4</td>\n      <td>Association of Intellectual and Youth Volunteer</td>\n      <td style=\"text-align: center;\">46</td>\n    </tr>\n    <tr>\n      <td style=\"text-align: center;\">5</td>\n      <td>Our Friends Association</td>\n      <td style=\"text-align: center;\">27</td>\n    </tr>\n    <tr style=\"background-color: #e7f3ff;\">\n      <td style=\"text-align: center;\">6</td>\n      <td>COMFREL</td>\n      <td style=\"text-align: center;\">26</td>\n    </tr>\n    <tr>\n      <td style=\"text-align: center;\">7</td>\n      <td>Traditional and Modern Mental Health Organization</td>\n      <td style=\"text-align: center;\">15</td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr>\n      <td></td>\n      <td><strong>Total</strong></td>\n      <td style=\"text-align: center;\"><strong>27,926</strong></td>\n    </tr>\n  </tfoot>\n</table>\n\n---\n\n¹⁵ https://www.nec.gov.kh/khmer/content/5524",
+  "document_metadata": {
+    "title": "Civil Society Engagement",
+    "style_conformity": 1.0,
+    "style_patch": null
+  },
+  "assets": [
+    {
+      "id": "table_1",
+      "bbox": [
+        194,
+        128,
+        605,
+        889
+      ],
+      "caption": "Table: The number of accredited observers as of 28 April 2022¹⁵",
+      "description": "A data table showing the number of accredited observers from various organizations. It features alternating light blue row shading and a total sum at the bottom."
+    }
+  ]
+}

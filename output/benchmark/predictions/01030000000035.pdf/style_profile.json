@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, serif font, typically preceded by a large standalone chapter number on the line above.",
+      "example_text": "4 Basis Fields"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "\\(\\d+\\.\\d+\\)",
+      "semantic_meaning": "Equation label, right-aligned with the mathematical expression."
+    },
+    {
+      "pattern": "Figure \\d+\\.\\d+",
+      "semantic_meaning": "Internal reference to an illustration."
+    },
+    {
+      "pattern": "equation \\(\\d+\\.\\d+\\)",
+      "semantic_meaning": "Internal reference to a numbered mathematical formula."
+    },
+    {
+      "pattern": "^\\d+.*",
+      "semantic_meaning": "Footnote text located at the bottom of the page, separated by a horizontal rule."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX / MathJax for both inline variables (e.g., $b^i$, $\\mathbf{e}$) and centered block equations.",
+    "table_style": "markdown",
+    "citation_format": "Superscript numeric footnotes for supplemental notes; parenthetical numbering for equations."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Standalone chapter numbers at the top of chapter start pages; horizontal separator line followed by small-font footnotes at the bottom margin."
+  }
+}

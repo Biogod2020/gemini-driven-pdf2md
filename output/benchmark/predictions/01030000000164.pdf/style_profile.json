@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Inferred from footer; likely a large, bold section title at the beginning of chapters.",
+      "example_text": "Soil Formation"
+    },
+    "h2": {
+      "visual_description": "Bolded alphanumeric horizon label at the start of a paragraph, immediately followed by an em-dash and a depth range.",
+      "example_text": "3Btg2—26 to 31 in;"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "**[Horizon Code]**—[Depth Range]",
+      "semantic_meaning": "Soil horizon designation and its vertical depth interval in inches."
+    },
+    {
+      "pattern": "([Munsell Notation])",
+      "semantic_meaning": "Munsell color system code (e.g., 10YR 4/2) providing a standardized description of soil color."
+    },
+    {
+      "pattern": "; ",
+      "semantic_meaning": "Structural delimiter used to separate different morphological properties (color, texture, structure, etc.) within a single horizon description."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "none",
+    "table_style": "markdown",
+    "citation_format": "none"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer text located at the bottom right, containing the section title and page number separated by a vertical bar (e.g., 'Soil Formation | 27')."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Large, bold, black sans-serif font; serves as the primary slide message/title.",
+      "example_text": "Recommendation pack shows outstanding performance of 1.7~2.6 times that of competing models even when using commercial service data"
+    },
+    "h2": {
+      "visual_description": "Medium-sized, purple sans-serif font; located at the top left as a section or breadcrumb header.",
+      "example_text": "Recommendation Pack: Track Record"
+    },
+    "h3": {
+      "visual_description": "Small, bold, black sans-serif font; used for individual chart or column titles.",
+      "example_text": "Comparison with Beauty Commerce Recommendation Models"
+    },
+    "h4": {
+      "visual_description": "Small, regular weight, grey sans-serif font; used for sub-captions or descriptive text under chart titles.",
+      "example_text": "Recommendation model Hit Ratio comparison"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Purple bars and 'UpStage' branding",
+      "semantic_meaning": "Represents the performance metrics and results of the UpStage proprietary solution."
+    },
+    {
+      "pattern": "Grey bars and 'aws' or 'Traditional' labels",
+      "semantic_meaning": "Represents competitor models, industry baselines, or existing service algorithms."
+    },
+    {
+      "pattern": "Blue dashed lines with upward arrows and multipliers (e.g., 1.7X↑, 20%↑)",
+      "semantic_meaning": "Indicates the relative performance lift or improvement factor of UpStage over the baseline."
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "inline LaTeX for symbols and ranges (e.g., $1.7\\sim2.6$, $20\\%\\uparrow$)",
+    "table_style": "markdown",
+    "citation_format": "not applicable (none visible)"
+  },
+  "layout_info": {
+    "primary_flow": "multi-column (3-column grid layout for data visualizations)",
+    "margin_noise_patterns": "Page number located in the bottom right corner; decorative vertical purple line in the top left margin."
+  }
+}

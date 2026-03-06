@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, serif font, left-aligned, prefixed with a single digit and a period. Significant vertical spacing above.",
+      "example_text": "5. The dynamics"
+    },
+    "h2": {
+      "visual_description": "Bold, serif font, inline at the start of a paragraph, followed by a period.",
+      "example_text": "Principle 1."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Principle \\d+\\.",
+      "semantic_meaning": "formal_axiom_or_principle_label"
+    },
+    {
+      "pattern": "\\[\\d+\\]",
+      "semantic_meaning": "citation_reference"
+    },
+    {
+      "pattern": "\\(\\d+\\)",
+      "semantic_meaning": "equation_number_or_internal_cross_reference"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "latex_block_with_right_tag",
+    "table_style": "markdown",
+    "citation_format": "brackets"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Top-of-page running header containing book title and DOI; bottom-of-page footer containing page number."
+  }
+}

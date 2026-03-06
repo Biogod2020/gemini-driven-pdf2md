@@ -1,0 +1,35 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Bold, centered, sans-serif or slab-serif font, significantly larger than body text, used for chart or section titles.",
+      "example_text": "Top 10 tuna fishing nations (2018)"
+    },
+    "h2": {
+      "visual_description": "Italicized label followed by a colon and standard serif body text, used for figure captions.",
+      "example_text": "Figure 12.8: Top tuna fishing nations based on landings of seven tuna species in 2018."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "Figure \\d+\\.\\d+:",
+      "semantic_meaning": "Figure caption identifier"
+    },
+    {
+      "pattern": "\\([A-Z][a-z]+( et al\\.)? \\d{4}(; [A-Z][a-z]+ \\d{4})*\\)",
+      "semantic_meaning": "In-text academic citation (author-year format)"
+    },
+    {
+      "pattern": "^\\d+ \\| .*",
+      "semantic_meaning": "Page footer containing page number and publication title"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (standard $ or $$ delimiters)",
+    "table_style": "markdown",
+    "citation_format": "Parenthetical author-date (e.g., Di Natale 2020)"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Footer text at the bottom of the page consisting of a page number, a vertical pipe, and the book title 'Conserving Tuna: The Most Commercially Valuable Fish on Earth'."
+  }
+}

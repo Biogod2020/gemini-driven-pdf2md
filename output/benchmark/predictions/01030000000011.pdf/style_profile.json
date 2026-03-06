@@ -1,0 +1,46 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Not present in sample, but typically large, centered, all-caps or bold serif at chapter starts.",
+      "example_text": "N/A"
+    },
+    "h2": {
+      "visual_description": "Not present in sample; likely centered serif with significant leading.",
+      "example_text": "N/A"
+    },
+    "h3": {
+      "visual_description": "Small caps or bold serif, often used for sub-sections within chapters.",
+      "example_text": "N/A"
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "FIGURE [NUMBER] [TEXT] [PUBLICATION INFO]",
+      "semantic_meaning": "Image caption: Small-caps 'FIGURE' followed by number, roman text for description, and smaller all-caps for publication metadata.",
+      "example_text": "FIGURE 4.11 A. Birrell, Sir Robert Shirley [graphic]. Engraving on wove paper. PUBLISHED BY EDWARD HARDING, LONDON, 1799"
+    },
+    {
+      "pattern": "[NUMBER] [TEXT] (at bottom of page)",
+      "semantic_meaning": "Footnote: Smaller serif font at the base of the page, separated by a horizontal rule, beginning with a numerical index.",
+      "example_text": "86 Elaine Freedgood, “Introduction: Reading Things,” in The Idea in Things..."
+    },
+    {
+      "pattern": "Italicized text within paragraphs",
+      "semantic_meaning": "Emphasis or Book Titles.",
+      "example_text": "The Arabian Nights in Historical Context"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX (inline $ or block $$)",
+    "table_style": "markdown",
+    "citation_format": "Chicago-style footnotes with superscript numbering in-text and corresponding entries at the footer."
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": {
+      "header_left": "Page number (e.g., '84')",
+      "header_right": "Author surname in all-caps (e.g., 'BAIRD')",
+      "footer_separator": "Thin horizontal rule above footnotes"
+    }
+  }
+}

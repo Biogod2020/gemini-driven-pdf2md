@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p0_table3",
+    "path": "assets/p0_table3.png",
+    "caption": "Table 3: Ablation studies on the different datasets used for instruction tuning. ‘SFT v3+v4’ indicates that the model is merged from ‘SFT v3’ and ‘SFT v4’ by simply averaging the model weights. The best scores for H6 and the individual tasks are shown in bold.",
+    "description": "A table showing ablation studies on instruction tuning datasets (Alpaca-GPT4, OpenOrca, Synth. Math-Instruct) across various benchmarks."
+  },
+  {
+    "id": "p0_table4",
+    "path": "assets/p0_table4.png",
+    "caption": "Table 4: Ablation studies on the different datasets used during the direct preference optimization (DPO) stage. ‘SFT v3’ is used as the SFT base model for DPO. We name ablated models with the ‘DPO’ prefix to indicate the alignment tuning stage. ‘DPO v1+v2’ indicates that the model is merged from ‘DPO v1’ and ‘DPO v2’ by simply averaging the model weights. The best scores for H6 and the individual tasks are shown in bold.",
+    "description": "A table showing ablation studies on DPO datasets (Ultrafeedback Clean, Synth. Math-Alignment) across various benchmarks."
+  },
+  {
+    "id": "p0_table5",
+    "path": "assets/p0_table5.png",
+    "caption": "Table 5: Ablation studies on the different SFT base models used during the direct preference optimization (DPO) stage. Ultrafeedback Clean and Synth. Math-Alignment datasets are used. We name ablated models with the ‘DPO’ prefix to indicate the alignment tuning stage. The best scores for H6 and the individual tasks are shown in bold.",
+    "description": "A table comparing DPO performance using different SFT base models (SFT v3 vs SFT v3+v4)."
+  }
+]

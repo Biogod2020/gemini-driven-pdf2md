@@ -1,0 +1,39 @@
+{
+  "heading_weights": {
+    "h1": {
+      "visual_description": "Inferred from footer; likely large, bold, serif font used for chapter titles (not visible on this specific page).",
+      "example_text": "BEHAVIORAL ECONOMICS PRACTICUM"
+    },
+    "h2": {
+      "visual_description": "Numbered list items starting with an Arabic numeral followed by a period; standard body serif font with a hanging indent.",
+      "example_text": "8. Suppose Evelyn the Environmental Economist..."
+    }
+  },
+  "visual_matchers": [
+    {
+      "pattern": "^\\d+\\.\\s",
+      "semantic_meaning": "Exercise or question identifier"
+    },
+    {
+      "pattern": "italicized serif text",
+      "semantic_meaning": "Latin terms, scientific names, or specific economic models (e.g., *Homo economicus*)"
+    },
+    {
+      "pattern": "Title Case within sentences",
+      "semantic_meaning": "Key economic theories or named effects (e.g., Endowment Effect, Gender Gap experiment)"
+    },
+    {
+      "pattern": "Figure [Number].[Number]",
+      "semantic_meaning": "Internal cross-reference to illustrative graphics"
+    }
+  ],
+  "markdown_grammar": {
+    "math_environment": "LaTeX ($...$ for inline expressions)",
+    "table_style": "markdown",
+    "citation_format": "Narrative citation style referring to chapters and figures"
+  },
+  "layout_info": {
+    "primary_flow": "single-column",
+    "margin_noise_patterns": "Bottom-right footer containing the section title in all-caps sans-serif and the page number (e.g., BEHAVIORAL ECONOMICS PRACTICUM 117)"
+  }
+}
