@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Output and temporary data
+output/
+resources/
+vendor/
+.coverage
+htmlcov/
+.pytest_cache/
+.benchmarks/
+
+# Project specific
+style_profile.json
+images.json
+mcp_config.json
+
+# OS
+.DS_Store
+Thumbs.db
