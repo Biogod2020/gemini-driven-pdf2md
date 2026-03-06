@@ -9,7 +9,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (manual)
 
 ## Phase 2: MCP Server Integration
-- [ ] Task: Implement MCP server scaffolding in Python
+- [x] Task: Implement MCP server scaffolding in Python (2deb1de)
     - [ ] Write unit tests for MCP tool registration
     - [ ] Implement `extract` and `profile` as MCP tools
 - [ ] Task: Add MCP configuration and startup scripts
