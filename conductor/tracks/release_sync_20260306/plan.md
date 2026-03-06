@@ -1,12 +1,12 @@
 # Implementation Plan: Release, MCP Interface, and GitHub Sync
 
-## Phase 1: Documentation & Showcase
+## Phase 1: Documentation ## Phase 1: Documentation & Showcase Showcase [checkpoint: d5198ce]
 - [~] Task: Create a high-fidelity `README.md`
     - [ ] Include feature list and SOTA highlights
     - [ ] Add detailed CLI usage guide
     - [ ] Create/Embed architecture diagrams (from workflow docs)
 - [ ] Task: Document the "Style Profiling" and "Triplet Context" logic
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md) (manual)
 
 ## Phase 2: MCP Server Integration
 - [ ] Task: Implement MCP server scaffolding in Python
